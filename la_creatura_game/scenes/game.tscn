@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=4 format=3 uid="uid://w86chk0k7rbt"]
+
+[ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://scenes/player.tscn" id="1_5vds4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cq1mi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oor00"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5vds4")]
+position = Vector2(72, 131)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(2, 0)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_cq1mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(81, 191)
+shape = SubResource("WorldBoundaryShape2D_oor00")
+debug_color = Color(1, 0.109804, 0.854902, 0.615686)
