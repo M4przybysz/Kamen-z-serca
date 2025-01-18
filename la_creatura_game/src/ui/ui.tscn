@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=2 format=3 uid="uid://c4ffy2ihhl0s2"]
+
+[ext_resource type="PackedScene" uid="uid://bubol4my2hwqv" path="res://src/ui/health_interface.tscn" id="1_xrukv"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -14,4 +16,16 @@ offset_left = 79.0
 offset_top = 100.0
 offset_right = 149.0
 offset_bottom = 123.0
-text = "Nice bird"
+text = "Hiii, Nith hereeee :DD"
+
+[node name="Health_Points_interface2" parent="." instance=ExtResource("1_xrukv")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 54.0
+offset_right = 301.0
+offset_bottom = 94.0
