@@ -4,8 +4,8 @@ extends CharacterBody2D
 @onready var grab_hand: RayCast2D = $GrabHand
 @onready var grab_check: RayCast2D = $GrabCheck
 
-const SPEED = 350.0
-const JUMP_VELOCITY = -550.0
+@export var movement_speed = 350.0
+@export var jump_velocity = -550.0
 
 var isGrabbing = false
 
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() || isGrabbing):
 		isGrabbing = false
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 	
 	if isGrabbing: return
 
@@ -46,9 +46,9 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("jump")
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * movement_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, movement_speed)
 
 	move_and_slide()
 
