@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -550.0
 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gameplay: Node2D = $".."
 
 
 func _physics_process(delta: float) -> void:
@@ -41,3 +42,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		gameplay.decrease_hp(1)

@@ -1,14 +1,18 @@
 extends Node2D
 
-const MAX_HIT_POINTS: int = 3
+var max_hp: int = 3
 
-var hit_points: int
+var hp: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	hp = max_hp
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func decrease_hp(value:int) -> void:
+	hp-=value
+	print(hp)
