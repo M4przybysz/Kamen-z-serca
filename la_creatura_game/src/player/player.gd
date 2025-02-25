@@ -1,13 +1,24 @@
 extends CharacterBody2D
 
-@onready var gameplay: Node2D = $".."
+@onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+# Assign physical collision to variables
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
-@onready var slide_timer: Timer = $SlideTimer
+
+# Assign hitboxes to variables
+@onready var normal_hitbox_collision: CollisionShape2D = $NormalHitbox/CollisionShape2D
+@onready var slide_hitbox_collision: CollisionShape2D = $SlideHitbox/CollisionShape2D
+
+# Assign grab to variables
 @onready var grab_hand: RayCast2D = $GrabHand
 @onready var grab_check: RayCast2D = $GrabCheck
+
+# Assign timers to variables
+@onready var slide_timer: Timer = $SlideTimer
+@onready var damage_timer: Timer = $DamageTimer
+
 
 @export var movement_speed = 350.0
 @export var jump_velocity = -550.0
@@ -16,6 +27,7 @@ var last_direction = 0
 var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
+var canBeDamaged: bool = true
 
 func _physics_process(delta: float) -> void:
 	check_edge_grab()
@@ -71,7 +83,9 @@ func _input(event: InputEvent) -> void:
 		canDash = false
 		if is_on_floor():
 			normal_collision.disabled = true
+			normal_hitbox_collision.disabled = true
 			slide_collision.disabled = false
+			slide_hitbox_collision.disabled = false
 			animated_sprite.rotation_degrees = 90 * last_direction
 		slide_timer.start()
 
@@ -90,14 +104,29 @@ func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
 
+func _on_normal_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy") && canBeDamaged:
+		gameplay.decrease_hp(1)
+		canBeDamaged = false
+		damage_timer.start()
+
+func _on_slide_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy") && canBeDamaged:
+		gameplay.decrease_hp(1)
+		canBeDamaged = false
+		damage_timer.start()
+
 func _on_slide_timer_timeout() -> void:
 	isDashing = false
 	normal_collision.disabled = false
+	normal_hitbox_collision.disabled = false
 	slide_collision.disabled = true
+	slide_hitbox_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
 	slide_timer.set_wait_time(0.3)
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
-		gameplay.decrease_hp(1)
+func _on_damage_timer_timeout() -> void:
+	canBeDamaged = true
+	damage_timer.stop()
+	damage_timer.set_wait_time(0.5)

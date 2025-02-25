@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=10 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
@@ -12,7 +12,7 @@
 size = Vector2(300, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjl25"]
-size = Vector2(1000, 20)
+size = Vector2(2000, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhye4"]
 size = Vector2(5000, 20)
@@ -29,12 +29,11 @@ position = Vector2(25, 45)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-
 [node name="SpikeTest" parent="." instance=ExtResource("3_i21sc")]
-position = Vector2(1094, 659)
+position = Vector2(706, 650)
 
 [node name="Block" type="StaticBody2D" parent="."]
-position = Vector2(1256, 442)
+position = Vector2(1500, 450)
 physics_material_override = SubResource("PhysicsMaterial_cq1mi")
 
 [node name="ColorRect" type="ColorRect" parent="Block"]
@@ -48,22 +47,22 @@ position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_uuew2")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(756, 640)
+position = Vector2(0, 650)
 physics_material_override = SubResource("PhysicsMaterial_cq1mi")
 
 [node name="ColorRect" type="ColorRect" parent="Floor"]
 offset_left = -500.0
-offset_right = 500.0
+offset_right = 1500.0
 offset_bottom = 20.0
 color = Color(1, 0, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(0, 10)
+position = Vector2(500, 10)
 shape = SubResource("RectangleShape2D_yjl25")
 
 [node name="Floor1" type="StaticBody2D" parent="."]
-position = Vector2(1556, 640)
+position = Vector2(1800, 650)
 physics_material_override = SubResource("PhysicsMaterial_cq1mi")
 
 [node name="ColorRect" type="ColorRect" parent="Floor1"]
