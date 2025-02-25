@@ -25,6 +25,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HP1" type="ColorRect" parent="HP_interface"]
+visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -33,26 +34,36 @@ offset_bottom = 45.0
 
 [node name="HP2" type="ColorRect" parent="HP_interface"]
 visible = false
+layout_mode = 0
 offset_left = 50.0
 offset_top = 5.0
 offset_right = 90.0
 offset_bottom = 45.0
+color = Color(1, 0.558333, 0.5, 1)
 
 [node name="HP3" type="ColorRect" parent="HP_interface"]
+visible = false
+layout_mode = 0
 offset_left = 95.0
 offset_top = 5.0
 offset_right = 135.0
 offset_bottom = 45.0
+color = Color(1, 0, 0, 1)
 
 [node name="HP4" type="ColorRect" parent="HP_interface"]
 visible = false
+layout_mode = 0
 offset_left = 140.0
 offset_top = 5.0
 offset_right = 180.0
 offset_bottom = 45.0
+color = Color(0.5, 0, 0, 1)
 
 [node name="HP5" type="ColorRect" parent="HP_interface"]
+visible = false
+layout_mode = 0
 offset_left = 185.0
 offset_top = 5.0
 offset_right = 225.0
 offset_bottom = 45.0
+color = Color(0, 0, 0, 1)

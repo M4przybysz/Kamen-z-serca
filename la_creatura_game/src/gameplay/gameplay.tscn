@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=8 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="3_i21sc"]
+[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cq1mi"]
 
@@ -41,3 +42,6 @@ shape = SubResource("RectangleShape2D_yjl25")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
+
+[node name="DeathMenu" parent="UI" instance=ExtResource("5_r6rdt")]
+visible = false
