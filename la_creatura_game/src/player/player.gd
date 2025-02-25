@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var gameplay: Node2D = $".."
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
@@ -11,7 +13,6 @@ extends CharacterBody2D
 @export var jump_velocity = -550.0
 
 var last_direction = 0
-
 var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
@@ -96,3 +97,7 @@ func _on_slide_timer_timeout() -> void:
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
 	slide_timer.set_wait_time(0.3)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		gameplay.decrease_hp(1)
