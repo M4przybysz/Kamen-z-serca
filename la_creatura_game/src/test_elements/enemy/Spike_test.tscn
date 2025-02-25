@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcep0b81sj6pl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpknk"]
+size = Vector2(50, 50)
+
+[node name="SpikeTest" type="StaticBody2D" groups=["enemy"]]
+rotation = 0.785398
+collision_layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(0.631373, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bpknk")
