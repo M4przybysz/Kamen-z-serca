@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=14 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://pplyfl44k6m3" path="res://assets/sprites/test_player.png" id="1_hj8ny"]
@@ -36,10 +36,6 @@ region = Rect2(200, 0, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rgla"]
 atlas = ExtResource("1_hj8ny")
 region = Rect2(0, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_beogg"]
-atlas = ExtResource("1_hj8ny")
-region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5irl"]
 animations = [{
@@ -83,14 +79,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_beogg")
-}],
-"loop": true,
-"name": &"slide",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
@@ -122,19 +110,19 @@ target_position = Vector2(100, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(22, 50)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"slide"
+animation = &"grab_edge"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_85ty6")
 
-[node name="NormalHitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_7yxln")
 
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
-[connection signal="body_entered" from="NormalHitbox" to="." method="_on_normal_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

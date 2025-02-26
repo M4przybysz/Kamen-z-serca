@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 
 # Assign hitboxes to variables
-@onready var normal_hitbox_collision: CollisionShape2D = $NormalHitbox/CollisionShape2D
+@onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 
 # Assign grab to variables
 @onready var grab_hand: RayCast2D = $GrabHand
@@ -66,9 +66,8 @@ func _input(event: InputEvent) -> void:
 		canBeDamaged = false
 		if is_on_floor():
 			normal_collision.disabled = true
-			normal_hitbox_collision.disabled = true
+			hitbox_collision.disabled = true
 			slide_collision.disabled = false
-			animated_sprite.rotation_degrees = 90 * last_direction
 		slide_timer.start()
 
 func flip_h(direction):
@@ -84,8 +83,11 @@ func flip_h(direction):
 func animate_player(direction) -> void: 
 	if isGrabbing: 
 		animated_sprite.play("grab_edge")
-	elif isDashing: 
-		animated_sprite.rotation_degrees = 90 * last_direction # Change to animation when it's done
+	elif isDashing:
+		if is_on_floor(): 
+			animated_sprite.rotation_degrees = 90 * last_direction # Change to animation when it's done
+		else:
+			pass # Change to air dashing animation when it's ready
 	elif is_on_floor():
 		if direction == 0: 
 			animated_sprite.play("idle")
@@ -100,13 +102,15 @@ func check_edge_grab() -> void:
 	var checkGrabHeight = grab_check.is_colliding()
 	
 	var canGrab = isFalling && checkHand && checkGrabHeight && not isGrabbing && is_on_wall_only()
-	if canGrab: isGrabbing = true
+	if canGrab: 
+		isGrabbing = true
+		animate_player(last_direction)
 
 func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
 
-func _on_normal_hitbox_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") && canBeDamaged:
 		gameplay.decrease_hp(1)
 
@@ -114,7 +118,7 @@ func _on_slide_timer_timeout() -> void:
 	isDashing = false
 	canBeDamaged = true
 	normal_collision.disabled = false
-	normal_hitbox_collision.disabled = false
+	hitbox_collision.disabled = false
 	slide_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
