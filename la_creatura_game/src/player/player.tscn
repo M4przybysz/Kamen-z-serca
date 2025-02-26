@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=15 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://pplyfl44k6m3" path="res://assets/sprites/test_player.png" id="1_hj8ny"]
@@ -96,17 +96,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
 size = Vector2(50, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygni6"]
-size = Vector2(100, 50)
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_golh8")
 
 [node name="SlideTimer" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="DamageTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(25, 50)
@@ -142,14 +136,5 @@ collision_mask = 2
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_7yxln")
 
-[node name="SlideHitbox" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlideHitbox"]
-position = Vector2(25, 75)
-shape = SubResource("RectangleShape2D_ygni6")
-
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
-[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
 [connection signal="body_entered" from="NormalHitbox" to="." method="_on_normal_hitbox_body_entered"]
-[connection signal="body_entered" from="SlideHitbox" to="." method="_on_slide_hitbox_body_entered"]

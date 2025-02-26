@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	pass
 
 func set_hp(hp):
-	for img in $HP_interface.get_children():
+	for img in hp_vfx:
 		img.visible = false
 	hp_vfx[hp].visible = true
 	
