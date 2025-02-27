@@ -25,7 +25,8 @@ script = ExtResource("1_i11ig")
 position = Vector2(977, 517)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(25, 45)
+position = Vector2(86.207, 155.172)
+scale = Vector2(3.44828, 3.44828)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 

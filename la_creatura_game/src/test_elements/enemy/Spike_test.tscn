@@ -15,5 +15,4 @@ offset_bottom = 25.0
 color = Color(0.631373, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bpknk")
