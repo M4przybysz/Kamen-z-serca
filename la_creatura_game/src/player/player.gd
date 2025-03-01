@@ -23,11 +23,21 @@ extends CharacterBody2D
 @export var movement_speed = 350.0
 @export var jump_velocity = -550.0
 
+# Dynamic playthrough variables
 var last_direction = 1
 var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
 var canBeDamaged: bool = true
+
+# Player progression variables
+var level: int = 1
+var max_level: int = 3
+var isShieldUnlocked: bool = false
+var feathers_lvl1 = [true] 				# Feathers usable on level 1 - [stone]
+var feathers_lvl2 = [true, true] 		# Feathers usable on level 2 - [stone, copper]
+var feathers_lvl3 = [true, true, true] 	# Feathers usable on level 3 - [stone, copper, bronze]
+var active_feathers: Array # Array of usable feathers
 
 func _physics_process(delta: float) -> void:
 	check_edge_grab()
@@ -54,6 +64,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+#########################################
+# Input handling
+#########################################
 func _input(event: InputEvent) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing):
@@ -75,19 +88,28 @@ func _input(event: InputEvent) -> void:
 		wing_attack_collision.disabled = false
 		wing_attack_collision.visible = true
 		wing_attack_timer.start()
+	
+	if Input.is_action_just_pressed("feather_throw"):
+		pass
+	
+	if Input.is_action_just_pressed("change_feather_down") || Input.is_action_just_pressed("change_feather_up"):
+		if level == 1:
+			pass
+		else:
+			# change active feather type
+			pass
+	
+	if Input.is_action_just_pressed("spear_attack"):
+		pass
+	elif Input.is_action_pressed("spear_attack"):
+		pass
+	
+	if Input.is_action_just_pressed("shield_use") && isShieldUnlocked:
+		pass
 
-func flip_h(direction):
-	if direction > 0:
-		animated_sprite.flip_h = false
-		grab_hand.target_position.x = 100
-		grab_check.target_position.x = 100
-		wing_attack_collision.position.x = 75
-	elif direction < 0:
-		animated_sprite.flip_h = true
-		grab_hand.target_position.x = -100
-		grab_check.target_position.x = -100
-		wing_attack_collision.position.x = -25
-
+#########################################
+# Animations handling
+#########################################
 func animate_player(direction) -> void: 
 	if isGrabbing: 
 		animated_sprite.play("grab_edge")
@@ -104,6 +126,21 @@ func animate_player(direction) -> void:
 	else: 
 		animated_sprite.play("jump")
 
+#########################################
+# Movement additions
+#########################################
+func flip_h(direction):
+	if direction > 0:
+		animated_sprite.flip_h = false
+		grab_hand.target_position.x = 100
+		grab_check.target_position.x = 100
+		wing_attack_collision.position.x = 75
+	elif direction < 0:
+		animated_sprite.flip_h = true
+		grab_hand.target_position.x = -100
+		grab_check.target_position.x = -100
+		wing_attack_collision.position.x = -25
+
 func check_edge_grab() -> void:
 	var isFalling = velocity.y >= 0
 	var checkHand = not grab_hand.is_colliding()
@@ -118,10 +155,16 @@ func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
 
+#########################################
+# Hitboxes and hurtboxes handling
+#########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") && canBeDamaged:
 		gameplay.decrease_hp(1)
 
+#########################################
+# Timers handling
+#########################################
 func _on_slide_timer_timeout() -> void:
 	isDashing = false
 	canBeDamaged = true
@@ -137,3 +180,18 @@ func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.visible = false
 	wing_attack_timer.stop()
 	wing_attack_timer.set_wait_time(0.5)
+
+#########################################
+# Leveling up
+#########################################
+func ascend_to_level_2() -> void:
+	level = 2
+	gameplay.player_level_up()
+	active_feathers = feathers_lvl2
+	print("Player ascended to level 2 and has acquired copper feathers.")
+
+func ascend_to_level_3() -> void:
+	level = 3
+	gameplay.player_level_up()
+	active_feathers = feathers_lvl3
+	print("Player ascended to level 3 and has acquired bronze feathers.")
