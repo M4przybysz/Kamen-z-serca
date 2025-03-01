@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=15 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://pplyfl44k6m3" path="res://assets/sprites/test_player.png" id="1_hj8ny"]
@@ -84,6 +84,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
 size = Vector2(50, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
+size = Vector2(50, 100)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_golh8")
 
@@ -110,19 +113,36 @@ target_position = Vector2(100, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(22, 50)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"grab_edge"
+animation = &"run"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 50)
-shape = SubResource("RectangleShape2D_85ty6")
-
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_7yxln")
 
+[node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="WingAttackTimer" type="Timer" parent="WingAttack"]
+wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WingAttack"]
+visible = false
+position = Vector2(75, 50)
+shape = SubResource("RectangleShape2D_722fy")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="WingAttack/CollisionShape2D"]
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 25.0
+offset_bottom = 50.0
+color = Color(0.862745, 0.784314, 0.686275, 0.784314)
+
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="WingAttack/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]

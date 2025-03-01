@@ -7,8 +7,9 @@ extends CharacterBody2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 
-# Assign hitboxes to variables
-@onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
+# Assign hitboxes and hurtboxes to variables
+@onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
+@onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
 
 # Assign grab to variables
 @onready var grab_hand: RayCast2D = $GrabHand
@@ -16,7 +17,7 @@ extends CharacterBody2D
 
 # Assign timers to variables
 @onready var slide_timer: Timer = $SlideTimer
-@onready var damage_timer: Timer = $DamageTimer
+@onready var wing_attack_timer: Timer = $WingAttack/WingAttackTimer
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed = 350.0
@@ -66,19 +67,26 @@ func _input(event: InputEvent) -> void:
 		canBeDamaged = false
 		if is_on_floor():
 			normal_collision.disabled = true
-			hitbox_collision.disabled = true
+			hurtbox_collision.disabled = true
 			slide_collision.disabled = false
 		slide_timer.start()
+	
+	if Input.is_action_just_pressed("wing_attack"):
+		wing_attack_collision.disabled = false
+		wing_attack_collision.visible = true
+		wing_attack_timer.start()
 
 func flip_h(direction):
 	if direction > 0:
 		animated_sprite.flip_h = false
 		grab_hand.target_position.x = 100
 		grab_check.target_position.x = 100
+		wing_attack_collision.position.x = 75
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -100
 		grab_check.target_position.x = -100
+		wing_attack_collision.position.x = -25
 
 func animate_player(direction) -> void: 
 	if isGrabbing: 
@@ -110,16 +118,22 @@ func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy") && canBeDamaged:
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy") && canBeDamaged:
 		gameplay.decrease_hp(1)
 
 func _on_slide_timer_timeout() -> void:
 	isDashing = false
 	canBeDamaged = true
 	normal_collision.disabled = false
-	hitbox_collision.disabled = false
+	hurtbox_collision.disabled = false
 	slide_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
 	slide_timer.set_wait_time(0.3)
+
+func _on_wing_attack_timer_timeout() -> void:
+	wing_attack_collision.disabled = true
+	wing_attack_collision.visible = false
+	wing_attack_timer.stop()
+	wing_attack_timer.set_wait_time(0.5)
