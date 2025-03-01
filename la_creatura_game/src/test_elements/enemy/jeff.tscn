@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://fiiq6mgymvyn"]
+[gd_scene load_steps=5 format=3 uid="uid://fiiq6mgymvyn"]
 
 [ext_resource type="Script" path="res://src/test_elements/enemy/jeff.gd" id="1_04ixf"]
+[ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="2_18erw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mrcg0"]
 font_size = 20
@@ -33,6 +34,21 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_a0y8b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(25, 50)
+emitting = false
+amount = 5
+lifetime = 0.75
+one_shot = true
+speed_scale = 0.75
+fixed_fps = 60
+texture = ExtResource("2_18erw")
+direction = Vector2(0, -1)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
 
 [connection signal="timeout" from="HPRegenTimer" to="." method="_on_hp_regen_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
