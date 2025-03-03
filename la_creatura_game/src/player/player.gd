@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
+@onready var feathers: Node2D = $Feathers
 
 # Assign physical collision to variables
 @onready var normal_collision: CollisionShape2D = $NormalCollision
@@ -16,8 +17,8 @@ extends CharacterBody2D
 @onready var grab_check: RayCast2D = $GrabCheck
 
 # Assign timers to variables
-@onready var slide_timer: Timer = $SlideTimer
-@onready var wing_attack_timer: Timer = $WingAttack/WingAttackTimer
+@onready var slide_timer: Timer = $Timers/SlideTimer
+@onready var wing_attack_timer: Timer = $Timers/WingAttackTimer
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed = 350.0
@@ -25,6 +26,7 @@ extends CharacterBody2D
 
 # Dynamic playthrough variables
 var last_direction = 1
+var active_feather: int = 0
 var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
@@ -34,10 +36,6 @@ var canBeDamaged: bool = true
 var level: int = 1
 var max_level: int = 3
 var isShieldUnlocked: bool = false
-var feathers_lvl1 = [true] 				# Feathers usable on level 1 - [stone]
-var feathers_lvl2 = [true, true] 		# Feathers usable on level 2 - [stone, copper]
-var feathers_lvl3 = [true, true, true] 	# Feathers usable on level 3 - [stone, copper, bronze]
-var active_feathers: Array # Array of usable feathers
 
 func _physics_process(delta: float) -> void:
 	check_edge_grab()
@@ -84,26 +82,45 @@ func _input(event: InputEvent) -> void:
 			slide_collision.disabled = false
 		slide_timer.start()
 	
+	# Handle basic attack
 	if Input.is_action_just_pressed("wing_attack"):
 		wing_attack_collision.disabled = false
 		wing_attack_collision.visible = true
 		wing_attack_timer.start()
 	
+	# Handle range feather attacks
 	if Input.is_action_just_pressed("feather_throw"):
-		pass
+		if !feathers.get_children()[active_feather].isOnCooldown:
+			feathers.get_children()[active_feather].throw(last_direction)
 	
-	if Input.is_action_just_pressed("change_feather_down") || Input.is_action_just_pressed("change_feather_up"):
+	# Handle changing feather type
+	if Input.is_action_just_pressed("change_feather_down"):
 		if level == 1:
 			pass
-		else:
-			# change active feather type
-			pass
+		elif level == 2:
+			if active_feather == 1: active_feather -= 1
+			else: active_feather += 1
+		elif level == 3:
+			if active_feather == 2: active_feather = 0
+			else: active_feather += 1
 	
+	if Input.is_action_just_pressed("change_feather_up"):
+		if level == 1:
+			pass
+		elif level == 2:
+			if active_feather == 0: active_feather += 1
+			else: active_feather -= 1
+		elif level == 3:
+			if active_feather == 0: active_feather = 2
+			else: active_feather -= 1
+	
+	# handle spear attacks
 	if Input.is_action_just_pressed("spear_attack"):
 		pass
 	elif Input.is_action_pressed("spear_attack"):
 		pass
 	
+	# Handle shield use
 	if Input.is_action_just_pressed("shield_use") && isShieldUnlocked:
 		pass
 
@@ -173,13 +190,13 @@ func _on_slide_timer_timeout() -> void:
 	slide_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
-	slide_timer.set_wait_time(0.3)
+	slide_timer.wait_time = 0.3
 
 func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.disabled = true
 	wing_attack_collision.visible = false
 	wing_attack_timer.stop()
-	wing_attack_timer.set_wait_time(0.5)
+	wing_attack_timer.wait_time = 0.5
 
 #########################################
 # Leveling up
@@ -187,11 +204,9 @@ func _on_wing_attack_timer_timeout() -> void:
 func ascend_to_level_2() -> void:
 	level = 2
 	gameplay.player_level_up()
-	active_feathers = feathers_lvl2
 	print("Player ascended to level 2 and has acquired copper feathers.")
 
 func ascend_to_level_3() -> void:
 	level = 3
 	gameplay.player_level_up()
-	active_feathers = feathers_lvl3
 	print("Player ascended to level 3 and has acquired bronze feathers.")

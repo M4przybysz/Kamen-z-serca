@@ -14,13 +14,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+		pass
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("wing_attack") and hp > 0:
 		hp -= 1
-		cpu_particles_2d.emitting = true
+	if area.is_in_group("stone_feather") and hp > 0:
+		hp -= 1
+	if area.is_in_group("copper_feather") and hp > 0:
+		hp -= 1
+	if area.is_in_group("bronze_feather") and hp > 0:
+		hp -= 3
 	print(hp)
+	cpu_particles_2d.emitting = true
 
 func _on_hp_regen_timer_timeout() -> void:
 	if hp < max_hp:

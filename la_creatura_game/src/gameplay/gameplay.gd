@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ui: Control = $UI/UI
 @onready var death_menu: Control = $UI/DeathMenu
+@onready var player: CharacterBody2D = $Player
 
 var player_level: int = 1
 var max_hp: int = 2 + player_level
@@ -10,6 +11,7 @@ var hp: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hp = max_hp
+	# player.ascend_to_level_3()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

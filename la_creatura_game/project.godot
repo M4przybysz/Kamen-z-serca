@@ -23,9 +23,7 @@ window/size/mode=3
 
 [global_group]
 
-player="Player"
 enemy=""
-wing_attack=""
 
 [input]
 
