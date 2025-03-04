@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc185eqheaern"
-path="res://.godot/imported/skok.png-acd1fc1ec9c4a2cf18f1cf0302964d48.ctex"
+uid="uid://dnpqvaig8j7jq"
+path="res://.godot/imported/slizg3.png-f6f2f471ba26b23f0f9f02b6c7c60211.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/skok.png"
-dest_files=["res://.godot/imported/skok.png-acd1fc1ec9c4a2cf18f1cf0302964d48.ctex"]
+source_file="res://assets/sprites/Player/Slizg/slizg3.png"
+dest_files=["res://.godot/imported/slizg3.png-f6f2f471ba26b23f0f9f02b6c7c60211.ctex"]
 
 [params]
 

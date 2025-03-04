@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn2o2sxl2sgws"
-path="res://.godot/imported/krokiprawog.png-adbd60d467cc0d4673c5b12567a3de9a.ctex"
+uid="uid://b025uaiy77y88"
+path="res://.godot/imported/2.png-9cc0c494f10997f9c7f845359c292b51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/krokiprawog.png"
-dest_files=["res://.godot/imported/krokiprawog.png-adbd60d467cc0d4673c5b12567a3de9a.ctex"]
+source_file="res://assets/sprites/Player/Chod/2.png"
+dest_files=["res://.godot/imported/2.png-9cc0c494f10997f9c7f845359c292b51.ctex"]
 
 [params]
 

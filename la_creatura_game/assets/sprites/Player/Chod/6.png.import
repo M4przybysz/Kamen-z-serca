@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmucc811gi2kx"
-path="res://.godot/imported/chwyt.png-be242cc4b17a5ee6b466228e025720ba.ctex"
+uid="uid://cq00iyikgj5s8"
+path="res://.godot/imported/6.png-551b545077ee89d3f67832d90d8ff4f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/chwyt.png"
-dest_files=["res://.godot/imported/chwyt.png-be242cc4b17a5ee6b466228e025720ba.ctex"]
+source_file="res://assets/sprites/Player/Chod/6.png"
+dest_files=["res://.godot/imported/6.png-551b545077ee89d3f67832d90d8ff4f3.ctex"]
 
 [params]
 
