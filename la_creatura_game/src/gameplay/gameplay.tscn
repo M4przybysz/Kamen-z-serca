@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=11 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="3_i21sc"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
+[ext_resource type="PackedScene" path="res://src/test_elements/enemy/jeff.tscn" id="6_ofiab"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cq1mi"]
 
@@ -21,16 +22,11 @@ size = Vector2(5000, 20)
 process_mode = 1
 script = ExtResource("1_i11ig")
 
-[node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(977, 517)
+[node name="Spike" parent="." groups=["enemy"] instance=ExtResource("3_i21sc")]
+position = Vector2(1191, 651)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(25, 45)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="SpikeTest" parent="." instance=ExtResource("3_i21sc")]
-position = Vector2(706, 650)
+[node name="Spike2" parent="." groups=["enemy"] instance=ExtResource("3_i21sc")]
+position = Vector2(1181, 651)
 
 [node name="Block" type="StaticBody2D" parent="."]
 position = Vector2(1500, 450)
@@ -74,6 +70,17 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
 position = Vector2(2500, 10)
 shape = SubResource("RectangleShape2D_xhye4")
+
+[node name="Jeff" parent="." instance=ExtResource("6_ofiab")]
+position = Vector2(79, 550)
+
+[node name="Player" parent="." instance=ExtResource("1_m47ch")]
+position = Vector2(977, 517)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(25, 45)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 
