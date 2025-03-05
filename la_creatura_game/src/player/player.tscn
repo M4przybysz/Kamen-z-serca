@@ -99,6 +99,8 @@ wait_time = 0.3
 [node name="WingAttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
 
+[node name="DamageTimer" type="Timer" parent="Timers"]
+
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(25, 50)
 shape = SubResource("RectangleShape2D_85ty6")
@@ -180,7 +182,9 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/DamageTimer" to="." method="_on_damage_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
 
 [editable path="Feathers/StoneFeather"]
 [editable path="Feathers/CopperFeather"]

@@ -19,13 +19,22 @@ extends CharacterBody2D
 # Assign timers to variables
 @onready var slide_timer: Timer = $Timers/SlideTimer
 @onready var wing_attack_timer: Timer = $Timers/WingAttackTimer
+@onready var damage_timer: Timer = $Timers/DamageTimer
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed = 350.0
 @export var jump_velocity = -550.0
 
+# Dictionaries
+var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
+	"enemy" : 1, 	# Test value 
+	# Add more values here (format "attack_name" : damage)
+}
+
 # Dynamic playthrough variables
 var last_direction = 1
+var dmg_source_count = 0
+var dmg_taken = 0
 var active_feather: int = 0
 var isGrabbing: bool = false
 var isDashing: bool = false
@@ -176,8 +185,19 @@ func check_dash() -> void:
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy") && canBeDamaged:
-		gameplay.decrease_hp(1)
+	dmg_source_count += 1
+	for group in dmg_dictionary:
+		if area.is_in_group(group):
+			dmg_taken += dmg_dictionary[group]
+	if damage_timer.is_stopped():
+		gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
+		damage_timer.start()
+
+func _on_hurtbox_area_exited(area: Area2D) -> void:
+	dmg_source_count -= 1
+	for group in dmg_dictionary:
+		if area.is_in_group(group):
+			dmg_taken -= dmg_dictionary[group]
 
 #########################################
 # Timers handling
@@ -190,13 +210,17 @@ func _on_slide_timer_timeout() -> void:
 	slide_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
-	slide_timer.wait_time = 0.3
 
 func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.disabled = true
 	wing_attack_collision.visible = false
 	wing_attack_timer.stop()
-	wing_attack_timer.wait_time = 0.5
+
+func _on_damage_timer_timeout() -> void:
+	damage_timer.stop()
+	if dmg_source_count > 0:
+		gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
+		damage_timer.start()
 
 #########################################
 # Leveling up
