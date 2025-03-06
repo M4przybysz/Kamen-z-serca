@@ -85,17 +85,18 @@ func animate_player(direction) -> void:
 		animated_sprite.play("grab_edge")
 	elif isDashing:
 		if is_on_floor(): 
-			animated_sprite.rotation_degrees = 90 * last_direction # Change to animation when it's done
+			animated_sprite.play("slide_start") # Change to animation when it's done
 		else:
 			pass # Change to air dashing animation when it's ready
 	elif is_on_floor():
 		if direction == 0: 
 			animated_sprite.play("idle")
+
 		else: 
 			animated_sprite.play("run")
 	else: 
 		animated_sprite.play("jump")
-
+		
 func check_edge_grab() -> void:
 	var isFalling = velocity.y >= 0
 	var checkHand = not grab_hand.is_colliding()
@@ -123,3 +124,7 @@ func _on_slide_timer_timeout() -> void:
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
 	slide_timer.set_wait_time(0.3)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	pass # Replace with function body.

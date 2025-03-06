@@ -207,12 +207,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_ac3f8")
 }, {
-"duration": 5.0,
+"duration": 1.0,
 "texture": ExtResource("26_g7xg8")
 }],
 "loop": false,
 "name": &"slide_start",
-"speed": 32.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
@@ -245,7 +245,7 @@ target_position = Vector2(100, 0)
 position = Vector2(22, 50)
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"slide_start"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

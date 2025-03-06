@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dspr3hj2dcbav"
-path="res://.godot/imported/atakwrecz.png-a387db1a906e27dfe1561a69c1a916b6.ctex"
+uid="uid://colobeh5lxa0s"
+path="res://.godot/imported/atak6.png-b9fd04788fd3abf2645dec032b16af0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/Fighting/atakwrecz.png"
-dest_files=["res://.godot/imported/atakwrecz.png-a387db1a906e27dfe1561a69c1a916b6.ctex"]
+source_file="res://assets/sprites/Player/Fighting/atak6.png"
+dest_files=["res://.godot/imported/atak6.png-b9fd04788fd3abf2645dec032b16af0d.ctex"]
 
 [params]
 
