@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=42 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://drep62q3glbr6" path="res://assets/sprites/Player/Skok/chwyt.png" id="2_ff48u"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://c2qgi8fhw8j0b" path="res://assets/sprites/Player/Chod/15.png" id="19_jq18v"]
 [ext_resource type="Texture2D" uid="uid://d0yne8387yecq" path="res://assets/sprites/Player/Chod/16.png" id="20_5xo1d"]
 [ext_resource type="Texture2D" uid="uid://h003yk80bpox" path="res://assets/sprites/Player/Chod/17.png" id="21_b66co"]
-[ext_resource type="Texture2D" uid="uid://bd8n1ga4pto3x" path="res://assets/sprites/Player/Slizg/slizg1.png" id="22_63nvc"]
 [ext_resource type="Texture2D" uid="uid://0jb5bi3vrlni" path="res://assets/sprites/Player/Slizg/slizg2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://dnpqvaig8j7jq" path="res://assets/sprites/Player/Slizg/slizg3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://phktglpi6pvr" path="res://assets/sprites/Player/Slizg/slizg4.png" id="25_ac3f8"]
@@ -89,18 +88,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"fighting_1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_45jco")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e3ioh")
 }],
 "loop": false,
 "name": &"grab_edge",
-"speed": 2.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3ioh")
+}],
+"loop": true,
+"name": &"grab_jump",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -108,7 +112,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 1.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -117,12 +121,20 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uyqu5")
 }, {
-"duration": 3.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qmdkc")
 }],
 "loop": false,
-"name": &"jump",
-"speed": 3.0
+"name": &"jump_up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmdkc")
+}],
+"loop": true,
+"name": &"mid_jump",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -136,7 +148,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"on_fall",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,12 +204,9 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_63nvc")
-}, {
 "duration": 1.0,
 "texture": ExtResource("23_h1ebp")
 }, {
@@ -211,8 +220,8 @@ animations = [{
 "texture": ExtResource("26_g7xg8")
 }],
 "loop": false,
-"name": &"slide_start",
-"speed": 32.0
+"name": &"slide",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
@@ -222,7 +231,7 @@ size = Vector2(50, 100)
 script = ExtResource("1_golh8")
 
 [node name="SlideTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(25, 50)
@@ -245,7 +254,7 @@ target_position = Vector2(100, 0)
 position = Vector2(22, 50)
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"slide_start"
+animation = &"grab_jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

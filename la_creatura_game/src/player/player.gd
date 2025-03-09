@@ -10,7 +10,7 @@ extends CharacterBody2D
 # Assign hitboxes to variables
 @onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 
-# Assign grab to variables
+# Assign raycasts to variables
 @onready var grab_hand: RayCast2D = $GrabHand
 @onready var grab_check: RayCast2D = $GrabCheck
 
@@ -27,6 +27,7 @@ var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
 var canBeDamaged: bool = true
+var grabChange: bool = false
 
 func _physics_process(delta: float) -> void:
 	check_edge_grab()
@@ -55,10 +56,12 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing):
+	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing) && !isDashing:
+		if isGrabbing:
+			grabChange = true
 		isGrabbing = false
 		velocity.y = jump_velocity
-	
+		
 	# Handle air dash and slide
 	if Input.is_action_just_pressed("slide_and_air_dash") && canDash:
 		isDashing = true
@@ -80,23 +83,24 @@ func flip_h(direction):
 		grab_hand.target_position.x = -100
 		grab_check.target_position.x = -100
 
-func animate_player(direction) -> void: 
-	if isGrabbing: 
-		animated_sprite.play("grab_edge")
-	elif isDashing:
-		if is_on_floor(): 
-			animated_sprite.play("slide_start") # Change to animation when it's done
+func animate_player(direction) -> void:
+	if !is_on_floor():
+		if isDashing: pass
+		elif grabChange:
+			grabChange = false
+			animated_sprite.play("grab_jump")
+		elif isGrabbing: 
+			animated_sprite.play("grab_edge")
 		else:
-			pass # Change to air dashing animation when it's ready
+			animated_sprite.play("mid_jump")
 	elif is_on_floor():
-		if direction == 0: 
+		if isDashing:
+			animated_sprite.play("slide")
+		elif direction == 0:
 			animated_sprite.play("idle")
-
-		else: 
+		else:
 			animated_sprite.play("run")
-	else: 
-		animated_sprite.play("jump")
-		
+
 func check_edge_grab() -> void:
 	var isFalling = velocity.y >= 0
 	var checkHand = not grab_hand.is_colliding()
@@ -123,8 +127,6 @@ func _on_slide_timer_timeout() -> void:
 	slide_collision.disabled = true
 	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
-	slide_timer.set_wait_time(0.3)
-
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
