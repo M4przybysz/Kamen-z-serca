@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
 
-# Assign grab to variables
+# Assign raycasts to variables
 @onready var grab_hand: RayCast2D = $GrabHand
 @onready var grab_check: RayCast2D = $GrabCheck
 
@@ -40,6 +40,7 @@ var isGrabbing: bool = false
 var isDashing: bool = false
 var canDash: bool = true
 var canBeDamaged: bool = true
+var grabChange: bool = false
 
 # Player progression variables
 var level: int = 1
@@ -76,10 +77,12 @@ func _physics_process(delta: float) -> void:
 #########################################
 func _input(event: InputEvent) -> void:
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing):
+	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing) && !isDashing:
+		if isGrabbing:
+			grabChange = true
 		isGrabbing = false
 		velocity.y = jump_velocity
-	
+		
 	# Handle air dash and slide
 	if Input.is_action_just_pressed("slide_and_air_dash") && canDash:
 		isDashing = true
@@ -136,21 +139,23 @@ func _input(event: InputEvent) -> void:
 #########################################
 # Animations handling
 #########################################
-func animate_player(direction) -> void: 
-	if isGrabbing: 
-		animated_sprite.play("grab_edge")
-	elif isDashing:
-		if is_on_floor(): 
-			animated_sprite.rotation_degrees = 90 * last_direction # Change to animation when it's done
+func animate_player(direction) -> void:
+	if !is_on_floor():
+		if isDashing: pass
+		elif grabChange:
+			grabChange = false
+			animated_sprite.play("grab_jump")
+		elif isGrabbing: 
+			animated_sprite.play("grab_edge")
 		else:
-			pass # Change to air dashing animation when it's ready
+			animated_sprite.play("mid_jump")
 	elif is_on_floor():
-		if direction == 0: 
+		if isDashing:
+			animated_sprite.play("slide")
+		elif direction == 0:
 			animated_sprite.play("idle")
-		else: 
+		else:
 			animated_sprite.play("run")
-	else: 
-		animated_sprite.play("jump")
 
 #########################################
 # Movement additions

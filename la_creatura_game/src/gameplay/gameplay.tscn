@@ -22,6 +22,16 @@ size = Vector2(5000, 20)
 process_mode = 1
 script = ExtResource("1_i11ig")
 
+
+[node name="Player" parent="." instance=ExtResource("1_m47ch")]
+position = Vector2(977, 517)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(86.207, 155.172)
+scale = Vector2(3.44828, 3.44828)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [node name="Spike" parent="." groups=["enemy"] instance=ExtResource("3_i21sc")]
 position = Vector2(1191, 651)
 
