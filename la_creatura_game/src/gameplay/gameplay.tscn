@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="3_i21sc"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
-[ext_resource type="PackedScene" path="res://src/test_elements/enemy/jeff.tscn" id="6_ofiab"]
+[ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="6_ofiab"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cq1mi"]
 
@@ -22,9 +22,8 @@ size = Vector2(5000, 20)
 process_mode = 1
 script = ExtResource("1_i11ig")
 
-
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(977, 517)
+position = Vector2(500, 400)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(86.207, 155.172)
@@ -83,14 +82,6 @@ shape = SubResource("RectangleShape2D_xhye4")
 
 [node name="Jeff" parent="." instance=ExtResource("6_ofiab")]
 position = Vector2(79, 550)
-
-[node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(977, 517)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(25, 45)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 

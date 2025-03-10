@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=44 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://drep62q3glbr6" path="res://assets/sprites/Player/Skok/chwyt.png" id="2_ff48u"]
 [ext_resource type="Texture2D" uid="uid://rnvh3gbvaila" path="res://assets/sprites/Player/Fighting/atak1.png" id="2_g4atu"]
 [ext_resource type="Texture2D" uid="uid://77gs534lm6sf" path="res://assets/sprites/Player/Fighting/atak2.png" id="3_i4645"]
+[ext_resource type="PackedScene" uid="uid://bouo875wigdd8" path="res://src/feather/feather.tscn" id="3_pj0em"]
 [ext_resource type="Texture2D" uid="uid://cdt4rsxb0jywj" path="res://assets/sprites/Player/Fighting/atak3.png" id="4_ki1la"]
 [ext_resource type="Texture2D" uid="uid://crvivhf2l38sx" path="res://assets/sprites/Player/Skok/skok.png" id="4_ws3vt"]
 [ext_resource type="Texture2D" uid="uid://dgg0nufb0rgem" path="res://assets/sprites/Player/Chod/1.png" id="5_njf6p"]
@@ -30,9 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://dnpqvaig8j7jq" path="res://assets/sprites/Player/Slizg/slizg3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://phktglpi6pvr" path="res://assets/sprites/Player/Slizg/slizg4.png" id="25_ac3f8"]
 [ext_resource type="Texture2D" uid="uid://clddomsh01dri" path="res://assets/sprites/Player/Slizg/slizg5.png" id="26_g7xg8"]
-
-[ext_resource type="Texture2D" uid="uid://pplyfl44k6m3" path="res://assets/sprites/test_player.png" id="1_hj8ny"]
-[ext_resource type="PackedScene" uid="uid://bouo875wigdd8" path="res://src/feather/feather.tscn" id="3_pj0em"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85ty6"]
 size = Vector2(50, 100)
@@ -97,7 +95,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_45jco")
 }],
-"loop": false,
+"loop": true,
 "name": &"grab_edge",
 "speed": 10.0
 }, {
@@ -105,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e3ioh")
 }],
-"loop": true,
+"loop": false,
 "name": &"grab_jump",
 "speed": 10.0
 }, {
@@ -267,8 +265,7 @@ target_position = Vector2(100, 0)
 position = Vector2(22, 50)
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"grab_jump"
-animation = &"run"
+animation = &"grab_edge"
 autoplay = "idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]

@@ -117,14 +117,14 @@ func _input(event: InputEvent) -> void:
 			else: active_feather += 1
 	
 	if Input.is_action_just_pressed("change_feather_up"):
-		if level == 1:
-			pass
-		elif level == 2:
+		if level == 2:
 			if active_feather == 0: active_feather += 1
 			else: active_feather -= 1
 		elif level == 3:
 			if active_feather == 0: active_feather = 2
 			else: active_feather -= 1
+		else: 
+			pass
 	
 	# handle spear attacks
 	if Input.is_action_just_pressed("spear_attack"):
@@ -213,7 +213,6 @@ func _on_slide_timer_timeout() -> void:
 	normal_collision.disabled = false
 	hurtbox_collision.disabled = false
 	slide_collision.disabled = true
-	animated_sprite.rotation_degrees = 0
 	slide_timer.stop()
 
 func _on_wing_attack_timer_timeout() -> void:
