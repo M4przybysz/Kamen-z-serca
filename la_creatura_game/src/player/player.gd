@@ -38,6 +38,7 @@ var dmg_taken = 0
 var active_feather: int = 0
 var isGrabbing: bool = false
 var isDashing: bool = false
+var usesWingAttack: bool = false
 var canDash: bool = true
 var canBeDamaged: bool = true
 var grabChange: bool = false
@@ -98,6 +99,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("wing_attack"):
 		wing_attack_collision.disabled = false
 		wing_attack_collision.visible = true
+		usesWingAttack = true
 		wing_attack_timer.start()
 	
 	# Handle range feather attacks
@@ -140,7 +142,9 @@ func _input(event: InputEvent) -> void:
 # Animations handling
 #########################################
 func animate_player(direction) -> void:
-	if !is_on_floor():
+	if usesWingAttack:
+		animated_sprite.play("wing_attack")
+	elif !is_on_floor():
 		if isDashing: pass
 		elif grabChange:
 			grabChange = false
@@ -218,6 +222,7 @@ func _on_slide_timer_timeout() -> void:
 func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.disabled = true
 	wing_attack_collision.visible = false
+	usesWingAttack = false
 	wing_attack_timer.stop()
 
 func _on_damage_timer_timeout() -> void:

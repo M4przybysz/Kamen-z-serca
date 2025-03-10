@@ -70,29 +70,6 @@ region = Rect2(2268, 0, 567, 824)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g4atu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_i4645")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ki1la")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_vy2g8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_gfcbk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_kmqv2")
-}],
-"loop": false,
-"name": &"fighting_1",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_45jco")
 }],
 "loop": true,
@@ -223,6 +200,29 @@ animations = [{
 "loop": false,
 "name": &"slide",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g4atu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i4645")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ki1la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vy2g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gfcbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kmqv2")
+}],
+"loop": false,
+"name": &"wing_attack",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
@@ -265,7 +265,7 @@ target_position = Vector2(100, 0)
 position = Vector2(22, 50)
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"grab_edge"
+animation = &"wing_attack"
 autoplay = "idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]
