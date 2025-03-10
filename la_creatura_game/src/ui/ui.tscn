@@ -24,6 +24,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="HP_Max" type="Control" parent="HP_interface"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="HP1" type="ColorRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
