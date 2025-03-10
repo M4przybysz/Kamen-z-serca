@@ -161,9 +161,6 @@ func animate_player(direction) -> void:
 		else:
 			animated_sprite.play("run")
 
-#########################################
-# Movement additions
-#########################################
 func flip_h(direction):
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -175,6 +172,10 @@ func flip_h(direction):
 		grab_hand.target_position.x = -100
 		grab_check.target_position.x = -100
 		wing_attack_collision.position.x = -25
+
+#########################################
+# Movement additions
+#########################################
 
 func check_edge_grab() -> void:
 	var isFalling = velocity.y >= 0
