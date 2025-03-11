@@ -237,7 +237,7 @@ script = ExtResource("1_golh8")
 [node name="Timers" type="Node" parent="."]
 
 [node name="SlideTimer" type="Timer" parent="Timers"]
-wait_time = 0.3
+wait_time = 0.5
 
 [node name="WingAttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
