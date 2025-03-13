@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=11 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
+[ext_resource type="PackedScene" uid="uid://df6sgaa02ae60" path="res://src/templates/characters/enemy_template.tscn" id="3_tev26"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
 
@@ -66,7 +67,6 @@ shape = SubResource("RectangleShape2D_eebte")
 [node name="Block2" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(932, 650)
 rotation = -0.261799
-scale = Vector2(1, 1)
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block2"]
@@ -126,3 +126,8 @@ shape = SubResource("RectangleShape2D_dxcl2")
 
 [node name="Jeff" parent="NPC" instance=ExtResource("2_f5u2k")]
 position = Vector2(79, 550)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnemyTemplate" parent="Enemies" instance=ExtResource("3_tev26")]
+position = Vector2(2404, 591)

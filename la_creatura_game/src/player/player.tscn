@@ -40,12 +40,6 @@ height = 100.0
 radius = 20.0
 height = 100.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxln"]
-size = Vector2(50, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
-size = Vector2(50, 100)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_45jco"]
 atlas = ExtResource("2_ff48u")
 region = Rect2(1134, 0, 567, 824)
@@ -332,13 +326,6 @@ cooldown = 5.0
 [node name="ColorRect" parent="Feathers/BronzeFeather" index="3"]
 color = Color(0.803922, 0.498039, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(22, 50)
-scale = Vector2(0.125, 0.125)
-sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"wing_attack"
-autoplay = "idle"
 
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
