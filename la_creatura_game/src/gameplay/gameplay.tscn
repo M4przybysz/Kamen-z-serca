@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=7 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
-[ext_resource type="PackedScene" uid="uid://df6sgaa02ae60" path="res://src/templates/characters/enemy_template.tscn" id="2_njelw"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://dqdvehj1hnuf5" path="res://src/levels/level_1.tscn" id="4_6sypr"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
@@ -15,9 +14,6 @@ script = ExtResource("1_i11ig")
 [node name="ProgrammersTestingGrounds" parent="." instance=ExtResource("7_crvro")]
 
 [node name="Level1" parent="." instance=ExtResource("4_6sypr")]
-
-[node name="EnemyTemplate" parent="." instance=ExtResource("2_njelw")]
-position = Vector2(2404, 591)
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
 position = Vector2(500, 400)
