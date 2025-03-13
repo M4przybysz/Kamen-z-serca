@@ -166,7 +166,7 @@ func flip_h(direction):
 		animated_sprite.flip_h = false
 		grab_hand.target_position.x = 100
 		grab_check.target_position.x = 100
-		wing_attack_collision.position.x = 75
+		wing_attack_collision.position.x = 25
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -100
