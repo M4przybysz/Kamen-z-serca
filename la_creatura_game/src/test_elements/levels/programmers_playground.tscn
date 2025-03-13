@@ -24,7 +24,7 @@ size = Vector2(2000, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxcl2"]
 size = Vector2(5000, 20)
 
-[node name="ProgrammersTestingGrounds" type="Node2D"]
+[node name="ProgrammersPlayground" type="Node2D"]
 
 [node name="Obstacles" type="Node2D" parent="."]
 

@@ -65,7 +65,15 @@ func _physics_process(delta: float) -> void:
 # State machine handling
 #########################################
 func state_machine():
+	if hp <= 0:
+		state = "dead"
+	
+	# Check lots of conditions to determine the state
+	
 	match state:
+		"dead":
+			# Remove enemy from the level
+			pass
 		"idle":
 			if seesPlayer:
 				state = "combat"
