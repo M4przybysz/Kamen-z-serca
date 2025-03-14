@@ -38,6 +38,8 @@ position = Vector2(1181, 651)
 
 [node name="Block" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1500, 450)
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block"]
@@ -52,6 +54,8 @@ shape = SubResource("RectangleShape2D_emsya")
 
 [node name="Block1" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1800, 450)
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block1"]
@@ -67,6 +71,8 @@ shape = SubResource("RectangleShape2D_eebte")
 [node name="Block2" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(932, 650)
 rotation = -0.261799
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block2"]
@@ -81,6 +87,8 @@ shape = SubResource("RectangleShape2D_k813h")
 
 [node name="Block3" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1025, 624)
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block3"]
@@ -95,6 +103,8 @@ shape = SubResource("RectangleShape2D_gj37g")
 
 [node name="Floor" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(0, 650)
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Floor"]
@@ -110,6 +120,8 @@ shape = SubResource("RectangleShape2D_kocim")
 
 [node name="Floor1" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1800, 650)
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Floor1"]

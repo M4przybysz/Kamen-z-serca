@@ -3,15 +3,12 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
-@onready var idle_range_collision: CollisionShape2D = $MovementRange/IdleRange/CollisionShape2D
-@onready var combat_range_collision: CollisionShape2D = $MovementRange/CombatRange/CollisionShape2D
 @onready var example_attack_collision: CollisionShape2D = $Attacks/ExampleAttack/CollisionShape2D
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
-
+@onready var attack_timer: Timer = $Timers/AttackTimer
 
 # Movement variables 
-@export var movement_speed = 300.0
-@export var jump_velocity = -400.0
+@export var movement_speed = 200.0
 var starting_point: Vector2
 @export var idle_distance: int = 250
 @export var combat_distance: int = 500
@@ -39,10 +36,6 @@ var playerInRange = false
 
 func _ready() -> void:
 	starting_point = global_position
-	idle_range_collision.shape.size.x = idle_distance
-	idle_range_collision.position.x = idle_distance/2 + 35
-	combat_range_collision.shape.size.x = combat_distance
-	combat_range_collision.position.x = combat_distance/2 + 35
 	hp = max_hp
 
 func _physics_process(delta: float) -> void:
@@ -65,15 +58,9 @@ func _physics_process(delta: float) -> void:
 # State machine handling
 #########################################
 func state_machine():
-	if hp <= 0:
-		state = "dead"
-	
 	# Check lots of conditions to determine the state
 	
 	match state:
-		"dead":
-			# Remove enemy from the level
-			pass
 		"idle":
 			if seesPlayer:
 				state = "combat"
@@ -100,7 +87,7 @@ func state_machine():
 			if playerTooFar:
 				state = "combat"
 			else:
-				pass
+				attack()
 		_:
 			print("undefined state")
 
@@ -110,8 +97,10 @@ func state_machine():
 func flip_h(direction):
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
+		example_attack_collision.position.x = 45
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
+		example_attack_collision.position.x = -45
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -135,6 +124,10 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 func _on_reset_hp_timer_timeout() -> void:
 	hp = max_hp
 
+func _on_attack_timer_timeout() -> void:
+	example_attack_collision.visible = false
+	example_attack_collision.disabled = true
+
 #########################################
 # Combat handling
 #########################################
@@ -143,18 +136,15 @@ func decrease_hp(value: int) -> void:
 		hp -= value
 	else:
 		hp = 0
+	print(hp)
 	if hp <= 0:
-		# Delete enemy
-		pass
+		# TODO: Add death animation
+		print("Deleting enemy...")
+		queue_free()
 
 func attack() -> void:
-	pass
+	example_attack_collision.visible = true
+	example_attack_collision.disabled = false
 
 func checkDistanceTooPlayer() -> void:
 	pass
-
-func _on_idle_range_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
-func _on_combat_range_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
