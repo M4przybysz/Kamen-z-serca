@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://dqdvehj1hnuf5" path="res://src/levels/level_1.tscn" id="4_6sypr"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
-[ext_resource type="PackedScene" uid="uid://c2hu2t4j0od5o" path="res://src/test_elements/levels/programmers_testing_grounds.tscn" id="7_crvro"]
+[ext_resource type="PackedScene" uid="uid://c2hu2t4j0od5o" path="res://src/test_elements/levels/programmers_playground.tscn" id="7_crvro"]
 
 [node name="Gameplay" type="Node2D"]
 process_mode = 1

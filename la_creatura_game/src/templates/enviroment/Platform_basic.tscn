@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr1pgdanv45c4"]
+
+[sub_resource type="Gradient" id="Gradient_plxia"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gvy3w"]
+gradient = SubResource("Gradient_plxia")
+fill_to = Vector2(1, 0.545872)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw17s"]
+size = Vector2(100, 25)
+
+[node name="PlatformBasic" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_right = 100.0
+offset_bottom = 25.0
+texture = SubResource("GradientTexture2D_gvy3w")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(50, 12.5)
+shape = SubResource("RectangleShape2D_pw17s")
