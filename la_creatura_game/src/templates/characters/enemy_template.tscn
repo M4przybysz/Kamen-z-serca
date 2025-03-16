@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li7yr"]
-size = Vector2(20, 50)
+size = Vector2(40, 50)
 
 [node name="EnemyTemplate" type="CharacterBody2D"]
 collision_layer = 16
@@ -87,14 +87,14 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/ExampleAttack"]
 visible = false
-position = Vector2(45, 0)
+position = Vector2(55, 0)
 shape = SubResource("RectangleShape2D_li7yr")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="Attacks/ExampleAttack/CollisionShape2D"]
-offset_left = -10.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 10.0
+offset_right = 20.0
 offset_bottom = 25.0
 color = Color(1, 0, 0, 0.501961)
 metadata/_edit_use_anchors_ = true

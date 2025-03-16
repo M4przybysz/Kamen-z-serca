@@ -37,7 +37,7 @@ func _on_flight_timer_timeout() -> void:
 	isThrown = false
 	visible = false
 	hitbox_collision.disabled = true
-	global_position = player.global_position + Vector2(25, 50)
+	global_position = player.global_position
 	flight_timer.stop()
 	flight_timer.wait_time = flight_time
 
