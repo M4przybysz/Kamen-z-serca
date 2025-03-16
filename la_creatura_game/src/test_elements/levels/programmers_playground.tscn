@@ -136,10 +136,10 @@ position = Vector2(79, 550)
 position = Vector2(2404, 591)
 
 [node name="PlatformBreaking" parent="." instance=ExtResource("4_frxwc")]
-position = Vector2(54, 474)
+position = Vector2(-45, 492)
 
 [node name="PlatformBasic" parent="." instance=ExtResource("5_8lnfh")]
-position = Vector2(-163, 317)
+position = Vector2(68, 491)
 
 [node name="PlatformSlowing" parent="." instance=ExtResource("6_kn8ie")]
-position = Vector2(56, 119)
+position = Vector2(183, 491)

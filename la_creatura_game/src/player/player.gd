@@ -190,6 +190,9 @@ func check_edge_grab() -> void:
 func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
+		
+func  movement_speed_change() -> void:
+	movement_speed/2
 
 #########################################
 # Hitboxes and hurtboxes handling
