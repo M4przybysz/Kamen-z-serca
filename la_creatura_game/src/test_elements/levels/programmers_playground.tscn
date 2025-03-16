@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=15 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
@@ -26,6 +26,15 @@ size = Vector2(2000, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxcl2"]
 size = Vector2(5000, 20)
+
+[sub_resource type="GDScript" id="GDScript_6jpx3"]
+script/source = "extends Node2D
+
+@onready var collision: CollisionShape2D = $Area2D/Collision
+
+func _on_area_2d_body_entered(body:Area2D) -> void:
+	$player.movement_speed_change()
+"
 
 [node name="ProgrammersTestingGrounds" type="Node2D"]
 
@@ -143,3 +152,4 @@ position = Vector2(68, 491)
 
 [node name="PlatformSlowing" parent="." instance=ExtResource("6_kn8ie")]
 position = Vector2(183, 491)
+script = SubResource("GDScript_6jpx3")

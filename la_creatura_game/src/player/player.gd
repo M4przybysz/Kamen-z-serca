@@ -191,26 +191,29 @@ func check_dash() -> void:
 	if !canDash && is_on_floor() && !isDashing:
 		canDash = true
 		
-func  movement_speed_change() -> void:
-	movement_speed/2
-
 #########################################
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	dmg_source_count += 1
-	for group in dmg_dictionary:
-		if area.is_in_group(group):
-			dmg_taken += dmg_dictionary[group]
-	if damage_timer.is_stopped():
-		gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
-		damage_timer.start()
+	if area.is_in_group("slowing_platform"):
+		movement_speed = movement_speed/2
+	else:
+		dmg_source_count += 1
+		for group in dmg_dictionary:
+			if area.is_in_group(group):
+				dmg_taken += dmg_dictionary[group]
+		if damage_timer.is_stopped():
+			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
+			damage_timer.start()
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
-	dmg_source_count -= 1
-	for group in dmg_dictionary:
-		if area.is_in_group(group):
-			dmg_taken -= dmg_dictionary[group]
+	if area.is_in_group("slowing_platform"):
+		movement_speed = movement_speed*2
+	else:
+		dmg_source_count -= 1
+		for group in dmg_dictionary:
+			if area.is_in_group(group):
+				dmg_taken -= dmg_dictionary[group]
 
 #########################################
 # Timers handling
