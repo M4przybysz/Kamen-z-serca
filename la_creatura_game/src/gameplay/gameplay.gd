@@ -12,6 +12,7 @@ var hp: int
 func _ready() -> void:
 	hp = max_hp
 	# player.ascend_to_level_3()
+	# load_level(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -40,3 +41,15 @@ func player_level_up() -> void:
 	max_hp = 2 + player_level
 	hp = max_hp
 	print(player_level, max_hp, hp)
+
+func load_level(level_number: int) -> void:
+	var level_paths = {
+		0 : "res://src/test_elements/levels/programmers_playground.tscn",
+		1 : "res://src/levels/level_1.tscn",
+		2 : "res://src/levels/level_2.tscn",
+		3 : "res://src/levels/level_3.tscn",
+	}
+	remove_child(get_child(0))
+	var new_level = load(level_paths[level_number]).instantiate()
+	add_child(new_level)
+	move_child(get_child(-1), 0)
