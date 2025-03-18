@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Animate enemy
 	flip_h(direction)
-	animated_sprite_2d.play(state)
+	# animated_sprite_2d.play(state)
 	
 	velocity.x = direction * movement_speed
 
