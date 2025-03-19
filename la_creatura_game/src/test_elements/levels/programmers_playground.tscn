@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=15 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
 [ext_resource type="PackedScene" uid="uid://df6sgaa02ae60" path="res://src/templates/characters/enemy_template.tscn" id="3_tev26"]
+[ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="4_frxwc"]
+[ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="5_8lnfh"]
+[ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="6_kn8ie"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
 
@@ -23,6 +27,15 @@ size = Vector2(2000, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxcl2"]
 size = Vector2(5000, 20)
+
+[sub_resource type="GDScript" id="GDScript_6jpx3"]
+script/source = "extends Node2D
+
+@onready var collision: CollisionShape2D = $Area2D/Collision
+
+func _on_area_2d_body_entered(body:Area2D) -> void:
+	$player.movement_speed_change()
+"
 
 [node name="ProgrammersPlayground" type="Node2D"]
 
@@ -143,3 +156,13 @@ position = Vector2(79, 550)
 
 [node name="EnemyTemplate" parent="Enemies" instance=ExtResource("3_tev26")]
 position = Vector2(2404, 591)
+
+[node name="PlatformBreaking" parent="." instance=ExtResource("4_frxwc")]
+position = Vector2(-45, 492)
+
+[node name="PlatformBasic" parent="." instance=ExtResource("5_8lnfh")]
+position = Vector2(68, 491)
+
+[node name="PlatformSlowing" parent="." instance=ExtResource("6_kn8ie")]
+position = Vector2(183, 491)
+script = SubResource("GDScript_6jpx3")

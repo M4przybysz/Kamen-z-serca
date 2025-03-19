@@ -24,6 +24,7 @@ window/size/mode=3
 [global_group]
 
 enemy=""
+slowing_platform=""
 
 [input]
 

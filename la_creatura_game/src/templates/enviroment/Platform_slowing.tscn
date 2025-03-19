@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://vhd8wu8sob1g"]
+
+[ext_resource type="Script" path="res://src/templates/enviroment/platform_slowing.gd" id="1_8hofe"]
+
+[sub_resource type="Gradient" id="Gradient_plxia"]
+interpolation_mode = 2
+colors = PackedColorArray(0.418256, 0.111768, 0.179657, 1, 0.63, 0.3339, 0.338835, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gvy3w"]
+gradient = SubResource("Gradient_plxia")
+fill_to = Vector2(1, 0.912844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw17s"]
+size = Vector2(100, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyxoh"]
+size = Vector2(100, 18)
+
+[node name="PlatformSlowing" type="StaticBody2D"]
+script = ExtResource("1_8hofe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_right = 100.0
+offset_bottom = 25.0
+texture = SubResource("GradientTexture2D_gvy3w")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 12.5)
+shape = SubResource("RectangleShape2D_pw17s")
+
+[node name="Area2D" type="Area2D" parent="." groups=["slowing_platform"]]
+collision_layer = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(50, -6)
+shape = SubResource("RectangleShape2D_qyxoh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
