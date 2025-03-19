@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://cwu5myu8m7unc" path="res://assets/sprites/Player/Chod/14.png" id="18_1715e"]
 [ext_resource type="Texture2D" uid="uid://c2qgi8fhw8j0b" path="res://assets/sprites/Player/Chod/15.png" id="19_jq18v"]
 [ext_resource type="Texture2D" uid="uid://d0yne8387yecq" path="res://assets/sprites/Player/Chod/16.png" id="20_5xo1d"]
-[ext_resource type="Texture2D" uid="uid://h003yk80bpox" path="res://assets/sprites/Player/Chod/17.png" id="21_b66co"]
 [ext_resource type="Texture2D" uid="uid://carqgfs5qxdnk" path="res://assets/sprites/Player/Slizg/slizg1.png" id="21_f36vr"]
 [ext_resource type="Texture2D" uid="uid://b4ibaehymabse" path="res://assets/sprites/Player/Slizg/slizg2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://dujodi66ap2au" path="res://assets/sprites/Player/Slizg/slizg3.png" id="24_3uvuj"]
@@ -38,6 +37,10 @@ height = 100.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_js45o"]
 radius = 20.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejvj4"]
+radius = 15.0
 height = 100.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45jco"]
@@ -67,6 +70,10 @@ region = Rect2(1701, 0, 567, 824)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjfix"]
 atlas = ExtResource("4_ws3vt")
 region = Rect2(2268, 0, 567, 824)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aeab"]
+atlas = ExtResource("6_e13ip")
+region = Rect2(0, 0, 518, 789)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5irl"]
 animations = [{
@@ -135,7 +142,7 @@ animations = [{
 "texture": ExtResource("5_njf6p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_e13ip")
+"texture": SubResource("AtlasTexture_5aeab")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_5sva1")
@@ -178,9 +185,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_5xo1d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_b66co")
 }],
 "loop": true,
 "name": &"run",
@@ -227,10 +231,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejvj4"]
-radius = 15.0
-height = 100.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
 size = Vector2(50, 100)
 
@@ -240,7 +240,7 @@ script = ExtResource("1_golh8")
 [node name="Timers" type="Node" parent="."]
 
 [node name="SlideTimer" type="Timer" parent="Timers"]
-wait_time = 0.3
+wait_time = 0.5
 
 [node name="WingAttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
@@ -264,12 +264,6 @@ target_position = Vector2(100, 0)
 position = Vector2(0, -44)
 target_position = Vector2(100, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.125, 0.125)
-sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"idle"
-autoplay = "idle"
-
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(0, -50)
 collision_mask = 2
@@ -277,6 +271,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, 50)
 shape = SubResource("CapsuleShape2D_ejvj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_n5irl")
+animation = &"run"
+autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]
 position = Vector2(0, -50)

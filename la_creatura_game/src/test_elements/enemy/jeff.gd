@@ -12,10 +12,6 @@ func _ready() -> void:
 	hp = max_hp
 	hp_regen_timer.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-		pass
-
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("wing_attack") and hp > 0:
 		hp -= 1
