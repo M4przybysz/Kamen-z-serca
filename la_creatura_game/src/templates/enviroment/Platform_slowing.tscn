@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://vhd8wu8sob1g"]
+[gd_scene load_steps=6 format=3 uid="uid://vhd8wu8sob1g"]
+
+[ext_resource type="Script" path="res://src/templates/enviroment/platform_slowing.gd" id="1_8hofe"]
 
 [sub_resource type="Gradient" id="Gradient_plxia"]
 interpolation_mode = 2
@@ -15,6 +17,7 @@ size = Vector2(100, 25)
 size = Vector2(100, 18)
 
 [node name="PlatformSlowing" type="StaticBody2D"]
+script = ExtResource("1_8hofe")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2

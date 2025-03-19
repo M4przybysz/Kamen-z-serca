@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr1pgdanv45c4"]
+[gd_scene load_steps=5 format=3 uid="uid://dr1pgdanv45c4"]
+
+[ext_resource type="Script" path="res://src/templates/enviroment/platform_basic.gd" id="1_tesby"]
 
 [sub_resource type="Gradient" id="Gradient_plxia"]
 
@@ -10,6 +12,7 @@ fill_to = Vector2(1, 0.545872)
 size = Vector2(100, 25)
 
 [node name="PlatformBasic" type="StaticBody2D"]
+script = ExtResource("1_tesby")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2
