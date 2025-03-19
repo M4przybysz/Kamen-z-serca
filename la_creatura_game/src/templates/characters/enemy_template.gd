@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	state_machine()
 	
 	# Animate enemy
-	flip_h(direction)
+	flip_h()
 	# animated_sprite_2d.play(state)
 	
 	velocity.x = direction * movement_speed
@@ -101,7 +101,7 @@ func state_machine():
 #########################################
 # Direction change handling
 #########################################
-func flip_h(direction):
+func flip_h():
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 		example_attack_collision.position.x = 45
