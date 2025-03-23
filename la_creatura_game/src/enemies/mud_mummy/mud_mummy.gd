@@ -3,13 +3,15 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
-@onready var example_attack_collision: CollisionShape2D = $Attacks/ExampleAttack/CollisionShape2D
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
+@onready var charge_timer: Timer = $Timers/ChargeTimer
+@onready var wrap_timer: Timer = $Timers/WrapTimer
 
 @onready var player: CharacterBody2D = $"../../../Player"
 
 # Movement variables 
-@export var movement_speed = 150.0
+@export var movement_speed_input = 150.0
+var movement_speed
 var starting_point: Vector2
 var left_movement_limit: float
 var right_movement_limit: float
@@ -36,6 +38,8 @@ var direction = 0
 var seesPlayer = false
 var playerInRange = false
 var playerInChargeRange = false
+var isWrapping = false
+var isCharging = false
 
 func _ready() -> void:
 	starting_point = global_position
@@ -43,6 +47,7 @@ func _ready() -> void:
 	right_movement_limit = starting_point.x + movement_range_right
 	hp = max_hp
 	target = global_position.x
+	movement_speed = movement_speed_input
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -88,8 +93,10 @@ func state_machine():
 				state = "charge"
 			elif !playerInRange:
 				state = "combat_movement"
-			elif playerInRange:
+			elif playerInRange && !wrap_timer.paused:
 				state = "wrap_round_player"
+			else:
+				state = "idle"
 		"combat_movement":
 			if playerInRange || !seesPlayer:
 				state = "combat"
@@ -98,12 +105,12 @@ func state_machine():
 			else:
 				combat_movement()
 		"wrap_round_player":
-			if !playerInRange:
+			if !playerInRange || !seesPlayer:
 				state = "combat"
 			else:
 				wrap_round_player()
 		"charge":
-			if !playerInChargeRange:
+			if !playerInChargeRange || !seesPlayer:
 				state = "combat"
 			else:
 				charge()
@@ -118,10 +125,8 @@ func state_machine():
 func flip_h():
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
-		example_attack_collision.position.x = 45
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-		example_attack_collision.position.x = -45
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -147,6 +152,12 @@ func _on_reset_hp_timer_timeout() -> void:
 	print(hp)
 	reset_hp_timer.stop()
 
+func _on_charge_timer_timeout() -> void:
+	charge_timer.stop()
+
+func _on_wrap_timer_timeout() -> void:
+	wrap_timer.stop()
+
 #########################################
 # Combat handling
 #########################################
@@ -169,16 +180,17 @@ func wrap_round_player() -> void:
 	pass
 
 func check_distance_to_player() -> void:
-	if player.global_position.x < left_movement_limit || player.global_position.x > right_movement_limit:
+	if player.global_position.x < left_movement_limit || player.global_position.x > right_movement_limit || global_position.x > right_movement_limit || global_position.x < left_movement_limit:
 		seesPlayer = false
 		if hp < max_hp && reset_hp_timer.is_stopped():
 			reset_hp_timer.start()
 	else: 
 		seesPlayer = true
 		playerInChargeRange = abs(player.global_position.x - global_position.x) > 400
-		playerInRange = !abs(player.global_position.x - global_position.x) > 100
+		playerInRange = !abs(player.global_position.x - global_position.x) > 50
 
 func combat_movement() -> void:
+	movement_speed = movement_speed_input
 	target = player.global_position.x
 	
 	if target > global_position.x:
@@ -189,6 +201,7 @@ func combat_movement() -> void:
 		direction = 0
 
 func idle_movement() -> void:
+	movement_speed = movement_speed_input
 	if global_position.x < target + 3 && global_position.x > target - 3:
 		target = randi() % int(right_movement_limit - left_movement_limit) + left_movement_limit
 

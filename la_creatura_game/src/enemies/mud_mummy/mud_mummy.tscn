@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=5 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 
@@ -42,9 +42,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_li7yr"]
-size = Vector2(40, 50)
-
 [node name="MudMummy" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 16
@@ -54,6 +51,11 @@ script = ExtResource("1_ri1ep")
 
 [node name="ResetHPTimer" type="Timer" parent="Timers"]
 wait_time = 10.0
+
+[node name="ChargeTimer" type="Timer" parent="Timers"]
+
+[node name="WrapTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -81,26 +83,8 @@ sprite_frames = SubResource("SpriteFrames_mbqbr")
 animation = &"charge"
 autoplay = "idle"
 
-[node name="Attacks" type="Node2D" parent="."]
-
-[node name="ExampleAttack" type="Area2D" parent="Attacks" groups=["enemy"]]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/ExampleAttack"]
-visible = false
-position = Vector2(55, 0)
-shape = SubResource("RectangleShape2D_li7yr")
-disabled = true
-
-[node name="ColorRect" type="ColorRect" parent="Attacks/ExampleAttack/CollisionShape2D"]
-offset_left = -20.0
-offset_top = -25.0
-offset_right = 20.0
-offset_bottom = 25.0
-color = Color(1, 0, 0, 0.501961)
-metadata/_edit_use_anchors_ = true
-
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
+[connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="Timers/WrapTimer" to="." method="_on_wrap_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
