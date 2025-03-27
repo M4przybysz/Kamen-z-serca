@@ -5,19 +5,19 @@ extends CharacterBody2D
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
-@onready var wrap_timer: Timer = $Timers/WrapTimer
+@onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
 
 @onready var player: CharacterBody2D = $"../../../Player"
 
 # Movement variables 
-@export var movement_speed_input = 150.0
+@export var movement_speed_input = 100.0
 var movement_speed
 var starting_point: Vector2
 var left_movement_limit: float
 var right_movement_limit: float
 var target: float
-@export var movement_range_left: int = 400
-@export var movement_range_right: int = 400
+@export var movement_range_left: int = 500
+@export var movement_range_right: int = 500
 
 # Combat variables
 @export var max_hp: int = 3
@@ -36,10 +36,9 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 var state = "idle"
 var direction = 0
 var seesPlayer = false
-var playerInRange = false
+var playerInWrapRange = false
 var playerInChargeRange = false
 var isWrapping = false
-var isCharging = false
 
 func _ready() -> void:
 	starting_point = global_position
@@ -62,20 +61,19 @@ func _physics_process(delta: float) -> void:
 	# animated_sprite_2d.play(state)
 	
 	velocity.x = direction * movement_speed
-
+	
 	move_and_slide()
 
 #########################################
 # State machine handling
 #########################################
 func state_machine():
+	check_death()
 	check_distance_to_player()
 	
 	match state:
 		"idle":
-			if hp <= 0:
-				state = "die"
-			elif seesPlayer:
+			if seesPlayer:
 				state = "combat"
 			else:
 				state = "idle_movement"
@@ -85,35 +83,32 @@ func state_machine():
 			else:
 				idle_movement()
 		"combat":
-			if hp <= 0:
-				state = "die"
-			elif !seesPlayer:
+			if !seesPlayer:
 				state = "idle"
 			elif playerInChargeRange:
 				state = "charge"
-			elif !playerInRange:
-				state = "combat_movement"
-			elif playerInRange && !wrap_timer.paused:
+			elif playerInWrapRange:
 				state = "wrap_round_player"
 			else:
-				state = "idle"
+				state = "combat_movement"
 		"combat_movement":
-			if playerInRange || !seesPlayer:
+			if playerInWrapRange || !seesPlayer:
 				state = "combat"
 			elif playerInChargeRange:
 				state = "charge"
 			else:
 				combat_movement()
 		"wrap_round_player":
-			if !playerInRange || !seesPlayer:
+			if !playerInWrapRange && !isWrapping:
 				state = "combat"
 			else:
 				wrap_round_player()
 		"charge":
-			if !playerInChargeRange || !seesPlayer:
+			if !playerInChargeRange:
 				state = "combat"
 			else:
 				charge()
+				state = "combat_movement"
 		"die":
 			die()
 		_:
@@ -136,6 +131,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	for group in dmg_dictionary:
 		if area.is_in_group(group):
 			dmg_taken += dmg_dictionary[group]
+			if isWrapping:
+				stop_wrapping()
 	decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
@@ -153,10 +150,11 @@ func _on_reset_hp_timer_timeout() -> void:
 	reset_hp_timer.stop()
 
 func _on_charge_timer_timeout() -> void:
+	movement_speed = movement_speed_input
 	charge_timer.stop()
 
-func _on_wrap_timer_timeout() -> void:
-	wrap_timer.stop()
+func _on_wrap_cooldown_timer_timeout() -> void:
+	wrap_cooldown_timer.stop()
 
 #########################################
 # Combat handling
@@ -168,16 +166,30 @@ func decrease_hp(value: int) -> void:
 		hp = 0
 	print(hp)
 
+func check_death() -> void:
+	if hp <= 0:
+		die()
+
 func die() -> void:
 	# TODO: Add death animation
 	print("Deleting enemy...")
 	queue_free()
 
 func charge() -> void:
-	pass
+	target = player.global_position.x
+	movement_speed = 4 * movement_speed_input
+	charge_timer.start()
 
 func wrap_round_player() -> void:
-	pass
+	movement_speed = 0
+	isWrapping = true
+	global_position = player.global_position + Vector2(0, 25)
+
+func stop_wrapping() -> void:
+	movement_speed = movement_speed_input
+	isWrapping = false
+	playerInWrapRange = false
+	wrap_cooldown_timer.start()
 
 func check_distance_to_player() -> void:
 	if player.global_position.x < left_movement_limit || player.global_position.x > right_movement_limit || global_position.x > right_movement_limit || global_position.x < left_movement_limit:
@@ -186,12 +198,13 @@ func check_distance_to_player() -> void:
 			reset_hp_timer.start()
 	else: 
 		seesPlayer = true
-		playerInChargeRange = abs(player.global_position.x - global_position.x) > 400
-		playerInRange = !abs(player.global_position.x - global_position.x) > 50
+		playerInChargeRange = abs(player.global_position.x - global_position.x) > 400 && floor(player.global_position.y) == floor(global_position.y) - 25
+		if wrap_cooldown_timer.is_stopped():
+			playerInWrapRange = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
 
 func combat_movement() -> void:
-	movement_speed = movement_speed_input
-	target = player.global_position.x
+	if charge_timer.is_stopped():
+		target = player.global_position.x
 	
 	if target > global_position.x:
 		direction = 1
