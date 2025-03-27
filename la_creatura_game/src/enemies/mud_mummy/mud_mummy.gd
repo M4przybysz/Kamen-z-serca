@@ -68,7 +68,10 @@ func _physics_process(delta: float) -> void:
 # State machine handling
 #########################################
 func state_machine():
-	check_death()
+	# Check death
+	if hp <= 0:
+		die()
+	
 	check_distance_to_player()
 	
 	match state:
@@ -165,10 +168,6 @@ func decrease_hp(value: int) -> void:
 	else:
 		hp = 0
 	print(hp)
-
-func check_death() -> void:
-	if hp <= 0:
-		die()
 
 func die() -> void:
 	# TODO: Add death animation
