@@ -166,3 +166,4 @@ position = Vector2(2404, 591)
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
 position = Vector2(798, 565)
+lock_rotation = true
