@@ -164,13 +164,13 @@ func animate_player(direction) -> void:
 func flip_h(direction):
 	if direction > 0:
 		animated_sprite.flip_h = false
-		grab_hand.target_position.x = 100
-		grab_check.target_position.x = 100
+		grab_hand.target_position.x = 30
+		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		grab_hand.target_position.x = -100
-		grab_check.target_position.x = -100
+		grab_hand.target_position.x = -30
+		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
 
 #########################################
