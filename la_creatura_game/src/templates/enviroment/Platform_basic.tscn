@@ -12,6 +12,8 @@ gradient = SubResource("Gradient_plxia")
 fill_to = Vector2(1, 0.545872)
 
 [node name="PlatformBasic" type="StaticBody2D"]
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_tesby")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

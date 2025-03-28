@@ -250,3 +250,16 @@ func ascend_to_level_3() -> void:
 	level = 3
 	gameplay.player_level_up()
 	print("Player ascended to level 3 and has acquired bronze feathers.")
+
+#########################################
+# Handling pushable objects
+#########################################
+func _on_push_fix_body_entered(body: Node2D) -> void:
+	if body.is_in_group("pushable_object"):
+		body.collision_layer = 1
+		body.collision_mask = 1
+
+func _on_push_fix_body_exited(body: Node2D) -> void:
+	if body.is_in_group("pushable_object"):
+		body.collision_layer = 32
+		body.collision_mask = 32
