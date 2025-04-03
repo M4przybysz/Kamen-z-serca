@@ -170,4 +170,4 @@ position = Vector2(798, 565)
 lock_rotation = true
 
 [node name="PressurePlate" parent="Puzzles" instance=ExtResource("9_e0jtf")]
-position = Vector2(-399, 640)
+position = Vector2(-399, 643)

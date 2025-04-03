@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://j8ypnmnq51x8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_46jyf"]
-b = Vector2(0, 45)
+b = Vector2(0, 30)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w41lm"]
-b = Vector2(0, 45)
+b = Vector2(0, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlft8"]
-size = Vector2(120, 20)
+size = Vector2(120, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t2ua"]
 size = Vector2(100, 10)
@@ -17,23 +17,23 @@ collision_layer = 33
 collision_mask = 33
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-60, -10)
+position = Vector2(-60, -7)
 rotation = 1.0472
 shape = SubResource("SegmentShape2D_46jyf")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D2"]
-offset_right = 18.0
-offset_bottom = 45.0
+offset_right = 13.0
+offset_bottom = 30.0
 color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(60, -10)
+position = Vector2(60, -7)
 rotation = -1.0472
 shape = SubResource("SegmentShape2D_w41lm")
 
 [node name="ColorRect2" type="ColorRect" parent="CollisionShape2D"]
-offset_left = -18.0
-offset_bottom = 45.0
+offset_left = -13.0
+offset_bottom = 30.0
 color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
@@ -41,13 +41,13 @@ shape = SubResource("RectangleShape2D_nlft8")
 
 [node name="ColorRect3" type="ColorRect" parent="CollisionShape2D3"]
 offset_left = -60.0
-offset_top = -10.0
+offset_top = -7.0
 offset_right = 60.0
-offset_bottom = 10.0
+offset_bottom = 7.0
 color = Color(0, 0, 1, 1)
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D3/Area2D"]
-position = Vector2(-0.5, -7)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_0t2ua")
