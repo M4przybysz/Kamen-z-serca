@@ -85,6 +85,6 @@ autoplay = "idle"
 
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
-[connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_timer_timeout"]
+[connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_cooldown_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
