@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 #########################################
 # Input handling
 #########################################
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing) && !isDashing:
 		if isGrabbing:

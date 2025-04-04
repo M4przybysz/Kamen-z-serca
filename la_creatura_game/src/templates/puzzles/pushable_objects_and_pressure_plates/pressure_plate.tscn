@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://j8ypnmnq51x8"]
+[gd_scene load_steps=6 format=3 uid="uid://j8ypnmnq51x8"]
+
+[ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="1_qdhir"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_46jyf"]
 b = Vector2(0, 30)
@@ -7,32 +9,36 @@ b = Vector2(0, 30)
 b = Vector2(0, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlft8"]
-size = Vector2(120, 14)
+size = Vector2(100, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t2ua"]
-size = Vector2(100, 10)
+size = Vector2(20, 10)
 
 [node name="PressurePlate" type="StaticBody2D"]
 collision_layer = 33
 collision_mask = 33
+script = ExtResource("1_qdhir")
+
+[node name="MovementLockTimer" type="Timer" parent="."]
+wait_time = 0.05
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-60, -7)
+position = Vector2(-50, -7)
 rotation = 1.0472
 shape = SubResource("SegmentShape2D_46jyf")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D2"]
-offset_right = 13.0
+offset_right = 17.0
 offset_bottom = 30.0
 color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(60, -7)
+position = Vector2(50, -7)
 rotation = -1.0472
 shape = SubResource("SegmentShape2D_w41lm")
 
 [node name="ColorRect2" type="ColorRect" parent="CollisionShape2D"]
-offset_left = -13.0
+offset_left = -17.0
 offset_bottom = 30.0
 color = Color(1, 0, 1, 1)
 
@@ -40,14 +46,19 @@ color = Color(1, 0, 1, 1)
 shape = SubResource("RectangleShape2D_nlft8")
 
 [node name="ColorRect3" type="ColorRect" parent="CollisionShape2D3"]
-offset_left = -60.0
+offset_left = -50.0
 offset_top = -7.0
-offset_right = 60.0
+offset_right = 50.0
 offset_bottom = 7.0
 color = Color(0, 0, 1, 1)
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D3"]
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D3/Area2D"]
-position = Vector2(0, -4)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_0t2ua")
+
+[connection signal="timeout" from="MovementLockTimer" to="." method="_on_movement_lock_timer_timeout"]
+[connection signal="body_entered" from="CollisionShape2D3/Area2D" to="." method="_on_area_2d_body_entered"]

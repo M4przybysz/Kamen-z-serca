@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=19 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="6_kn8ie"]
 [ext_resource type="PackedScene" uid="uid://b15myy0524ijj" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
 [ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
+[ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
 
@@ -167,7 +168,10 @@ position = Vector2(2404, 591)
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
 position = Vector2(798, 565)
-lock_rotation = true
 
-[node name="PressurePlate" parent="Puzzles" instance=ExtResource("9_e0jtf")]
+[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
 position = Vector2(-399, 643)
+connected_thing = NodePath("../Door")
+
+[node name="Door" parent="Puzzles" instance=ExtResource("10_7wred")]
+position = Vector2(-781, 400)
