@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=20 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="5_8lnfh"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="5_x4klb"]
 [ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="6_kn8ie"]
+[ext_resource type="PackedScene" uid="uid://b15myy0524ijj" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
+[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
+[ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
@@ -24,7 +27,7 @@ size = Vector2(100, 50)
 size = Vector2(100, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kocim"]
-size = Vector2(2000, 20)
+size = Vector2(5000, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxcl2"]
 size = Vector2(5000, 20)
@@ -45,8 +48,8 @@ position = Vector2(1181, 651)
 
 [node name="Block" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1500, 450)
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block"]
@@ -61,8 +64,8 @@ shape = SubResource("RectangleShape2D_emsya")
 
 [node name="Block1" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1800, 450)
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block1"]
@@ -78,8 +81,8 @@ shape = SubResource("RectangleShape2D_eebte")
 [node name="Block2" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(932, 650)
 rotation = -0.261799
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block2"]
@@ -94,8 +97,8 @@ shape = SubResource("RectangleShape2D_k813h")
 
 [node name="Block3" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1025, 624)
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Block3"]
@@ -110,25 +113,25 @@ shape = SubResource("RectangleShape2D_gj37g")
 
 [node name="Floor" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(0, 650)
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Floor"]
-offset_left = -500.0
+offset_left = -3500.0
 offset_right = 1500.0
 offset_bottom = 20.0
 color = Color(1, 0, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingBlocks/Floor"]
-position = Vector2(500, 10)
+position = Vector2(-1000, 10)
 shape = SubResource("RectangleShape2D_kocim")
 
 [node name="Floor1" type="StaticBody2D" parent="BuildingBlocks"]
 position = Vector2(1800, 650)
-collision_layer = 17
-collision_mask = 17
+collision_layer = 49
+collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_yoxu6")
 
 [node name="ColorRect" type="ColorRect" parent="BuildingBlocks/Floor1"]
@@ -160,6 +163,22 @@ position = Vector2(79, 550)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="EnemyTemplate" parent="Enemies" instance=ExtResource("3_tev26")]
+position = Vector2(6632, 550)
+
+[node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
+position = Vector2(2962, 591)
+
+[node name="Puzzles" type="Node2D" parent="."]
+
+[node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
+position = Vector2(798, 565)
+
+[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
+position = Vector2(-399, 643)
+connected_thing = NodePath("../Door")
+
+[node name="Door" parent="Puzzles" instance=ExtResource("10_7wred")]
+position = Vector2(-781, 400)
 position = Vector2(6632, 550)
 
 [node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
