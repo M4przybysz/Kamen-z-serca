@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=23 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="1_kjvcn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://assets/LD/schody.tscn" id="5_vuyuk"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://assets/LD/drab1.tscn" id="6_3cifj"]
 [ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://assets/LD/za_daleki.tscn" id="8_m47wa"]
+[ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://assets/LD/oz_grab.tscn" id="9_27djh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -36,6 +37,8 @@ size = Vector2(2000, 20)
 size = Vector2(5000, 20)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r2w24"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kwhg2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wty7j"]
 
@@ -67,7 +70,7 @@ position = Vector2(15762, -4291)
 position = Vector2(16015, -4417)
 
 [node name="Player" parent="Gameplay/Gameplay" index="1"]
-position = Vector2(1856, 336)
+position = Vector2(279, 34)
 
 [node name="Level" type="Node2D" parent="Gameplay/Gameplay"]
 
@@ -524,8 +527,8 @@ position = Vector2(259.578, 0)
 shape = SubResource("RectangleShape2D_fx6at")
 
 [node name="Block" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
-position = Vector2(-124, 106.999)
-scale = Vector2(1, 1.28)
+position = Vector2(-132, -101)
+scale = Vector2(1, 1.48)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
@@ -1461,6 +1464,23 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
+[node name="Block1" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+position = Vector2(-83, 507)
+scale = Vector2(1, 1.28)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block1"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block1"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
 [node name="Floor" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
 position = Vector2(286, 646)
 scale = Vector2(0.2, 1)
@@ -1574,9 +1594,9 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block99"]
-offset_left = -383.132
+offset_left = -366.474
 offset_top = 210.296
-offset_right = -83.1323
+offset_right = -66.4743
 offset_bottom = 510.296
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
@@ -1690,6 +1710,20 @@ scale = Vector2(0.110871, 0.65483)
 [node name="Block102" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(8055, 856)
 scale = Vector2(0.108999, 0.577952)
+
+[node name="Block154" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
+position = Vector2(8062, 857)
+scale = Vector2(0.108999, 0.577952)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_kwhg2")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block154"]
+offset_left = 45.872
+offset_right = 345.872
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Block74" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(8089, 1472)
@@ -2055,7 +2089,7 @@ position = Vector2(7464, 1007)
 scale = Vector2(0.174123, 0.474264)
 
 [node name="Drab2" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(7077, 1500)
+position = Vector2(7077, 1506)
 
 [node name="Drab4" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
 position = Vector2(7082, 1367)
@@ -2064,7 +2098,7 @@ position = Vector2(7082, 1367)
 position = Vector2(7148, 1225)
 
 [node name="Drab7" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8082, 1096)
+position = Vector2(8086, 1096)
 
 [node name="Drab8" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
 position = Vector2(8148, 954)
@@ -2083,6 +2117,57 @@ position = Vector2(7559, 883)
 
 [node name="ZaDaleki" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("8_m47wa")]
 position = Vector2(34, 914)
+
+[node name="Level3" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+
+[node name="Block55" parent="Gameplay/Gameplay/Level/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(12095, 741)
+
+[node name="Graf" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+
+[node name="OzGrab" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+
+[node name="OzGrab2" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(2218, 361)
+
+[node name="OzGrab4" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(2189, 601)
+
+[node name="OzGrab5" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(2233, 599)
+
+[node name="OzGrab8" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(7547, 867)
+
+[node name="OzGrab10" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(7137, 1210)
+
+[node name="OzGrab11" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(7070, 1352)
+
+[node name="OzGrab12" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(7067, 1490)
+
+[node name="OzGrab13" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8085, 1471)
+
+[node name="OzGrab14" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8074, 1080)
+
+[node name="OzGrab15" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8138, 937)
+
+[node name="OzGrab16" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8191, 844)
+
+[node name="OzGrab17" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8258, 702)
+
+[node name="OzGrab18" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8327, 580)
+
+[node name="OzGrab19" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9080, 712)
 
 [editable path="Gameplay/Gameplay"]
 [editable path="Gameplay/Gameplay/ProgrammersPlayground"]
