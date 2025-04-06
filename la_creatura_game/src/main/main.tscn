@@ -104,7 +104,7 @@ position = Vector2(17436, -4196)
 position = Vector2(17689, -4322)
 
 [node name="Player" parent="Gameplay/Gameplay" index="1"]
-position = Vector2(7249, 583)
+position = Vector2(7158, 596)
 
 [node name="Level Design" type="Node2D" parent="Gameplay/Gameplay"]
 
