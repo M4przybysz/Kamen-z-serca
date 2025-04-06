@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://cngywphy75ux3" path="res://assets/sprites/UI/Damage_1.png" id="2_ce1ua"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cgh2kq5yjfg2i" path="res://assets/sprites/UI/Damage_3.png" id="4_ae1f5"]
 [ext_resource type="Texture2D" uid="uid://p6rdm7s7fr7k" path="res://assets/sprites/UI/Damage_4.png" id="5_bvfud"]
 [ext_resource type="Texture2D" uid="uid://b3kynodfdu0x4" path="res://assets/sprites/UI/Damage_5.png" id="6_xwhx4"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_u2e53"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -18,15 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlrv2")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 63.0
-offset_right = 195.0
-offset_bottom = 86.0
-text = "Hiii, Nith hereeee :DD"
-label_settings = SubResource("LabelSettings_u2e53")
 
 [node name="HP_interface" type="Control" parent="."]
 anchors_preset = 0
