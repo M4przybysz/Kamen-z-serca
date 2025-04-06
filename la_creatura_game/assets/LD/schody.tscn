@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx23kih6wt82a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx6at"]
+size = Vector2(2191.62, 84.0352)
+
+[node name="Stairs6" type="Node2D"]
+position = Vector2(4977, -1323)
+
+[node name="Kolorki" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1593.0
+offset_top = -458.0
+offset_right = -1553.0
+offset_bottom = -418.0
+
+[node name="ColorRect" type="ColorRect" parent="Kolorki"]
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.778065, 0.289769)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Kolorki"]
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.665063, 0.317893)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Kolorki"]
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+scale = Vector2(0.543894, 0.248747)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Kolorki"]
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+scale = Vector2(0.428082, 0.327425)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.317012, 0.473055)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.202579, 0.494371)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Kolizja" type="StaticBody2D" parent="."]
+position = Vector2(-23.9999, 43)
+rotation = -0.436332
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(291.066, -0.000488281)
+shape = SubResource("RectangleShape2D_fx6at")

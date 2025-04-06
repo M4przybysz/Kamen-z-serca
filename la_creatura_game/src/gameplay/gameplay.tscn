@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=6 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
-[ext_resource type="PackedScene" uid="uid://c2hu2t4j0od5o" path="res://src/test_elements/levels/programmers_playground.tscn" id="7_crvro"]
+[ext_resource type="PackedScene" uid="uid://bh2xgx3s7m7po" path="res://src/levels/level_design4.tscn" id="3_7xlne"]
+[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
+[ext_resource type="PackedScene" uid="uid://dgufgkfvdt0c" path="res://src/levels/level_4.tscn" id="6_qa371"]
 
 [node name="Gameplay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_i11ig")
 
-[node name="ProgrammersPlayground" parent="." instance=ExtResource("7_crvro")]
+[node name="Level Design" parent="." instance=ExtResource("3_7xlne")]
+
+[node name="Level 4" parent="." instance=ExtResource("6_qa371")]
+rotation = 3.14159
+scale = Vector2(1.02559, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
 position = Vector2(500, 400)
+collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)

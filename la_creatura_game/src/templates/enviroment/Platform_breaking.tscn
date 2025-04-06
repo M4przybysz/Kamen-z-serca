@@ -13,6 +13,8 @@ gradient = SubResource("Gradient_plxia")
 fill_to = Vector2(1, 0.912844)
 
 [node name="PlatformBreaking" type="StaticBody2D"]
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_pfb8h")
 
 [node name="Timer" type="Timer" parent="."]
@@ -23,6 +25,8 @@ position = Vector2(50, 12.5)
 shape = SubResource("RectangleShape2D_pw17s")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(50, 0)

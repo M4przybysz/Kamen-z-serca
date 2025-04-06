@@ -1,0 +1,21 @@
+#Tree talk
+N: [center][i]Bohater podszedł powoli do Pradawnego Dębu, stojącego na jego drodze. Jego cień skulał się pośród bezkresnego cienia drzewa.[/i][/center]
+N: [center][i]Poczuł skręt trzewi i narastające tętno w żyłach, gdy gałęzie Dębu obracały się nienaturalnie w jego stronę.[/i][/center]
+D: Śmiertelniku…
+D: Co robisz tutaj, na granicy światów?
+D: Czego szukasz w krainie, do której żywi wstępu nie mają?
+D: Zawróć, póki me gałęzie i korzenie nie wplotły cię w jedności ziemi.
+N: [center][i]Kręcił głową, nie zgadzał się. Wyrównał krok.[/i][/center]
+D: Gorzko się mylisz, sądząc że twe uczucia ugodzą we mnie czy w bogów.
+D: Twoja [b]pycha[/b] zepchnie cię do poziomu niewolników służących w kopalni.
+D: [b]Zawiścią, cierpieniem[/b] i [b]zgryzotą[/b] - oto czym się staniesz.
+D: Nie zawiniłeś przeciwko mnie, nie mam więc wobec ciebie urazy. Zawróć, zachowaj płomień gniewu – niech ci dalej w życiu służy.
+N: [center][i]Ogarnął go kolejny ścisk żołądka, a rękę ukłożył na broni trzymanej przy ciele.[/i][/center]
+D: Cokolwiek chcesz zdobyć w Głębinach zobaczysz w Wyznaczonym Czasie.
+N: [center][i]Wiedział, że nie ma czasu ani sił na Wyznaczony Czas.[/i][/center]
+N: [center][i]Wyciągnął broń, pocierając się o nowowyrosłe pióra.[/i][/center]
+D: Zatem podjąłeś wybór…
+N: [center][i]Potężny huk rozniósł się po okolicy, gdy Dąb uniósł jedną gałąź nad drugą ku górze.[/i][/center]
+D: Zabaw mnie zatem. Zważmy twoje serce, zobaczymy jak głęboko cię pociągnie.
+###
+#####

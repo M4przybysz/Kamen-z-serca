@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgufgkfvdt0c"]
+
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://assets/LD/bloczek.tscn" id="1_iwqaq"]
+[ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://assets/LD/drab1.tscn" id="2_jkmx3"]
+[ext_resource type="PackedScene" uid="uid://h673kowl7hhg" path="res://Filar1.tscn" id="3_1c6nr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rky7p"]
+
+[node name="Level 4" type="Node2D"]
+position = Vector2(18606, -152)
+scale = Vector2(-1.02559, 1)
+
+[node name="Block111" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1286, 71.9995)
+scale = Vector2(1.01442, 0.223152)
+
+[node name="Block114" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(316.998, 945)
+scale = Vector2(0.697455, 0.181729)
+
+[node name="Block119" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(398.796, 999)
+scale = Vector2(0.42708, -0.905536)
+
+[node name="Block103" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(118.998, 1109)
+
+[node name="Block104" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(-2543.91, 2290)
+
+[node name="Block105" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(-2593.64, 2173)
+
+[node name="Block106" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(-2604.36, 2074)
+
+[node name="Block107" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(-2913.45, 2077)
+
+[node name="Block108" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(-3091.89, 1845)
+
+[node name="Block112" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(520.998, 594)
+
+[node name="Block117" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(687.412, 726)
+
+[node name="Block118" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(688.387, 646)
+
+[node name="Block113" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(143.998, 261)
+
+[node name="Block130" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(134.998, 164)
+scale = Vector2(1, 3.90268)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 120.998
+offset_top = 162.0
+offset_right = 150.998
+offset_bottom = 192.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Block135" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(226.998, 160)
+physics_material_override = SubResource("PhysicsMaterial_rky7p")
+
+[node name="Block143" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(144.307, 92)
+physics_material_override = SubResource("PhysicsMaterial_rky7p")
+
+[node name="Block139" parent="." instance=ExtResource("2_jkmx3")]
+position = Vector2(1625.41, 130)
+physics_material_override = SubResource("PhysicsMaterial_rky7p")
+
+[node name="Block115" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(306.998, 555)
+scale = Vector2(0.697455, 0.181729)
+
+[node name="Block124" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(147, 447)
+scale = Vector2(0.912739, 0.549799)
+
+[node name="Block128" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(361.998, 20.9995)
+scale = Vector2(0.502222, 0.122841)
+
+[node name="Block131" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(273.015, 21)
+scale = Vector2(0.502222, 0.122841)
+
+[node name="Block141" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(229.138, 57)
+scale = Vector2(0.576918, 0.20281)
+
+[node name="Block129" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(228.998, 105)
+scale = Vector2(0.463485, 0.742347)
+
+[node name="Block132" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(67.2785, -112)
+rotation = -1.06121
+scale = Vector2(0.789496, 0.278616)
+
+[node name="Block142" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(-2.92519, 9)
+rotation = -1.06121
+scale = Vector2(0.789496, 0.278616)
+
+[node name="Block133" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(307, 231.999)
+rotation = -1.06121
+scale = Vector2(0.789496, 0.278616)
+
+[node name="Block145" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(398.796, 136)
+rotation = -1.06121
+scale = Vector2(0.419373, 0.165917)
+
+[node name="Block116" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1325.1, 802)
+scale = Vector2(0.716335, 0.140447)
+
+[node name="Block120" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(502.152, 610)
+scale = Vector2(-0.184573, 0.21003)
+
+[node name="Block134" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1310.15, 548)
+scale = Vector2(0.697455, 0.181729)
+
+[node name="Block136" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1480.13, 423)
+scale = Vector2(0.153979, 0.595411)
+
+[node name="Block137" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1583.48, 71)
+scale = Vector2(0.110635, 0.619455)
+
+[node name="Block138" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(1525.96, 423)
+scale = Vector2(0.491388, 0.222099)
+
+[node name="Block146" parent="." instance=ExtResource("1_iwqaq")]
+position = Vector2(687.413, 557)
+rotation = -0.0105221
+scale = Vector2(0.190511, 0.817343)
+
+[node name="PushableObject5" parent="." instance=ExtResource("3_1c6nr")]
+position = Vector2(1372, -7.00047)
+
+[node name="PushableObject6" parent="." instance=ExtResource("3_1c6nr")]
+position = Vector2(-2541.96, 2436)

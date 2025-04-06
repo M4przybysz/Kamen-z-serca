@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://myw1rlo6ju5e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3xxm"]
+size = Vector2(30, 30)
+
+[node name="Block56" type="StaticBody2D"]
+position = Vector2(2077, 174)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w3xxm")

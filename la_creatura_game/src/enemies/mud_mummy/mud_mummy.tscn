@@ -1,0 +1,245 @@
+[gd_scene load_steps=15 format=3 uid="uid://dwl1u5xa8yaj3"]
+
+[ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
+[ext_resource type="AudioStream" uid="uid://ckj4v8wnfep8s" path="res://assets/sound/SFX/Draugr-Śmierć.wav" id="2_4o23v"]
+[ext_resource type="AudioStream" uid="uid://caf2wd5b0w2xx" path="res://assets/sound/SFX/Draugr-Atak.wav" id="3_ph1a7"]
+[ext_resource type="AudioStream" uid="uid://c8umab7w5h544" path="res://assets/sound/SFX/Draugr-Rzut mumią.wav" id="4_qyjaw"]
+[ext_resource type="AudioStream" uid="uid://cfr7irdah4up0" path="res://assets/sound/SFX/Draugr-Chód.wav" id="5_ibqi1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
+radius = 25.0
+height = 70.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl10x"]
+size = Vector2(70, 50)
+
+[sub_resource type="Animation" id="Animation_g20w1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../walkindDraugr:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../wrapAroundPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../chargeDraugr:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../dead:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iu1pe"]
+resource_name = "attack_Draugr"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../wrapAroundPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7h87a"]
+resource_name = "idle_movement"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../walkindDraugr:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_keyv8"]
+resource_name = "charge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../chargeDraugr:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fmmlc"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../dead:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qub5d"]
+_data = {
+"RESET": SubResource("Animation_g20w1"),
+"attack_Draugr": SubResource("Animation_iu1pe"),
+"charge": SubResource("Animation_keyv8"),
+"dead": SubResource("Animation_fmmlc"),
+"idle_movement": SubResource("Animation_7h87a")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbqbr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"combat",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"combat_movement",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_movement",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"wrap_around_player",
+"speed": 5.0
+}]
+
+[node name="MudMummy" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_ri1ep")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="ResetHPTimer" type="Timer" parent="Timers"]
+wait_time = 10.0
+
+[node name="ChargeTimer" type="Timer" parent="Timers"]
+
+[node name="WrapCooldownTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
+
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4h4jj")
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2(-35, -25)
+collision_layer = 6
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(35, 25)
+shape = SubResource("RectangleShape2D_bl10x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -35.0
+offset_top = -25.0
+offset_right = 35.0
+offset_bottom = 25.0
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_qub5d")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-35, -25)
+sprite_frames = SubResource("SpriteFrames_mbqbr")
+animation = &"idle_movement"
+autoplay = "idle"
+
+[node name="dead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4o23v")
+volume_db = 2.0
+max_distance = 1200.0
+attenuation = 1.56917
+
+[node name="wrapAroundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ph1a7")
+volume_db = 2.0
+max_distance = 1200.0
+attenuation = 1.56917
+
+[node name="chargeDraugr" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qyjaw")
+volume_db = 5.0
+max_distance = 1200.0
+attenuation = 1.56917
+
+[node name="walkindDraugr" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ibqi1")
+volume_db = 5.0
+max_distance = 1200.0
+attenuation = 1.56917
+
+[connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
+[connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_cooldown_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=10 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="1_kjvcn"]
 [ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
 [ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="5_mf4ai"]
+[ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/Asety zew/skały 2.png" id="12_1llap"]
+[ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/Asety zew/gory.png" id="13_cax8e"]
+[ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/Asety zew/skala-gen.png" id="14_7bosm"]
+[ext_resource type="PackedScene" uid="uid://bxceiueli7cx8" path="res://assets/sound/music/music.tscn" id="20_grj2p"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -25,3 +30,46 @@ visible = false
 
 [node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
 visible = false
+
+[node name="Tlo" type="Node2D" parent="Gameplay/Gameplay"]
+
+[node name="UI2" parent="Gameplay/Gameplay/Tlo" instance=ExtResource("5_mf4ai")]
+process_mode = 0
+z_index = -3
+offset_left = -5340.0
+offset_top = -2531.0
+offset_right = -5340.0
+offset_bottom = -2531.0
+script = null
+
+[node name="TextureRect" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -6
+offset_left = 4931.0
+offset_top = -898.0
+offset_right = 5931.0
+offset_bottom = -157.0
+scale = Vector2(4.23164, 3.93185)
+texture = ExtResource("12_1llap")
+
+[node name="TextureRect2" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -7
+offset_left = 3701.0
+offset_top = -371.0
+offset_right = 4981.0
+offset_bottom = 557.0
+scale = Vector2(1.66074, 1.39718)
+texture = ExtResource("13_cax8e")
+
+[node name="TextureRect3" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+z_index = -6
+offset_left = 5732.0
+offset_top = -950.0
+offset_right = 7012.0
+offset_bottom = 586.0
+scale = Vector2(0.614995, 0.757229)
+texture = ExtResource("14_7bosm")
+
+[node name="Music\\" parent="." instance=ExtResource("20_grj2p")]
+bus = &"Music"
