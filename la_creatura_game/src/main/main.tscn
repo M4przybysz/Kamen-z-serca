@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=34 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="1_kjvcn"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/Asety zew/gory.png" id="13_cax8e"]
 [ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="13_vpe5f"]
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/Asety zew/skala-gen.png" id="14_7bosm"]
+[ext_resource type="PackedScene" uid="uid://bxceiueli7cx8" path="res://assets/sound/music/music.tscn" id="20_grj2p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -2395,6 +2396,8 @@ offset_right = 7012.0
 offset_bottom = 586.0
 scale = Vector2(0.614995, 0.757229)
 texture = ExtResource("14_7bosm")
+
+[node name="Music\\" parent="." instance=ExtResource("20_grj2p")]
 
 [editable path="Gameplay/Gameplay"]
 [editable path="Gameplay/Gameplay/ProgrammersPlayground"]
