@@ -19,7 +19,6 @@ process_mode = 1
 process_mode = 2
 
 [node name="MainMenu" parent="Menus" instance=ExtResource("2_s1k2l")]
-visible = false
 
 [node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
 visible = false
