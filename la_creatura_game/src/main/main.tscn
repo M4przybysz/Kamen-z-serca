@@ -1,14 +1,24 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=33 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="1_kjvcn"]
 [ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
+[ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="4_kq3b3"]
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://assets/LD/bloczek.tscn" id="4_l6t68"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="4_qaj5b"]
+[ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="5_mf4ai"]
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://assets/LD/schody.tscn" id="5_vuyuk"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://assets/LD/drab1.tscn" id="6_3cifj"]
 [ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://assets/LD/za_daleki.tscn" id="8_m47wa"]
+[ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="9_4wm2h"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://assets/LD/oz_grab.tscn" id="9_27djh"]
+[ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="10_i576s"]
+[ext_resource type="PackedScene" uid="uid://b15myy0524ijj" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="11_g5e1w"]
+[ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/Asety zew/skały 2.png" id="12_1llap"]
+[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="12_mhn8g"]
+[ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/Asety zew/gory.png" id="13_cax8e"]
+[ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="13_vpe5f"]
+[ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/Asety zew/skala-gen.png" id="14_7bosm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -60,34 +70,58 @@ visible = false
 [node name="ProgrammersPlayground" parent="Gameplay/Gameplay" index="0"]
 position = Vector2(-5258, 5753)
 
+[node name="Spike4" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="2" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(13328, -5173)
+
+[node name="Spike9" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="3" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(13745, -5447)
+
+[node name="Spike6" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="4" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(10998, -5341)
+
+[node name="Spike7" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="5" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(10955, -5441)
+
+[node name="Spike8" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="6" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(11022, -5414)
+
+[node name="Spike5" parent="Gameplay/Gameplay/ProgrammersPlayground/Obstacles" index="7" groups=["enemy"] instance=ExtResource("4_kq3b3")]
+position = Vector2(15013, -4137)
+
 [node name="MudMummy2" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="2" instance=ExtResource("4_qaj5b")]
 position = Vector2(8590, -5136)
 
-[node name="MudMummy3" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="3" instance=ExtResource("4_qaj5b")]
-position = Vector2(15762, -4291)
+[node name="MudMummy5" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="3" instance=ExtResource("4_qaj5b")]
+position = Vector2(14056, -4897)
 
-[node name="MudMummy4" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="4" instance=ExtResource("4_qaj5b")]
-position = Vector2(16015, -4417)
+[node name="MudMummy6" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="4" instance=ExtResource("4_qaj5b")]
+position = Vector2(13156, -4903)
+
+[node name="MudMummy3" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="5" instance=ExtResource("4_qaj5b")]
+position = Vector2(17436, -4196)
+
+[node name="MudMummy4" parent="Gameplay/Gameplay/ProgrammersPlayground/Enemies" index="6" instance=ExtResource("4_qaj5b")]
+position = Vector2(17689, -4322)
 
 [node name="Player" parent="Gameplay/Gameplay" index="1"]
-position = Vector2(279, 34)
+position = Vector2(7249, 583)
 
-[node name="Level" type="Node2D" parent="Gameplay/Gameplay"]
+[node name="Level Design" type="Node2D" parent="Gameplay/Gameplay"]
 
-[node name="Environment" type="Node2D" parent="Gameplay/Gameplay/Level"]
+[node name="Environment" type="Node2D" parent="Gameplay/Gameplay/Level Design"]
 
-[node name="Level1" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+[node name="Level1" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment"]
 
-[node name="Stairs3" type="Node2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Stairs3" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3704, -251)
 
-[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3"]
+[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 0
 offset_left = 1498.0
 offset_top = 491.001
@@ -96,7 +130,7 @@ offset_bottom = 791.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 0
 offset_left = 1532.0
 offset_top = 476.001
@@ -105,7 +139,7 @@ offset_bottom = 776.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 0
 offset_left = 1568.0
 offset_top = 463.001
@@ -114,7 +148,7 @@ offset_bottom = 763.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 0
 offset_left = 1603.0
 offset_top = 446.001
@@ -123,7 +157,7 @@ offset_bottom = 746.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -138,7 +172,7 @@ scale = Vector2(0.857596, 1.03872)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -153,7 +187,7 @@ scale = Vector2(0.683787, 1.26853)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect7" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect7" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -168,7 +202,7 @@ scale = Vector2(0.57897, 1)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect8" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect8" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -183,7 +217,7 @@ scale = Vector2(0.557614, 0.812491)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect9" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect9" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.725
@@ -198,7 +232,7 @@ scale = Vector2(0.509707, 1.22886)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect10" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect10" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.725
@@ -213,7 +247,7 @@ scale = Vector2(0.376596, 1.32991)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect11" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect11" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.725
@@ -228,7 +262,7 @@ scale = Vector2(0.259535, 0.94965)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect12" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="ColorRect12" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.725
@@ -243,7 +277,7 @@ scale = Vector2(0.162392, 0.759104)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolorki"]
+[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolorki"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 183.0
@@ -251,7 +285,7 @@ offset_top = -94.0
 offset_right = 223.0
 offset_bottom = -54.0
 
-[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3"]
+[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3"]
 position = Vector2(1569, 501)
 rotation = -0.436332
 scale = Vector2(0.119588, 0.72)
@@ -259,21 +293,21 @@ collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs3/Kolizja"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs3/Kolizja"]
 position = Vector2(1106.51, -17.979)
 shape = SubResource("RectangleShape2D_52ui8")
 
-[node name="Stairs4" type="Node2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Stairs4" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4319, -526)
 
-[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4"]
+[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 0
 offset_left = 1498.0
 offset_top = 491.001
@@ -282,7 +316,7 @@ offset_bottom = 791.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 0
 offset_left = 1532.0
 offset_top = 476.001
@@ -291,7 +325,7 @@ offset_bottom = 776.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 0
 offset_left = 1568.0
 offset_top = 463.001
@@ -301,7 +335,7 @@ scale = Vector2(0.636111, 1.02436)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 0
 offset_left = 1603.0
 offset_top = 446.001
@@ -311,7 +345,7 @@ scale = Vector2(0.586414, 1.01834)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -326,7 +360,7 @@ scale = Vector2(0.418418, 0.988432)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolorki"]
+[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -341,7 +375,7 @@ scale = Vector2(0.145152, 1.16203)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4"]
+[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4"]
 position = Vector2(1569, 501)
 rotation = -0.436332
 scale = Vector2(0.119588, 0.72)
@@ -349,21 +383,21 @@ collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs4/Kolizja"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs4/Kolizja"]
 position = Vector2(291.066, -0.000488281)
 shape = SubResource("RectangleShape2D_fx6at")
 
-[node name="Stairs5" type="Node2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Stairs5" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4652, -634)
 
-[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5"]
+[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 0
 offset_left = 1498.0
 offset_top = 491.001
@@ -373,7 +407,7 @@ scale = Vector2(0.783091, 0.289769)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 0
 offset_left = 1532.0
 offset_top = 476.001
@@ -383,7 +417,7 @@ scale = Vector2(0.668731, 0.317893)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 0
 offset_left = 1568.0
 offset_top = 463.001
@@ -393,7 +427,7 @@ scale = Vector2(0.543894, 0.248747)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 0
 offset_left = 1603.0
 offset_top = 446.001
@@ -403,7 +437,7 @@ scale = Vector2(0.428082, 0.327425)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -418,7 +452,7 @@ scale = Vector2(0.317012, 0.473055)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolorki"]
+[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolorki"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.45
@@ -433,7 +467,7 @@ scale = Vector2(0.202579, 0.494371)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5"]
+[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5"]
 position = Vector2(1569, 501)
 rotation = -0.436332
 scale = Vector2(0.119588, 0.72)
@@ -441,26 +475,26 @@ collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs5/Kolizja"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs5/Kolizja"]
 position = Vector2(291.066, -0.000488281)
 shape = SubResource("RectangleShape2D_fx6at")
 
-[node name="Stairs6" parent="Gameplay/Gameplay/Level/Environment/Level1" instance=ExtResource("5_vuyuk")]
+[node name="Stairs6" parent="Gameplay/Gameplay/Level Design/Environment/Level1" instance=ExtResource("5_vuyuk")]
 position = Vector2(1129, -4425)
 
-[node name="Stairs2" type="Node2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Stairs2" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3881, -336)
 
-[node name="Stairs1" type="Node2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Stairs1" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 
-[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1"]
+[node name="Kolorki" type="Control" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1498.0
 offset_top = 491.001
@@ -469,7 +503,7 @@ offset_bottom = 791.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1532.0
 offset_top = 476.001
@@ -478,7 +512,7 @@ offset_bottom = 776.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1568.0
 offset_top = 463.001
@@ -487,7 +521,7 @@ offset_bottom = 763.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect4" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1603.0
 offset_top = 446.001
@@ -496,7 +530,7 @@ offset_bottom = 746.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect5" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1639.0
 offset_top = 426.001
@@ -505,7 +539,7 @@ offset_bottom = 726.001
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolorki"]
+[node name="ColorRect6" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolorki"]
 layout_mode = 0
 offset_left = 1675.0
 offset_top = 406.0
@@ -514,7 +548,7 @@ offset_bottom = 706.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1"]
+[node name="Kolizja" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1"]
 position = Vector2(1569, 501)
 rotation = -0.436332
 scale = Vector2(0.119588, 0.72)
@@ -522,395 +556,395 @@ collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Stairs1/Kolizja"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Stairs1/Kolizja"]
 position = Vector2(259.578, 0)
 shape = SubResource("RectangleShape2D_fx6at")
 
-[node name="Block" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(-132, -101)
 scale = Vector2(1, 1.48)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block2" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block2" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(912, 543.001)
 scale = Vector2(0.742506, 0.599362)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block2"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block2"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block2"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block3" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block3" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1130, 494)
 scale = Vector2(1.27959, 0.72)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block3"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block3"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block3"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block5" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block5" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1709, 406)
 scale = Vector2(0.420439, 3.84133)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block5"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block5"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block5"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block7" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block7" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1836, 407)
 scale = Vector2(0.620444, 3.84133)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block7"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block7"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block7"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block8" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block8" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1999, 526)
 scale = Vector2(0.140444, 3.84133)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block8"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block8"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block8"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block9" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block9" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2219, 362)
 scale = Vector2(0.300453, 0.121337)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block9"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block9"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block9"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block6" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block6" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1702, 29)
 scale = Vector2(1.28606, 0.534376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block6"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block6"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block6"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block6"]
 position = Vector2(165.428, 82.339)
 shape = SubResource("RectangleShape2D_0rudt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block6"]
 position = Vector2(285.368, 40.7017)
 shape = SubResource("RectangleShape2D_ffv4n")
 
-[node name="Block10" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block10" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1726, -128)
 scale = Vector2(1.28606, 0.534376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block10"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block10"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block10"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block11" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block11" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1923, -419)
 scale = Vector2(1.28606, 0.534376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block11"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block11"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block11"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block19" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block19" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1746, -267)
 scale = Vector2(1.28606, 0.534376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block19"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block19"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block19"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block19"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block18" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block18" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2282, -376)
 scale = Vector2(0.326063, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block18"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block18"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block18"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block18"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block20" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block20" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2268, -427)
 scale = Vector2(0.326063, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block20"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block20"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block20"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block20"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block21" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block21" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2071, -461.001)
 scale = Vector2(0.326063, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block21"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block21"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block21"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block21"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block22" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block22" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2248, -484.999)
 scale = Vector2(0.326063, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block22"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block22"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block22"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block22"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block23" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block23" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1710, -26.0003)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block23"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block23"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block23"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block23"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block24" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block24" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1736, -51)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block24"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block24"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block24"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block24"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block25" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block25" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1762, -62.0003)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block25"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block25"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block25"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block25"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block26" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block26" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1831, -70.0003)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block26"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block26"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block26"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block26"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block27" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block27" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1907, -55.9997)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block27"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block27"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block27"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block27"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block28" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block28" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1932, -43.9997)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block28"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block28"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block28"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block28"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block29" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block29" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(1941, -65.0006)
 scale = Vector2(0.0860632, 0.894376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block29"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block29"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block29"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block29"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block50" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block50" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2077, 174)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block50"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block50"]
 offset_left = -15.0
 offset_top = -15.0
 offset_right = 15.0
@@ -918,606 +952,606 @@ offset_bottom = 15.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block50"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block50"]
 shape = SubResource("RectangleShape2D_w3xxm")
 
-[node name="Block56" parent="Gameplay/Gameplay/Level/Environment/Level1" instance=ExtResource("6_3cifj")]
+[node name="Block56" parent="Gameplay/Gameplay/Level Design/Environment/Level1" instance=ExtResource("6_3cifj")]
 
-[node name="Block12" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block12" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2294, 40.0003)
 scale = Vector2(1.28606, 0.654376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block12"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block12"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block12"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block13" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block13" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2309, 231)
 scale = Vector2(1.28606, 0.534376)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block13"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block13"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block13"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block14" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block14" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2191, 600)
 scale = Vector2(0.227673, 0.442191)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block14"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block14"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block14"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block41" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block41" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2024, 667)
 scale = Vector2(2.30713, 0.292132)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block41"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block41"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block41"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block41"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block15" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block15" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2453, 531)
 scale = Vector2(0.72794, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block15"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block15"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block15"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block15"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block30" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block30" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2526, 226)
 scale = Vector2(0.494083, 0.765046)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block30"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block30"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block30"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block30"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block32" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block32" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3409, 585)
 scale = Vector2(0.72794, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block32"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block32"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block32"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block32"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block33" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block33" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3624, 499.001)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block33"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block33"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block33"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block33"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block34" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block34" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4041, 402)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block34"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block34"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block34"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block34"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block35" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block35" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4630, 256)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block35"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block35"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block35"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block35"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block36" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block36" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3689, 593)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block36"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block36"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block36"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block36"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block40" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block40" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(3960, 631)
 scale = Vector2(0.268463, 0.262872)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block40"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block40"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block40"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block40"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block37" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block37" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4103, 525)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block37"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block37"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block37"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block37"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block38" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block38" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4580, 289)
 scale = Vector2(0.32795, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block38"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block38"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block38"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block38"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block39" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block39" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(4726, 243)
 scale = Vector2(2.1525, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block39"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block39"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block39"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block39"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block42" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block42" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5584, 68.0003)
 scale = Vector2(0.144146, 2.12052)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block42"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block42"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block42"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block42"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block44" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block44" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5626, 205)
 scale = Vector2(0.144146, 2.12052)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block44"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block44"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block44"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block44"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block45" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block45" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5669, 322)
 scale = Vector2(0.144146, 2.12052)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block45"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block45"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block45"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block45"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block46" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block46" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5772, 190.999)
 scale = Vector2(0.144146, 2.12052)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block46"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block46"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block46"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block46"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block47" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block47" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5690, 435)
 scale = Vector2(0.2646, 2.73292)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block47"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block47"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block47"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block47"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block48" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block48" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6025, -122)
 scale = Vector2(0.4246, 1.2929)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block48"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block48"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block48"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block48"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block49" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block49" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6358, -230)
 scale = Vector2(0.216683, 1.75533)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block49"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block49"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block49"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block49"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block51" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block51" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6422, -230)
 scale = Vector2(0.54258, 0.119933)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block51"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block51"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block51"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block51"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block52" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block52" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6372, -214)
 scale = Vector2(0.569556, 0.111936)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block52"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block52"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block52"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block52"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block53" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block53" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6375, -220)
 scale = Vector2(0.208519, 0.546377)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block53"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block53"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block53"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block53"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block54" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block54" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6385, -212)
 scale = Vector2(0.244404, 0.267926)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block54"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block54"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block54"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block54"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block55" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block55" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(6405, -204)
 scale = Vector2(0.259119, 0.130101)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block55"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block55"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block55"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block55"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block16" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block16" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2618, 570)
 scale = Vector2(0.72794, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block16"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block16"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block16"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block16"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block17" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block17" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2702, 629)
 scale = Vector2(0.72794, 1.34701)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block17"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block17"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block17"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block17"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block57" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block57" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5577, 67)
 scale = Vector2(0.119588, 0.72)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="Block58" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block58" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5816, -40.0007)
 scale = Vector2(0.119588, 0.72)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="Block69" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block69" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(5782, -25.0006)
 scale = Vector2(0.119588, 0.72)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block69"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block69"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block69"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block69"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block0" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block0" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(-112, 329)
 scale = Vector2(1, 1.28)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block0"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block0"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block0"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Block1" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Block1" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(-83, 507)
 scale = Vector2(1, 1.28)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Block1"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block1"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Block1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Block1"]
 position = Vector2(150, 150)
 shape = SubResource("RectangleShape2D_k72wi")
 
-[node name="Floor" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Floor" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(286, 646)
 scale = Vector2(0.2, 1)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor"]
 offset_left = -500.0
 offset_right = 1500.0
 offset_bottom = 20.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor"]
 position = Vector2(500, 10)
 shape = SubResource("RectangleShape2D_lpeq8")
 
-[node name="Floor2" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Floor2" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(614, 628)
 scale = Vector2(0.2, 1)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor2"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor2"]
 offset_left = -500.0
 offset_right = 1500.0
 offset_bottom = 20.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor2"]
 position = Vector2(500, 10)
 shape = SubResource("RectangleShape2D_lpeq8")
 
-[node name="Floor3" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Floor3" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(467, 646)
 rotation = -0.334259
 scale = Vector2(0.0366243, 1.15247)
@@ -1525,75 +1559,79 @@ collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor3"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor3"]
 offset_left = -500.0
 offset_right = 1500.0
 offset_bottom = 20.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor3"]
 position = Vector2(500, 10)
 shape = SubResource("RectangleShape2D_lpeq8")
 
-[node name="Floor1" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level1"]
+[node name="Floor1" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1"]
 position = Vector2(2464, 650)
 scale = Vector2(0.787363, 5.31996)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_fdvim")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor1"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor1"]
 offset_right = 5000.0
 offset_bottom = 20.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level1/Floor1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level1/Floor1"]
 position = Vector2(2500, 10)
 shape = SubResource("RectangleShape2D_gxmnd")
 
-[node name="Level2" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+[node name="Level2" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment"]
 
-[node name="Block56" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block56" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(7304, -223)
 scale = Vector2(0.636693, 0.183152)
 
-[node name="Block57" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block57" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(7425, -171)
 
-[node name="Block72" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7492, -80)
+[node name="Block72" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9166, 15)
 scale = Vector2(1.93927, 0.886104)
 
-[node name="Block73" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7950, 23)
+[node name="Block158" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7487, -233)
+scale = Vector2(5.68368, 1.38004)
+
+[node name="Block73" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9624, 118)
 scale = Vector2(0.412468, 3.63004)
 
-[node name="Block98" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8048, -78)
+[node name="Block98" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9722, 17)
 scale = Vector2(0.488874, 3.17744)
 
-[node name="Block99" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(8097, 771)
+[node name="Block99" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(9771, 866)
 scale = Vector2(0.180094, 0.651463)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block99"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block99"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block99"]
+[node name="ColorRect3" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block99"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block99"]
+[node name="ColorRect2" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block99"]
 offset_left = -366.474
 offset_top = 210.296
 offset_right = -66.4743
@@ -1601,573 +1639,762 @@ offset_bottom = 510.296
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block152" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(8234, 514)
+[node name="Block152" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(9908, 609)
 scale = Vector2(0.136968, 0.64677)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block152"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block152"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block153" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(8164, 665)
+[node name="Block153" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(9838, 760)
 scale = Vector2(0.136968, 0.64677)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block153"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block153"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block100" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8118, 701)
+[node name="Block100" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9792, 796)
 scale = Vector2(0.167953, 0.65483)
 
-[node name="Block107" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8190, 478)
+[node name="Block107" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9864, 573)
 scale = Vector2(0.167953, 0.65483)
 
-[node name="Block108" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8223, 526)
+[node name="Block108" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9897, 621)
 scale = Vector2(0.144944, 0.65483)
 
-[node name="Block109" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8284, 408)
+[node name="Block109" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9958, 503)
 scale = Vector2(0.184842, 0.65483)
 
-[node name="Block114" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8254, 429)
+[node name="Block114" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9928, 524)
 scale = Vector2(0.167953, 0.65483)
 
-[node name="Block110" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8289, 251)
+[node name="Block110" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9963, 346)
 scale = Vector2(0.167953, 0.65483)
 
-[node name="Block111" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8194, -81)
+[node name="Block111" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9868, 14)
 scale = Vector2(0.381632, 2.12961)
 
-[node name="Block112" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8194, -81)
+[node name="Block112" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9868, 14)
 scale = Vector2(0.644484, 1.5089)
 
-[node name="Block121" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8354, -83)
+[node name="Block121" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10028, 12)
 scale = Vector2(0.328107, 1.08952)
 
-[node name="Block122" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8900, -89)
+[node name="Block122" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10574, 6)
 scale = Vector2(0.328107, 1.08952)
 
-[node name="Block123" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8843, -136)
+[node name="Block123" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10517, -41)
 scale = Vector2(0.328107, 1.08952)
 
-[node name="Block116" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9093, -81)
+[node name="Block116" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10767, 14)
 scale = Vector2(0.644484, 1.5089)
 
-[node name="Block117" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8991, -131)
+[node name="Block117" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10665, -36)
 scale = Vector2(0.644484, 1.5089)
 
-[node name="Block118" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9267, 26)
+[node name="Block118" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10941, 121)
 scale = Vector2(0.644484, 1.5089)
 
-[node name="Block127" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9430, -347)
+[node name="Block127" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11104, -252)
 scale = Vector2(0.531194, 2.39515)
 
-[node name="Block133" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11946, -429)
+[node name="Block133" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13620, -334)
 scale = Vector2(0.531194, 2.39515)
 
-[node name="Block139" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(12004, 271)
+[node name="Block139" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13678, 366)
 scale = Vector2(0.338662, 2.44715)
 
-[node name="Block144" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11892, 1714)
+[node name="Block144" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13566, 1809)
 scale = Vector2(1.1074, 0.318357)
 
-[node name="Block145" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11892, 1714)
+[node name="Block145" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13566, 1809)
 scale = Vector2(1.1074, 0.318357)
 
-[node name="Block101" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8085, 792)
+[node name="Block101" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9759, 887)
 scale = Vector2(0.110871, 0.65483)
 
-[node name="Block102" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8055, 856)
+[node name="Block102" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9729, 951)
 scale = Vector2(0.108999, 0.577952)
 
-[node name="Block154" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(8062, 857)
+[node name="Block154" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(9736, 952)
 scale = Vector2(0.108999, 0.577952)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_kwhg2")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block154"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block154"]
 offset_left = 45.872
 offset_right = 345.872
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block74" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8089, 1472)
+[node name="Block74" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9763, 1567)
 scale = Vector2(1.34841, 0.314461)
 
-[node name="Block103" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8362, 1234)
+[node name="Block103" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10036, 1329)
 scale = Vector2(0.288458, 0.843381)
 
-[node name="Block115" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9223, 1241)
+[node name="Block115" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10897, 1336)
 scale = Vector2(1.18853, 0.314396)
 
-[node name="Block120" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9245, 1316)
+[node name="Block120" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10919, 1411)
 scale = Vector2(1.07581, 0.199732)
 
-[node name="Block126" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9559, 1241)
+[node name="Block126" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11233, 1336)
 scale = Vector2(0.323552, 0.104883)
 
-[node name="Block128" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(9620, 1240)
+[node name="Block128" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(11294, 1335)
 scale = Vector2(0.213408, 0.0878642)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_wty7j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level2/Block128"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block128"]
 position = Vector2(150, 161.381)
 shape = SubResource("RectangleShape2D_woite")
 
-[node name="Block137" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(11658, 1292)
+[node name="Block137" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(13332, 1387)
 scale = Vector2(0.257175, 0.0878642)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_wty7j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level2/Block137"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block137"]
 position = Vector2(136.094, -113.811)
 shape = SubResource("RectangleShape2D_woite")
 
-[node name="Block138" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(11895, 1780)
+[node name="Block138" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(13569, 1875)
 scale = Vector2(0.393962, 0.0878642)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_wty7j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level/Environment/Level2/Block138"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block138"]
 position = Vector2(150, 161.381)
 shape = SubResource("RectangleShape2D_woite")
 
-[node name="Block124" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9245, 1316)
+[node name="Block124" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10919, 1411)
 scale = Vector2(0.991601, 0.670725)
 
-[node name="Block129" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9561, 1271)
+[node name="Block129" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11235, 1366)
 scale = Vector2(0.248906, 1.35816)
 
-[node name="Block130" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9636, 1391)
+[node name="Block130" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11310, 1486)
 scale = Vector2(0.248906, 1.35816)
 
-[node name="Block131" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9711, 1490)
+[node name="Block131" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11385, 1585)
 scale = Vector2(3.1718, 0.291245)
 
-[node name="Block140" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11310, 1504)
+[node name="Block140" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(12984, 1599)
 scale = Vector2(1.17213, 0.588473)
 
-[node name="Block141" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(10965, 1605)
+[node name="Block141" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(12639, 1700)
 scale = Vector2(1.17213, 0.588473)
 
-[node name="Block142" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11559, 1697)
+[node name="Block142" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13233, 1792)
 scale = Vector2(1.17213, 0.588473)
 
-[node name="Block143" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11404, 1594)
+[node name="Block143" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13078, 1689)
 scale = Vector2(1.17213, 0.588473)
 
-[node name="Block132" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(10619, 1463)
+[node name="Block132" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(12293, 1558)
 scale = Vector2(1.32374, 0.220385)
 
-[node name="Block134" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(10624, 1365)
+[node name="Block134" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(12298, 1460)
 scale = Vector2(1.7399, 0.331441)
 
-[node name="Block135" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11028, 1516)
+[node name="Block135" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(12702, 1611)
 rotation = -0.401976
 scale = Vector2(2.2058, 0.339222)
 
-[node name="Block136" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(11882, 1705)
+[node name="Block136" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(13556, 1800)
 rotation = -2.07222
 scale = Vector2(1.9431, 0.42558)
 
-[node name="Block104" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9223, 1289)
+[node name="Block104" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10897, 1384)
 scale = Vector2(0.684545, 0.448613)
 
-[node name="Block113" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9083, 710)
+[node name="Block113" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10757, 805)
 scale = Vector2(1.13025, 0.219395)
 
-[node name="Block119" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9167, 743)
+[node name="Block119" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10841, 838)
 scale = Vector2(1.13025, 0.219395)
 
-[node name="Block105" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9244, 1424)
+[node name="Block105" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10918, 1519)
 scale = Vector2(0.684545, 0.448613)
 
-[node name="Block106" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9203, 1551)
+[node name="Block106" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10877, 1646)
 scale = Vector2(0.684545, 0.448613)
 
-[node name="Block75" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8135, 1526)
+[node name="Block75" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9809, 1621)
 scale = Vector2(1.46294, 0.289332)
 
-[node name="Block79" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8309, 1611)
+[node name="Block79" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9983, 1706)
 scale = Vector2(1.10817, 0.383912)
 
-[node name="Block87" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8287, 1600)
+[node name="Block87" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9961, 1695)
 scale = Vector2(0.760939, 0.214131)
 
-[node name="Block82" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8347, 1685)
+[node name="Block82" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10021, 1780)
 scale = Vector2(0.981444, 0.395541)
 
-[node name="Block94" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8326, 1958)
+[node name="Block94" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10000, 2053)
 scale = Vector2(0.981444, 0.395541)
 
-[node name="Block95" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8363, 1876)
+[node name="Block95" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10037, 1971)
 scale = Vector2(0.981444, 0.395541)
 
-[node name="Block85" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8453, 1895)
+[node name="Block85" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10127, 1990)
 scale = Vector2(1.03234, 0.302087)
 
-[node name="Block86" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8510, 1964)
+[node name="Block86" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10184, 2059)
 scale = Vector2(1.12034, 0.72461)
 
-[node name="Block76" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7576, 2346)
+[node name="Block76" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9250, 2441)
 scale = Vector2(3.32493, 0.367689)
 
-[node name="Block92" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7090, 1984)
+[node name="Block92" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8767, 2080)
 scale = Vector2(3.32493, 0.367689)
 
-[node name="Block93" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7944, 2022)
+[node name="Block93" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9618, 2117)
 scale = Vector2(2.04495, 0.367689)
 
-[node name="Block83" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8386, 1906)
+[node name="Block83" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10060, 2001)
 scale = Vector2(3.19787, -0.79718)
 
-[node name="Block84" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(8543, 2465)
+[node name="Block84" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(10217, 2560)
 scale = Vector2(1.04867, -1.71354)
 
-[node name="Block77" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7576, 2346)
+[node name="Block77" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9253, 2442)
 scale = Vector2(-0.977555, -1.6693)
 
-[node name="Block80" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7688, 2450)
+[node name="Block80" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9362, 2545)
 scale = Vector2(-0.577555, -1.6693)
 
-[node name="Block81" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7745, 2685)
+[node name="Block81" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9419, 2780)
 scale = Vector2(-0.217555, -1.6693)
 
-[node name="Block78" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7071, 1963)
+[node name="Block78" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8745, 2058)
 scale = Vector2(-0.500462, -2.47525)
 
-[node name="Block88" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7308, 2442)
+[node name="Block88" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8982, 2537)
 scale = Vector2(-0.845073, -2.42955)
 
-[node name="Block59" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block59" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(7401, -171)
 scale = Vector2(0.0877618, 0.295797)
 
-[node name="Block60" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block60" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(7391, -175)
 scale = Vector2(0.0516895, 0.128489)
 
-[node name="Block55" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block55" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6363, 291)
 scale = Vector2(0.207318, 2.05174)
 
-[node name="Block58" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block58" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6425, 496)
 scale = Vector2(0.637742, 2.15852)
 
-[node name="Block67" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block67" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6600, 598)
 rotation = -0.936955
 scale = Vector2(0.227127, 1.09948)
 
-[node name="Block125" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(9636, 1297)
+[node name="Block125" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(11310, 1392)
 rotation = -0.936955
 scale = Vector2(0.227127, 1.09948)
 
-[node name="Block70" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block70" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6955, 694)
 rotation = -1.12105
 scale = Vector2(0.155434, 0.42454)
 
-[node name="Block71" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block71" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6821, 674)
 rotation = -1.87311
 scale = Vector2(0.11543, 0.446885)
 
-[node name="Block68" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block68" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6862, 685)
 rotation = -0.677369
 scale = Vector2(0.227127, 0.868428)
 
-[node name="Block69" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block69" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(7056, 818)
 rotation = -1.88139
 scale = Vector2(0.227127, 0.868428)
 
-[node name="Block62" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block62" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6609, 749)
 scale = Vector2(0.599721, 2.15852)
 
-[node name="Block63" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7120, 795)
+[node name="Block63" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8794, 890)
 scale = Vector2(0.635749, 0.662568)
 
-[node name="Block96" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(7059, 1043)
+[node name="Block96" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8734, 1138)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block96"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block96"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block146" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(7042, 1108)
+[node name="Block146" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8717, 1203)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block146"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block146"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block149" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(6977, 1236)
+[node name="Block149" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8652, 1331)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block149"]
-offset_right = 300.0
-offset_bottom = 300.0
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block149"]
+offset_left = 4665.4
+offset_top = 221.759
+offset_right = 4965.4
+offset_bottom = 521.759
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block150" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(6977, 1373)
+[node name="Block150" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8652, 1468)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block150"]
-offset_right = 300.0
-offset_bottom = 300.0
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block150"]
+offset_left = 4665.4
+offset_top = 221.759
+offset_right = 4965.4
+offset_bottom = 521.759
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block151" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(6992, 1150)
+[node name="Block151" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8667, 1245)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block151"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block151"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block147" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7101, 995)
+[node name="Block147" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8776, 1090)
 scale = Vector2(0.358812, 0.428393)
 
-[node name="Block148" type="StaticBody2D" parent="Gameplay/Gameplay/Level/Environment/Level2"]
-position = Vector2(7101, 995)
+[node name="Block148" type="StaticBody2D" parent="Gameplay/Gameplay/Level Design/Environment/Level2"]
+position = Vector2(8776, 1090)
 scale = Vector2(0.358812, 0.428393)
 collision_layer = 49
 collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
-[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level/Environment/Level2/Block148"]
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block148"]
 offset_right = 300.0
 offset_bottom = 300.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Block97" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7131, 919)
+[node name="Block97" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8805, 1014)
 scale = Vector2(0.358812, 0.428393)
 
-[node name="Block90" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7012, 945)
+[node name="Block90" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8686, 1040)
 scale = Vector2(0.635749, 0.662568)
 
-[node name="Block64" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(6939, 871)
+[node name="Block64" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8613, 966)
 scale = Vector2(0.655935, 1.22453)
 
-[node name="Block65" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block65" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6787, 787)
 scale = Vector2(0.537692, 2.65051)
 
-[node name="Block66" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
+[node name="Block66" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
 position = Vector2(6425, 361)
 scale = Vector2(0.218319, 0.59401)
 
-[node name="Block61" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7299, 741)
+[node name="Block61" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8973, 836)
 scale = Vector2(0.877829, 0.501759)
 
-[node name="Block89" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7306, 1107)
+[node name="Block155" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7103, 807)
+scale = Vector2(0.635749, 0.662568)
+
+[node name="Block156" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(6922, 883)
+scale = Vector2(0.655935, 1.22453)
+
+[node name="Block157" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7282, 753)
+scale = Vector2(1.51994, 0.519738)
+
+[node name="Block159" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7722, 880)
+scale = Vector2(4.29767, 0.308976)
+
+[node name="Block89" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8980, 1202)
 scale = Vector2(0.696465, 0.147139)
 
-[node name="Block91" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("4_l6t68")]
-position = Vector2(7464, 1007)
+[node name="Block160" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8084, 582)
+scale = Vector2(0.879898, 0.412389)
+
+[node name="Block161" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7784, 102)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block163" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7817, 38)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block164" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(7745, -38)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block168" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8467, 18)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block169" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8491, -75)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block170" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8443, -54)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block165" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8004, 62)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block166" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8101, -23)
+scale = Vector2(0.140784, 0.927095)
+
+[node name="Block162" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(8040, 177)
+scale = Vector2(0.236674, 1.0356)
+
+[node name="Block91" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("4_l6t68")]
+position = Vector2(9138, 1102)
 scale = Vector2(0.174123, 0.474264)
 
-[node name="Drab2" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(7077, 1506)
+[node name="Drab2" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(8751, 1601)
 
-[node name="Drab4" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(7082, 1367)
+[node name="Drab4" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(8757, 1462)
 
-[node name="Drab5" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(7148, 1225)
+[node name="Drab5" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(8823, 1320)
 
-[node name="Drab7" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8086, 1096)
+[node name="Drab6" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(8586, 685)
 
-[node name="Drab8" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8148, 954)
+[node name="Drab7" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(9760, 1191)
 
-[node name="Drab12" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8269, 717)
+[node name="Drab8" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(9822, 1049)
 
-[node name="Drab10" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8202, 860)
+[node name="Drab12" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(9943, 812)
 
-[node name="Drab13" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(8337, 595)
+[node name="Drab10" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(9876, 955)
 
-[node name="Drab9" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("6_3cifj")]
-position = Vector2(7559, 883)
+[node name="Drab13" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(10011, 690)
 
-[node name="ZaDaleki" parent="Gameplay/Gameplay/Level/Environment/Level2" instance=ExtResource("8_m47wa")]
-position = Vector2(34, 914)
+[node name="Drab9" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("6_3cifj")]
+position = Vector2(9233, 978)
 
-[node name="Level3" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+[node name="ZaDaleki" parent="Gameplay/Gameplay/Level Design/Environment/Level2" instance=ExtResource("8_m47wa")]
+position = Vector2(1711, 1010)
 
-[node name="Block55" parent="Gameplay/Gameplay/Level/Environment/Level3" instance=ExtResource("4_l6t68")]
-position = Vector2(12095, 741)
+[node name="Level3" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment"]
 
-[node name="Graf" type="Node2D" parent="Gameplay/Gameplay/Level/Environment"]
+[node name="Block55" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(13769, 836)
 
-[node name="OzGrab" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+[node name="Block56" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(13845, -355)
+scale = Vector2(1.02788, 4.14583)
 
-[node name="OzGrab2" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+[node name="Block57" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14577, 1881)
+scale = Vector2(0.987573, 0.288503)
+
+[node name="Block67" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14553, 2116)
+scale = Vector2(0.987573, 0.288503)
+
+[node name="Block68" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14268, 2111)
+scale = Vector2(0.987573, 0.288503)
+
+[node name="Block69" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14097, 1959)
+scale = Vector2(0.987573, 0.288503)
+
+[node name="Block58" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(16491, 1569)
+scale = Vector2(1.25727, 0.134816)
+
+[node name="Block60" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(16228, 1892)
+scale = Vector2(1.1996, 0.209353)
+
+[node name="Block62" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(15821, 1892)
+scale = Vector2(1.37678, 0.200602)
+
+[node name="Block63" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14787, 2324)
+scale = Vector2(5.15515, 0.256439)
+
+[node name="Block64" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14837, 2120)
+scale = Vector2(0.508628, 0.708207)
+
+[node name="Block65" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14971, 2129)
+scale = Vector2(0.458552, 1.04056)
+
+[node name="Block66" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(15092, 2200)
+scale = Vector2(0.458552, 1.04056)
+
+[node name="Block61" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(16566, 1892)
+scale = Vector2(1.1996, 0.209353)
+
+[node name="Block59" parent="Gameplay/Gameplay/Level Design/Environment/Level3" instance=ExtResource("4_l6t68")]
+position = Vector2(14825, 1675)
+scale = Vector2(0.846095, 0.139711)
+
+[node name="PlatformBreaking2w" parent="Gameplay/Gameplay/Level Design/Environment" instance=ExtResource("9_4wm2h")]
+position = Vector2(14261, 2843)
+texture_file = ExtResource("10_i576s")
+
+[node name="PlatformBreaking2w2" parent="Gameplay/Gameplay/Level Design/Environment" instance=ExtResource("9_4wm2h")]
+position = Vector2(14863, 1905)
+scale = Vector2(9.63999, 1)
+texture_file = ExtResource("14_7bosm")
+
+[node name="Puzzles2" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment"]
+position = Vector2(15910, 1042)
+
+[node name="PushableObject" parent="Gameplay/Gameplay/Level Design/Environment/Puzzles2" instance=ExtResource("11_g5e1w")]
+position = Vector2(-890, 536)
+scale = Vector2(1, 2.4)
+
+[node name="PushableObject2" parent="Gameplay/Gameplay/Level Design/Environment/Puzzles2" instance=ExtResource("11_g5e1w")]
+position = Vector2(950, 772)
+scale = Vector2(1, 1.95461)
+
+[node name="PressurePlate" parent="Gameplay/Gameplay/Level Design/Environment/Puzzles2" node_paths=PackedStringArray("connected_thing") instance=ExtResource("12_mhn8g")]
+position = Vector2(68, 1285)
+connected_thing = NodePath("../Door")
+
+[node name="Door" parent="Gameplay/Gameplay/Level Design/Environment/Puzzles2" instance=ExtResource("13_vpe5f")]
+position = Vector2(637, 712)
+scale = Vector2(1, 0.574831)
+
+[node name="Graf" type="Node2D" parent="Gameplay/Gameplay/Level Design/Environment"]
+
+[node name="OzGrab" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+
+[node name="OzGrab2" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
 position = Vector2(2218, 361)
 
-[node name="OzGrab4" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+[node name="OzGrab4" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
 position = Vector2(2189, 601)
 
-[node name="OzGrab5" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
+[node name="OzGrab5" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
 position = Vector2(2233, 599)
 
-[node name="OzGrab8" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(7547, 867)
+[node name="OzGrab8" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9221, 962)
 
-[node name="OzGrab10" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(7137, 1210)
+[node name="OzGrab9" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8572, 674)
 
-[node name="OzGrab11" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(7070, 1352)
+[node name="OzGrab13" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8321, 582)
 
-[node name="OzGrab12" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(7067, 1490)
+[node name="OzGrab10" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8811, 1305)
 
-[node name="OzGrab13" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8085, 1471)
+[node name="OzGrab11" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8744, 1447)
 
-[node name="OzGrab14" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8074, 1080)
+[node name="OzGrab12" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(8741, 1585)
 
-[node name="OzGrab15" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8138, 937)
+[node name="OzGrab14" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9748, 1175)
 
-[node name="OzGrab16" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8191, 844)
+[node name="OzGrab15" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9812, 1032)
 
-[node name="OzGrab17" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8258, 702)
+[node name="OzGrab16" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9865, 939)
 
-[node name="OzGrab18" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(8327, 580)
+[node name="OzGrab17" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(9932, 797)
 
-[node name="OzGrab19" parent="Gameplay/Gameplay/Level/Environment/Graf" instance=ExtResource("9_27djh")]
-position = Vector2(9080, 712)
+[node name="OzGrab18" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(10001, 675)
+
+[node name="OzGrab19" parent="Gameplay/Gameplay/Level Design/Environment/Graf" instance=ExtResource("9_27djh")]
+position = Vector2(10754, 807)
+
+[node name="Tlo" type="Node2D" parent="Gameplay/Gameplay"]
+
+[node name="UI2" parent="Gameplay/Gameplay/Tlo" instance=ExtResource("5_mf4ai")]
+z_index = -3
+offset_left = -5340.0
+offset_top = -2531.0
+offset_right = -5340.0
+offset_bottom = -2531.0
+script = null
+
+[node name="TextureRect" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -6
+offset_left = 4931.0
+offset_top = -898.0
+offset_right = 5931.0
+offset_bottom = -157.0
+scale = Vector2(4.23164, 3.93185)
+texture = ExtResource("12_1llap")
+
+[node name="TextureRect2" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -7
+offset_left = 3701.0
+offset_top = -371.0
+offset_right = 4981.0
+offset_bottom = 557.0
+scale = Vector2(1.66074, 1.39718)
+texture = ExtResource("13_cax8e")
+
+[node name="TextureRect3" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+z_index = -6
+offset_left = 5732.0
+offset_top = -950.0
+offset_right = 7012.0
+offset_bottom = 586.0
+scale = Vector2(0.614995, 0.757229)
+texture = ExtResource("14_7bosm")
 
 [editable path="Gameplay/Gameplay"]
 [editable path="Gameplay/Gameplay/ProgrammersPlayground"]
