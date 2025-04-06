@@ -2398,6 +2398,7 @@ scale = Vector2(0.614995, 0.757229)
 texture = ExtResource("14_7bosm")
 
 [node name="Music\\" parent="." instance=ExtResource("20_grj2p")]
+bus = &"Music"
 
 [editable path="Gameplay/Gameplay"]
 [editable path="Gameplay/Gameplay/ProgrammersPlayground"]
