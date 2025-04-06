@@ -1,0 +1,1472 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3c70npwevy82"]
+
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://bloczek.tscn" id="1_ksr0x"]
+[ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://schody.tscn" id="2_p75vx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52ui8"]
+size = Vector2(3802.4, 55.9604)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx6at"]
+size = Vector2(2191.62, 84.0352)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k72wi"]
+size = Vector2(300, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rudt"]
+size = Vector2(207.222, 433.859)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffv4n"]
+size = Vector2(29.9907, 382.69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3xxm"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpeq8"]
+size = Vector2(2000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxmnd"]
+size = Vector2(5000, 20)
+
+[node name="Level" type="Node2D"]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Level2" type="Node" parent="Environment"]
+
+[node name="Block55" parent="Environment" instance=ExtResource("1_ksr0x")]
+position = Vector2(6363, 291)
+scale = Vector2(0.207318, 2.05174)
+
+[node name="Level 1" type="Node" parent="Environment"]
+
+[node name="Stairs3" type="Node2D" parent="Environment/Level 1"]
+position = Vector2(3704, -251)
+
+[node name="Kolorki" type="Control" parent="Environment/Level 1/Stairs3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 0
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 0
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 0
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 0
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.857596, 1.03872)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.683787, 1.26853)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+scale = Vector2(0.57897, 1)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+scale = Vector2(0.557614, 0.812491)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.725
+anchor_top = -3.15003
+anchor_right = 6.725
+anchor_bottom = -3.15002
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.509707, 1.22886)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.725
+anchor_top = -3.15003
+anchor_right = 6.725
+anchor_bottom = -3.15002
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.376596, 1.32991)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.725
+anchor_top = -3.15003
+anchor_right = 6.725
+anchor_bottom = -3.15002
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+scale = Vector2(0.259535, 0.94965)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.725
+anchor_top = -3.15003
+anchor_right = 6.725
+anchor_bottom = -3.15002
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+scale = Vector2(0.162392, 0.759104)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Kolorki" type="Control" parent="Environment/Level 1/Stairs3/Kolorki"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 183.0
+offset_top = -94.0
+offset_right = 223.0
+offset_bottom = -54.0
+
+[node name="Kolizja" type="StaticBody2D" parent="Environment/Level 1/Stairs3"]
+position = Vector2(1569, 501)
+rotation = -0.436332
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Stairs3/Kolizja"]
+position = Vector2(1106.51, -17.979)
+shape = SubResource("RectangleShape2D_52ui8")
+
+[node name="Stairs4" type="Node2D" parent="Environment/Level 1"]
+position = Vector2(4319, -526)
+
+[node name="Kolorki" type="Control" parent="Environment/Level 1/Stairs4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+scale = Vector2(0.636111, 1.02436)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+scale = Vector2(0.586414, 1.01834)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.418418, 0.988432)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Environment/Level 1/Stairs4/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.145152, 1.16203)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Kolizja" type="StaticBody2D" parent="Environment/Level 1/Stairs4"]
+position = Vector2(1569, 501)
+rotation = -0.436332
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Stairs4/Kolizja"]
+position = Vector2(291.066, -0.000488281)
+shape = SubResource("RectangleShape2D_fx6at")
+
+[node name="Stairs5" type="Node2D" parent="Environment/Level 1"]
+position = Vector2(4652, -634)
+
+[node name="Kolorki" type="Control" parent="Environment/Level 1/Stairs5"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.783091, 0.289769)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.668731, 0.317893)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+scale = Vector2(0.543894, 0.248747)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+scale = Vector2(0.428082, 0.327425)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+scale = Vector2(0.317012, 0.473055)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Environment/Level 1/Stairs5/Kolorki"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.45
+anchor_top = -1.60003
+anchor_right = 3.45
+anchor_bottom = -1.60002
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+scale = Vector2(0.202579, 0.494371)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Kolizja" type="StaticBody2D" parent="Environment/Level 1/Stairs5"]
+position = Vector2(1569, 501)
+rotation = -0.436332
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Stairs5/Kolizja"]
+position = Vector2(291.066, -0.000488281)
+shape = SubResource("RectangleShape2D_fx6at")
+
+[node name="Stairs6" parent="Environment/Level 1" instance=ExtResource("2_p75vx")]
+position = Vector2(1129, -4425)
+
+[node name="Stairs2" type="Node2D" parent="Environment/Level 1"]
+position = Vector2(3881, -336)
+
+[node name="Stairs1" type="Node2D" parent="Environment/Level 1"]
+
+[node name="Kolorki" type="Control" parent="Environment/Level 1/Stairs1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1498.0
+offset_top = 491.001
+offset_right = 1798.0
+offset_bottom = 791.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1532.0
+offset_top = 476.001
+offset_right = 1832.0
+offset_bottom = 776.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1568.0
+offset_top = 463.001
+offset_right = 1868.0
+offset_bottom = 763.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1603.0
+offset_top = 446.001
+offset_right = 1903.0
+offset_bottom = 746.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1639.0
+offset_top = 426.001
+offset_right = 1939.0
+offset_bottom = 726.001
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Environment/Level 1/Stairs1/Kolorki"]
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 406.0
+offset_right = 1975.0
+offset_bottom = 706.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Kolizja" type="StaticBody2D" parent="Environment/Level 1/Stairs1"]
+position = Vector2(1569, 501)
+rotation = -0.436332
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Stairs1/Kolizja"]
+position = Vector2(259.578, 0)
+shape = SubResource("RectangleShape2D_fx6at")
+
+[node name="Block" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(-124, 106.999)
+scale = Vector2(1, 1.28)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block2" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(912, 543.001)
+scale = Vector2(0.719591, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block2"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block2"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block3" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1130, 494)
+scale = Vector2(1.27959, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block3"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block3"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block5" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1709, 406)
+scale = Vector2(0.420439, 3.84133)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block5"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block5"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block7" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1836, 407)
+scale = Vector2(0.620444, 3.84133)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block7"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block7"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block8" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1999, 526)
+scale = Vector2(0.140444, 3.84133)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block8"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block8"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block9" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2219, 362)
+scale = Vector2(0.300453, 0.121337)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block9"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block9"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block6" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1702, 29)
+scale = Vector2(1.28606, 0.534376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block6"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Level 1/Block6"]
+position = Vector2(165.428, 82.339)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0rudt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block6"]
+position = Vector2(285.368, 40.7017)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ffv4n")
+
+[node name="Block10" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1726, -128)
+scale = Vector2(1.28606, 0.534376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block10"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block10"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block11" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1923, -419)
+scale = Vector2(1.28606, 0.534376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block11"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block11"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block19" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1746, -267)
+scale = Vector2(1.28606, 0.534376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block19"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block19"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block18" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2282, -376)
+scale = Vector2(0.326063, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block18"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block18"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block20" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2268, -427)
+scale = Vector2(0.326063, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block20"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block20"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block21" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2071, -461.001)
+scale = Vector2(0.326063, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block21"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block21"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block22" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2248, -484.999)
+scale = Vector2(0.326063, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block22"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block22"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block23" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1710, -26.0003)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block23"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block23"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block24" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1736, -51)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block24"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block24"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block25" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1762, -62.0003)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block25"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block25"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block26" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1831, -70.0003)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block26"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block26"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block27" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1907, -55.9997)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block27"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block27"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block28" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1932, -43.9997)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block28"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block28"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block29" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1941, -65.0006)
+scale = Vector2(0.0860632, 0.894376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block29"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block29"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block50" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2077, 174)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block50"]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block50"]
+shape = SubResource("RectangleShape2D_w3xxm")
+
+[node name="Block12" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2294, 40.0003)
+scale = Vector2(1.28606, 0.654376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block12"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block12"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block13" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2309, 231)
+scale = Vector2(1.28606, 0.534376)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block13"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block13"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block14" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2204, 590)
+scale = Vector2(0.227673, 0.442191)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block14"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block14"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block15" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2454, 508)
+scale = Vector2(0.72794, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block15"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block15"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block32" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(3409, 585)
+scale = Vector2(0.72794, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block32"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block32"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block33" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(3624, 499.001)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block33"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block33"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block34" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(4041, 402)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block34"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block34"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block35" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(4630, 256)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block35"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block35"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block36" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(3689, 593)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block36"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block36"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block40" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(3960, 631)
+scale = Vector2(0.268463, 0.262872)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block40"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block40"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block37" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(4103, 525)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block37"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block37"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block38" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(4580, 289)
+scale = Vector2(0.32795, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block38"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block38"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block39" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(4726, 243)
+scale = Vector2(2.1525, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block39"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block39"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block42" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5584, 68.0003)
+scale = Vector2(0.144146, 2.12052)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block42"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block42"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block44" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5626, 205)
+scale = Vector2(0.144146, 2.12052)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block44"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block44"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block45" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5669, 322)
+scale = Vector2(0.144146, 2.12052)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block45"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block45"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block46" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5772, 190.999)
+scale = Vector2(0.144146, 2.12052)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block46"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block46"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block47" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5690, 435)
+scale = Vector2(0.2646, 2.73292)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block47"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block47"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block48" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6025, -122)
+scale = Vector2(0.4246, 1.2929)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block48"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block48"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block49" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6358, -230)
+scale = Vector2(0.216683, 1.75533)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block49"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block49"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block51" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6422, -230)
+scale = Vector2(0.54258, 0.119933)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block51"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block51"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block52" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6372, -214)
+scale = Vector2(0.569556, 0.111936)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block52"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block52"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block53" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6375, -220)
+scale = Vector2(0.208519, 0.546377)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block53"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block53"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block54" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6385, -212)
+scale = Vector2(0.244404, 0.267926)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block54"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block54"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block55" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(6405, -204)
+scale = Vector2(0.259119, 0.130101)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block55"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block55"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block16" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2618, 570)
+scale = Vector2(0.72794, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block16"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block16"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block17" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(2702, 629)
+scale = Vector2(0.72794, 1.34701)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block17"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block17"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block57" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5577, 67)
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="Block58" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5816, -40.0007)
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="Block69" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(5782, -25.0006)
+scale = Vector2(0.119588, 0.72)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block69"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block69"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Block0" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(-112, 329)
+scale = Vector2(1, 1.28)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Block0"]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Block0"]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_k72wi")
+
+[node name="Floor" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(286, 646)
+scale = Vector2(0.2, 1)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Floor"]
+offset_left = -500.0
+offset_right = 1500.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Floor"]
+position = Vector2(500, 10)
+shape = SubResource("RectangleShape2D_lpeq8")
+
+[node name="Floor2" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(614, 628)
+scale = Vector2(0.2, 1)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Floor2"]
+offset_left = -500.0
+offset_right = 1500.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Floor2"]
+position = Vector2(500, 10)
+shape = SubResource("RectangleShape2D_lpeq8")
+
+[node name="Floor3" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(467, 646)
+rotation = -0.334259
+scale = Vector2(0.0366243, 1.15247)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Floor3"]
+offset_left = -500.0
+offset_right = 1500.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Floor3"]
+position = Vector2(500, 10)
+shape = SubResource("RectangleShape2D_lpeq8")
+
+[node name="Floor1" type="StaticBody2D" parent="Environment/Level 1"]
+position = Vector2(1800, 650)
+scale = Vector2(0.892641, 5.92228)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level 1/Floor1"]
+offset_right = 5000.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level 1/Floor1"]
+position = Vector2(2500, 10)
+shape = SubResource("RectangleShape2D_gxmnd")
+
+[node name="Block56" parent="Environment" instance=ExtResource("1_ksr0x")]
+position = Vector2(7304, -223)
+scale = Vector2(0.636693, 0.183152)
+
+[node name="Block57" parent="Environment" instance=ExtResource("1_ksr0x")]
+position = Vector2(7425, -171)
+
+[node name="Block59" parent="Environment" instance=ExtResource("1_ksr0x")]
+position = Vector2(7401, -171)
+scale = Vector2(0.0877618, 0.295797)
+
+[node name="Block60" parent="Environment" instance=ExtResource("1_ksr0x")]
+position = Vector2(7391, -175)
+scale = Vector2(0.0516895, 0.128489)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxv3r1w44i2h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_okbey"]
+
+[node name="OzGrab" type="StaticBody2D"]
+position = Vector2(2065, 160)
+scale = Vector2(0.0885882, 0.0905125)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_okbey")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 300.0
+offset_bottom = 300.0
+scale = Vector2(1.03226, 0.762791)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 31.0
+offset_bottom = 40.0
+scale = Vector2(10.0269, 1.80275)
+color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_top = 143.626
+offset_right = 31.0
+offset_bottom = 183.626
+scale = Vector2(9.96228, 2.08691)
+color = Color(0.201527, 0.201527, 0.201527, 1)
