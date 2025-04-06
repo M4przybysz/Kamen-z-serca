@@ -1,8 +1,9 @@
 extends Node2D
 
 @onready var ui: Control = $UI/UI
-@onready var death_menu: Control = $UI/DeathMenu
 @onready var player: CharacterBody2D = $Player
+@onready var death_menu: Control = $"../../Menus/DeathMenu"
+@onready var main: Node = $"../.."
 
 var player_level: int = 1
 var max_hp: int = 2 + player_level
@@ -26,7 +27,7 @@ func decrease_hp(value: int) -> void:
 	if hp >= 0 and hp < max_hp:
 		ui.set_hp(hp)
 	if hp <= 0:
-		death_menu.visible = true
+		main.show_death_menu()
 
 func increase_hp(value: int) -> void:
 	if hp + value < max_hp:

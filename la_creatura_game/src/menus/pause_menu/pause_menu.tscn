@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxp55no4h5r02"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tpoli"]
-font_size = 50
+[ext_resource type="Script" path="res://src/menus/pause_menu/pause_menu.gd" id="1_imqcu"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -10,12 +9,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_imqcu")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-text = "PAUSED"
-label_settings = SubResource("LabelSettings_tpoli")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+offset_left = 710.0
+offset_top = 193.0
+offset_right = 1210.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 50
+text = "Exit the game"
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 1
+offset_left = 710.0
+offset_top = 307.0
+offset_right = 1210.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 50
+text = "Resume the game"
+
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
+[connection signal="button_down" from="Resume" to="." method="_on_resume_button_down"]
