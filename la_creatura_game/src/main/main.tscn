@@ -2046,10 +2046,10 @@ collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
 [node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block149"]
-offset_left = 4665.4
-offset_top = 221.759
-offset_right = 4965.4
-offset_bottom = 521.759
+offset_left = -2.78711
+offset_top = 72.3634
+offset_right = 297.213
+offset_bottom = 372.363
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -2061,10 +2061,10 @@ collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_r2w24")
 
 [node name="ColorRect" type="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Level2/Block150"]
-offset_left = 4665.4
-offset_top = 221.759
-offset_right = 4965.4
-offset_bottom = 521.759
+offset_left = -11.1481
+offset_top = 14.0058
+offset_right = 288.852
+offset_bottom = 314.006
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
