@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=45 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://drep62q3glbr6" path="res://assets/sprites/Player/Skok/chwyt.png" id="2_ff48u"]
@@ -234,7 +234,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
 size = Vector2(50, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or1cx"]
+size = Vector2(20, 50)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 33
 script = ExtResource("1_golh8")
 
 [node name="Timers" type="Node" parent="."]
@@ -258,11 +262,11 @@ disabled = true
 
 [node name="GrabHand" type="RayCast2D" parent="."]
 position = Vector2(0, -49)
-target_position = Vector2(100, 0)
+target_position = Vector2(30, 0)
 
 [node name="GrabCheck" type="RayCast2D" parent="."]
 position = Vector2(0, -44)
-target_position = Vector2(100, 0)
+target_position = Vector2(30, 0)
 
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(0, -50)
@@ -327,11 +331,21 @@ cooldown = 5.0
 color = Color(0.803922, 0.498039, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="PushFix" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushFix"]
+position = Vector2(0, 50)
+shape = SubResource("RectangleShape2D_or1cx")
+
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageTimer" to="." method="_on_damage_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="PushFix" to="." method="_on_push_fix_body_entered"]
+[connection signal="body_exited" from="PushFix" to="." method="_on_push_fix_body_exited"]
 
 [editable path="Feathers/StoneFeather"]
 [editable path="Feathers/CopperFeather"]

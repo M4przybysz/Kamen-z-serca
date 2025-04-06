@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwfjsx6t32cso"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kwhg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woite"]
+size = Vector2(300, 300)
+
+[node name="Block55" type="StaticBody2D"]
+position = Vector2(6888, -186)
+scale = Vector2(0.236673, 0.863151)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_kwhg2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 300.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(150, 150)
+shape = SubResource("RectangleShape2D_woite")

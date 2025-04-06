@@ -9,6 +9,10 @@ extends StaticBody2D
 @export var width: int = 100
 @export var height: int = 25
 @export var break_counter: int = 3
+@export var respawn: bool = true
+@export var ignore_player: bool = false
+@export var detect_blocks: bool = false
+@export var connected_block: RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,16 +24,27 @@ func _ready() -> void:
 	texture_rect.size = Vector2(width, height)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		break_counter -= 1
-		if break_counter == 0 && timer.is_stopped():
-			break_platform()
+	if body.is_in_group("player") && !ignore_player:
+		count_break()
 	
+	if body.is_in_group("pushable_object") && detect_blocks:
+		if connected_block:
+			if body == connected_block:
+				count_break()
+		else:
+			count_break()
+
+func count_break() -> void:
+	break_counter -= 1
+	if break_counter == 0 && timer.is_stopped():
+		break_platform()
+
 func break_platform() -> void:
 	visible = false
 	break_collision.set_deferred("disabled", true)
 	collision.set_deferred("disabled", true)
-	timer.start()
+	if respawn:
+		timer.start()
 
 func _on_timer_timeout() -> void:
 	timer.stop()

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtdi70vm2ahdn"]
+[gd_scene load_steps=3 format=3 uid="uid://dtdi70vm2ahdn"]
+
+[ext_resource type="Script" path="res://src/menus/death_menu/death_menu.gd" id="1_oy743"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4q5h"]
 font_size = 100
@@ -11,12 +13,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oy743")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
+offset_top = 109.0
 offset_right = 1920.0
-offset_bottom = 1080.0
-text = "Skill issue"
+offset_bottom = 383.0
+text = "Umarłeś!"
 label_settings = SubResource("LabelSettings_x4q5h")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="tryagain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 511.0
+offset_right = 1233.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 50
+text = "Spróbuj jeszcze raz"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 370.0
+offset_right = 1233.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 50
+text = "Wyjdź z gry"
+
+[connection signal="button_down" from="tryagain" to="." method="_on_tryagain_button_down"]
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]

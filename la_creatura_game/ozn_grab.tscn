@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://plwcp3g03jva"]
+
+[node name="OznGrab" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 2219.0
+offset_top = 362.0
+offset_right = 2259.0
+offset_bottom = 402.0
+scale = Vector2(0.88, 0.189382)
+color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 2219.0
+offset_top = 375.0
+offset_right = 2259.0
+offset_bottom = 415.0
+scale = Vector2(0.88, 0.189382)
+color = Color(0.446777, 0.446777, 0.446777, 1)
