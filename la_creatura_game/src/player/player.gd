@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 #########################################
 # Input handling
 #########################################
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing) && !isDashing:
 		if isGrabbing:
@@ -164,13 +164,13 @@ func animate_player(direction) -> void:
 func flip_h(direction):
 	if direction > 0:
 		animated_sprite.flip_h = false
-		grab_hand.target_position.x = 100
-		grab_check.target_position.x = 100
+		grab_hand.target_position.x = 30
+		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		grab_hand.target_position.x = -100
-		grab_check.target_position.x = -100
+		grab_hand.target_position.x = -30
+		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
 
 #########################################
@@ -250,3 +250,16 @@ func ascend_to_level_3() -> void:
 	level = 3
 	gameplay.player_level_up()
 	print("Player ascended to level 3 and has acquired bronze feathers.")
+
+#########################################
+# Handling pushable objects
+#########################################
+func _on_push_fix_body_entered(body: Node2D) -> void:
+	if body.is_in_group("pushable_object"):
+		body.collision_layer = 1
+		body.collision_mask = 1
+
+func _on_push_fix_body_exited(body: Node2D) -> void:
+	if body.is_in_group("pushable_object"):
+		body.collision_layer = 32
+		body.collision_mask = 32

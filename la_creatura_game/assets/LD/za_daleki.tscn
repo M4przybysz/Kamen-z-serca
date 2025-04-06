@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm1vjcxraynlk"]
+
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://assets/LD/bloczek.tscn" id="1_cx6p5"]
+
+[node name="ZaDaleki" type="Node2D"]
+
+[node name="Block105" parent="." instance=ExtResource("1_cx6p5")]
+position = Vector2(8329, 319)
+scale = Vector2(0.285235, 0.203448)
+
+[node name="Block106" parent="." instance=ExtResource("1_cx6p5")]
+position = Vector2(9134, 327)
+scale = Vector2(0.285235, 0.203448)
