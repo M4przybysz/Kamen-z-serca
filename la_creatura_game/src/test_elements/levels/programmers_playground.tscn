@@ -144,9 +144,14 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(2500, 10)
 shape = SubResource("RectangleShape2D_dxcl2")
 
-[node name="PlatformBreaking" parent="BuildingBlocks" instance=ExtResource("4_frxwc")]
+[node name="PlatformBreaking" parent="BuildingBlocks" node_paths=PackedStringArray("connected_block") instance=ExtResource("4_frxwc")]
 position = Vector2(-57, 492)
 texture_file = ExtResource("5_x4klb")
+break_counter = 1
+respawn = false
+ignore_player = true
+detect_blocks = true
+connected_block = NodePath("../../Puzzles/PushableObject")
 
 [node name="PlatformBasic" parent="BuildingBlocks" instance=ExtResource("5_8lnfh")]
 position = Vector2(68, 491)
@@ -171,7 +176,7 @@ position = Vector2(2962, 591)
 [node name="Puzzles" type="Node2D" parent="."]
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
-position = Vector2(798, 565)
+position = Vector2(116, 418)
 
 [node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
 position = Vector2(-399, 643)
