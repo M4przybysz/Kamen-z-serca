@@ -13,11 +13,15 @@ extends CharacterBody2D
 @export var movement_speed_input = 100.0
 var movement_speed
 var starting_point: Vector2
-var left_movement_limit: float
-var right_movement_limit: float
+var left_combat_movement_limit: float
+var right_combat_movement_limit: float
+var left_idle_movement_limit: float
+var right_idle_movement_limit: float
 var target: float
-@export var movement_range_left: int = 500
-@export var movement_range_right: int = 500
+@export var combat_movement_range_left: int = 500
+@export var combat_movement_range_right: int = 500
+@export var idle_movement_range_left: int = 300
+@export var idle_movement_range_right: int = 300
 
 # Combat variables
 @export var max_hp: int = 3
@@ -42,8 +46,10 @@ var isWrapping = false
 
 func _ready() -> void:
 	starting_point = global_position
-	left_movement_limit = starting_point.x - movement_range_left
-	right_movement_limit = starting_point.x + movement_range_right
+	left_combat_movement_limit = starting_point.x - combat_movement_range_left
+	right_combat_movement_limit = starting_point.x + combat_movement_range_right
+	left_idle_movement_limit = starting_point.x - idle_movement_range_left
+	right_idle_movement_limit = starting_point.x + idle_movement_range_right
 	hp = max_hp
 	target = global_position.x
 	movement_speed = movement_speed_input
@@ -191,7 +197,7 @@ func stop_wrapping() -> void:
 	wrap_cooldown_timer.start()
 
 func check_distance_to_player() -> void:
-	if player.global_position.x < left_movement_limit || player.global_position.x > right_movement_limit || global_position.x > right_movement_limit || global_position.x < left_movement_limit:
+	if player.global_position.x < left_combat_movement_limit || player.global_position.x > right_combat_movement_limit || global_position.x > right_combat_movement_limit || global_position.x < left_combat_movement_limit:
 		seesPlayer = false
 		if hp < max_hp && reset_hp_timer.is_stopped():
 			reset_hp_timer.start()
@@ -215,7 +221,7 @@ func combat_movement() -> void:
 func idle_movement() -> void:
 	movement_speed = movement_speed_input
 	if global_position.x < target + 3 && global_position.x > target - 3:
-		target = randi() % int(right_movement_limit - left_movement_limit) + left_movement_limit
+		target = randi() % int(right_idle_movement_limit - left_idle_movement_limit) + left_idle_movement_limit
 
 	if target > global_position.x:
 		direction = 1
