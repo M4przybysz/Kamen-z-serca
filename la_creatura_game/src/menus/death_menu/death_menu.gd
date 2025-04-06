@@ -1,4 +1,5 @@
 extends Control
+
 @onready var main: Node = $"../.."
 
 func _on_exit_button_down() -> void:

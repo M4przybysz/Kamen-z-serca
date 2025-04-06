@@ -1,5 +1,7 @@
 extends Control
+
 @onready var main: Node = $"../.."
+@onready var music: AudioStreamPlayer = $"../../Music"
 
 func _on_exit_button_down() -> void:
 	main.get_tree().quit()

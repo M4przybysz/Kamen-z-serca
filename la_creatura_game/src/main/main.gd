@@ -2,6 +2,7 @@ extends Node
 
 @onready var pause_menu: Control = $Menus/PauseMenu
 @onready var death_menu: Control = $Menus/DeathMenu
+@onready var music: AudioStreamPlayer = $Music
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _input(_event: InputEvent) -> void:
 		if !get_tree().paused:
 			pause_menu.visible=true
 			get_tree().paused=true
+			music.stop()
 		else:
 			pause_menu.visible=false
 			get_tree().paused=false
