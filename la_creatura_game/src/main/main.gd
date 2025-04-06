@@ -1,5 +1,8 @@
 extends Node
 
+@onready var pause_menu: Control = $Menus/PauseMenu
+@onready var death_menu: Control = $Menus/DeathMenu
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,4 +13,13 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+		if !get_tree().paused:
+			pause_menu.visible=true
+			get_tree().paused=true
+		else:
+			pause_menu.visible=false
+			get_tree().paused=false
+
+func show_death_menu():
+	death_menu.visible=true
+	get_tree().paused=true
