@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var ui: Control = $"../../../UI/UI"
+@onready var main: Node = $"../../.."
+@onready var ui: Control = $"../UI/UI"
 
 var dialogue_triggered: bool = false
 
@@ -9,3 +10,4 @@ func _on_body_entered(body: Node2D) -> void:
 		ui.print_scene()
 		dialogue_triggered = true
 		get_tree().paused = true
+		main.lock_pause = true

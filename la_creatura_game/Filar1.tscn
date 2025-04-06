@@ -16,7 +16,7 @@ offset_top = -68.0
 offset_right = 41.0
 offset_bottom = 12.0
 scale = Vector2(1.04635, 1.85819)
-color = Color(0, 0, 1, 1)
+color = Color(0.144063, 0.144063, 0.144062, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]

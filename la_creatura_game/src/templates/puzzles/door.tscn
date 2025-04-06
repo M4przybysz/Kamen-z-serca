@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr0v8ycq04gce"]
+[gd_scene load_steps=3 format=3 uid="uid://nvpnjg2xb8f4"]
 
 [ext_resource type="Script" path="res://src/templates/puzzles/door.gd" id="1_tqgie"]
 
@@ -13,7 +13,7 @@ offset_left = -10.0
 offset_top = -250.0
 offset_right = 10.0
 offset_bottom = 250.0
-color = Color(0, 0, 1, 1)
+color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1u5sh")

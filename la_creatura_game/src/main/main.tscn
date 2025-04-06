@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=53 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
@@ -14,17 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="8_nt06g"]
 [ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="9_d4mmf"]
 [ext_resource type="Texture2D" uid="uid://djsl6n6kplnd3" path="res://Zapad.png" id="9_i0enb"]
-[ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="10_sevm8"]
+[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="10_sevm8"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://assets/LD/oz_grab.tscn" id="11_na5r5"]
 [ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/Asety zew/skały 2.png" id="12_1llap"]
 [ext_resource type="PackedScene" uid="uid://h673kowl7hhg" path="res://Filar1.tscn" id="12_rdmqs"]
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/Asety zew/gory.png" id="13_cax8e"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="13_heijf"]
+[ext_resource type="Texture2D" uid="uid://c6tp70ofhftua" path="res://assets/sprites/Spikes/tex_kolce.png" id="13_l2ico"]
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/Asety zew/skala-gen.png" id="14_7bosm"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="19_h3637"]
+[ext_resource type="PackedScene" uid="uid://bsus3i2nxy6a6" path="res://src/dialogues/dialogue_trigger.tscn" id="19_wfr7d"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://czarn.tscn" id="20_csg0q"]
 [ext_resource type="PackedScene" uid="uid://bxceiueli7cx8" path="res://assets/sound/music/music.tscn" id="20_grj2p"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/Spike_test.tscn" id="21_cpkt6"]
+[ext_resource type="Texture2D" uid="uid://6f4o44vmvb32" path="res://assets/sprites/Tree/drzewo.png" id="22_somfw"]
+[ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/End_screen/end_screen.tscn" id="27_qlefr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -3350,9 +3354,15 @@ scale = Vector2(0.789954, 0.274169)
 position = Vector2(23736, 786)
 scale = Vector2(0.789954, 0.274169)
 
+[node name="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Finish/Block63" index="0"]
+visible = false
+
 [node name="Block70" parent="Gameplay/Gameplay/Level Design/Environment/Finish" instance=ExtResource("5_rpplg")]
 position = Vector2(23973, 762)
 scale = Vector2(2.65548, 0.394257)
+
+[node name="ColorRect" parent="Gameplay/Gameplay/Level Design/Environment/Finish/Block70" index="0"]
+visible = false
 
 [node name="Block64" parent="Gameplay/Gameplay/Level Design/Environment/Finish" instance=ExtResource("5_rpplg")]
 position = Vector2(23719, 867)
@@ -3652,6 +3662,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Stairs9" parent="Gameplay/Gameplay/Level Design/Environment/Finish" instance=ExtResource("3_0ry0y")]
 position = Vector2(23622, 840)
 
+[node name="TextureRect" type="TextureRect" parent="Gameplay/Gameplay/Level Design"]
+offset_left = 9730.0
+offset_top = 1639.0
+offset_right = 10754.0
+offset_bottom = 2663.0
+rotation = -1.5708
+scale = Vector2(0.0499418, 0.0479971)
+texture = ExtResource("13_l2ico")
+
 [node name="Level 4" type="Node2D" parent="Gameplay/Gameplay"]
 position = Vector2(18606, -152)
 rotation = 3.14159
@@ -3803,7 +3822,7 @@ position = Vector2(1372, -7.00047)
 position = Vector2(-2541.96, 2436)
 
 [node name="Player" parent="Gameplay/Gameplay" instance=ExtResource("13_heijf")]
-position = Vector2(500, 400)
+position = Vector2(777, 295)
 collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Gameplay/Gameplay/Player"]
@@ -3818,6 +3837,35 @@ position_smoothing_speed = 10.0
 
 [node name="Tlo" type="Node2D" parent="Gameplay/Gameplay"]
 
+[node name="UI2" parent="Gameplay/Gameplay/Tlo" instance=ExtResource("5_mf4ai")]
+process_mode = 0
+z_index = -3
+offset_left = -5340.0
+offset_top = -2531.0
+offset_right = -5340.0
+offset_bottom = -2531.0
+script = null
+
+[node name="TextureRect" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -6
+offset_left = 4931.0
+offset_top = -898.0
+offset_right = 5931.0
+offset_bottom = -157.0
+scale = Vector2(4.23164, 3.93185)
+texture = ExtResource("12_1llap")
+
+[node name="TextureRect2" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
+visible = false
+z_index = -7
+offset_left = 3701.0
+offset_top = -371.0
+offset_right = 4981.0
+offset_bottom = 557.0
+scale = Vector2(1.66074, 1.39718)
+texture = ExtResource("13_cax8e")
+
 [node name="TextureRect3" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
 z_index = -6
 offset_left = 5732.0
@@ -3826,7 +3874,12 @@ offset_right = 7012.0
 offset_bottom = 586.0
 scale = Vector2(0.614995, 0.757229)
 texture = ExtResource("14_7bosm")
-metadata/_edit_use_anchors_ = true
+
+[node name="DialogueTrigger" parent="Gameplay/Gameplay" instance=ExtResource("19_wfr7d")]
+position = Vector2(24017, 736)
+
+[node name="CollisionShape2D" parent="Gameplay/Gameplay/DialogueTrigger" index="0"]
+position = Vector2(123.5, -130.5)
 
 [node name="PushableObject3" parent="Gameplay" instance=ExtResource("12_rdmqs")]
 position = Vector2(16252, 1549)
@@ -4011,6 +4064,17 @@ scale = Vector2(807.404, 844.284)
 [node name="SpikeTest4" parent="Gameplay/enemies" instance=ExtResource("21_cpkt6")]
 position = Vector2(5765, 371)
 
+[node name="Block26" parent="Gameplay/enemies" instance=ExtResource("20_csg0q")]
+position = Vector2(24767, 752)
+scale = Vector2(6.43998, 3.728)
+
+[node name="TextureRect" type="TextureRect" parent="Gameplay/enemies"]
+offset_left = 23576.0
+offset_top = -1886.0
+offset_right = 26458.0
+offset_bottom = 1210.0
+texture = ExtResource("22_somfw")
+
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
 
@@ -4022,9 +4086,16 @@ visible = false
 [node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
 visible = false
 
+[node name="EndScreen" parent="Menus" instance=ExtResource("27_qlefr")]
+visible = false
+
 [node name="Music" parent="." instance=ExtResource("20_grj2p")]
 autoplay = false
 bus = &"Music"
 
 [connection signal="timeout" from="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]
+
+[editable path="Gameplay/Gameplay/Level Design/Environment/Finish/Block63"]
+[editable path="Gameplay/Gameplay/Level Design/Environment/Finish/Block70"]
+[editable path="Gameplay/Gameplay/DialogueTrigger"]

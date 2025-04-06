@@ -4,6 +4,7 @@ extends Control
 @onready var narrator: RichTextLabel = $DialogueInterface/Narrator
 @onready var dynamic_dialogue_box: RichTextLabel = $DialogueInterface/DynamicDialogueBox
 @onready var dialogue_timer: Timer = $DialogueInterface/DialogueTimer
+@onready var main: Node = $"../../../.."
 
 # HP_Interface variables
 var screen_break1: Array
@@ -90,6 +91,7 @@ func print_line() -> void:
 		dialogue_timer.start()
 	else:
 		dialogue_interface.visible = false
+		main.show_end_screen()
 		# trigger end screen
 
 func _on_dialogue_timer_timeout() -> void:
