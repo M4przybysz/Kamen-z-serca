@@ -174,21 +174,25 @@ func decrease_hp(value: int) -> void:
 	else:
 		hp = 0
 	print(hp)
+	
 
 func die() -> void:
 	# TODO: Add death animation
 	print("Deleting enemy...")
+	$AnimationPlayer.play("dead")
 	queue_free()
 
 func charge() -> void:
 	target = player.global_position.x
 	movement_speed = 4 * movement_speed_input
 	charge_timer.start()
+	$AnimationPlayer.play("charge")
 
 func wrap_round_player() -> void:
 	movement_speed = 0
 	isWrapping = true
 	global_position = player.global_position + Vector2(0, 25)
+	$AnimationPlayer.play("attack_Draugr")
 
 func stop_wrapping() -> void:
 	movement_speed = movement_speed_input
@@ -217,6 +221,7 @@ func combat_movement() -> void:
 		direction = -1
 	else:
 		direction = 0
+	$AnimationPlayer.play("idle_movement")
 
 func idle_movement() -> void:
 	movement_speed = movement_speed_input
@@ -229,3 +234,4 @@ func idle_movement() -> void:
 		direction = -1
 	else:
 		direction = 0
+	$AnimationPlayer.play("idle_movement")
