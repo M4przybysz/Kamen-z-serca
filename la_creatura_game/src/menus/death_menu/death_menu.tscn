@@ -26,6 +26,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tryagain" type="Button" parent="."]
+layout_mode = 0
 offset_left = 733.0
 offset_top = 511.0
 offset_right = 1233.0
