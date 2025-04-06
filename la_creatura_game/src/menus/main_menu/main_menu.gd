@@ -13,5 +13,4 @@ func _on_exit_button_down() -> void:
 func _on_play_button_down() -> void:
 	hide()
 	get_tree().paused=false
-	music.play()
 	

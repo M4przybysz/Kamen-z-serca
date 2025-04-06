@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=8 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
+[ext_resource type="Texture2D" uid="uid://cngywphy75ux3" path="res://assets/sprites/UI/Damage_1.png" id="2_ce1ua"]
+[ext_resource type="Texture2D" uid="uid://droc0kmq2av10" path="res://assets/sprites/UI/Damage_2.png" id="3_fq08q"]
+[ext_resource type="Texture2D" uid="uid://cgh2kq5yjfg2i" path="res://assets/sprites/UI/Damage_3.png" id="4_ae1f5"]
+[ext_resource type="Texture2D" uid="uid://p6rdm7s7fr7k" path="res://assets/sprites/UI/Damage_4.png" id="5_bvfud"]
+[ext_resource type="Texture2D" uid="uid://b3kynodfdu0x4" path="res://assets/sprites/UI/Damage_5.png" id="6_xwhx4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u2e53"]
 
@@ -33,49 +38,50 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HP1" type="ColorRect" parent="HP_interface"]
+[node name="HP1" type="TextureRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
 offset_right = 45.0
 offset_bottom = 45.0
+texture = ExtResource("2_ce1ua")
 
-[node name="HP2" type="ColorRect" parent="HP_interface"]
+[node name="HP2" type="TextureRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
 offset_left = 50.0
 offset_top = 5.0
 offset_right = 90.0
 offset_bottom = 45.0
-color = Color(1, 0.558333, 0.5, 1)
+texture = ExtResource("3_fq08q")
 
-[node name="HP3" type="ColorRect" parent="HP_interface"]
+[node name="HP3" type="TextureRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
 offset_left = 95.0
 offset_top = 5.0
 offset_right = 135.0
 offset_bottom = 45.0
-color = Color(1, 0, 0, 1)
+texture = ExtResource("4_ae1f5")
 
-[node name="HP4" type="ColorRect" parent="HP_interface"]
+[node name="HP4" type="TextureRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
 offset_left = 140.0
 offset_top = 5.0
 offset_right = 180.0
 offset_bottom = 45.0
-color = Color(0.5, 0, 0, 1)
+texture = ExtResource("5_bvfud")
 
-[node name="HP5" type="ColorRect" parent="HP_interface"]
+[node name="HP5" type="TextureRect" parent="HP_interface"]
 visible = false
 layout_mode = 0
 offset_left = 185.0
 offset_top = 5.0
 offset_right = 225.0
 offset_bottom = 45.0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("6_xwhx4")
 
 [node name="DialogueInterface" type="Control" parent="."]
 visible = false
