@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
 [ext_resource type="PackedScene" uid="uid://bh2xgx3s7m7po" path="res://src/levels/level_design4.tscn" id="3_7xlne"]
-[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_r6rdt"]
 [ext_resource type="PackedScene" uid="uid://dgufgkfvdt0c" path="res://src/levels/level_4.tscn" id="6_qa371"]
 
 [node name="Gameplay" type="Node2D"]

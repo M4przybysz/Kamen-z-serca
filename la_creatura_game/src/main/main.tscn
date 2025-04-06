@@ -3818,35 +3818,6 @@ position_smoothing_speed = 10.0
 
 [node name="Tlo" type="Node2D" parent="Gameplay/Gameplay"]
 
-[node name="UI2" parent="Gameplay/Gameplay/Tlo" instance=ExtResource("5_mf4ai")]
-process_mode = 0
-z_index = -3
-offset_left = -5340.0
-offset_top = -2531.0
-offset_right = -5340.0
-offset_bottom = -2531.0
-script = null
-
-[node name="TextureRect" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
-visible = false
-z_index = -6
-offset_left = 4931.0
-offset_top = -898.0
-offset_right = 5931.0
-offset_bottom = -157.0
-scale = Vector2(4.23164, 3.93185)
-texture = ExtResource("12_1llap")
-
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
-visible = false
-z_index = -7
-offset_left = 3701.0
-offset_top = -371.0
-offset_right = 4981.0
-offset_bottom = 557.0
-scale = Vector2(1.66074, 1.39718)
-texture = ExtResource("13_cax8e")
-
 [node name="TextureRect3" type="TextureRect" parent="Gameplay/Gameplay/Tlo"]
 z_index = -6
 offset_left = 5732.0
@@ -3855,6 +3826,7 @@ offset_right = 7012.0
 offset_bottom = 586.0
 scale = Vector2(0.614995, 0.757229)
 texture = ExtResource("14_7bosm")
+metadata/_edit_use_anchors_ = true
 
 [node name="PushableObject3" parent="Gameplay" instance=ExtResource("12_rdmqs")]
 position = Vector2(16252, 1549)
@@ -4050,7 +4022,8 @@ visible = false
 [node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
 visible = false
 
-[node name="Music\\" parent="." instance=ExtResource("20_grj2p")]
+[node name="Music" parent="." instance=ExtResource("20_grj2p")]
+autoplay = false
 bus = &"Music"
 
 [connection signal="timeout" from="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Gameplay/Gameplay/Level Design/Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
