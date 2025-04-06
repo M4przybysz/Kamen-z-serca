@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_u2e53"]
+
 [node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +21,7 @@ offset_top = 63.0
 offset_right = 195.0
 offset_bottom = 86.0
 text = "Hiii, Nith hereeee :DD"
+label_settings = SubResource("LabelSettings_u2e53")
 
 [node name="HP_interface" type="Control" parent="."]
 anchors_preset = 0
@@ -72,3 +76,31 @@ offset_top = 5.0
 offset_right = 225.0
 offset_bottom = 45.0
 color = Color(0, 0, 0, 1)
+
+[node name="DialogueInterface" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="DialogueTimer" type="Timer" parent="DialogueInterface"]
+wait_time = 5.0
+
+[node name="Narrator" type="RichTextLabel" parent="DialogueInterface"]
+layout_mode = 0
+offset_top = 900.0
+offset_right = 1920.0
+offset_bottom = 1000.0
+bbcode_enabled = true
+text = "[center][i]Narrator:[/i][/center]"
+
+[node name="DynamicDialogueBox" type="RichTextLabel" parent="DialogueInterface"]
+layout_mode = 0
+offset_left = 1315.0
+offset_top = 343.0
+offset_right = 1615.0
+offset_bottom = 443.0
+bbcode_enabled = true
+text = "Plaeholder text"
+
+[connection signal="timeout" from="DialogueInterface/DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
