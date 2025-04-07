@@ -3822,7 +3822,7 @@ position = Vector2(1372, -7.00047)
 position = Vector2(-2541.96, 2436)
 
 [node name="Player" parent="Gameplay/Gameplay" instance=ExtResource("13_heijf")]
-position = Vector2(777, 295)
+position = Vector2(831, 446)
 collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Gameplay/Gameplay/Player"]

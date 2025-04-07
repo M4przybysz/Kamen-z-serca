@@ -182,7 +182,7 @@ func check_edge_grab() -> void:
 	var checkHand = not grab_hand.is_colliding()
 	var checkGrabHeight = grab_check.is_colliding()
 	
-	var canGrab = isFalling && checkHand && checkGrabHeight && not isGrabbing && is_on_wall_only()
+	var canGrab = isFalling && checkHand && checkGrabHeight && not isGrabbing
 	if canGrab: 
 		isGrabbing = true
 		animate_player(last_direction)
