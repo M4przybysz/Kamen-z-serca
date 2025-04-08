@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="5_vaxbg"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="6_gvhq0"]
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/Asety zew/skala-gen.png" id="7_2jbq3"]
-[ext_resource type="PackedScene" uid="uid://b15myy0524ijj" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_hxnnm"]
-[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_x73ce"]
-[ext_resource type="PackedScene" uid="uid://dr0v8ycq04gce" path="res://src/templates/puzzles/door.tscn" id="10_1xmlq"]
+[ext_resource type="PackedScene" uid="uid://gtogh0qnp8um" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_hxnnm"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_x73ce"]
+[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="10_1xmlq"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://assets/LD/oz_grab.tscn" id="11_u26m0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
