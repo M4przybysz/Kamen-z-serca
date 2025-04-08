@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
 
 @onready var player: CharacterBody2D = $"../../Gameplay/Player"
+#@export var player: CharacterBody2D
 
 # Movement variables 
 @export var movement_speed_input = 100.0
@@ -108,10 +109,10 @@ func state_machine():
 			else:
 				combat_movement()
 		"wrap_round_player":
-			if !playerInWrapRange && !isWrapping:
+			if (!playerInWrapRange && !isWrapping) || player.isDashing:
 				state = "combat"
 			else:
-				wrap_round_player()
+				wrap_around_player()
 		"charge":
 			if !playerInChargeRange:
 				state = "combat"
@@ -188,7 +189,7 @@ func charge() -> void:
 	charge_timer.start()
 	$AnimationPlayer.play("charge")
 
-func wrap_round_player() -> void:
+func wrap_around_player() -> void:
 	movement_speed = 0
 	isWrapping = true
 	global_position = player.global_position + Vector2(0, 25)
