@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var charge_timer: Timer = $Timers/ChargeTimer
 @onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
 
-@onready var player: CharacterBody2D = $"../../Gameplay/Player"
+@onready var player: CharacterBody2D = $"../../../Player"
 #@export var player: CharacterBody2D
 
 # Movement variables 
