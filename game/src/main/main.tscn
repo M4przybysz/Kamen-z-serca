@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3gn4eoxa2lh0"]
+
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
+[ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
+[ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
+[ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
+[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="PackedScene" uid="uid://bxceiueli7cx8" path="res://assets/sound/music/music.tscn" id="20_grj2p"]
+[ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_2nm2t")
+
+[node name="Gameplay" type="Node" parent="."]
+process_mode = 1
+
+[node name="Gameplay" parent="Gameplay" instance=ExtResource("2_lamct")]
+
+[node name="Menus" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
+visible = false
+
+[node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
+visible = false
+
+[node name="EndScreen" parent="Menus" instance=ExtResource("27_qlefr")]
+visible = false
+
+[node name="MainMenu" parent="Menus" instance=ExtResource("2_s1k2l")]
+
+[node name="Music" parent="." instance=ExtResource("20_grj2p")]
+autoplay = false
+bus = &"Music"
