@@ -5,18 +5,17 @@ extends Node
 @onready var main_menu: Control = $Menus/MainMenu
 @onready var end_screen: Control = $Menus/EndScreen
 
-var lock_pause = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().paused = true
+	main_menu.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("quit") && main_menu.visible == false && lock_pause == false:
+	if Input.is_action_just_pressed("quit") && main_menu.visible == false:
 		if !get_tree().paused:
 			pause_menu.visible = true
 			get_tree().paused = true

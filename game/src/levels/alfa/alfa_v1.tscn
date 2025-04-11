@@ -4044,10 +4044,7 @@ offset_bottom = 1210.0
 texture = ExtResource("19_n3byk")
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("20_ljk8w")]
-position = Vector2(24017, 736)
-
-[node name="CollisionShape2D" parent="DialogueTrigger" index="0"]
-position = Vector2(123.5, -130.5)
+position = Vector2(24187, 631)
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]

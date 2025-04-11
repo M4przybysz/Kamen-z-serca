@@ -32,6 +32,7 @@ visible = false
 main = NodePath("../..")
 
 [node name="MainMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("2_s1k2l")]
+visible = false
 main = NodePath("../..")
 
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]

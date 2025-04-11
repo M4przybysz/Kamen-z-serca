@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/dialogues/dialogue_trigger.gd" id="1_jlyt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuhdi"]
-size = Vector2(50, 50)
+size = Vector2(270, 262)
 
 [node name="DialogueTrigger" type="Area2D"]
 script = ExtResource("1_jlyt3")

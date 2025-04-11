@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ksq8wfn4fmk"]
+
+[ext_resource type="Texture2D" uid="uid://d1wbhmbqm18e" path="res://assets/sprites/environment/Trawa.png" id="1_neirl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_615ma"]
+size = Vector2(5022, 20)
+
+[node name="ExampleLevelELements" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_right = 5012.0
+offset_bottom = 139.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 200673.0
+offset_bottom = 985.0
+scale = Vector2(0.025, 0.04)
+texture = ExtResource("1_neirl")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2511, 10)
+shape = SubResource("RectangleShape2D_615ma")
