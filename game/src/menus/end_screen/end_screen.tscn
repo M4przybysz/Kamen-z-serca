@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci0n5flna6gp5"]
+
+[ext_resource type="Script" path="res://src/menus/end_screen/end_screen.gd" id="1_nia8w"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nia8w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 74.0
+offset_right = 1665.0
+offset_bottom = 974.0
+color = Color(0.47, 0.413443, 0.2914, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 118.0
+offset_right = 1510.0
+offset_bottom = 753.0
+theme_override_font_sizes/font_size = 40
+text = "Ciąg dalszy nastąpi
+
+Nadszedł Twój koniec. Nasz bohater natrafił właśnie na swoją pierwszą prawdziwą próbę. W innych okolicznościach czasu wykonałby ten krok, jednak nie nadszedł on jeszcze. 
+
+Dziękujemy za zagranie w demo “Kamień z Serca”. Mamy nadzieję, że Twoje serce jeszcze nie skamieniało ani nie uległo, żadnej innej poważnej zmianie - w końcu, nadejdzie na to jeszcze odpowiedni czas!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 835.0
+offset_right = 1164.0
+offset_bottom = 912.0
+theme_override_font_sizes/font_size = 50
+text = "Wyjdź"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

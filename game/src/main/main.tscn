@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3gn4eoxa2lh0"]
+
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
+[ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
+[ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
+[ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
+[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="PackedScene" uid="uid://dwwfucydt1x2p" path="res://src/music/music.tscn" id="7_fc0gw"]
+[ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_2nm2t")
+
+[node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
+main = NodePath("..")
+death_menu = NodePath("../Menus/DeathMenu")
+
+[node name="Menus" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("3_apl8s")]
+visible = false
+main = NodePath("../..")
+
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("5_saqgk")]
+visible = false
+main = NodePath("../..")
+
+[node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
+visible = false
+main = NodePath("../..")
+
+[node name="MainMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("2_s1k2l")]
+visible = false
+main = NodePath("../..")
+
+[node name="Music" parent="." instance=ExtResource("7_fc0gw")]
