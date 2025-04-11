@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var ui: Control = $UI/UI
 @onready var player: CharacterBody2D = $Player
-@onready var death_menu: Control = $"../../Menus/DeathMenu"
-@onready var main: Node = $"../.."
+
+@export var main: Node
+@export var death_menu: Control
 
 var player_level: int = 1
 var max_hp: int = 2 + player_level

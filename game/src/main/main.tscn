@@ -5,32 +5,33 @@
 [ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
 [ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
-[ext_resource type="PackedScene" uid="uid://bxceiueli7cx8" path="res://assets/sound/music/music.tscn" id="20_grj2p"]
+[ext_resource type="PackedScene" uid="uid://dwwfucydt1x2p" path="res://src/music/music.tscn" id="7_fc0gw"]
 [ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
 
 [node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_2nm2t")
 
-[node name="Gameplay" type="Node" parent="."]
-process_mode = 1
-
-[node name="Gameplay" parent="Gameplay" instance=ExtResource("2_lamct")]
+[node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
+main = NodePath("..")
+death_menu = NodePath("../Menus/DeathMenu")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
+[node name="PauseMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("3_apl8s")]
 visible = false
+main = NodePath("../..")
 
-[node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("5_saqgk")]
 visible = false
+main = NodePath("../..")
 
-[node name="EndScreen" parent="Menus" instance=ExtResource("27_qlefr")]
+[node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
 visible = false
+main = NodePath("../..")
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("2_s1k2l")]
+[node name="MainMenu" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("2_s1k2l")]
+main = NodePath("../..")
 
-[node name="Music" parent="." instance=ExtResource("20_grj2p")]
-autoplay = false
-bus = &"Music"
+[node name="Music" parent="." instance=ExtResource("7_fc0gw")]

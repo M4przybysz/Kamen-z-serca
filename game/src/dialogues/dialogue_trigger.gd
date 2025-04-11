@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var main: Node = $"../../../.."
+@export var main: Node
 @onready var ui: Control = $"../../UI/UI"
 
 var dialogue_triggered: bool = false

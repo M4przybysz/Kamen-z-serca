@@ -4,7 +4,7 @@ extends Control
 @onready var narrator: RichTextLabel = $DialogueInterface/Narrator
 @onready var dynamic_dialogue_box: RichTextLabel = $DialogueInterface/DynamicDialogueBox
 @onready var dialogue_timer: Timer = $DialogueInterface/DialogueTimer
-@onready var main: Node = $"../../../.."
+@export var main: Node
 
 # HP_Interface variables
 var screen_break1: Array

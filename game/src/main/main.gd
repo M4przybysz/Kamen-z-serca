@@ -4,7 +4,6 @@ extends Node
 @onready var death_menu: Control = $Menus/DeathMenu
 @onready var main_menu: Control = $Menus/MainMenu
 @onready var end_screen: Control = $Menus/EndScreen
-@onready var music: AudioStreamPlayer = $Music
 
 var lock_pause = false
 
