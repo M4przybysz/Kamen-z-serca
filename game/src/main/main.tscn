@@ -16,6 +16,9 @@ script = ExtResource("1_2nm2t")
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
+main = NodePath("../../..")
+
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
 
@@ -33,3 +36,5 @@ main = NodePath("../..")
 visible = false
 
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
+
+[editable path="Gameplay"]
