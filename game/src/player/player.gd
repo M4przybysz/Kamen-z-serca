@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
-@onready var feathers: Node2D = $Feathers
+@onready var throwables: Node2D = $Throwables
 
 # Assign physical collision to variables
 @onready var normal_collision: CollisionShape2D = $NormalCollision
@@ -103,12 +103,12 @@ func _input(_event: InputEvent) -> void:
 		wing_attack_timer.start()
 	
 	# Handle range feather attacks
-	if Input.is_action_just_pressed("feather_throw"):
-		if !feathers.get_children()[active_feather].isOnCooldown:
-			feathers.get_children()[active_feather].throw(last_direction)
+	if Input.is_action_just_pressed("throw"):
+		if !throwables.get_children()[active_feather].isOnCooldown:
+			throwables.get_children()[active_feather].throw(last_direction)
 	
 	# Handle changing feather type
-	if Input.is_action_just_pressed("change_feather_down"):
+	if Input.is_action_just_pressed("change_throwable_down"):
 		if level == 1:
 			pass
 		elif level == 2:
@@ -118,7 +118,7 @@ func _input(_event: InputEvent) -> void:
 			if active_feather == 2: active_feather = 0
 			else: active_feather += 1
 	
-	if Input.is_action_just_pressed("change_feather_up"):
+	if Input.is_action_just_pressed("change_throwable_up"):
 		if level == 2:
 			if active_feather == 0: active_feather += 1
 			else: active_feather -= 1
@@ -128,14 +128,11 @@ func _input(_event: InputEvent) -> void:
 		else: 
 			pass
 	
-	# handle spear attacks
-	if Input.is_action_just_pressed("spear_attack"):
-		pass
-	elif Input.is_action_pressed("spear_attack"):
-		pass
-	
 	# Handle shield use
 	if Input.is_action_just_pressed("shield_use") && isShieldUnlocked:
+		pass
+	
+	if Input.is_action_just_pressed("action"):
 		pass
 
 #########################################
@@ -244,12 +241,12 @@ func _on_damage_timer_timeout() -> void:
 func ascend_to_level_2() -> void:
 	level = 2
 	gameplay.player_level_up()
-	print("Player ascended to level 2 and has acquired copper feathers.")
+	print("Player ascended to level 2 and has acquired copper throwables.")
 
 func ascend_to_level_3() -> void:
 	level = 3
 	gameplay.player_level_up()
-	print("Player ascended to level 3 and has acquired bronze feathers.")
+	print("Player ascended to level 3 and has acquired bronze throwables.")
 
 #########################################
 # Handling pushable objects

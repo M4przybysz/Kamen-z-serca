@@ -300,34 +300,34 @@ offset_right = 25.0
 offset_bottom = 50.0
 color = Color(1, 0, 0, 0.501961)
 
-[node name="Feathers" type="Node2D" parent="."]
+[node name="Throwables" type="Node2D" parent="."]
 
-[node name="StoneFeather" parent="Feathers" instance=ExtResource("3_pj0em")]
+[node name="StoneFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
 visible = false
 
-[node name="Hitbox" parent="Feathers/StoneFeather" index="2" groups=["stone_feather"]]
+[node name="Hitbox" parent="Throwables/StoneFeather" index="2" groups=["stone_feather"]]
 
-[node name="ColorRect" parent="Feathers/StoneFeather" index="3"]
+[node name="ColorRect" parent="Throwables/StoneFeather" index="3"]
 color = Color(0.501961, 0.501961, 0.501961, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CopperFeather" parent="Feathers" instance=ExtResource("3_pj0em")]
+[node name="CopperFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
 visible = false
 cooldown = 4.0
 
-[node name="Hitbox" parent="Feathers/CopperFeather" index="2" groups=["copper_feather"]]
+[node name="Hitbox" parent="Throwables/CopperFeather" index="2" groups=["copper_feather"]]
 
-[node name="ColorRect" parent="Feathers/CopperFeather" index="3"]
+[node name="ColorRect" parent="Throwables/CopperFeather" index="3"]
 color = Color(0.721569, 0.45098, 0.2, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="BronzeFeather" parent="Feathers" instance=ExtResource("3_pj0em")]
+[node name="BronzeFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
 visible = false
 cooldown = 5.0
 
-[node name="Hitbox" parent="Feathers/BronzeFeather" index="2" groups=["bronze_feather"]]
+[node name="Hitbox" parent="Throwables/BronzeFeather" index="2" groups=["bronze_feather"]]
 
-[node name="ColorRect" parent="Feathers/BronzeFeather" index="3"]
+[node name="ColorRect" parent="Throwables/BronzeFeather" index="3"]
 color = Color(0.803922, 0.498039, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -347,6 +347,6 @@ shape = SubResource("RectangleShape2D_or1cx")
 [connection signal="body_entered" from="PushFix" to="." method="_on_push_fix_body_entered"]
 [connection signal="body_exited" from="PushFix" to="." method="_on_push_fix_body_exited"]
 
-[editable path="Feathers/StoneFeather"]
-[editable path="Feathers/CopperFeather"]
-[editable path="Feathers/BronzeFeather"]
+[editable path="Throwables/StoneFeather"]
+[editable path="Throwables/CopperFeather"]
+[editable path="Throwables/BronzeFeather"]
