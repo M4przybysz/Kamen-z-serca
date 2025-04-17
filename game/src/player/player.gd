@@ -32,21 +32,21 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 }
 
 # Dynamic playthrough variables
+var state: String = "idle"
 var last_direction = 1
+var direction
 var dmg_source_count = 0
 var dmg_taken = 0
 var active_feather: int = 0
-var isGrabbing: bool = false
-var isDashing: bool = false
-var usesWingAttack: bool = false
-var canDash: bool = true
-var canBeDamaged: bool = true
-var grabChange: bool = false
+var is_grabbing: bool = false
+var is_dashing: bool = false
+var can_dash: bool = true
+var can_be_damaged: bool = true
 
 # Player progression variables
 var level: int = 1
 var max_level: int = 3
-var isShieldUnlocked: bool = false
+var is_shield_unlocked: bool = false
 
 func _physics_process(delta: float) -> void:
 	check_edge_grab()
@@ -55,18 +55,19 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if !is_on_floor(): 
 		velocity += get_gravity() * delta
-	
-	if isGrabbing: return
 
 	# Get direction: -1, 0, 1
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction != 0: last_direction = direction
 	
-	flip_h(direction) # Flip the sprite and other things
-	animate_player(direction) # Play animations
+	flip_h() # Flip the sprite and other things
+	
+	state_machine()
+	
+	if is_grabbing: return
 	
 	# Set velocity
-	if isDashing: 
+	if is_dashing: 
 		velocity.x = last_direction * movement_speed * 2
 	else: 
 		velocity.x = direction * movement_speed
@@ -74,39 +75,128 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #########################################
+# State machine handling
+#########################################
+func state_machine() -> void:
+	print(state)
+	match state:
+		"idle":
+			if Input.is_action_just_pressed("wing_attack"):
+				state = "wing_attack"
+			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
+				state = "use_shield"
+			elif Input.is_action_just_pressed("throw"):
+				state = "throw"
+			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
+				state = "start_slide"
+			elif Input.is_action_just_pressed("jump"):
+				state = "start_jump"
+			elif !is_on_floor():
+				state = "mid_jump"
+			elif direction != 0:
+				state = "movement"
+			else:
+				animated_sprite.play("idle")
+		"movement":
+			if Input.is_action_just_pressed("wing_attack"):
+				state = "wing_attack"
+			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
+				state = "use_shield"
+			elif Input.is_action_just_pressed("throw"):
+				state = "throw"
+			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
+				state = "start_slide"
+			elif Input.is_action_just_pressed("jump"):
+				state = "start_jump"
+			elif !is_on_floor():
+				state = "mid_jump"
+			elif direction == 0:
+				state = "idle"
+			else:
+				animated_sprite.play("movement")
+		"start_jump":
+			jump()
+			animated_sprite.play("start_jump")
+			if animated_sprite.animation_finished:
+				state = "mid_jump"
+		"mid_jump":
+			if is_grabbing:
+				print("grab")
+				state = "grab_edge"
+			elif Input.is_action_just_pressed("wing_attack"):
+				animated_sprite.stop()
+				state = "wing_attack"
+			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
+				animated_sprite.stop()
+				state = "use_shield"
+			elif Input.is_action_just_pressed("throw"):
+				animated_sprite.stop()
+				state = "throw"
+			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
+				animated_sprite.stop()
+				state = "air_dash"
+			elif is_on_floor():
+				state = "end_jump"
+			else:
+				animated_sprite.play("mid_jump")
+		"end_jump":
+			animated_sprite.play("end_jump")
+			if animated_sprite.animation_finished:
+				state = "idle"
+		"grab_edge":
+			animated_sprite.play("grab_edge")
+			if Input.is_action_just_pressed("jump"):
+				animated_sprite.stop()
+				state = "grab_jump"
+		"grab_jump":
+			jump()
+			animated_sprite.play("grab_jump")
+			if animated_sprite.animation_finished:
+				state = "mid_jump"
+		"air_dash":
+			air_dash()
+			animated_sprite.play("air_dash")
+			if animated_sprite.animation_finished:
+				state = "idle"
+		"start_slide":
+			slide()
+			animated_sprite.play("start_slide")
+			if animated_sprite.animation_finished:
+				state = "mid_slide"
+		"mid_slide":
+			if slide_timer.is_stopped():
+				animated_sprite.stop()
+				state = "end_slide"
+		"end_slide":
+			animated_sprite.play("end_slide")
+			if animated_sprite.animation_finished:
+				state = "idle"
+		"wing_attack":
+			if wing_attack_timer.is_stopped():
+				wing_attack()
+			animated_sprite.play("wing_attack")
+			if animated_sprite.animation_finished:
+				state = "idle"
+		"throw":
+			throw()
+			animated_sprite.play("throw")
+			if animated_sprite.animation_finished:
+				state = "idle"
+		"use_shield":
+			if Input.is_action_just_pressed("slide_and_air_dash"):
+				state = "shield_charge"
+			else:
+				pass
+		"shield_charge":
+			pass
+		_:
+			print("undefined state")
+			state = "idle"
+
+#########################################
 # Input handling
 #########################################
 func _input(_event: InputEvent) -> void:
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") && (is_on_floor() || isGrabbing) && !isDashing:
-		if isGrabbing:
-			grabChange = true
-		isGrabbing = false
-		velocity.y = jump_velocity
-		
-	# Handle air dash and slide
-	if Input.is_action_just_pressed("slide_and_air_dash") && canDash:
-		isDashing = true
-		canDash = false
-		canBeDamaged = false
-		if is_on_floor():
-			normal_collision.disabled = true
-			hurtbox_collision.disabled = true
-			slide_collision.disabled = false
-		slide_timer.start()
-	
-	# Handle basic attack
-	if Input.is_action_just_pressed("wing_attack"):
-		wing_attack_collision.disabled = false
-		wing_attack_collision.visible = true
-		usesWingAttack = true
-		wing_attack_timer.start()
-	
-	# Handle range feather attacks
-	if Input.is_action_just_pressed("throw"):
-		if !throwables.get_children()[active_feather].isOnCooldown:
-			throwables.get_children()[active_feather].throw(last_direction)
-	
 	# Handle changing feather type
 	if Input.is_action_just_pressed("change_throwable_down"):
 		if level == 1:
@@ -128,37 +218,13 @@ func _input(_event: InputEvent) -> void:
 		else: 
 			pass
 	
-	# Handle shield use
-	if Input.is_action_just_pressed("shield_use") && isShieldUnlocked:
-		pass
-	
 	if Input.is_action_just_pressed("action"):
 		pass
 
 #########################################
-# Animations handling
+# Direction change handling
 #########################################
-func animate_player(direction) -> void:
-	if usesWingAttack:
-		animated_sprite.play("wing_attack")
-	elif !is_on_floor():
-		if isDashing: pass
-		elif grabChange:
-			grabChange = false
-			animated_sprite.play("grab_jump")
-		elif isGrabbing: 
-			animated_sprite.play("grab_edge")
-		else:
-			animated_sprite.play("mid_jump")
-	elif is_on_floor():
-		if isDashing:
-			animated_sprite.play("slide")
-		elif direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("run")
-
-func flip_h(direction):
+func flip_h():
 	if direction > 0:
 		animated_sprite.flip_h = false
 		grab_hand.target_position.x = 30
@@ -171,23 +237,56 @@ func flip_h(direction):
 		wing_attack_collision.position.x = -25
 
 #########################################
+# Movement handling
+#########################################
+func jump() -> void:
+	is_grabbing = false
+	velocity.y = jump_velocity
+
+func air_dash() -> void:
+	is_dashing = true
+	can_dash = false
+	can_be_damaged = false
+	slide_timer.start()
+
+func slide() -> void:
+	is_dashing = true
+	can_dash = false
+	can_be_damaged = false
+	if is_on_floor():
+		normal_collision.disabled = true
+		hurtbox_collision.disabled = true
+		slide_collision.disabled = false
+	slide_timer.start()
+
+#########################################
 # Movement additions
 #########################################
-
 func check_edge_grab() -> void:
 	var isFalling = velocity.y >= 0
 	var checkHand = not grab_hand.is_colliding()
 	var checkGrabHeight = grab_check.is_colliding()
 	
-	var canGrab = isFalling && checkHand && checkGrabHeight && not isGrabbing
+	var canGrab = isFalling && checkHand && checkGrabHeight && not is_grabbing
 	if canGrab: 
-		isGrabbing = true
-		animate_player(last_direction)
+		is_grabbing = true
 
 func check_dash() -> void:
-	if !canDash && is_on_floor() && !isDashing:
-		canDash = true
-		
+	if !can_dash && is_on_floor() && !is_dashing:
+		can_dash = true
+
+#########################################
+# Combat handling
+#########################################
+func wing_attack() -> void:
+	wing_attack_collision.disabled = false
+	wing_attack_collision.visible = true
+	wing_attack_timer.start()
+
+func throw() -> void:
+	if !throwables.get_children()[active_feather].isOnCooldown:
+		throwables.get_children()[active_feather].throw(last_direction)
+
 #########################################
 # Hitboxes and hurtboxes handling
 #########################################
@@ -216,8 +315,8 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 # Timers handling
 #########################################
 func _on_slide_timer_timeout() -> void:
-	isDashing = false
-	canBeDamaged = true
+	is_dashing = false
+	can_be_damaged = true
 	normal_collision.disabled = false
 	hurtbox_collision.disabled = false
 	slide_collision.disabled = true
@@ -226,7 +325,6 @@ func _on_slide_timer_timeout() -> void:
 func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.disabled = true
 	wing_attack_collision.visible = false
-	usesWingAttack = false
 	wing_attack_timer.stop()
 
 func _on_damage_timer_timeout() -> void:
@@ -249,7 +347,7 @@ func ascend_to_level_3() -> void:
 	print("Player ascended to level 3 and has acquired bronze throwables.")
 
 #########################################
-# Handling pushable objects
+# Pushable objects fix
 #########################################
 func _on_push_fix_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
