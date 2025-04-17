@@ -49,8 +49,8 @@ var max_level: int = 3
 var is_shield_unlocked: bool = false
 
 func _physics_process(delta: float) -> void:
-	check_edge_grab()
-	check_dash()
+	state_machine()
+	if is_grabbing: return
 	
 	# Add the gravity.
 	if !is_on_floor(): 
@@ -61,10 +61,6 @@ func _physics_process(delta: float) -> void:
 	if direction != 0: last_direction = direction
 	
 	flip_h() # Flip the sprite and other things
-	
-	state_machine()
-	
-	if is_grabbing: return
 	
 	# Set velocity
 	if is_dashing: 
@@ -78,6 +74,9 @@ func _physics_process(delta: float) -> void:
 # State machine handling
 #########################################
 func state_machine() -> void:
+	check_edge_grab()
+	check_dash()
+	
 	print(state)
 	match state:
 		"idle":
