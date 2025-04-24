@@ -22,8 +22,9 @@ extends CharacterBody2D
 @onready var damage_timer: Timer = $Timers/DamageTimer
 
 # Assign exportable variables <--- add more exportables if needed later
-@export var movement_speed = 350.0
-@export var jump_velocity = -550.0
+@export var movement_speed: float = 350.0
+@export var jump_velocity: float = -550.0
+@export var knockback_force: Vector2 = Vector2(-1200, -120)
 
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
@@ -38,6 +39,7 @@ var direction
 var dmg_source_count = 0
 var dmg_taken = 0
 var active_feather: int = 0
+var knockback: Vector2 = Vector2.ZERO
 var is_grabbing: bool = false
 var is_dashing: bool = false
 var can_dash: bool = true
@@ -67,7 +69,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = last_direction * movement_speed * 2
 	else: 
 		velocity.x = direction * movement_speed
-
+	
+	velocity += knockback
+	knockback = knockback.lerp(Vector2.ZERO, 0.2)
+	
 	move_and_slide()
 
 #########################################
@@ -299,6 +304,13 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 				dmg_taken += dmg_dictionary[group]
 		if damage_timer.is_stopped():
 			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
+			knockback = knockback_force
+			var knockback_direction: int
+			if area.global_position.x > global_position.x:
+				knockback_direction = 1
+			else:
+				knockback_direction = -1
+			knockback.x *= knockback_direction
 			damage_timer.start()
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:

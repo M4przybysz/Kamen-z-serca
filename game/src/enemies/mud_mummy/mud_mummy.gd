@@ -23,6 +23,9 @@ var target: float
 @export var combat_movement_range_right: int = 500
 @export var idle_movement_range_left: int = 300
 @export var idle_movement_range_right: int = 300
+@export var knockback_force: Vector2 = Vector2(-1000, -50)
+var knockback: Vector2 = Vector2.ZERO
+
 
 # Combat variables
 @export var max_hp: int = 3
@@ -68,6 +71,9 @@ func _physics_process(delta: float) -> void:
 	# animated_sprite.play(state)
 	
 	velocity.x = direction * movement_speed
+	
+	velocity += knockback
+	knockback = knockback.lerp(Vector2.ZERO, 0.2)
 	
 	move_and_slide()
 
@@ -142,6 +148,13 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			dmg_taken += dmg_dictionary[group]
 			if is_wrapping:
 				stop_wrapping()
+	knockback = knockback_force
+	var knockback_direction: int
+	if area.global_position.x > global_position.x:
+		knockback_direction = 1
+	else:
+		knockback_direction = -1
+	knockback.x *= knockback_direction
 	decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
