@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ui: Control = $UI/UI
 @onready var player: CharacterBody2D = $Player
+@onready var camera: Camera2D = $Player/Camera2D
 
 @export var main: Node
 @export var death_menu: Control
@@ -19,6 +20,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_pressed("look_down"):
+		move_camera(0, 100)
+	
+	if Input.is_action_pressed("look_up"):
+		move_camera(0, -100)
+	
+	if Input.is_action_just_released("look_down") || Input.is_action_just_released("look_up"):
+		camera.global_position = player.global_position
+
+func move_camera(x: float, y: float):
+	camera.global_position = player.global_position + Vector2(x, y)
 
 func decrease_hp(value: int) -> void:
 	if hp - value > 0: 
