@@ -1,0 +1,4 @@
+#Scene1
+N:Man entered the path to the underworld.
+X:Hello There!
+N:General Kenobi! 

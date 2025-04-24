@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b0fj4cojmp4tx"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="NormalBackground" type="Node2D" parent="."]
+
+[node name="FarBackground" type="Node2D" parent="NormalBackground"]
+
+[node name="Walls" type="Node2D" parent="NormalBackground"]
+
+[node name="Decorations" type="Node2D" parent="NormalBackground"]
+
+[node name="GameplayLayer" type="Node2D" parent="."]
+
+[node name="PlatformTextures" type="Node2D" parent="."]
+
+[node name="Foreground" type="Node2D" parent="."]
