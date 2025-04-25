@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="9_5257e"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/pillar.tscn" id="10_s0h4d"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="11_se4u3"]
-[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/krzesimirowe_sceny/czarn.tscn" id="12_2rkfp"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="12_2rkfp"]
 [ext_resource type="Texture2D" uid="uid://b8od1vctqyayo" path="res://assets/sprites/spikes/spikes.png" id="13_mxkye"]
 [ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/external_assets/skały 2.png" id="14_a8ili"]
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/external_assets/gory.png" id="15_lks04"]

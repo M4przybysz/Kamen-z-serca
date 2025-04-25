@@ -24,7 +24,7 @@ extends CharacterBody2D
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
 @export var jump_velocity: float = -550.0
-@export var knockback_force: Vector2 = Vector2(-1200, -120)
+@export var knockback_force: Vector2 = Vector2(-1000, -100)
 
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
@@ -71,7 +71,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * movement_speed
 	
 	velocity += knockback
-	knockback = knockback.lerp(Vector2.ZERO, 0.2)
+	knockback = knockback.lerp(Vector2.ZERO, 0.16)
+	if is_on_floor():
+		knockback.y = 0
 	
 	move_and_slide()
 
@@ -283,9 +285,10 @@ func check_dash() -> void:
 # Combat handling
 #########################################
 func wing_attack() -> void:
+	if wing_attack_collision.disabled == true:
+		wing_attack_timer.start()
 	wing_attack_collision.disabled = false
 	wing_attack_collision.visible = true
-	wing_attack_timer.start()
 
 func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:

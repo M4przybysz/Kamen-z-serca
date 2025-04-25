@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * movement_speed
 	
 	velocity += knockback
-	knockback = knockback.lerp(Vector2.ZERO, 0.2)
+	knockback = knockback.lerp(Vector2.ZERO, 0.16)
 	
 	move_and_slide()
 
@@ -187,7 +187,6 @@ func decrease_hp(value: int) -> void:
 	else:
 		hp = 0
 	#print(hp)
-	
 
 func die() -> void:
 	# TODO: Add death animation
