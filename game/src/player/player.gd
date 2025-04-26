@@ -184,9 +184,12 @@ func state_machine() -> void:
 			if animated_sprite.animation_finished:
 				state = "idle"
 		"throw":
-			throw()
-			animated_sprite.play("throw")
-			if animated_sprite.animation_finished:
+			if !throwables.get_children()[active_feather].isOnCooldown:
+				throw()
+				animated_sprite.play("throw")
+				if animated_sprite.animation_finished:
+					state = "idle"
+			else:
 				state = "idle"
 		"use_shield":
 			if Input.is_action_just_pressed("slide_and_air_dash"):

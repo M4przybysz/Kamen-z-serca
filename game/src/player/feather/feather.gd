@@ -16,6 +16,7 @@ var flight_direction = 1
 func _ready() -> void:
 	flight_timer.wait_time = flight_time
 	cooldown_timer.wait_time = cooldown
+	reset_fether()
 
 func _process(delta: float) -> void:
 	if !isThrown:
@@ -34,14 +35,20 @@ func throw(direction):
 	cooldown_timer.start()
 
 func _on_flight_timer_timeout() -> void:
-	isThrown = false
-	visible = false
-	hitbox_collision.disabled = true
-	global_position = player.global_position
+	reset_fether()
 	flight_timer.stop()
-	flight_timer.wait_time = flight_time
 
 func _on_cooldown_timer_timeout() -> void:
 	isOnCooldown = false
 	cooldown_timer.stop()
 	cooldown_timer.wait_time = cooldown
+
+func _on_hitbox_body_entered(_body: Node2D) -> void:
+	reset_fether()
+	flight_timer.stop()
+
+func reset_fether() -> void:
+	isThrown = false
+	visible = false
+	hitbox_collision.disabled = true
+	global_position = player.global_position
