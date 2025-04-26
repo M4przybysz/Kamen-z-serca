@@ -38,3 +38,7 @@ visible = false
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
 [editable path="Gameplay"]
+[editable path="Gameplay/Alfa_v1"]
+[editable path="Gameplay/Alfa_v1/Environment/Finish/Block63"]
+[editable path="Gameplay/Alfa_v1/Environment/Finish/Block70"]
+[editable path="Gameplay/Alfa_v1/DialogueTrigger"]

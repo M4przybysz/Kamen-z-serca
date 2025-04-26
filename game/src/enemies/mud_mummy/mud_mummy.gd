@@ -63,6 +63,12 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity += get_gravity() * delta
 	
+	# Remove dmg when falling
+	if !is_wrapping && !is_on_floor():
+		hurtbox_collision.disabled = true
+	else:
+		hurtbox_collision.disabled = false
+	
 	# Decide what to do
 	state_machine()
 	
