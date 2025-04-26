@@ -154,13 +154,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			dmg_taken += dmg_dictionary[group]
 			if is_wrapping:
 				stop_wrapping()
-	knockback = knockback_force
-	var knockback_direction: int
-	if area.global_position.x > global_position.x:
-		knockback_direction = 1
-	else:
-		knockback_direction = -1
-	knockback.x *= knockback_direction
+	if dmg_taken > 0:
+		knockback = knockback_force
+		var knockback_direction: int
+		if area.global_position.x > global_position.x:
+			knockback_direction = 1
+		else:
+			knockback_direction = -1
+		knockback.x *= knockback_direction
 	decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
@@ -243,7 +244,7 @@ func combat_movement() -> void:
 
 func idle_movement() -> void:
 	movement_speed = movement_speed_input
-	if global_position.x < target + 3 && global_position.x > target - 3:
+	if global_position.x < target + 3 && global_position.x > target - 3 || is_on_wall():
 		target = randi() % int(right_idle_movement_limit - left_idle_movement_limit) + left_idle_movement_limit
 
 	if target > global_position.x:

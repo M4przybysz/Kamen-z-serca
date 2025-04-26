@@ -7,6 +7,8 @@ extends CharacterBody2D
 # Assign physical collision to variables
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
+@onready var slide_fix_collision: CollisionShape2D = $SlideFix/CollisionShape2D
+
 
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
@@ -44,6 +46,7 @@ var is_grabbing: bool = false
 var is_dashing: bool = false
 var can_dash: bool = true
 var can_be_damaged: bool = true
+var can_stand_up: int = 0
 
 # Player progression variables
 var level: int = 1
@@ -84,7 +87,7 @@ func state_machine() -> void:
 	check_edge_grab()
 	check_dash()
 	
-	print(state)
+	#print(state)
 	match state:
 		"idle":
 			if Input.is_action_just_pressed("wing_attack"):
@@ -258,7 +261,7 @@ func air_dash() -> void:
 	can_be_damaged = false
 	slide_timer.start()
 
-func slide() -> void:
+func slide(time: float = 0.5) -> void:
 	is_dashing = true
 	can_dash = false
 	can_be_damaged = false
@@ -266,6 +269,8 @@ func slide() -> void:
 		normal_collision.disabled = true
 		hurtbox_collision.disabled = true
 		slide_collision.disabled = false
+		slide_fix_collision.disabled = false
+	slide_timer.wait_time = time
 	slide_timer.start()
 
 #########################################
@@ -332,12 +337,16 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 # Timers handling
 #########################################
 func _on_slide_timer_timeout() -> void:
-	is_dashing = false
-	can_be_damaged = true
-	normal_collision.disabled = false
-	hurtbox_collision.disabled = false
-	slide_collision.disabled = true
 	slide_timer.stop()
+	if can_stand_up == 0:
+		is_dashing = false
+		can_be_damaged = true
+		normal_collision.disabled = false
+		hurtbox_collision.disabled = false
+		slide_collision.disabled = true
+		slide_fix_collision.disabled = true
+	else:
+		slide(0.2)
 
 func _on_wing_attack_timer_timeout() -> void:
 	wing_attack_collision.disabled = true
@@ -375,3 +384,14 @@ func _on_push_fix_body_exited(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
 		body.collision_layer = 32
 		body.collision_mask = 32
+
+#########################################
+# Slide fix
+#########################################
+func _on_slide_fix_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		can_stand_up += 1
+
+func _on_slide_fix_body_exited(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		can_stand_up -= 1

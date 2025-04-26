@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=48 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://f7yv2xqggk4r" path="res://assets/sprites/player/jump/grab.png" id="2_ff48u"]
@@ -292,6 +292,9 @@ size = Vector2(50, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or1cx"]
 size = Vector2(20, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42bjv"]
+size = Vector2(60, 60)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 33
 script = ExtResource("1_golh8")
@@ -394,6 +397,13 @@ collision_mask = 33
 position = Vector2(0, 50)
 shape = SubResource("RectangleShape2D_or1cx")
 
+[node name="SlideFix" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlideFix"]
+position = Vector2(-0.5, -20)
+shape = SubResource("RectangleShape2D_42bjv")
+disabled = true
+
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageTimer" to="." method="_on_damage_timer_timeout"]
@@ -401,6 +411,8 @@ shape = SubResource("RectangleShape2D_or1cx")
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="body_entered" from="PushFix" to="." method="_on_push_fix_body_entered"]
 [connection signal="body_exited" from="PushFix" to="." method="_on_push_fix_body_exited"]
+[connection signal="body_entered" from="SlideFix" to="." method="_on_slide_fix_body_entered"]
+[connection signal="body_exited" from="SlideFix" to="." method="_on_slide_fix_body_exited"]
 
 [editable path="Throwables/StoneFeather"]
 [editable path="Throwables/CopperFeather"]
