@@ -16,7 +16,7 @@ position = Vector2(22681, 4189)
 gameplay = NodePath("../../..")
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(20509, 2235)
+position = Vector2(14008, 1445)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)

@@ -5,28 +5,40 @@ extends Node2D
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 
-@export var flight_time:  = 1
-@export var cooldown: float = 2
+@export var flight_time: float = 1.0
+@export var cooldown: float = 2.0
 @export var speed: int = 550
 
 var isThrown: bool = false
 var isOnCooldown: bool = false
-var flight_direction = 1
+var flight_direction: int = 1
+var reset = false
 
 func _ready() -> void:
 	flight_timer.wait_time = flight_time
 	cooldown_timer.wait_time = cooldown
-	reset_fether()
+	visible = false
+	hitbox_collision.disabled = true
 
 func _process(delta: float) -> void:
-	if !isThrown:
-		pass
-	else:
+	if isThrown:
 		global_position.x += (flight_direction * speed - player.velocity.x) * delta
 		global_position.y -= player.velocity.y * delta
+		print(global_position)
+	
+	if reset:
+		global_position = player.global_position
+		isThrown = false
+		visible = false
+		hitbox_collision.disabled = true
+		reset = false
 
-func throw(direction):
+func throw(direction: int) -> void:
+	if isOnCooldown:
+		return
+		
 	flight_direction = direction
+	global_position = player.global_position  # Start from player position
 	visible = true
 	hitbox_collision.disabled = false
 	isThrown = true
@@ -35,20 +47,14 @@ func throw(direction):
 	cooldown_timer.start()
 
 func _on_flight_timer_timeout() -> void:
-	reset_fether()
 	flight_timer.stop()
+	reset = true
 
 func _on_cooldown_timer_timeout() -> void:
-	isOnCooldown = false
 	cooldown_timer.stop()
-	cooldown_timer.wait_time = cooldown
+	isOnCooldown = false
 
-func _on_hitbox_body_entered(_body: Node2D) -> void:
-	reset_fether()
-	flight_timer.stop()
-
-func reset_fether() -> void:
-	isThrown = false
-	visible = false
-	hitbox_collision.disabled = true
-	global_position = player.global_position
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		flight_timer.stop()
+		reset = true
