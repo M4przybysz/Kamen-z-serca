@@ -11,8 +11,12 @@ script = ExtResource("1_i11ig")
 
 [node name="Alfa_v1" parent="." instance=ExtResource("2_rjhhv")]
 
+[node name="DeathZone" parent="Alfa_v1/Environment" index="10" node_paths=PackedStringArray("gameplay")]
+position = Vector2(22681, 4189)
+gameplay = NodePath("../../..")
+
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(597, 244)
+position = Vector2(20509, 2235)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)
@@ -22,3 +26,8 @@ position_smoothing_enabled = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
+
+[editable path="Alfa_v1"]
+[editable path="Alfa_v1/Environment/Finish/Block63"]
+[editable path="Alfa_v1/Environment/Finish/Block70"]
+[editable path="Alfa_v1/DialogueTrigger"]
