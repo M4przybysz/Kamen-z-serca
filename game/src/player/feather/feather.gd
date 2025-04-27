@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	if isThrown:
 		global_position.x += (flight_direction * speed - player.velocity.x) * delta
 		global_position.y -= player.velocity.y * delta
-		print(global_position)
 	
 	if reset:
 		global_position = player.global_position

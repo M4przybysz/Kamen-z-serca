@@ -130,7 +130,6 @@ func state_machine() -> void:
 				state = "mid_jump"
 		"mid_jump":
 			if is_grabbing:
-				print("grab")
 				state = "grab_edge"
 			elif Input.is_action_just_pressed("wing_attack"):
 				animated_sprite.stop()
@@ -377,8 +376,8 @@ func ascend_to_level_3() -> void:
 #########################################
 func _on_push_fix_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
-		body.collision_layer = 1
-		body.collision_mask = 1
+		body.collision_layer = 33
+		body.collision_mask = 33
 
 func _on_push_fix_body_exited(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
