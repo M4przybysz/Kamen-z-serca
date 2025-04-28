@@ -8,11 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="6_w85h7"]
 [ext_resource type="Texture2D" uid="uid://dkg53p0oyf6q1" path="res://assets/sprites/environment/brown.png" id="7_m1wh5"]
 [ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="8_c7vtu"]
-[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="9_5257e"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/pillar.tscn" id="10_s0h4d"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="9_5257e"]
+[ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="10_s0h4d"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="11_se4u3"]
-[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/czarn.tscn" id="12_2rkfp"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="12_2rkfp"]
 [ext_resource type="Texture2D" uid="uid://b8od1vctqyayo" path="res://assets/sprites/spikes/spikes.png" id="13_mxkye"]
+[ext_resource type="PackedScene" uid="uid://cjx5qw1hi6dm6" path="res://src/templates/enviroment/death_zone.tscn" id="13_xofsb"]
 [ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/external_assets/skały 2.png" id="14_a8ili"]
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/external_assets/gory.png" id="15_lks04"]
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/external_assets/skala-gen.png" id="16_6g4ad"]
@@ -67,9 +68,6 @@ size = Vector2(300, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ue20i"]
 size = Vector2(30, 132)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptt74"]
-size = Vector2(76, 192)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v3bg1"]
 
@@ -3193,15 +3191,6 @@ shape = SubResource("RectangleShape2D_ue20i")
 [node name="Block83" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(14414, 1554)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Level3"]
-position = Vector2(16339, 1608)
-collision_layer = 32
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/StaticBody2D"]
-position = Vector2(2, -56)
-shape = SubResource("RectangleShape2D_ptt74")
-
 [node name="Level 4" type="Node2D" parent="Environment"]
 position = Vector2(18606, -152)
 rotation = 3.14159
@@ -3911,6 +3900,9 @@ scale = Vector2(0.298397, 1.11106)
 position = Vector2(23478, 1007)
 scale = Vector2(0.298397, 1.11106)
 
+[node name="DeathZone" parent="Environment" instance=ExtResource("13_xofsb")]
+position = Vector2(2, 5229)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 9730.0
 offset_top = 1639.0
@@ -4016,18 +4008,6 @@ position = Vector2(8489, 290)
 [node name="SpikeTest7" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(17869, 404.001)
 scale = Vector2(0.660547, 0.745469)
-
-[node name="SpikeTest8" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(8896, 33595)
-scale = Vector2(807.404, 844.284)
-
-[node name="SpikeTest9" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(9614, 35175)
-scale = Vector2(807.404, 844.284)
-
-[node name="SpikeTest10" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(8680, 35965)
-scale = Vector2(807.404, 844.284)
 
 [node name="SpikeTest4" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(5765, 371)

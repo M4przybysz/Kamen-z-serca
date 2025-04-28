@@ -43,14 +43,6 @@ height = 100.0
 radius = 15.0
 height = 100.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dgeq"]
-atlas = ExtResource("4_ws3vt")
-region = Rect2(2268, 0, 567, 811)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmdkc"]
-atlas = ExtResource("4_ws3vt")
-region = Rect2(1134, 0, 567, 824)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyjho"]
 atlas = ExtResource("4_ws3vt")
 region = Rect2(1701, 0, 567, 824)
@@ -66,6 +58,10 @@ region = Rect2(1134, 0, 567, 824)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3ioh"]
 atlas = ExtResource("2_ff48u")
 region = Rect2(1701, 0, 567, 824)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmdkc"]
+atlas = ExtResource("4_ws3vt")
+region = Rect2(1134, 0, 567, 824)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yk7v1"]
 atlas = ExtResource("25_ac3f8")
@@ -87,16 +83,13 @@ region = Rect2(567, 0, 567, 824)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5dgeq")
+"texture": ExtResource("5_njf6p")
 }],
-"loop": true,
+"loop": false,
 "name": &"air_dash",
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qmdkc")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iyjho")
 }, {
@@ -108,9 +101,6 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("25_ac3f8")
-}, {
 "duration": 1.0,
 "texture": ExtResource("24_3uvuj")
 }, {
@@ -133,7 +123,7 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 5.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e3ioh")
 }],
 "loop": false,
@@ -292,6 +282,9 @@ size = Vector2(50, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or1cx"]
 size = Vector2(20, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42bjv"]
+size = Vector2(60, 60)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 33
 script = ExtResource("1_golh8")
@@ -316,11 +309,11 @@ shape = SubResource("CapsuleShape2D_js45o")
 disabled = true
 
 [node name="GrabHand" type="RayCast2D" parent="."]
-position = Vector2(0, -49)
+position = Vector2(0, -50)
 target_position = Vector2(30, 0)
 
 [node name="GrabCheck" type="RayCast2D" parent="."]
-position = Vector2(0, -44)
+position = Vector2(0, -45)
 target_position = Vector2(30, 0)
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -334,7 +327,7 @@ shape = SubResource("CapsuleShape2D_ejvj4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"end_slide"
+animation = &"grab_jump"
 autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]
@@ -394,13 +387,23 @@ collision_mask = 33
 position = Vector2(0, 50)
 shape = SubResource("RectangleShape2D_or1cx")
 
+[node name="SlideFix" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlideFix"]
+position = Vector2(-0.5, -20)
+shape = SubResource("RectangleShape2D_42bjv")
+disabled = true
+
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageTimer" to="." method="_on_damage_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="PushFix" to="." method="_on_push_fix_body_entered"]
 [connection signal="body_exited" from="PushFix" to="." method="_on_push_fix_body_exited"]
+[connection signal="body_entered" from="SlideFix" to="." method="_on_slide_fix_body_entered"]
+[connection signal="body_exited" from="SlideFix" to="." method="_on_slide_fix_body_exited"]
 
 [editable path="Throwables/StoneFeather"]
 [editable path="Throwables/CopperFeather"]

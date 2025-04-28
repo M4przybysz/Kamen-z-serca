@@ -23,6 +23,9 @@ var target: float
 @export var combat_movement_range_right: int = 500
 @export var idle_movement_range_left: int = 300
 @export var idle_movement_range_right: int = 300
+@export var knockback_force: Vector2 = Vector2(-1000, -50)
+var knockback: Vector2 = Vector2.ZERO
+
 
 # Combat variables
 @export var max_hp: int = 3
@@ -60,6 +63,12 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity += get_gravity() * delta
 	
+	# Remove dmg when falling
+	if !is_wrapping && !is_on_floor():
+		hurtbox_collision.disabled = true
+	else:
+		hurtbox_collision.disabled = false
+	
 	# Decide what to do
 	state_machine()
 	
@@ -68,6 +77,9 @@ func _physics_process(delta: float) -> void:
 	# animated_sprite.play(state)
 	
 	velocity.x = direction * movement_speed
+	
+	velocity += knockback
+	knockback = knockback.lerp(Vector2.ZERO, 0.16)
 	
 	move_and_slide()
 
@@ -142,6 +154,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			dmg_taken += dmg_dictionary[group]
 			if is_wrapping:
 				stop_wrapping()
+	if dmg_taken > 0:
+		knockback = knockback_force
+		var knockback_direction: int
+		if area.global_position.x > global_position.x:
+			knockback_direction = 1
+		else:
+			knockback_direction = -1
+		knockback.x *= knockback_direction
 	decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
@@ -174,7 +194,6 @@ func decrease_hp(value: int) -> void:
 	else:
 		hp = 0
 	#print(hp)
-	
 
 func die() -> void:
 	# TODO: Add death animation
@@ -225,7 +244,7 @@ func combat_movement() -> void:
 
 func idle_movement() -> void:
 	movement_speed = movement_speed_input
-	if global_position.x < target + 3 && global_position.x > target - 3:
+	if global_position.x < target + 3 && global_position.x > target - 3 || is_on_wall():
 		target = randi() % int(right_idle_movement_limit - left_idle_movement_limit) + left_idle_movement_limit
 
 	if target > global_position.x:
