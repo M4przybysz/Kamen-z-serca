@@ -47,6 +47,7 @@ var is_dashing: bool = false
 var can_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
+var animation_locked: bool = false
 
 # Player progression variables
 var level: int = 1
@@ -87,128 +88,87 @@ func state_machine() -> void:
 	check_edge_grab()
 	check_dash()
 	
-	#print(state)
+	print(state, " - ", animation_locked)
+	
 	match state:
 		"idle":
-			if Input.is_action_just_pressed("wing_attack"):
-				state = "wing_attack"
-			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
-				state = "use_shield"
-			elif Input.is_action_just_pressed("throw"):
-				state = "throw"
-			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
-				state = "start_slide"
-			elif Input.is_action_just_pressed("jump"):
-				state = "start_jump"
-			elif !is_on_floor():
-				state = "mid_jump"
-			elif direction != 0:
-				state = "movement"
-			else:
-				animated_sprite.play("idle")
+			if !is_on_floor(): state = "mid_jump"
+			elif direction != 0: state = "movement"
+			
+			animated_sprite.play(state)
 		"movement":
-			if Input.is_action_just_pressed("wing_attack"):
-				state = "wing_attack"
-			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
-				state = "use_shield"
-			elif Input.is_action_just_pressed("throw"):
-				state = "throw"
-			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
-				state = "start_slide"
-			elif Input.is_action_just_pressed("jump"):
-				state = "start_jump"
-			elif !is_on_floor():
-				state = "mid_jump"
-			elif direction == 0:
-				state = "idle"
-			else:
-				animated_sprite.play("movement")
-		"start_jump":
-			jump()
-			animated_sprite.play("start_jump")
-			if animated_sprite.animation_finished:
-				state = "mid_jump"
+			if !is_on_floor(): state = "mid_jump"
+			elif direction == 0: state = "idle"
+			
+			animated_sprite.play(state)
 		"mid_jump":
-			if is_grabbing:
-				state = "grab_edge"
-			elif Input.is_action_just_pressed("wing_attack"):
-				animated_sprite.stop()
-				state = "wing_attack"
-			elif Input.is_action_just_pressed("shield_use") && is_shield_unlocked:
-				animated_sprite.stop()
-				state = "use_shield"
-			elif Input.is_action_just_pressed("throw"):
-				animated_sprite.stop()
-				state = "throw"
-			elif Input.is_action_just_pressed("slide_and_air_dash") && can_dash:
-				animated_sprite.stop()
-				state = "air_dash"
-			elif is_on_floor():
-				state = "end_jump"
-			else:
-				animated_sprite.play("mid_jump")
-		"end_jump":
-			animated_sprite.play("end_jump")
-			if animated_sprite.animation_finished:
-				state = "idle"
-		"grab_edge":
-			animated_sprite.play("grab_edge")
-			if Input.is_action_just_pressed("jump"):
-				animated_sprite.stop()
-				state = "grab_jump"
-		"grab_jump":
-			jump()
-			animated_sprite.play("grab_jump")
-			if animated_sprite.animation_finished:
-				state = "mid_jump"
-		"air_dash":
-			air_dash()
-			animated_sprite.play("air_dash")
-			if animated_sprite.animation_finished:
-				state = "idle"
-		"start_slide":
-			slide()
-			animated_sprite.play("start_slide")
-			if animated_sprite.animation_finished:
-				state = "mid_slide"
+			if is_grabbing: state = "grab_edge"
+			elif is_on_floor(): state = "end_jump"
+			else: animated_sprite.play(state)
 		"mid_slide":
+			animated_sprite.play(state)
 			if slide_timer.is_stopped():
-				animated_sprite.stop()
 				state = "end_slide"
-		"end_slide":
-			animated_sprite.play("end_slide")
-			if animated_sprite.animation_finished:
-				state = "idle"
-		"wing_attack":
-			if wing_attack_timer.is_stopped():
-				wing_attack()
-			animated_sprite.play("wing_attack")
-			if animated_sprite.animation_finished:
-				state = "idle"
-		"throw":
-			if !throwables.get_children()[active_feather].isOnCooldown:
-				throw()
-				animated_sprite.play("throw")
-				if animated_sprite.animation_finished:
-					state = "idle"
-			else:
-				state = "idle"
-		"use_shield":
-			if Input.is_action_just_pressed("slide_and_air_dash"):
-				state = "shield_charge"
-			else:
-				pass
-		"shield_charge":
-			pass
+		"grab_edge":
+			animated_sprite.play(state)
+			if Input.is_action_just_pressed("jump"):
+				state = "grab_jump"
+				jump()
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw", "use_shield", "shield_charge":
+			if !animation_locked:
+				animated_sprite.play(state)
+				animation_locked = true
 		_:
 			print("undefined state")
 			state = "idle"
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	animation_locked = false
+	match state:
+		"start_jump", "grab_jump", "air_dash":
+			state = "mid_jump"
+		"end_jump", "wing_attack", "throw", "end_slide":
+			state = "idle"
+		"start_slide":
+			state = "mid_slide"
+		_:
+			pass
 
 #########################################
 # Input handling
 #########################################
 func _input(_event: InputEvent) -> void:
-	# Handle changing feather type
+	# Handle jumping
+	if Input.is_action_just_pressed("jump"):
+		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
+			state = "start_jump"
+			jump()
+	
+	# Handle dashing and sliding
+	if Input.is_action_just_pressed("slide_and_air_dash"):
+		if state == "mid_jump":
+			state = "air_dash"
+			air_dash()
+		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
+			state = "start_slide"
+			slide()
+	
+	if Input.is_action_just_pressed("shield_use") && is_shield_unlocked: 
+		if Input.is_action_just_pressed("slide_and_air_dash"): 
+			state = "shield_charge"
+		else:
+			state = "use_shield"
+	
+	# Handle attacks
+	if Input.is_action_just_pressed("wing_attack") && wing_attack_timer.is_stopped() && (state == "idle" || state == "movement" || state == "mid_jump"): 
+		state = "wing_attack"
+		wing_attack()
+	
+	if Input.is_action_just_pressed("throw") && !throwables.get_children()[active_feather].isOnCooldown && (state == "idle" || state == "movement" || state == "mid_jump"):
+		state = "throw"
+		throw()
+	
+	# Handle changing throwables
 	if Input.is_action_just_pressed("change_throwable_down"):
 		if level == 1:
 			pass
