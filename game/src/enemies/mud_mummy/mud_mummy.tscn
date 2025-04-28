@@ -187,8 +187,8 @@ animations = [{
 }]
 
 [node name="MudMummy" type="CharacterBody2D" groups=["no_push"]]
-collision_layer = 48
-collision_mask = 48
+collision_layer = 80
+collision_mask = 80
 script = ExtResource("1_ri1ep")
 
 [node name="Timers" type="Node" parent="."]

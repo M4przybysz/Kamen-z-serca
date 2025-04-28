@@ -336,13 +336,13 @@ func ascend_to_level_3() -> void:
 #########################################
 func _on_push_fix_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
-		body.collision_layer = 33
-		body.collision_mask = 33
+		body.collision_layer = 97
+		body.collision_mask = 97
 
 func _on_push_fix_body_exited(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
-		body.collision_layer = 32
-		body.collision_mask = 32
+		body.collision_layer = 96
+		body.collision_mask = 96
 
 #########################################
 # Slide fix
