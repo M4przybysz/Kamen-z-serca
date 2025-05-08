@@ -1,10 +1,56 @@
-[gd_scene format=3 uid="uid://dqdvehj1hnuf5"]
+[gd_scene load_steps=9 format=3 uid="uid://dqdvehj1hnuf5"]
+
+[ext_resource type="Texture2D" uid="uid://b31b63qpot8lk" path="res://assets/Background/duchy/duch_na_kolanach1.png" id="1_xgck0"]
+[ext_resource type="Texture2D" uid="uid://cvmaenam3vwk4" path="res://assets/Background/duchy/duch_maly5.png" id="2_pwqno"]
+[ext_resource type="Texture2D" uid="uid://urecpb681col" path="res://assets/Background/duchy/duch_maly4.png" id="3_0dqtx"]
+[ext_resource type="Texture2D" uid="uid://gbbq5lb1inv5" path="res://assets/Background/duchy/duch_maly2.png" id="4_85u15"]
+[ext_resource type="Texture2D" uid="uid://c1dcu0oi3hsys" path="res://assets/Background/duchy/duch_para1.png" id="5_5mghc"]
+[ext_resource type="Texture2D" uid="uid://bllkxtycqu73f" path="res://assets/Background/duchy/duch_para4.png" id="6_q1rl3"]
+[ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="7_mwy8p"]
+[ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="8_afh11"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1910, 0)
+
+[node name="DuchNaKolanach1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1361, 766)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("1_xgck0")
+offset = Vector2(-200, 100)
+
+[node name="DuchMaly5" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1496, 863)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("2_pwqno")
+offset = Vector2(-200, 100)
+
+[node name="DuchMaly4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(156, 831)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("3_0dqtx")
+offset = Vector2(-200, 100)
+
+[node name="DuchMaly2" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(367, 820)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("4_85u15")
+offset = Vector2(-200, 100)
+
+[node name="DuchPara1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(505, 745)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("5_5mghc")
+offset = Vector2(-200, 100)
+
+[node name="DuchPara4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(972, 825)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("6_q1rl3")
+offset = Vector2(-200, 100)
 
 [node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -23,3 +69,12 @@
 [node name="PlatformTextures" type="Node2D" parent="."]
 
 [node name="Foreground" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("7_mwy8p")]
+position = Vector2(167, 704)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="PlatformBasic" parent="." instance=ExtResource("8_afh11")]
+position = Vector2(77, 1055)
+width = 5000
