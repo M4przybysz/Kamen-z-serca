@@ -162,7 +162,7 @@ script = SubResource("GDScript_6jpx3")
 position = Vector2(1604, 304)
 
 [node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
-position = Vector2(-949, 620)
+position = Vector2(-1502, 622)
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -181,14 +181,15 @@ position = Vector2(2962, 591)
 [node name="Puzzles" type="Node2D" parent="."]
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
-position = Vector2(-425, 597)
+position = Vector2(-832, 586)
 
-[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
-position = Vector2(-567, 643)
-connected_thing = NodePath("../Door")
+[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("9_e0jtf")]
+position = Vector2(-1080, 643)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../PushableObject3")
 
 [node name="Door" parent="Puzzles" instance=ExtResource("10_7wred")]
-position = Vector2(-744, 404)
+position = Vector2(-1257, 404)
 
 [node name="PushableObject3" parent="Puzzles" instance=ExtResource("12_23iqs")]
-position = Vector2(649, 503)
+position = Vector2(-705, 547)
