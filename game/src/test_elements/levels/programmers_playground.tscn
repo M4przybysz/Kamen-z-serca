@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=24 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="5_x4klb"]
 [ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="6_kn8ie"]
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="6_w0u7d"]
+[ext_resource type="PackedScene" uid="uid://c0ksg8yaii172" path="res://src/templates/enviroment/interactable_object.tscn" id="7_hixf1"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
+[ext_resource type="PackedScene" uid="uid://qnjxd6fe4n2a" path="res://src/templates/enviroment/breakable_wall.tscn" id="8_2g65v"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
@@ -160,6 +162,9 @@ script = SubResource("GDScript_6jpx3")
 [node name="ResponsivePlatform" parent="Environment" instance=ExtResource("6_w0u7d")]
 position = Vector2(1604, 304)
 
+[node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
+position = Vector2(-1502, 622)
+
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Jeff" parent="NPC" instance=ExtResource("2_f5u2k")]
@@ -177,14 +182,19 @@ position = Vector2(2962, 591)
 [node name="Puzzles" type="Node2D" parent="."]
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
-position = Vector2(798, 565)
+position = Vector2(-832, 586)
 
-[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
-position = Vector2(-399, 643)
-connected_thing = NodePath("../Door")
+[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("9_e0jtf")]
+position = Vector2(-1080, 643)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../PushableObject3")
 
 [node name="Door" parent="Puzzles" instance=ExtResource("10_7wred")]
-position = Vector2(-576, 404)
+position = Vector2(-1257, 404)
 
 [node name="PushableObject3" parent="Puzzles" instance=ExtResource("12_23iqs")]
-position = Vector2(649, 503)
+position = Vector2(-705, 547)
+
+[node name="BreakableWall" parent="Puzzles" instance=ExtResource("8_2g65v")]
+position = Vector2(648, 550)
+hp = 3

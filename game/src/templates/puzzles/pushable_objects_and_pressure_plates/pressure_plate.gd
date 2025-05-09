@@ -5,10 +5,11 @@ extends StaticBody2D
 @onready var block_detection: CollisionShape2D = $CollisionShape2D3/Area2D/CollisionShape2D
 @onready var movement_lock_timer: Timer = $MovementLockTimer
 
-@export var connected_thing: StaticBody2D
+@export var thing_to_open: StaticBody2D
+@export var activator: RigidBody2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("pushable_object"):
+	if (activator == null && body.is_in_group("pushable_object")) || (activator != null && body == activator):
 		plate_collision.set_deferred("disabled", true)
 		block_detection.set_deferred("disabled", true)
 		plate_color.visible = false
@@ -16,4 +17,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		do_the_thing()
 
 func do_the_thing() -> void:
-	connected_thing.activate()
+	thing_to_open.activate()
