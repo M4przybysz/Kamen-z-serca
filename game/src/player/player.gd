@@ -88,7 +88,7 @@ func state_machine() -> void:
 	check_edge_grab()
 	check_dash()
 	
-	print(state, " - ", animation_locked)
+	# print(state, " - ", animation_locked)
 	
 	match state:
 		"idle":
