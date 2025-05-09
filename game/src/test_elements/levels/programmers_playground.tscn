@@ -165,10 +165,6 @@ position = Vector2(1604, 304)
 [node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
 position = Vector2(-1502, 622)
 
-[node name="BreakableWall" parent="Environment" instance=ExtResource("8_2g65v")]
-position = Vector2(648, 550)
-hp = 3
-
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Jeff" parent="NPC" instance=ExtResource("2_f5u2k")]
@@ -198,3 +194,7 @@ position = Vector2(-1257, 404)
 
 [node name="PushableObject3" parent="Puzzles" instance=ExtResource("12_23iqs")]
 position = Vector2(-705, 547)
+
+[node name="BreakableWall" parent="Puzzles" instance=ExtResource("8_2g65v")]
+position = Vector2(648, 550)
+hp = 3
