@@ -180,6 +180,9 @@ func _input(_event: InputEvent) -> void:
 		if active_feather == 0: active_feather = level
 		else: active_feather -= 1
 	
+	if Input.is_action_just_pressed("spear_return"):
+		throwables.get_children()[0].return_to_player()
+	
 	if Input.is_action_just_pressed("action"):
 		pass
 
