@@ -16,6 +16,9 @@ script = ExtResource("1_2nm2t")
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
+[node name="Player" parent="Gameplay" index="2"]
+position = Vector2(22187, 1190)
+
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
 main = NodePath("../../..")
 

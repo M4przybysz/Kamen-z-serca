@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://csay8c0a0u5in"]
+
+[ext_resource type="Script" path="res://src/dialogues/text_box.gd" id="1_6yrq0"]
+[ext_resource type="Texture2D" uid="uid://b7j8y1qiw6aby" path="res://assets/dialogues/Chmurka_2.png" id="1_dn77y"]
+
+[node name="Control" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.315
+anchor_bottom = 0.265
+offset_right = 250.4
+offset_bottom = 200.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6yrq0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_dn77y")
+region_rect = Rect2(20, 300, 960, 460)
+patch_margin_left = 180
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 190
+
+[node name="Control" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 105
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "gwegywrdurrygloiuhsjfkblrskfjblksj ;iyd nigkjfujga hfkjahfdgkfjdh a; lidhsfkj hd,kjhli ke dhfkdjhfl AKJEIHFD HCDSKHF; Sgwegywrdurrygloiuhsjfkblrskfjblksj ;iyd nigkjfujga hfkjahfdgkfjdh a; lidhsfkj hd,kjhli ke dhfkdjhfl AKJEIHFD HCDSKHF; S"
