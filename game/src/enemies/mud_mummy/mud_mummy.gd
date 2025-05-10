@@ -36,7 +36,8 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 	"wing_attack" : 1,
 	"stone_feather" : 1,
 	"copper_feather" : 1,
-	"bronze_feather" : 3,
+	"bronze_feather" : 2,
+	"spear" : 3,
 	# Add more values here (format "attack_name" : damage)
 }
 

@@ -186,7 +186,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MudMummy" type="CharacterBody2D" groups=["no_push"]]
+[node name="MudMummy" type="CharacterBody2D" groups=["enemy", "no_push"]]
 collision_layer = 80
 collision_mask = 80
 script = ExtResource("1_ri1ep")

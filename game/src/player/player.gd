@@ -88,7 +88,7 @@ func state_machine() -> void:
 	check_edge_grab()
 	check_dash()
 	
-	print(state, " - ", animation_locked)
+	#print(state, " - ", animation_locked)
 	
 	match state:
 		"idle":
@@ -114,7 +114,7 @@ func state_machine() -> void:
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw", "use_shield", "shield_charge":
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear", "use_shield", "shield_charge":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
@@ -127,7 +127,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	match state:
 		"start_jump", "grab_jump", "air_dash":
 			state = "mid_jump"
-		"end_jump", "wing_attack", "throw", "end_slide":
+		"end_jump", "wing_attack", "throw_feather", "throw_spear", "end_slide":
 			state = "idle"
 		"start_slide":
 			state = "mid_slide"
@@ -165,29 +165,20 @@ func _input(_event: InputEvent) -> void:
 		wing_attack()
 	
 	if Input.is_action_just_pressed("throw") && !throwables.get_children()[active_feather].isOnCooldown && (state == "idle" || state == "movement" || state == "mid_jump"):
-		state = "throw"
+		if throwables.get_children()[active_feather].is_in_group("feather"):
+			state = "throw_feather"
+		elif throwables.get_children()[active_feather].is_in_group("spear"):
+			state = "throw_spear"
 		throw()
 	
 	# Handle changing throwables
-	if Input.is_action_just_pressed("change_throwable_down"):
-		if level == 1:
-			pass
-		elif level == 2:
-			if active_feather == 1: active_feather -= 1
-			else: active_feather += 1
-		elif level == 3:
-			if active_feather == 2: active_feather = 0
-			else: active_feather += 1
+	if Input.is_action_pressed("change_throwable_down"):
+		if active_feather == level: active_feather = 0
+		else: active_feather += 1
 	
-	if Input.is_action_just_pressed("change_throwable_up"):
-		if level == 2:
-			if active_feather == 0: active_feather += 1
-			else: active_feather -= 1
-		elif level == 3:
-			if active_feather == 0: active_feather = 2
-			else: active_feather -= 1
-		else: 
-			pass
+	if Input.is_action_pressed("change_throwable_up"):
+		if active_feather == 0: active_feather = level
+		else: active_feather -= 1
 	
 	if Input.is_action_just_pressed("action"):
 		pass
