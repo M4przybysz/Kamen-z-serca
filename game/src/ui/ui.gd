@@ -81,7 +81,8 @@ func get_scene(scene_name: String) -> Array:
 		index += 1
 	return scene
 
-func print_scene() -> void:
+func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
+	dynamic_dialogue_box_placement.position=dynamic_dialogue_position
 	narrator.text = ""
 	narrator_placement.visible = false
 	dynamic_dialogue_box_placement.visible = false
