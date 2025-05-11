@@ -13,6 +13,7 @@ var isOnCooldown: bool = false
 var flight_direction: int = 1
 var reset: bool = true
 var platform_mode: bool = false
+var lock_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		angular_velocity = 0
 	
 	if platform_mode && !player.is_grabbing:
-		global_position -= player.velocity * delta
+		global_position = lock_position
 	
 	if !player.is_grabbing && !reset && !platform_mode:
 		global_position -= player.velocity * delta
@@ -71,14 +72,15 @@ func _on_cooldown_timer_timeout() -> void:
 	reset = true
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if !body.is_in_group("player") && !body.is_in_group("enemy") && !platform_mode:
+	if !body.is_in_group("player") && !platform_mode:
+		lock_position = global_position
 		platform_mode = true
 		set_deferred("freeze", true)
 		collision_layer = 17
 		collision_mask = 17
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
-	if !body.is_in_group("player") && !body.is_in_group("enemy") && platform_mode:
+	if !body.is_in_group("player") && platform_mode:
 		platform_mode = false
 		set_deferred("freeze", false)
 		collision_layer = 16

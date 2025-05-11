@@ -25,7 +25,7 @@ extends CharacterBody2D
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
-@export var jump_velocity: float = -550.0
+@export var jump_velocity: float = -575.0
 @export var knockback_force: Vector2 = Vector2(-1000, -100)
 
 # Dictionaries
@@ -101,6 +101,11 @@ func state_machine() -> void:
 			elif direction == 0: state = "idle"
 			
 			animated_sprite.play(state)
+		"start_jump":
+			if is_grabbing: state = "grab_edge"
+			elif !animation_locked:
+				animated_sprite.play(state)
+				animation_locked = true
 		"mid_jump":
 			if is_grabbing: state = "grab_edge"
 			elif is_on_floor(): state = "end_jump"
@@ -114,7 +119,7 @@ func state_machine() -> void:
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear", "use_shield", "shield_charge":
+		"end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear", "use_shield", "shield_charge":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
