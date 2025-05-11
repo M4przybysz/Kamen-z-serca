@@ -25,9 +25,8 @@ func _ready() -> void:
 	freeze = true
 
 func _physics_process(delta: float) -> void:
-	flight_direction = player.last_direction
-	
 	if reset:
+		flight_direction = player.last_direction
 		rotation_degrees = 60 * flight_direction
 		global_position = player.global_position + Vector2(0, -35)
 		linear_velocity = Vector2.ZERO
@@ -38,7 +37,9 @@ func _physics_process(delta: float) -> void:
 	
 	if !player.is_grabbing && !reset && !platform_mode:
 		global_position -= player.velocity * delta
-		apply_torque(3500 * flight_direction)
+		apply_torque(3000 * flight_direction)
+		if rotation_degrees > 150 || 360 + rotation_degrees < 210:
+			angular_velocity = 0
 
 func throw(_direction: int) -> void:
 	if !isOnCooldown:
