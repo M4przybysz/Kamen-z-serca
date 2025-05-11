@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mcsp"]
 height = 50.0
 
-[node name="Feather" type="Node2D"]
+[node name="Feather" type="Node2D" groups=["feather"]]
 script = ExtResource("1_t5w1c")
 
 [node name="FlightTimer" type="Timer" parent="."]
