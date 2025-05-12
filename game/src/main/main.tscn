@@ -19,6 +19,18 @@ death_menu = NodePath("../Menus/DeathMenu")
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
 main = NodePath("../../..")
 
+[node name="Beta" type="Node2D" parent="Gameplay"]
+
+[node name="Enviroment" type="Node2D" parent="Gameplay/Beta"]
+
+[node name="LD" type="Node2D" parent="Gameplay/Beta/Enviroment"]
+
+[node name="Level2Podzm" type="Node2D" parent="Gameplay/Beta/Enviroment/LD"]
+
+[node name="FLevel1" type="Node2D" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm"]
+
+[node name="KLevel1" type="Node2D" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm"]
+
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
 
