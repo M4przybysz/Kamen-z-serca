@@ -13,6 +13,7 @@ extends CharacterBody2D
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
+@onready var shield_charge_collision: CollisionShape2D = $Shield/Area2D/CollisionShape2D
 
 # Assign raycasts to variables
 @onready var grab_hand: RayCast2D = $GrabHand
@@ -93,7 +94,7 @@ func state_machine() -> void:
 	check_dash()
 	check_shield()
 	
-	print(state, " - ", animation_locked)
+	#print(state, " - ", animation_locked)
 	
 	match state:
 		"idle":
@@ -218,12 +219,14 @@ func flip_h():
 		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
 		shield_collision.position.x = 25
+		shield_charge_collision.position.x = 35
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -30
 		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
 		shield_collision.position.x = -25
+		shield_charge_collision.position.x = -35
 
 #########################################
 # Movement handling
@@ -291,6 +294,7 @@ func check_shield() -> void:
 
 func shield_charge() -> void:
 	is_charging = true
+	shield_charge_collision.disabled = false
 	is_dashing = true
 	can_dash = false
 	can_be_damaged = false
@@ -334,6 +338,7 @@ func _on_slide_timer_timeout() -> void:
 	slide_timer.stop()
 	if can_stand_up == 0:
 		is_charging = false
+		shield_charge_collision.disabled = true
 		is_dashing = false
 		can_be_damaged = true
 		normal_collision.disabled = false
