@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 @onready var slide_fix_collision: CollisionShape2D = $SlideFix/CollisionShape2D
-
+@onready var shield_collision: CollisionShape2D = $Shield/CollisionShape2D
 
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
@@ -48,11 +48,13 @@ var can_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
 var animation_locked: bool = false
+var is_shield_used: bool = false
+var is_charging: bool = false
 
 # Player progression variables
 var level: int = 1
 var max_level: int = 3
-var is_shield_unlocked: bool = false
+var is_shield_unlocked: bool = true
 
 func _physics_process(delta: float) -> void:
 	state_machine()
@@ -71,6 +73,8 @@ func _physics_process(delta: float) -> void:
 	# Set velocity
 	if is_dashing: 
 		velocity.x = last_direction * movement_speed * 2
+	elif is_shield_used:
+		velocity.x = direction * movement_speed / 2
 	else: 
 		velocity.x = direction * movement_speed
 	
@@ -87,6 +91,7 @@ func _physics_process(delta: float) -> void:
 func state_machine() -> void:
 	check_edge_grab()
 	check_dash()
+	check_shield()
 	
 	print(state, " - ", animation_locked)
 	
@@ -114,7 +119,14 @@ func state_machine() -> void:
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw", "use_shield", "shield_charge":
+		"use_shield":
+			if !is_shield_used: state = "idle"
+			elif !is_on_floor(): state = "mid_jump"
+			else: animated_sprite.play(state)
+		"shield_charge":
+			if !is_shield_used && !is_charging: state = "idle"
+			else: animated_sprite.play(state)
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
@@ -153,11 +165,15 @@ func _input(_event: InputEvent) -> void:
 			state = "start_slide"
 			slide()
 	
-	if Input.is_action_just_pressed("shield_use") && is_shield_unlocked: 
+	if Input.is_action_pressed("shield_use") && is_shield_unlocked && is_on_floor(): 
+		state = "use_shield"
+		is_shield_used = true
 		if Input.is_action_just_pressed("slide_and_air_dash"): 
 			state = "shield_charge"
-		else:
-			state = "use_shield"
+			shield_charge()
+	
+	if Input.is_action_just_released("shield_use"):
+		is_shield_used = false
 	
 	# Handle attacks
 	if Input.is_action_just_pressed("wing_attack") && wing_attack_timer.is_stopped() && (state == "idle" || state == "movement" || state == "mid_jump"): 
@@ -201,11 +217,13 @@ func flip_h():
 		grab_hand.target_position.x = 30
 		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
+		shield_collision.position.x = 25
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -30
 		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
+		shield_collision.position.x = -25
 
 #########################################
 # Movement handling
@@ -261,6 +279,23 @@ func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:
 		throwables.get_children()[active_feather].throw(last_direction)
 
+func check_shield() -> void:
+	if (!is_shield_used && !is_charging) || !is_on_floor():
+		is_shield_used = false
+		is_charging = false
+		shield_collision.disabled = true
+		shield_collision.visible = false
+	else:
+		shield_collision.disabled = false
+		shield_collision.visible = true
+
+func shield_charge() -> void:
+	is_charging = true
+	is_dashing = true
+	can_dash = false
+	can_be_damaged = false
+	slide_timer.start()
+
 #########################################
 # Hitboxes and hurtboxes handling
 #########################################
@@ -298,6 +333,7 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 func _on_slide_timer_timeout() -> void:
 	slide_timer.stop()
 	if can_stand_up == 0:
+		is_charging = false
 		is_dashing = false
 		can_be_damaged = true
 		normal_collision.disabled = false
