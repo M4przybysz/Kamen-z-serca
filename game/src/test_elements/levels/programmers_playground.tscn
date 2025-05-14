@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="6_w0u7d"]
 [ext_resource type="PackedScene" path="res://src/templates/enviroment/interactable_object.tscn" id="7_hixf1"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
-[ext_resource type="PackedScene" uid="uid://qnjxd6fe4n2a" path="res://src/templates/puzzles/breakable_wall.tscn" id="8_2g65v"]
-[ext_resource type="PackedScene" uid="uid://b0s0m6yv6l1f8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/breakable_wall.tscn" id="8_2g65v"]
+[ext_resource type="PackedScene" uid="uid://gtogh0qnp8um" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_23iqs"]
@@ -159,7 +159,20 @@ position = Vector2(183, 491)
 script = SubResource("GDScript_6jpx3")
 
 [node name="ResponsivePlatform" parent="Environment" instance=ExtResource("6_w0u7d")]
-position = Vector2(1604, 304)
+position = Vector2(1195, 243)
+
+[node name="ResponsivePlatform2" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(1495, 243)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="ResponsivePlatform3" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(651, 99)
+
+[node name="ResponsivePlatform4" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(951, 97)
+rotation = 0.523599
+scale = Vector2(1, 1)
 
 [node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
 position = Vector2(-1502, 622)

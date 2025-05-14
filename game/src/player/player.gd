@@ -9,7 +9,6 @@ extends CharacterBody2D
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 @onready var slide_fix_collision: CollisionShape2D = $SlideFix/CollisionShape2D
 
-
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
@@ -44,7 +43,7 @@ var active_feather: int = 0
 var knockback: Vector2 = Vector2.ZERO
 var is_grabbing: bool = false
 var is_dashing: bool = false
-var can_dash: bool = true
+var can_air_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
 var animation_locked: bool = false
@@ -86,7 +85,7 @@ func _physics_process(delta: float) -> void:
 #########################################
 func state_machine() -> void:
 	check_edge_grab()
-	check_dash()
+	check_air_dash()
 	
 	# print(state, " - ", animation_locked)
 	
@@ -151,7 +150,7 @@ func _input(_event: InputEvent) -> void:
 	
 	# Handle dashing and sliding
 	if Input.is_action_just_pressed("slide_and_air_dash"):
-		if state == "mid_jump":
+		if state == "mid_jump" && can_air_dash:
 			state = "air_dash"
 			air_dash()
 		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
@@ -215,19 +214,18 @@ func jump() -> void:
 
 func air_dash() -> void:
 	is_dashing = true
-	can_dash = false
+	can_air_dash = false
 	can_be_damaged = false
 	slide_timer.start()
 
 func slide(time: float = 0.5) -> void:
 	is_dashing = true
-	can_dash = false
 	can_be_damaged = false
 	if is_on_floor():
-		normal_collision.disabled = true
-		hurtbox_collision.disabled = true
 		slide_collision.disabled = false
 		slide_fix_collision.disabled = false
+		normal_collision.disabled = true
+		hurtbox_collision.disabled = true
 	slide_timer.wait_time = time
 	slide_timer.start()
 
@@ -239,13 +237,13 @@ func check_edge_grab() -> void:
 	var checkHand = not grab_hand.is_colliding()
 	var checkGrabHeight = grab_check.is_colliding()
 	
-	var canGrab = isFalling && checkHand && checkGrabHeight && not is_grabbing
+	var canGrab = isFalling && checkHand && checkGrabHeight && !is_grabbing && (state == "start_jump" || state == "mid_jump") 
 	if canGrab: 
 		is_grabbing = true
 
-func check_dash() -> void:
-	if !can_dash && is_on_floor() && !is_dashing:
-		can_dash = true
+func check_air_dash() -> void:
+	if (is_on_floor() || is_grabbing) && !can_air_dash:
+		can_air_dash = true
 
 #########################################
 # Combat handling
@@ -265,7 +263,7 @@ func throw() -> void:
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("slowing_platform"):
-		movement_speed = movement_speed/2
+		movement_speed = movement_speed / 2
 	else:
 		dmg_source_count += 1
 		for group in dmg_dictionary:
@@ -284,7 +282,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("slowing_platform"):
-		movement_speed = movement_speed*2
+		movement_speed = movement_speed * 2
 	else:
 		dmg_source_count -= 1
 		for group in dmg_dictionary:
@@ -347,9 +345,9 @@ func _on_push_fix_body_exited(body: Node2D) -> void:
 # Slide fix
 #########################################
 func _on_slide_fix_body_entered(body: Node2D) -> void:
-	if !body.is_in_group("player"):
+	if !body.is_in_group("player") && !body.is_in_group("responsive_platform"):
 		can_stand_up += 1
 
 func _on_slide_fix_body_exited(body: Node2D) -> void:
-	if !body.is_in_group("player"):
+	if !body.is_in_group("player") || body.is_in_group("responsive_platform"):
 		can_stand_up -= 1
