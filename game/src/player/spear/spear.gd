@@ -51,6 +51,7 @@ func throw(_direction: int) -> void:
 		freeze = false
 		apply_impulse(throw_strength * Vector2(flight_direction, 1))
 		isOnCooldown = true
+		cooldown_timer.wait_time = cooldown
 		cooldown_timer.start()
 
 func return_to_player() -> void:
@@ -65,12 +66,16 @@ func return_to_player() -> void:
 
 func _on_cooldown_timer_timeout() -> void:
 	cooldown_timer.stop()
-	visible = false
-	hitbox_collision.disabled = true
-	collision.disabled = true
-	freeze = true
-	isOnCooldown = false
-	reset = true
+	if !player.is_grabbing:
+		visible = false
+		hitbox_collision.disabled = true
+		collision.disabled = true
+		freeze = true
+		isOnCooldown = false
+		reset = true
+	else:
+		cooldown_timer.wait_time = 2
+		cooldown_timer.start()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("player") && !platform_mode:

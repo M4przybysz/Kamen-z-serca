@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://qnjxd6fe4n2a"]
+[gd_scene load_steps=4 format=3 uid="uid://c84uj4l8am2lt"]
 
 [ext_resource type="Script" path="res://src/templates/puzzles/breakable_wall.gd" id="1_2dw5y"]
 
@@ -9,6 +9,8 @@ size = Vector2(40, 200)
 size = Vector2(44, 200)
 
 [node name="BreakableWall" type="StaticBody2D"]
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_2dw5y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
