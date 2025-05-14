@@ -114,10 +114,15 @@ func state_machine() -> void:
 			if slide_timer.is_stopped():
 				state = "end_slide"
 		"grab_edge":
-			animated_sprite.play(state)
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
+			
+			if Input.is_action_pressed("look_down") && is_grabbing:
+				state = "mid_jump"
+				is_grabbing = false
+			
+			animated_sprite.play(state)
 		"end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear", "use_shield", "shield_charge":
 			if !animation_locked:
 				animated_sprite.play(state)
