@@ -39,7 +39,7 @@ var last_direction = 1
 var direction
 var dmg_source_count = 0
 var dmg_taken = 0
-var active_feather: int = 0
+var active_feather: int = 1
 var knockback: Vector2 = Vector2.ZERO
 var is_grabbing: bool = false
 var is_dashing: bool = false
@@ -52,6 +52,7 @@ var animation_locked: bool = false
 var level: int = 1
 var max_level: int = 3
 var is_shield_unlocked: bool = false
+var is_spear_unlocked: bool = false
 
 func _physics_process(delta: float) -> void:
 	state_machine()
@@ -176,24 +177,32 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("throw") && !throwables.get_children()[active_feather].isOnCooldown && (state == "idle" || state == "movement" || state == "mid_jump"):
 		if throwables.get_children()[active_feather].is_in_group("feather"):
 			state = "throw_feather"
-		elif throwables.get_children()[active_feather].is_in_group("spear"):
+		elif throwables.get_children()[active_feather].is_in_group("spear") && is_spear_unlocked:
 			state = "throw_spear"
 		throw()
 	
 	# Handle changing throwables
 	if Input.is_action_pressed("change_throwable_down"):
+		if !is_spear_unlocked:
+			return
+		
 		if active_feather == level: active_feather = 0
 		else: active_feather += 1
 	
 	if Input.is_action_pressed("change_throwable_up"):
+		if !is_spear_unlocked:
+			return
+		
 		if active_feather == 0: active_feather = level
 		else: active_feather -= 1
 	
+	# Handle spear return
 	if Input.is_action_just_pressed("spear_return") && !is_grabbing:
 		throwables.get_children()[0].return_to_player()
 	
+	# Action key can lock and unlock spear
 	if Input.is_action_just_pressed("action"):
-		pass
+		is_spear_unlocked = !is_spear_unlocked
 
 #########################################
 # Direction change handling
