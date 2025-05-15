@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://psxhxflpo0ys" path="res://assets/sprites/player/slide/slide2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
+[ext_resource type="PackedScene" uid="uid://co24k8ymn44rp" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cojr7"]
 radius = 20.0
@@ -257,7 +258,27 @@ animations = [{
 "texture": ExtResource("5_vy2g8")
 }],
 "loop": false,
-"name": &"throw",
+"name": &"throw_feather",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_kmqv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gfcbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vy2g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ki1la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i4645")
+}],
+"loop": false,
+"name": &"throw_spear",
 "speed": 15.0
 }, {
 "frames": [{
@@ -335,7 +356,7 @@ position = Vector2(0, -50)
 target_position = Vector2(30, 0)
 
 [node name="GrabCheck" type="RayCast2D" parent="."]
-position = Vector2(0, -45)
+position = Vector2(0, -43)
 target_position = Vector2(30, 0)
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -396,8 +417,13 @@ disabled = true
 
 [node name="Throwables" type="Node2D" parent="."]
 
-[node name="StoneFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
+[node name="Spear" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("31_k2iuf")]
 visible = false
+player = NodePath("../..")
+
+[node name="StoneFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
+visible = false
+player = NodePath("../..")
 
 [node name="Hitbox" parent="Throwables/StoneFeather" index="2" groups=["stone_feather"]]
 
@@ -405,8 +431,9 @@ visible = false
 color = Color(0.501961, 0.501961, 0.501961, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CopperFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
+[node name="CopperFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
+player = NodePath("../..")
 cooldown = 4.0
 
 [node name="Hitbox" parent="Throwables/CopperFeather" index="2" groups=["copper_feather"]]
@@ -415,8 +442,9 @@ cooldown = 4.0
 color = Color(0.721569, 0.45098, 0.2, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="BronzeFeather" parent="Throwables" instance=ExtResource("3_pj0em")]
+[node name="BronzeFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
+player = NodePath("../..")
 cooldown = 5.0
 
 [node name="Hitbox" parent="Throwables/BronzeFeather" index="2" groups=["bronze_feather"]]

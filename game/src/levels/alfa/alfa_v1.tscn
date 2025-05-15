@@ -3205,11 +3205,11 @@ position = Vector2(316.998, 945)
 scale = Vector2(0.697455, 0.181729)
 
 [node name="Block119" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
-position = Vector2(398.796, 999)
+position = Vector2(400, 999)
 scale = Vector2(0.42708, -0.905536)
 
 [node name="Block103" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
-position = Vector2(118.998, 1109)
+position = Vector2(117.983, 1109)
 
 [node name="Block104" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-2543.91, 2290)
@@ -3360,12 +3360,12 @@ detect_blocks = true
 [node name="Puzzles2" type="Node2D" parent="Environment"]
 position = Vector2(15532, 1037)
 
-[node name="PressurePlate" type="StaticBody2D" parent="Environment/Puzzles2" node_paths=PackedStringArray("connected_thing")]
+[node name="PressurePlate" type="StaticBody2D" parent="Environment/Puzzles2" node_paths=PackedStringArray("thing_to_open")]
 position = Vector2(391, 1408)
 collision_layer = 33
 collision_mask = 33
 script = ExtResource("8_c7vtu")
-connected_thing = NodePath("../Door")
+thing_to_open = NodePath("../Door")
 
 [node name="MovementLockTimer" type="Timer" parent="Environment/Puzzles2/PressurePlate"]
 wait_time = 0.05

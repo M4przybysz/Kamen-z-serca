@@ -21,6 +21,7 @@ main = NodePath("../../..")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
+layer = 2
 
 [node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
 visible = false
