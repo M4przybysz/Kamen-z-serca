@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=50 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://f7yv2xqggk4r" path="res://assets/sprites/player/jump/grab.png" id="2_ff48u"]
@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://psxhxflpo0ys" path="res://assets/sprites/player/slide/slide2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
-[ext_resource type="PackedScene" uid="uid://co24k8ymn44rp" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="PackedScene" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cojr7"]
 radius = 20.0
@@ -210,6 +210,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_njf6p")
+}],
+"loop": false,
+"name": &"shield_charge",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dqs6s")
 }, {
 "duration": 1.0,
@@ -275,6 +283,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_njf6p")
+}],
+"loop": false,
+"name": &"use_shield",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_g4atu")
 }, {
 "duration": 1.0,
@@ -299,6 +315,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
 size = Vector2(50, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyrw6"]
+size = Vector2(10, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sfbq"]
+size = Vector2(10, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or1cx"]
 size = Vector2(20, 50)
@@ -368,6 +390,30 @@ offset_top = -50.0
 offset_right = 25.0
 offset_bottom = 50.0
 color = Color(1, 0, 0, 0.501961)
+
+[node name="Shield" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield"]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_cyrw6")
+
+[node name="ColorRect" type="ColorRect" parent="Shield/CollisionShape2D"]
+offset_left = -5.0
+offset_top = -35.0
+offset_right = 5.0
+offset_bottom = 35.0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Area2D" type="Area2D" parent="Shield" groups=["shield_charge"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield/Area2D"]
+position = Vector2(35, 0)
+shape = SubResource("RectangleShape2D_6sfbq")
+disabled = true
 
 [node name="Throwables" type="Node2D" parent="."]
 

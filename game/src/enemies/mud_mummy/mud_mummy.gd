@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
 @onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
+@onready var stun_timer: Timer = $Timers/StunTimer
 
 @onready var player: CharacterBody2D = $"../../../Player"
 #@export var player: CharacterBody2D
@@ -24,8 +25,8 @@ var target: float
 @export var idle_movement_range_left: int = 300
 @export var idle_movement_range_right: int = 300
 @export var knockback_force: Vector2 = Vector2(-1000, -50)
+@export var knockback_boost: Vector2 = Vector2(3, 2.5)
 var knockback: Vector2 = Vector2.ZERO
-
 
 # Combat variables
 @export var max_hp: int = 3
@@ -65,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	# Remove dmg when falling
-	if !is_wrapping && !is_on_floor():
+	if (!is_wrapping && !is_on_floor()) || !stun_timer.is_stopped():
 		hurtbox_collision.disabled = true
 	else:
 		hurtbox_collision.disabled = false
@@ -78,6 +79,7 @@ func _physics_process(delta: float) -> void:
 	# animated_sprite.play(state)
 	
 	velocity.x = direction * movement_speed
+	if !stun_timer.is_stopped(): velocity.x = 0
 	
 	velocity += knockback
 	knockback = knockback.lerp(Vector2.ZERO, 0.16)
@@ -149,20 +151,27 @@ func flip_h():
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
+	var got_charged = false
+	if area.is_in_group("shield_charge"): got_charged = true
+	
 	dmg_source_count += 1
 	for group in dmg_dictionary:
 		if area.is_in_group(group):
 			dmg_taken += dmg_dictionary[group]
 			if is_wrapping:
 				stop_wrapping()
-	if dmg_taken > 0:
+	if dmg_taken > 0 || got_charged:
 		knockback = knockback_force
 		var knockback_direction: int
-		if area.global_position.x > global_position.x:
-			knockback_direction = 1
-		else:
-			knockback_direction = -1
+		if area.global_position.x > global_position.x: knockback_direction = 1
+		else: knockback_direction = -1
 		knockback.x *= knockback_direction
+		if got_charged: 
+			stun_timer.start()
+			knockback.x *= knockback_boost.x
+			knockback.y *= knockback_boost.y
+		if !stun_timer.is_stopped():
+			dmg_taken *= 2
 	decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
@@ -185,6 +194,9 @@ func _on_charge_timer_timeout() -> void:
 
 func _on_wrap_cooldown_timer_timeout() -> void:
 	wrap_cooldown_timer.stop()
+
+func _on_stun_timer_timeout() -> void:
+	stun_timer.stop()
 
 #########################################
 # Combat handling

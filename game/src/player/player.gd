@@ -8,10 +8,12 @@ extends CharacterBody2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 @onready var slide_fix_collision: CollisionShape2D = $SlideFix/CollisionShape2D
+@onready var shield_collision: CollisionShape2D = $Shield/CollisionShape2D
 
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
+@onready var shield_charge_collision: CollisionShape2D = $Shield/Area2D/CollisionShape2D
 
 # Assign raycasts to variables
 @onready var grab_hand: RayCast2D = $GrabHand
@@ -47,6 +49,8 @@ var can_air_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
 var animation_locked: bool = false
+var is_shield_used: bool = false
+var is_charging: bool = false
 
 # Player progression variables
 var level: int = 1
@@ -71,6 +75,8 @@ func _physics_process(delta: float) -> void:
 	# Set velocity
 	if is_dashing: 
 		velocity.x = last_direction * movement_speed * 2
+	elif is_shield_used:
+		velocity.x = direction * movement_speed / 2
 	else: 
 		velocity.x = direction * movement_speed
 	
@@ -86,6 +92,7 @@ func _physics_process(delta: float) -> void:
 #########################################
 func state_machine() -> void:
 	check_edge_grab()
+	check_shield()
 	check_air_dash()
 	
 	# print(state, " - ", animation_locked)
@@ -119,17 +126,24 @@ func state_machine() -> void:
 				state = "grab_jump"
 				jump()
 			
-			if Input.is_action_pressed("look_down") && is_grabbing:
+			if Input.is_action_just_pressed("look_down") && is_grabbing:
 				state = "mid_jump"
 				is_grabbing = false
 			
 			animated_sprite.play(state)
-		"end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear", "use_shield", "shield_charge":
+		"use_shield":
+			if !is_shield_used: state = "idle"
+			elif !is_on_floor(): state = "mid_jump"
+			else: animated_sprite.play(state)
+		"shield_charge":
+			if !is_shield_used && !is_charging: state = "idle"
+			else: animated_sprite.play(state)
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
 		_:
-			print("undefined state")
+			print("undefined state: ", state)
 			state = "idle"
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -150,7 +164,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _input(_event: InputEvent) -> void:
 	# Handle jumping
 	if Input.is_action_just_pressed("jump"):
-		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
+		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" && is_on_floor():
 			state = "start_jump"
 			jump()
 	
@@ -163,11 +177,15 @@ func _input(_event: InputEvent) -> void:
 			state = "start_slide"
 			slide()
 	
-	if Input.is_action_just_pressed("shield_use") && is_shield_unlocked: 
+	if Input.is_action_pressed("shield_use") && is_shield_unlocked && is_on_floor(): 
+		state = "use_shield"
+		is_shield_used = true
 		if Input.is_action_just_pressed("slide_and_air_dash"): 
 			state = "shield_charge"
-		else:
-			state = "use_shield"
+			shield_charge()
+	
+	if Input.is_action_just_released("shield_use"):
+		is_shield_used = false
 	
 	# Handle attacks
 	if Input.is_action_just_pressed("wing_attack") && wing_attack_timer.is_stopped() && (state == "idle" || state == "movement" || state == "mid_jump"): 
@@ -203,6 +221,7 @@ func _input(_event: InputEvent) -> void:
 	# Action key can lock and unlock spear
 	if Input.is_action_just_pressed("action"):
 		is_spear_unlocked = !is_spear_unlocked
+		is_shield_unlocked = !is_shield_unlocked
 
 #########################################
 # Direction change handling
@@ -213,11 +232,15 @@ func flip_h():
 		grab_hand.target_position.x = 30
 		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
+		shield_collision.position.x = 25
+		shield_charge_collision.position.x = 35
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -30
 		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
+		shield_collision.position.x = -25
+		shield_charge_collision.position.x = -35
 
 #########################################
 # Movement handling
@@ -272,6 +295,23 @@ func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:
 		throwables.get_children()[active_feather].throw(last_direction)
 
+func check_shield() -> void:
+	if (!is_shield_used && !is_charging) || !is_on_floor():
+		is_shield_used = false
+		is_charging = false
+		shield_collision.disabled = true
+		shield_collision.visible = false
+	else:
+		shield_collision.disabled = false
+		shield_collision.visible = true
+
+func shield_charge() -> void:
+	shield_charge_collision.disabled = false
+	is_charging = true
+	is_dashing = true
+	can_be_damaged = false
+	slide_timer.start()
+
 #########################################
 # Hitboxes and hurtboxes handling
 #########################################
@@ -309,6 +349,8 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 func _on_slide_timer_timeout() -> void:
 	slide_timer.stop()
 	if can_stand_up == 0:
+		is_charging = false
+		shield_charge_collision.disabled = true
 		is_dashing = false
 		can_be_damaged = true
 		normal_collision.disabled = false
