@@ -125,7 +125,8 @@ func state_machine() -> void:
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
-      if Input.is_action_pressed("look_down") && is_grabbing:
+			
+			if Input.is_action_just_pressed("look_down") && is_grabbing:
 				state = "mid_jump"
 				is_grabbing = false
 			
@@ -137,12 +138,12 @@ func state_machine() -> void:
 		"shield_charge":
 			if !is_shield_used && !is_charging: state = "idle"
 			else: animated_sprite.play(state)
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw":
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
 		_:
-			print("undefined state")
+			print("undefined state: ", state)
 			state = "idle"
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -163,7 +164,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _input(_event: InputEvent) -> void:
 	# Handle jumping
 	if Input.is_action_just_pressed("jump"):
-		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
+		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" && is_on_floor():
 			state = "start_jump"
 			jump()
 	
@@ -220,6 +221,7 @@ func _input(_event: InputEvent) -> void:
 	# Action key can lock and unlock spear
 	if Input.is_action_just_pressed("action"):
 		is_spear_unlocked = !is_spear_unlocked
+		is_shield_unlocked = !is_shield_unlocked
 
 #########################################
 # Direction change handling
@@ -307,7 +309,6 @@ func shield_charge() -> void:
 	shield_charge_collision.disabled = false
 	is_charging = true
 	is_dashing = true
-	can_dash = false
 	can_be_damaged = false
 	slide_timer.start()
 
