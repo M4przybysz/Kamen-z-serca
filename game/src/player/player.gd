@@ -293,8 +293,8 @@ func check_shield() -> void:
 		shield_collision.visible = true
 
 func shield_charge() -> void:
-	is_charging = true
 	shield_charge_collision.disabled = false
+	is_charging = true
 	is_dashing = true
 	can_dash = false
 	can_be_damaged = false

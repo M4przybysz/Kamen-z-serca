@@ -296,7 +296,7 @@ animations = [{
 size = Vector2(50, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyrw6"]
-size = Vector2(20, 70)
+size = Vector2(10, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sfbq"]
 size = Vector2(10, 70)
@@ -375,13 +375,13 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shield"]
-position = Vector2(25, 0)
+position = Vector2(30, 0)
 shape = SubResource("RectangleShape2D_cyrw6")
 
 [node name="ColorRect" type="ColorRect" parent="Shield/CollisionShape2D"]
-offset_left = -10.0
+offset_left = -5.0
 offset_top = -35.0
-offset_right = 10.0
+offset_right = 5.0
 offset_bottom = 35.0
 color = Color(0, 0, 0, 0.470588)
 

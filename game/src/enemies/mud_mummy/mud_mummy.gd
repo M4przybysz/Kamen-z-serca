@@ -25,6 +25,7 @@ var target: float
 @export var idle_movement_range_left: int = 300
 @export var idle_movement_range_right: int = 300
 @export var knockback_force: Vector2 = Vector2(-1000, -50)
+@export var knockback_boost: Vector2 = Vector2(3, 2.5)
 var knockback: Vector2 = Vector2.ZERO
 
 # Combat variables
@@ -64,7 +65,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	# Remove dmg when falling
-	if !is_wrapping && !is_on_floor():
+	if (!is_wrapping && !is_on_floor()) || !stun_timer.is_stopped():
 		hurtbox_collision.disabled = true
 	else:
 		hurtbox_collision.disabled = false
@@ -166,8 +167,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		knockback.x *= knockback_direction
 		if got_charged: 
 			stun_timer.start()
-			knockback.x *= 3
-			knockback.y *= 2
+			knockback.x *= knockback_boost.x
+			knockback.y *= knockback_boost.y
 		if !stun_timer.is_stopped():
 			dmg_taken *= 2
 	decrease_hp(floor(dmg_taken/dmg_source_count))
