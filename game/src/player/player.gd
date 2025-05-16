@@ -126,7 +126,7 @@ func state_machine() -> void:
 				state = "grab_jump"
 				jump()
 			
-			if Input.is_action_just_pressed("look_down") && is_grabbing:
+			if Input.is_action_pressed("look_down") && is_grabbing:
 				state = "mid_jump"
 				is_grabbing = false
 			
