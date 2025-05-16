@@ -17,7 +17,6 @@ color = Color(0, 1, 0, 1)
 
 [node name="Node2D" type="Node2D" parent="."]
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Node2D"]
 offset_left = -12.0

@@ -1,3 +1,3 @@
 extends Node2D
 
-@export var hp: int = 1
+@export var heal: int = 1

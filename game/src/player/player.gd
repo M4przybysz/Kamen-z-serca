@@ -318,9 +318,12 @@ func shield_charge() -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("slowing_platform"):
 		movement_speed = movement_speed / 2
-	if area.is_in_group("hp"):
-		gameplay.increase_hp(area.get_parent().hp)
+	elif area.is_in_group("hp"):
+		gameplay.increase_hp(area.get_parent().heal)
 		area.get_parent().queue_free()
+	elif area.is_in_group("checkpoint"):
+		gameplay.increase_hp(area.get_parent().heal)
+		gameplay.set_checkpoint(area.get_parent().global_position)
 	else:
 		dmg_source_count += 1
 		for group in dmg_dictionary:
@@ -338,7 +341,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			damage_timer.start()
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
-	if area.is_in_group("slowing_platform"):
+	if area.is_in_group("hp") || area.is_in_group("checkpoint"):
+		return
+	elif area.is_in_group("slowing_platform"):
 		movement_speed = movement_speed * 2
 	else:
 		dmg_source_count -= 1

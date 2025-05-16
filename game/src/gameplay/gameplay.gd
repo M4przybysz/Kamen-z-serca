@@ -10,6 +10,7 @@ extends Node2D
 var player_level: int = 1
 var max_hp: int = 2 + player_level
 var hp: int
+var revive_position: Vector2 = Vector2(750, 200)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,7 +43,8 @@ func decrease_hp(value: int) -> void:
 	if hp >= 0 and hp < max_hp:
 		ui.set_hp(hp)
 	if hp <= 0:
-		main.show_death_menu()
+		#main.show_death_menu()
+		revive_player()
 
 func increase_hp(value: int) -> void:
 	if hp + value < max_hp:
@@ -53,6 +55,15 @@ func increase_hp(value: int) -> void:
 		ui.set_hp(hp)
 	if hp == max_hp:
 		ui.set_max_hp()
+
+func revive_player() -> void:
+	player.global_position = revive_position
+	hp = max_hp
+	ui.set_max_hp()
+
+func set_checkpoint(checkpoint_position: Vector2) ->void:
+	revive_position = checkpoint_position
+	#print(revive_position)
 
 func player_level_up() -> void:
 	player_level += 1
