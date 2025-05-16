@@ -39,6 +39,10 @@ func set_hp(hp):
 		img.visible = false
 	hp_vfx[hp].visible = true
 
+func set_max_hp():
+	for img in hp_vfx:
+		img.visible = false
+
 func load_text_from_file(path: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()

@@ -359,7 +359,7 @@ target_position = Vector2(30, 0)
 position = Vector2(0, -43)
 target_position = Vector2(30, 0)
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["player_hurtbox"]]
 position = Vector2(0, -50)
 collision_mask = 2
 

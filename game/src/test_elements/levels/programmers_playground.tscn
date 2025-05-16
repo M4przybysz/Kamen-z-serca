@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=25 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="6_w0u7d"]
 [ext_resource type="PackedScene" path="res://src/templates/enviroment/interactable_object.tscn" id="7_hixf1"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/breakable_wall.tscn" id="8_2g65v"]
+[ext_resource type="PackedScene" uid="uid://c84uj4l8am2lt" path="res://src/templates/puzzles/breakable_wall.tscn" id="8_2g65v"]
 [ext_resource type="PackedScene" uid="uid://gtogh0qnp8um" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
 [ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
+[ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_23iqs"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="15_r67vx"]
+[ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="16_agdfy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
 
@@ -164,7 +166,6 @@ position = Vector2(1195, 243)
 [node name="ResponsivePlatform2" parent="Environment" instance=ExtResource("6_w0u7d")]
 position = Vector2(1495, 243)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="ResponsivePlatform3" parent="Environment" instance=ExtResource("6_w0u7d")]
 position = Vector2(651, 99)
@@ -172,7 +173,6 @@ position = Vector2(651, 99)
 [node name="ResponsivePlatform4" parent="Environment" instance=ExtResource("6_w0u7d")]
 position = Vector2(951, 97)
 rotation = 0.523599
-scale = Vector2(1, 1)
 
 [node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
 position = Vector2(-1502, 622)
@@ -206,3 +206,18 @@ position = Vector2(-705, 547)
 [node name="BreakableWall" parent="Puzzles" instance=ExtResource("8_2g65v")]
 position = Vector2(648, 550)
 hp = 3
+
+[node name="Healing" type="Node2D" parent="."]
+
+[node name="HealthPack" parent="Healing" instance=ExtResource("15_r67vx")]
+position = Vector2(1547, 427)
+
+[node name="HealthPack2" parent="Healing" instance=ExtResource("15_r67vx")]
+position = Vector2(3658, 617)
+heal = 100
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("16_agdfy")]
+position = Vector2(706, 49)
+heal = 100
