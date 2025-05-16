@@ -26,8 +26,9 @@ layer = 2
 [node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
 visible = false
 
-[node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("5_saqgk")]
 visible = false
+gameplay = NodePath("../../Gameplay")
 
 [node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
 visible = false

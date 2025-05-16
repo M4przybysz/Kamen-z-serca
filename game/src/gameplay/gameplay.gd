@@ -43,8 +43,7 @@ func decrease_hp(value: int) -> void:
 	if hp >= 0 and hp < max_hp:
 		ui.set_hp(hp)
 	if hp <= 0:
-		#main.show_death_menu()
-		revive_player()
+		main.show_death_menu()
 
 func increase_hp(value: int) -> void:
 	if hp + value < max_hp:
