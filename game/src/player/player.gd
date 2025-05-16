@@ -318,6 +318,9 @@ func shield_charge() -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("slowing_platform"):
 		movement_speed = movement_speed / 2
+	if area.is_in_group("hp"):
+		gameplay.increase_hp(area.get_parent().hp)
+		area.get_parent().queue_free()
 	else:
 		dmg_source_count += 1
 		for group in dmg_dictionary:

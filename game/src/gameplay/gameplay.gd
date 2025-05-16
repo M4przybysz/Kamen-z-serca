@@ -51,6 +51,8 @@ func increase_hp(value: int) -> void:
 		hp = max_hp
 	if hp >= 0 and hp < max_hp:
 		ui.set_hp(hp)
+	if hp == max_hp:
+		ui.set_max_hp()
 
 func player_level_up() -> void:
 	player_level += 1
