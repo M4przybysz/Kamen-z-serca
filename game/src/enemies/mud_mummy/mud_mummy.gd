@@ -3,11 +3,15 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
+
+# Assign timers to variables
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
 @onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
 @onready var stun_timer: Timer = $Timers/StunTimer
+@onready var idle_stay_timer: Timer = $Timers/IdleStayTimer
 
+# Assign player to variable
 @onready var player: CharacterBody2D = $"../../../Player"
 #@export var player: CharacterBody2D
 
@@ -47,9 +51,14 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 var state: String = "idle"
 var direction = 0
 var sees_player = false
-var player_in_wrap_range = false
+var player_in_attack_range = false
 var player_in_charge_range = false
 var is_wrapping = false
+var animation_locked = false
+
+# Random number generator
+var RNG = RandomNumberGenerator.new()
+var random_number: int
 
 func _ready() -> void:
 	starting_point = global_position
@@ -75,6 +84,14 @@ func _physics_process(delta: float) -> void:
 	# Decide what to do
 	state_machine()
 	
+	# Change direction to the target (player or random point on X axis)
+	if target > global_position.x:
+		direction = 1
+	elif target < global_position.x:
+		direction = -1
+	else:
+		direction = 0
+	
 	# Animate enemy
 	flip_h()
 	# animated_sprite.play(state)
@@ -93,51 +110,87 @@ func _physics_process(delta: float) -> void:
 func state_machine():
 	# Check death
 	if hp <= 0:
-		die()
+		state = "die"
+		if !animation_locked:
+			animated_sprite.play(state)
+		animation_locked = true
+		return
 	
 	check_distance_to_player()
 	
+	#print(state)
+	
 	match state:
 		"idle":
-			if sees_player:
-				state = "combat"
+			if !animation_locked:
+				animated_sprite.play(state)
+			
+			if sees_player: state = "combat"
 			else:
-				state = "idle_movement"
+				random_number = RNG.randi_range(0, 1)
+				if random_number == 0:
+					state = "idle_movement"
+				else:
+					state = "idle_stay"
 		"idle_movement":
-			if sees_player:
-				state = "combat"
-			else:
+			if sees_player: state = "combat"
+			else: 
 				idle_movement()
+				if !animation_locked:
+					animated_sprite.play(state)
+		"idle_stay":
+			if sees_player: 
+				idle_stay_timer.stop()
+				state = "combat"
+			elif idle_stay_timer.is_stopped() && !sees_player: state = "idle"
+			else: 
+				idle_stay_timer.start()
+				if !animation_locked:
+					animated_sprite.play(state)
 		"combat":
-			if !sees_player:
-				state = "idle"
-			elif player_in_charge_range:
-				state = "charge"
-			elif player_in_wrap_range:
-				state = "wrap_round_player"
-			else:
-				state = "combat_movement"
+			if !sees_player: state = "idle"
+			elif player_in_charge_range: state = "charge"
+			else: state = "combat_movement"
 		"combat_movement":
-			if player_in_wrap_range || !sees_player:
-				state = "combat"
-			elif player_in_charge_range:
-				state = "charge"
-			else:
+			if !sees_player: state = "idle"
+			elif player_in_charge_range: state = "charge"
+			elif player_in_attack_range: state = "attack"
+			else: 
 				combat_movement()
-		"wrap_round_player":
-			if (!player_in_wrap_range && !is_wrapping) || player.is_dashing:
-				state = "combat"
-			else:
-				wrap_around_player()
+				if !animation_locked:
+					animated_sprite.play(state)
+		"attack":
+			if !sees_player: state = "idle"
+			else: 
+				attack()
+				animated_sprite.play(state)
+				animation_locked = true
 		"charge":
-			if !player_in_charge_range:
-				state = "combat"
-			else:
+			if !sees_player: state = "idle"
+			elif !player_in_charge_range: state = "combat"
+			else: 
 				charge()
-				state = "combat_movement"
+				animated_sprite.play(state)
+				animation_locked = true
 		_:
-			print("undefined state")
+			print("undefined state: ", state)
 			state = "idle"
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	animation_locked = false
+	match state:
+		"idle_movement", "idle_stay", "idle":
+			state = "idle"
+		"attack", "stand_up":
+			state = "combat"
+		"charge":
+			state = "combat_movement"
+		"die":
+			die()
+		_:
+			print("(finished) undefined state: ", state)
+			state = "idle"
+	
 
 #########################################
 # Direction change handling
@@ -159,8 +212,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	for group in dmg_dictionary:
 		if area.is_in_group(group):
 			dmg_taken += dmg_dictionary[group]
-			if is_wrapping:
-				stop_wrapping()
+			#if is_wrapping:
+				#stop_wrapping()
 	if dmg_taken > 0 || got_charged:
 		knockback = knockback_force
 		var knockback_direction: int
@@ -199,6 +252,9 @@ func _on_wrap_cooldown_timer_timeout() -> void:
 func _on_stun_timer_timeout() -> void:
 	stun_timer.stop()
 
+func _on_idle_stay_timer_timeout() -> void:
+	idle_stay_timer.stop()
+
 #########################################
 # Combat handling
 #########################################
@@ -210,10 +266,11 @@ func decrease_hp(value: int) -> void:
 	#print(hp)
 
 func die() -> void:
-	# TODO: Add death animation
 	print("Deleting enemy...")
-	$AnimationPlayer.play("dead")
 	queue_free()
+
+func attack() -> void:
+	pass
 
 func charge() -> void:
 	target = player.global_position.x
@@ -221,17 +278,17 @@ func charge() -> void:
 	charge_timer.start()
 	$AnimationPlayer.play("charge")
 
-func wrap_around_player() -> void:
-	movement_speed = 0
-	is_wrapping = true
-	global_position = player.global_position + Vector2(0, 25)
-	$AnimationPlayer.play("attack_Draugr")
+#func wrap_around_player() -> void:
+	#movement_speed = 0
+	#is_wrapping = true
+	#global_position = player.global_position + Vector2(0, 25)
+	#$AnimationPlayer.play("attack_Draugr")
 
-func stop_wrapping() -> void:
-	movement_speed = movement_speed_input
-	is_wrapping = false
-	player_in_wrap_range = false
-	wrap_cooldown_timer.start()
+#func stop_wrapping() -> void:
+	#movement_speed = movement_speed_input
+	#is_wrapping = false
+	#player_in_wrap_range = false
+	#wrap_cooldown_timer.start()
 
 func check_distance_to_player() -> void:
 	if player.global_position.x < left_combat_movement_limit || player.global_position.x > right_combat_movement_limit || global_position.x > right_combat_movement_limit || global_position.x < left_combat_movement_limit:
@@ -241,19 +298,14 @@ func check_distance_to_player() -> void:
 	else: 
 		sees_player = true
 		player_in_charge_range = abs(player.global_position.x - global_position.x) > 400 && floor(player.global_position.y) == floor(global_position.y) - 25
-		if wrap_cooldown_timer.is_stopped():
-			player_in_wrap_range = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
+		player_in_attack_range = abs(player.global_position.x - global_position.x) < 120 && floor(player.global_position.y) == floor(global_position.y) - 25
+		#if wrap_cooldown_timer.is_stopped():
+			#player_in_wrap_range = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
 
 func combat_movement() -> void:
 	if charge_timer.is_stopped():
 		target = player.global_position.x
 	
-	if target > global_position.x:
-		direction = 1
-	elif target < global_position.x:
-		direction = -1
-	else:
-		direction = 0
 	$AnimationPlayer.play("idle_movement")
 
 func idle_movement() -> void:
@@ -261,10 +313,4 @@ func idle_movement() -> void:
 	if global_position.x < target + 3 && global_position.x > target - 3 || is_on_wall():
 		target = randi() % int(right_idle_movement_limit - left_idle_movement_limit) + left_idle_movement_limit
 
-	if target > global_position.x:
-		direction = 1
-	elif target < global_position.x:
-		direction = -1
-	else:
-		direction = 0
 	$AnimationPlayer.play("idle_movement")

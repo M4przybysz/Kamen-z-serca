@@ -26,7 +26,7 @@ extends CharacterBody2D
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
-@export var jump_velocity: float = -575.0
+@export var jump_velocity: float = -550.0
 @export var knockback_force: Vector2 = Vector2(-1000, -100)
 
 # Dictionaries
@@ -157,7 +157,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"start_slide":
 			state = "mid_slide"
 		_:
-			pass
+			print("undefined state: ", state)
+			state = "idle"
 
 #########################################
 # Input handling

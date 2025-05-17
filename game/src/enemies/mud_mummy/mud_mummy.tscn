@@ -141,17 +141,25 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
-"loop": true,
-"name": &"charge",
-"speed": 5.0
+"loop": false,
+"name": &"attack",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
 "loop": true,
+"name": &"charge",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"combat",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,15 +167,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"combat_movement",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
-"loop": true,
+"loop": false,
+"name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,15 +191,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_movement",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
 "loop": true,
+"name": &"idle_stay",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
+"name": &"lay_down",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
+"name": &"stand_up",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"wrap_around_player",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="MudMummy" type="CharacterBody2D" groups=["enemy", "no_push"]]
@@ -203,6 +243,9 @@ wait_time = 3.0
 
 [node name="StunTimer" type="Timer" parent="Timers"]
 wait_time = 3.0
+
+[node name="IdleStayTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -235,7 +278,7 @@ libraries = {
 position = Vector2(-0.369857, 2.5)
 scale = Vector2(-0.0498325, 0.152108)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"idle"
+animation = &"die"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
@@ -266,5 +309,7 @@ attenuation = 1.56917
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
