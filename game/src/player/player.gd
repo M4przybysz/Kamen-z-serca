@@ -32,6 +32,7 @@ extends CharacterBody2D
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
 	"enemy" : 1, 	# Test value 
+	"spike" : 1,
 	# Add more values here (format "attack_name" : damage)
 }
 
