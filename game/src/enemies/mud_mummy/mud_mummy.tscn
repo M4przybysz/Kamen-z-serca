@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=18 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
@@ -17,6 +17,9 @@ height = 80.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kj1do"]
 size = Vector2(30, 60)
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_hb8k3"]
+length = 30.0
 
 [sub_resource type="Animation" id="Animation_g20w1"]
 length = 0.001
@@ -298,8 +301,8 @@ shape = SubResource("CapsuleShape2D_06uet")
 disabled = true
 
 [node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
 visible = false
@@ -313,6 +316,12 @@ offset_top = -30.0
 offset_right = 15.0
 offset_bottom = 30.0
 color = Color(1, 0, 0, 0.501961)
+
+[node name="WallDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetector"]
+rotation = -1.5708
+shape = SubResource("SeparationRayShape2D_hb8k3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -361,4 +370,6 @@ attenuation = 1.56917
 [connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="ChargeHurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="WallDetector" to="." method="_on_wall_detector_body_entered"]
+[connection signal="body_exited" from="WallDetector" to="." method="_on_wall_detector_body_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

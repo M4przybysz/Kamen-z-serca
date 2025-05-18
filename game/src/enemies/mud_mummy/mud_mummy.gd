@@ -10,6 +10,8 @@ extends CharacterBody2D
 
 @onready var attack_hitbox_collision: CollisionShape2D = $AttackHitbox/CollisionShape2D
 
+@onready var wall_detector_collision: CollisionShape2D = $WallDetector/CollisionShape2D
+
 # Assign timers to variables
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
@@ -69,6 +71,7 @@ var player_in_charge_range: bool = false
 var is_wrapping: bool = false
 var can_wrap: bool = false
 var animation_locked: bool = false
+var can_break_wall: bool = false
 
 # Random number generator
 var RNG = RandomNumberGenerator.new()
@@ -141,6 +144,7 @@ func state_machine():
 				animated_sprite.play(state)
 			
 			if sees_player: state = "combat"
+			elif can_break_wall: attack()
 			else:
 				random_number = RNG.randi_range(0, 1)
 				if random_number == 0:
@@ -149,6 +153,7 @@ func state_machine():
 					state = "idle_stay"
 		"idle_movement":
 			if sees_player: state = "combat"
+			elif can_break_wall: attack()
 			else: 
 				idle_movement()
 				if !animation_locked:
@@ -157,6 +162,7 @@ func state_machine():
 			if sees_player: 
 				idle_stay_timer.stop()
 				state = "combat"
+			elif can_break_wall: attack()
 			elif idle_stay_timer.is_stopped() && !sees_player: state = "idle"
 			else: 
 				idle_stay_timer.start()
@@ -229,9 +235,11 @@ func flip_h() -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
 		attack_hitbox_collision.position.x = 25
+		wall_detector_collision.rotation_degrees = -90
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		attack_hitbox_collision.position.x = -25
+		wall_detector_collision.rotation_degrees = 90
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -375,3 +383,14 @@ func check_charge() -> void:
 		charge_collision.disabled = false
 		charge_hurtbox_collision.disabled = false
 		$ChargeHurtbox/ColorRect.show()
+
+#########################################
+# Wall detection
+#########################################
+func _on_wall_detector_body_entered(body: Node2D) -> void:
+	if body.is_in_group("breakable_wall"):
+		can_break_wall = true
+
+func _on_wall_detector_body_exited(body: Node2D) -> void:
+	if body.is_in_group("breakable_wall"):
+		can_break_wall = false

@@ -9,6 +9,7 @@ var dmg_dictionary = {
 	"copper_feather" : 1,
 	"bronze_feather" : 2,
 	"spear" : 1,
+	"mummy_attack" : 1,
 }
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
