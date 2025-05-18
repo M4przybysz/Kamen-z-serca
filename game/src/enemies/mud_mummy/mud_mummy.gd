@@ -144,7 +144,7 @@ func state_machine():
 				animated_sprite.play(state)
 			
 			if sees_player: state = "combat"
-			elif can_break_wall: attack()
+			elif can_break_wall && attack_timer.is_stopped(): attack()
 			else:
 				random_number = RNG.randi_range(0, 1)
 				if random_number == 0:
@@ -153,7 +153,7 @@ func state_machine():
 					state = "idle_stay"
 		"idle_movement":
 			if sees_player: state = "combat"
-			elif can_break_wall: attack()
+			elif can_break_wall && attack_timer.is_stopped(): attack()
 			else: 
 				idle_movement()
 				if !animation_locked:
