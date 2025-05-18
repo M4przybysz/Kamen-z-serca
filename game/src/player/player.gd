@@ -157,7 +157,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"start_slide":
 			state = "mid_slide"
 		_:
-			print("undefined state: ", state)
+			print("(animation finished) undefined state: ", state)
 			state = "idle"
 
 #########################################

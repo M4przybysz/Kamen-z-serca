@@ -8,11 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://d2mu6t4bmsyuy" path="res://assets/sound/sfx/draugr_movement.wav" id="5_ibqi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
-radius = 25.0
-height = 70.0
+radius = 15.0
+height = 80.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl10x"]
-size = Vector2(70, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
+radius = 15.0
+height = 80.0
 
 [sub_resource type="Animation" id="Animation_g20w1"]
 length = 0.001
@@ -245,25 +246,48 @@ wait_time = 3.0
 wait_time = 5.0
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4h4jj")
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
+[node name="ChargeCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4h4jj")
+disabled = true
+
+[node name="NormalHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
 position = Vector2(-35, -25)
 collision_layer = 6
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(35, 25)
-shape = SubResource("RectangleShape2D_bl10x")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -35.0
-offset_top = -25.0
-offset_right = 35.0
-offset_bottom = 25.0
+[node name="ColorRect" type="ColorRect" parent="NormalHurtbox"]
+offset_left = 20.0
+offset_top = -15.0
+offset_right = 50.0
+offset_bottom = 65.0
 color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalHurtbox"]
+position = Vector2(35, 25)
+shape = SubResource("CapsuleShape2D_06uet")
+
+[node name="ChargeHurtbox" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 4
+
+[node name="ColorRect" type="ColorRect" parent="ChargeHurtbox"]
+visible = false
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 90.0
+rotation = 1.5708
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeHurtbox"]
+position = Vector2(0, 25)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_06uet")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -272,8 +296,8 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.369857, 2.5)
-scale = Vector2(-0.0498325, 0.152108)
+position = Vector2(-1, 26)
+scale = Vector2(-0.06, 0.1)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
 animation = &"die"
 autoplay = "idle"
@@ -281,7 +305,6 @@ autoplay = "idle"
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4o23v")
 volume_db = 2.0
-stream_paused = true
 max_distance = 1200.0
 attenuation = 1.56917
 
@@ -300,7 +323,6 @@ attenuation = 1.56917
 [node name="walkindDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ibqi1")
 volume_db = 5.0
-stream_paused = true
 max_distance = 1200.0
 attenuation = 1.56917
 
@@ -308,6 +330,8 @@ attenuation = 1.56917
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="Timers/StunTimer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
-[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="area_entered" from="NormalHurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="ChargeHurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

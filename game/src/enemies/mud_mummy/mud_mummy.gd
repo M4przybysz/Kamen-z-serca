@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @onready var normal_collision: CollisionShape2D = $NormalCollision
-@onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
+@onready var charge_collision: CollisionShape2D = $ChargeCollision
+
+@onready var normal_hurtbox_collision: CollisionShape2D = $NormalHurtbox/CollisionShape2D
+@onready var charge_hurtbox_collision: CollisionShape2D = $ChargeHurtbox/CollisionShape2D
 
 # Assign timers to variables
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
@@ -15,21 +19,27 @@ extends CharacterBody2D
 #@export var player: CharacterBody2D
 
 # Movement variables 
-@export var movement_speed_input = 100.0
-var movement_speed
-var starting_point: Vector2
-var left_combat_movement_limit: float
-var right_combat_movement_limit: float
-var left_idle_movement_limit: float
-var right_idle_movement_limit: float
-var target: float
-@export var combat_movement_range_left: int = 500
-@export var combat_movement_range_right: int = 500
-@export var idle_movement_range_left: int = 300
-@export var idle_movement_range_right: int = 300
-@export var knockback_force: Vector2 = Vector2(-1000, -50)
-@export var knockback_boost: Vector2 = Vector2(3, 2.5)
-var knockback: Vector2 = Vector2.ZERO
+var target: float	# Mymmy's target (player or random point in idle range)
+
+@export var movement_speed_input: float = 100.0 # Movement speed input
+var movement_speed								# Movement speed variable that can change during the game
+
+@export var combat_movement_range_left: int = 500	# Combat movement distance to the left
+@export var combat_movement_range_right: int = 500	# Combat movement distance to the right
+@export var idle_movement_range_left: int = 300		# Idle movement distance to the left
+@export var idle_movement_range_right: int = 300	# Idle movement distance to the right
+
+var starting_point: Vector2				# Mummy's starting global position
+var left_combat_movement_limit: float	# Combat movement limiting point to the left
+var right_combat_movement_limit: float	# Combat movement limiting point to the right
+var left_idle_movement_limit: float		# Idle movement limiting point to the left
+var right_idle_movement_limit: float	# Idle movement limiting point to the right
+
+@export var knockback_force: Vector2 = Vector2(-1000, -50)	# Normal knockback force
+@export var knockback_boost: Vector2 = Vector2(3, 2.5)		# Knockback boost modifiers
+var knockback: Vector2 = Vector2.ZERO						# Dynamic knockback force
+
+@export var charge_distance: float = 400.0	# Distnce from player to start charging
 
 # Combat variables
 @export var max_hp: int = 3
@@ -77,9 +87,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Remove dmg when falling
 	if (!is_wrapping && !is_on_floor()) || !stun_timer.is_stopped():
-		hurtbox_collision.disabled = true
+		normal_hurtbox_collision.disabled = true
 	else:
-		hurtbox_collision.disabled = false
+		normal_hurtbox_collision.disabled = false
 	
 	# Decide what to do
 	state_machine()
@@ -117,8 +127,9 @@ func state_machine():
 		return
 	
 	check_distance_to_player()
+	check_charge()
 	
-	print(state, " - ", can_wrap)
+	print(state)
 	
 	match state:
 		"idle":
@@ -149,11 +160,11 @@ func state_machine():
 					animated_sprite.play(state)
 		"combat":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "charge"
+			elif player_in_charge_range: state = "lay_down"
 			else: state = "combat_movement"
 		"combat_movement":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "charge"
+			elif player_in_charge_range: state = "lay_down"
 			elif player_in_attack_range: state = "attack"
 			else: 
 				combat_movement()
@@ -165,12 +176,15 @@ func state_machine():
 				attack()
 				animated_sprite.play(state)
 				animation_locked = true
+		"lay_down", "stand_up":
+			if !animation_locked:
+				animated_sprite.play(state)
+				animation_locked = true
 		"charge":
-			if !sees_player: state = "idle"
-			elif can_wrap:
+			if can_wrap:
 				state = "wrap_around_player"
 				wrap_around_player()
-			elif !player_in_charge_range && charge_timer.is_stopped(): state = "combat"
+			elif !player_in_charge_range && charge_timer.is_stopped(): state = "stand_up"
 			else: 
 				charge()
 				animated_sprite.play(state)
@@ -189,19 +203,22 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			state = "idle"
 		"attack", "stand_up":
 			state = "combat"
+		"lay_down":
+			state = "charge"
+		"wrap_around_player":
+			state = "wrap_around_player"
 		"charge":
 			state = "combat_movement"
 		"die":
 			die()
 		_:
-			print("(finished) undefined state: ", state)
+			print("(animation finished) undefined state: ", state)
 			state = "idle"
-	
 
 #########################################
 # Direction change handling
 #########################################
-func flip_h():
+func flip_h() -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
@@ -292,12 +309,15 @@ func stop_wrapping() -> void:
 	movement_speed = movement_speed_input
 	is_wrapping = false
 
+#########################################
+# Movement handling
+#########################################
 func check_distance_to_player() -> void:
 	if player.global_position.x > left_combat_movement_limit && player.global_position.x < right_combat_movement_limit && global_position.x < right_combat_movement_limit && global_position.x > left_combat_movement_limit:
 		sees_player = true
-		player_in_charge_range = abs(player.global_position.x - global_position.x) > 400 && floor(player.global_position.y) == floor(global_position.y) - 25
-		#player_in_attack_range = abs(player.global_position.x - global_position.x) < 200 && floor(player.global_position.y) == floor(global_position.y) - 25
-		can_wrap = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
+		player_in_charge_range = abs(player.global_position.x - global_position.x) > charge_distance && floor(player.global_position.y) > floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
+		#player_in_attack_range = abs(player.global_position.x - global_position.x) > 200 && floor(player.global_position.y) == floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
+		can_wrap = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) > floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
 	else: 
 		sees_player = false
 		if hp < max_hp && reset_hp_timer.is_stopped():
@@ -315,3 +335,22 @@ func idle_movement() -> void:
 		target = randi() % int(right_idle_movement_limit - left_idle_movement_limit) + left_idle_movement_limit
 
 	$AnimationPlayer.play("idle_movement")
+
+#########################################
+# Movement additions
+#########################################
+func check_charge() -> void:
+	if charge_timer.is_stopped():
+		charge_collision.disabled = true
+		charge_hurtbox_collision.disabled = true
+		$ChargeHurtbox/ColorRect.hide()
+		normal_collision.disabled = false
+		normal_hurtbox_collision.disabled = false
+		$NormalHurtbox/ColorRect.show()
+	else:
+		normal_collision.disabled = true
+		normal_hurtbox_collision.disabled = true
+		$NormalHurtbox/ColorRect.hide()
+		charge_collision.disabled = false
+		charge_hurtbox_collision.disabled = false
+		$ChargeHurtbox/ColorRect.show()
