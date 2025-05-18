@@ -226,7 +226,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="MudMummy" type="CharacterBody2D" groups=["enemy", "no_push"]]
+[node name="MudMummy" type="CharacterBody2D" groups=["no_push"]]
 collision_layer = 80
 collision_mask = 80
 script = ExtResource("1_ri1ep")
@@ -238,9 +238,6 @@ wait_time = 10.0
 
 [node name="ChargeTimer" type="Timer" parent="Timers"]
 
-[node name="WrapCooldownTimer" type="Timer" parent="Timers"]
-wait_time = 3.0
-
 [node name="StunTimer" type="Timer" parent="Timers"]
 wait_time = 3.0
 
@@ -251,7 +248,7 @@ wait_time = 5.0
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4h4jj")
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["enemy"]]
+[node name="Hurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
 position = Vector2(-35, -25)
 collision_layer = 6
 collision_mask = 4
@@ -284,6 +281,7 @@ autoplay = "idle"
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4o23v")
 volume_db = 2.0
+stream_paused = true
 max_distance = 1200.0
 attenuation = 1.56917
 
@@ -302,12 +300,12 @@ attenuation = 1.56917
 [node name="walkindDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ibqi1")
 volume_db = 5.0
+stream_paused = true
 max_distance = 1200.0
 attenuation = 1.56917
 
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
-[connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/StunTimer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

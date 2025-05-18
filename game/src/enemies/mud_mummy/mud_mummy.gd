@@ -7,7 +7,6 @@ extends CharacterBody2D
 # Assign timers to variables
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
-@onready var wrap_cooldown_timer: Timer = $Timers/WrapCooldownTimer
 @onready var stun_timer: Timer = $Timers/StunTimer
 @onready var idle_stay_timer: Timer = $Timers/IdleStayTimer
 
@@ -50,11 +49,12 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 # Dynamic playthrough variables
 var state: String = "idle"
 var direction = 0
-var sees_player = false
-var player_in_attack_range = false
-var player_in_charge_range = false
-var is_wrapping = false
-var animation_locked = false
+var sees_player: bool = false
+var player_in_attack_range: bool = false
+var player_in_charge_range: bool = false
+var is_wrapping: bool = false
+var can_wrap: bool = false
+var animation_locked: bool = false
 
 # Random number generator
 var RNG = RandomNumberGenerator.new()
@@ -118,7 +118,7 @@ func state_machine():
 	
 	check_distance_to_player()
 	
-	#print(state)
+	print(state, " - ", can_wrap)
 	
 	match state:
 		"idle":
@@ -167,11 +167,17 @@ func state_machine():
 				animation_locked = true
 		"charge":
 			if !sees_player: state = "idle"
-			elif !player_in_charge_range: state = "combat"
+			elif can_wrap:
+				state = "wrap_around_player"
+				wrap_around_player()
+			elif !player_in_charge_range && charge_timer.is_stopped(): state = "combat"
 			else: 
 				charge()
 				animated_sprite.play(state)
-				animation_locked = true
+		"wrap_around_player":
+			if !is_wrapping: state = "stand_up"
+			else: wrap_around_player()
+			animated_sprite.play(state)
 		_:
 			print("undefined state: ", state)
 			state = "idle"
@@ -212,8 +218,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	for group in dmg_dictionary:
 		if area.is_in_group(group):
 			dmg_taken += dmg_dictionary[group]
-			#if is_wrapping:
-				#stop_wrapping()
+			if is_wrapping:
+				stop_wrapping()
 	if dmg_taken > 0 || got_charged:
 		knockback = knockback_force
 		var knockback_direction: int
@@ -246,9 +252,6 @@ func _on_charge_timer_timeout() -> void:
 	movement_speed = movement_speed_input
 	charge_timer.stop()
 
-func _on_wrap_cooldown_timer_timeout() -> void:
-	wrap_cooldown_timer.stop()
-
 func _on_stun_timer_timeout() -> void:
 	stun_timer.stop()
 
@@ -275,32 +278,30 @@ func attack() -> void:
 func charge() -> void:
 	target = player.global_position.x
 	movement_speed = 4 * movement_speed_input
-	charge_timer.start()
+	if charge_timer.is_stopped():
+		charge_timer.start()
 	$AnimationPlayer.play("charge")
 
-#func wrap_around_player() -> void:
-	#movement_speed = 0
-	#is_wrapping = true
-	#global_position = player.global_position + Vector2(0, 25)
-	#$AnimationPlayer.play("attack_Draugr")
+func wrap_around_player() -> void:
+	movement_speed = 0
+	is_wrapping = true
+	global_position = player.global_position + Vector2(0, 25)
+	$AnimationPlayer.play("attack_Draugr")
 
-#func stop_wrapping() -> void:
-	#movement_speed = movement_speed_input
-	#is_wrapping = false
-	#player_in_wrap_range = false
-	#wrap_cooldown_timer.start()
+func stop_wrapping() -> void:
+	movement_speed = movement_speed_input
+	is_wrapping = false
 
 func check_distance_to_player() -> void:
-	if player.global_position.x < left_combat_movement_limit || player.global_position.x > right_combat_movement_limit || global_position.x > right_combat_movement_limit || global_position.x < left_combat_movement_limit:
+	if player.global_position.x > left_combat_movement_limit && player.global_position.x < right_combat_movement_limit && global_position.x < right_combat_movement_limit && global_position.x > left_combat_movement_limit:
+		sees_player = true
+		player_in_charge_range = abs(player.global_position.x - global_position.x) > 400 && floor(player.global_position.y) == floor(global_position.y) - 25
+		#player_in_attack_range = abs(player.global_position.x - global_position.x) < 200 && floor(player.global_position.y) == floor(global_position.y) - 25
+		can_wrap = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
+	else: 
 		sees_player = false
 		if hp < max_hp && reset_hp_timer.is_stopped():
 			reset_hp_timer.start()
-	else: 
-		sees_player = true
-		player_in_charge_range = abs(player.global_position.x - global_position.x) > 400 && floor(player.global_position.y) == floor(global_position.y) - 25
-		player_in_attack_range = abs(player.global_position.x - global_position.x) < 120 && floor(player.global_position.y) == floor(global_position.y) - 25
-		#if wrap_cooldown_timer.is_stopped():
-			#player_in_wrap_range = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) == floor(global_position.y) - 25
 
 func combat_movement() -> void:
 	if charge_timer.is_stopped():
