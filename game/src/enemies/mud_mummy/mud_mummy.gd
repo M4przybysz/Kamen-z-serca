@@ -8,11 +8,15 @@ extends CharacterBody2D
 @onready var normal_hurtbox_collision: CollisionShape2D = $NormalHurtbox/CollisionShape2D
 @onready var charge_hurtbox_collision: CollisionShape2D = $ChargeHurtbox/CollisionShape2D
 
+@onready var attack_hitbox_collision: CollisionShape2D = $AttackHitbox/CollisionShape2D
+
 # Assign timers to variables
 @onready var reset_hp_timer: Timer = $Timers/ResetHPTimer
 @onready var charge_timer: Timer = $Timers/ChargeTimer
 @onready var stun_timer: Timer = $Timers/StunTimer
 @onready var idle_stay_timer: Timer = $Timers/IdleStayTimer
+@onready var huh_timer: Timer = $Timers/HuhTimer			# Timer used for delaying enemy turning XD
+@onready var attack_timer: Timer = $Timers/AttackTimer
 
 # Assign player to variable
 @onready var player: CharacterBody2D = $"../../../Player"
@@ -161,6 +165,7 @@ func state_machine():
 		"combat":
 			if !sees_player: state = "idle"
 			elif player_in_charge_range: state = "lay_down"
+			elif player_in_attack_range: state = "attack"
 			else: state = "combat_movement"
 		"combat_movement":
 			if !sees_player: state = "idle"
@@ -172,10 +177,12 @@ func state_machine():
 					animated_sprite.play(state)
 		"attack":
 			if !sees_player: state = "idle"
-			else: 
+			elif attack_timer.is_stopped(): 
 				attack()
 				animated_sprite.play(state)
 				animation_locked = true
+			else:
+				state = "combat"
 		"lay_down", "stand_up":
 			if !animation_locked:
 				animated_sprite.play(state)
@@ -199,16 +206,16 @@ func state_machine():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animation_locked = false
 	match state:
-		"idle_movement", "idle_stay", "idle":
+		"idle_movement", "idle_stay":
 			state = "idle"
-		"attack", "stand_up":
+		"stand_up":
 			state = "combat"
 		"lay_down":
 			state = "charge"
-		"wrap_around_player":
-			state = "wrap_around_player"
 		"charge":
 			state = "combat_movement"
+		"idle", "wrap_around_player", "attack":
+			pass
 		"die":
 			die()
 		_:
@@ -221,8 +228,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func flip_h() -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack_hitbox_collision.position.x = 25
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		attack_hitbox_collision.position.x = -25
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -269,11 +278,19 @@ func _on_charge_timer_timeout() -> void:
 	movement_speed = movement_speed_input
 	charge_timer.stop()
 
+func _on_attack_timer_timeout() -> void:
+	attack_timer.stop()
+	attack_hitbox_collision.disabled = true
+	attack_hitbox_collision.visible = false
+
 func _on_stun_timer_timeout() -> void:
 	stun_timer.stop()
 
 func _on_idle_stay_timer_timeout() -> void:
 	idle_stay_timer.stop()
+
+func _on_huh_timer_timeout() -> void:
+	huh_timer.stop()
 
 #########################################
 # Combat handling
@@ -290,7 +307,10 @@ func die() -> void:
 	queue_free()
 
 func attack() -> void:
-	pass
+	if attack_hitbox_collision.disabled == true:
+		attack_timer.start()
+	attack_hitbox_collision.disabled = false
+	attack_hitbox_collision.visible = true
 
 func charge() -> void:
 	target = player.global_position.x
@@ -316,7 +336,7 @@ func check_distance_to_player() -> void:
 	if player.global_position.x > left_combat_movement_limit && player.global_position.x < right_combat_movement_limit && global_position.x < right_combat_movement_limit && global_position.x > left_combat_movement_limit:
 		sees_player = true
 		player_in_charge_range = abs(player.global_position.x - global_position.x) > charge_distance && floor(player.global_position.y) > floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
-		#player_in_attack_range = abs(player.global_position.x - global_position.x) > 200 && floor(player.global_position.y) == floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
+		player_in_attack_range = abs(player.global_position.x - global_position.x) < 50 && floor(player.global_position.y) > floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
 		can_wrap = !abs(player.global_position.x - global_position.x) > 50 && floor(player.global_position.y) > floor(global_position.y) - 50 && floor(player.global_position.y) < floor(global_position.y) + 50
 	else: 
 		sees_player = false
@@ -324,8 +344,9 @@ func check_distance_to_player() -> void:
 			reset_hp_timer.start()
 
 func combat_movement() -> void:
-	if charge_timer.is_stopped():
+	if charge_timer.is_stopped() && (huh_timer.is_stopped() || global_position.x < target + 3 && global_position.x > target - 3):
 		target = player.global_position.x
+		huh_timer.start()
 	
 	$AnimationPlayer.play("idle_movement")
 

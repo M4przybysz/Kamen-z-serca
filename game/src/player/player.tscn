@@ -361,6 +361,7 @@ target_position = Vector2(30, 0)
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["player_hurtbox"]]
 position = Vector2(0, -50)
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -396,6 +397,7 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shield"]
+visible = false
 position = Vector2(30, 0)
 shape = SubResource("RectangleShape2D_cyrw6")
 

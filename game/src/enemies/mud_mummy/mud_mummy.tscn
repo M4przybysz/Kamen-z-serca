@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=17 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
@@ -14,6 +14,9 @@ height = 80.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
 radius = 15.0
 height = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj1do"]
+size = Vector2(30, 60)
 
 [sub_resource type="Animation" id="Animation_g20w1"]
 length = 0.001
@@ -245,6 +248,11 @@ wait_time = 3.0
 [node name="IdleStayTimer" type="Timer" parent="Timers"]
 wait_time = 5.0
 
+[node name="HuhTimer" type="Timer" parent="Timers"]
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4h4jj")
 
@@ -270,7 +278,7 @@ color = Color(1, 0, 0, 1)
 position = Vector2(35, 25)
 shape = SubResource("CapsuleShape2D_06uet")
 
-[node name="ChargeHurtbox" type="Area2D" parent="."]
+[node name="ChargeHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
 collision_layer = 6
 collision_mask = 4
 
@@ -289,6 +297,23 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_06uet")
 disabled = true
 
+[node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+visible = false
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_kj1do")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="AttackHitbox/CollisionShape2D"]
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = 30.0
+color = Color(1, 0, 0, 0.501961)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
@@ -299,7 +324,7 @@ libraries = {
 position = Vector2(-1, 26)
 scale = Vector2(-0.06, 0.1)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
@@ -330,6 +355,8 @@ attenuation = 1.56917
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="Timers/StunTimer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
+[connection signal="timeout" from="Timers/HuhTimer" to="." method="_on_huh_timer_timeout"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="area_entered" from="NormalHurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]
