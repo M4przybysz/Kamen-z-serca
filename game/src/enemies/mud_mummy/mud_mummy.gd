@@ -42,7 +42,7 @@ var left_idle_movement_limit: float		# Idle movement limiting point to the left
 var right_idle_movement_limit: float	# Idle movement limiting point to the right
 
 @export var knockback_force: Vector2 = Vector2(-1000, -50)	# Normal knockback force
-@export var knockback_boost: Vector2 = Vector2(3, 2.5)		# Knockback boost modifiers
+@export var knockback_boost: Vector2 = Vector2(3, 1.5)		# Knockback boost modifiers
 var knockback: Vector2 = Vector2.ZERO						# Dynamic knockback force
 
 @export var charge_distance: float = 400.0	# Distnce from player to start charging
