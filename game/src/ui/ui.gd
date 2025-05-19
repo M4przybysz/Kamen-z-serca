@@ -10,7 +10,6 @@ extends Control
 @onready var dynamic_dialogue_box_text: RichTextLabel = $DialogueInterface/DynamicDiaogueBox/Control/RichTextLabel
 @onready var dynamic_dialogue_box_placement: MarginContainer =$DialogueInterface/DynamicDiaogueBox
 
-@onready var dialogue_timer: Timer = $DialogueInterface/DialogueTimer
 @export var main: Node
 
 # HP_Interface variables
@@ -100,16 +99,15 @@ func print_line() -> void:
 			dynamic_dialogue_box_placement.visible = true
 			dynamic_dialogue_box_text.text = dialogue_scene[dialgue_line_index].substr(3, dialogue_scene[dialgue_line_index].length() - 3)
 		dialgue_line_index += 1
-		dialogue_timer.start()
 	else:
 		dialogue_interface.visible = false
 		main.show_end_screen()
 		# trigger end screen
 
-func _on_dialogue_timer_timeout() -> void:
-	dialogue_timer.stop()
-	narrator_placement.visible = false
-	dynamic_dialogue_box_placement.visible = false
-	narrator.text = ""
-	dynamic_dialogue_box_text.text = ""
-	print_line()
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("wing_attack") or Input.is_action_just_pressed("shield_use"):
+		narrator_placement.visible = false
+		dynamic_dialogue_box_placement.visible = false
+		narrator.text = ""
+		dynamic_dialogue_box_text.text = ""
+		print_line()

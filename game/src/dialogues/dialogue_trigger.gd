@@ -9,4 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") && !dialogue_triggered:
 		ui.print_scene(dialogue_box_position)
 		dialogue_triggered = true
-		get_tree().paused = true
+		body.movement_lock = true

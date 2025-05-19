@@ -69,9 +69,6 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="DialogueTimer" type="Timer" parent="DialogueInterface"]
-wait_time = 5.0
-
 [node name="DynamicDiaogueBox" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
 layout_mode = 1
 anchor_right = 0.106
@@ -94,8 +91,6 @@ offset_right = 2666.48
 offset_bottom = 987.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[connection signal="timeout" from="DialogueInterface/DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 
 [editable path="DialogueInterface/DynamicDiaogueBox"]
 [editable path="DialogueInterface/Narrator"]
