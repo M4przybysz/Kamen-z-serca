@@ -8,11 +8,12 @@ extends CharacterBody2D
 @onready var normal_collision: CollisionShape2D = $NormalCollision
 @onready var slide_collision: CollisionShape2D = $SlideCollision
 @onready var slide_fix_collision: CollisionShape2D = $SlideFix/CollisionShape2D
-
+@onready var shield_collision: CollisionShape2D = $Shield/CollisionShape2D
 
 # Assign hitboxes and hurtboxes to variables
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
 @onready var wing_attack_collision: CollisionShape2D = $WingAttack/CollisionShape2D
+@onready var shield_charge_collision: CollisionShape2D = $Shield/Area2D/CollisionShape2D
 
 # Assign raycasts to variables
 @onready var grab_hand: RayCast2D = $GrabHand
@@ -31,6 +32,8 @@ extends CharacterBody2D
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
 	"enemy" : 1, 	# Test value 
+	"spike" : 1,
+	"mummy_attack": 1,
 	# Add more values here (format "attack_name" : damage)
 }
 
@@ -40,20 +43,23 @@ var last_direction = 1
 var direction
 var dmg_source_count = 0
 var dmg_taken = 0
-var active_feather: int = 0
+var active_feather: int = 1
 var knockback: Vector2 = Vector2.ZERO
 var is_grabbing: bool = false
 var is_dashing: bool = false
-var can_dash: bool = true
+var can_air_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
 var animation_locked: bool = false
 var movement_lock: bool = false
+var is_shield_used: bool = false
+var is_charging: bool = false
 
 # Player progression variables
 var level: int = 1
 var max_level: int = 3
 var is_shield_unlocked: bool = false
+var is_spear_unlocked: bool = false
 
 func _physics_process(delta: float) -> void:
 	state_machine()
@@ -72,6 +78,8 @@ func _physics_process(delta: float) -> void:
 	# Set velocity
 	if is_dashing: 
 		velocity.x = last_direction * movement_speed * 2
+	elif is_shield_used:
+		velocity.x = direction * movement_speed / 2
 	else: 
 		velocity.x = direction * movement_speed
 	
@@ -90,9 +98,10 @@ func _physics_process(delta: float) -> void:
 #########################################
 func state_machine() -> void:
 	check_edge_grab()
-	check_dash()
+	check_shield()
+	check_air_dash()
 	
-	print(state, " - ", animation_locked)
+	# print(state, " - ", animation_locked)
 	
 	match state:
 		"idle":
@@ -105,6 +114,11 @@ func state_machine() -> void:
 			elif direction == 0: state = "idle"
 			
 			animated_sprite.play(state)
+		"start_jump":
+			if is_grabbing: state = "grab_edge"
+			elif !animation_locked:
+				animated_sprite.play(state)
+				animation_locked = true
 		"mid_jump":
 			if is_grabbing: state = "grab_edge"
 			elif is_on_floor(): state = "end_jump"
@@ -114,16 +128,28 @@ func state_machine() -> void:
 			if slide_timer.is_stopped():
 				state = "end_slide"
 		"grab_edge":
-			animated_sprite.play(state)
 			if Input.is_action_just_pressed("jump"):
 				state = "grab_jump"
 				jump()
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw", "use_shield", "shield_charge":
+			
+			if Input.is_action_pressed("look_down") && is_grabbing:
+				state = "mid_jump"
+				is_grabbing = false
+			
+			animated_sprite.play(state)
+		"use_shield":
+			if !is_shield_used: state = "idle"
+			elif !is_on_floor(): state = "mid_jump"
+			else: animated_sprite.play(state)
+		"shield_charge":
+			if !is_shield_used && !is_charging: state = "idle"
+			else: animated_sprite.play(state)
+		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
 			if !animation_locked:
 				animated_sprite.play(state)
 				animation_locked = true
 		_:
-			print("undefined state")
+			print("undefined state: ", state)
 			state = "idle"
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -131,12 +157,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	match state:
 		"start_jump", "grab_jump", "air_dash":
 			state = "mid_jump"
-		"end_jump", "wing_attack", "throw", "end_slide":
+		"end_jump", "wing_attack", "throw_feather", "throw_spear", "end_slide":
 			state = "idle"
 		"start_slide":
 			state = "mid_slide"
 		_:
-			pass
+			print("(animation finished) undefined state: ", state)
+			state = "idle"
 
 #########################################
 # Input handling
@@ -144,24 +171,28 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _input(_event: InputEvent) -> void:
 	# Handle jumping
 	if Input.is_action_just_pressed("jump"):
-		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
+		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" && is_on_floor():
 			state = "start_jump"
 			jump()
 	
 	# Handle dashing and sliding
 	if Input.is_action_just_pressed("slide_and_air_dash"):
-		if state == "mid_jump":
+		if state == "mid_jump" && can_air_dash:
 			state = "air_dash"
 			air_dash()
 		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump":
 			state = "start_slide"
 			slide()
 	
-	if Input.is_action_just_pressed("shield_use") && is_shield_unlocked: 
+	if Input.is_action_pressed("shield_use") && is_shield_unlocked && is_on_floor(): 
+		state = "use_shield"
+		is_shield_used = true
 		if Input.is_action_just_pressed("slide_and_air_dash"): 
 			state = "shield_charge"
-		else:
-			state = "use_shield"
+			shield_charge()
+	
+	if Input.is_action_just_released("shield_use"):
+		is_shield_used = false
 	
 	# Handle attacks
 	if Input.is_action_just_pressed("wing_attack") && wing_attack_timer.is_stopped() && (state == "idle" || state == "movement" || state == "mid_jump"): 
@@ -169,32 +200,35 @@ func _input(_event: InputEvent) -> void:
 		wing_attack()
 	
 	if Input.is_action_just_pressed("throw") && !throwables.get_children()[active_feather].isOnCooldown && (state == "idle" || state == "movement" || state == "mid_jump"):
-		state = "throw"
+		if throwables.get_children()[active_feather].is_in_group("feather"):
+			state = "throw_feather"
+		elif throwables.get_children()[active_feather].is_in_group("spear") && is_spear_unlocked:
+			state = "throw_spear"
 		throw()
 	
 	# Handle changing throwables
-	if Input.is_action_just_pressed("change_throwable_down"):
-		if level == 1:
-			pass
-		elif level == 2:
-			if active_feather == 1: active_feather -= 1
-			else: active_feather += 1
-		elif level == 3:
-			if active_feather == 2: active_feather = 0
-			else: active_feather += 1
+	if Input.is_action_pressed("change_throwable_down"):
+		if !is_spear_unlocked:
+			return
+		
+		if active_feather == level: active_feather = 0
+		else: active_feather += 1
 	
-	if Input.is_action_just_pressed("change_throwable_up"):
-		if level == 2:
-			if active_feather == 0: active_feather += 1
-			else: active_feather -= 1
-		elif level == 3:
-			if active_feather == 0: active_feather = 2
-			else: active_feather -= 1
-		else: 
-			pass
+	if Input.is_action_pressed("change_throwable_up"):
+		if !is_spear_unlocked:
+			return
+		
+		if active_feather == 0: active_feather = level
+		else: active_feather -= 1
 	
+	# Handle spear return
+	if Input.is_action_just_pressed("spear_return") && !is_grabbing:
+		throwables.get_children()[0].return_to_player()
+	
+	# Action key can lock and unlock spear
 	if Input.is_action_just_pressed("action"):
-		pass
+		is_spear_unlocked = !is_spear_unlocked
+		is_shield_unlocked = !is_shield_unlocked
 
 #########################################
 # Direction change handling
@@ -205,11 +239,15 @@ func flip_h():
 		grab_hand.target_position.x = 30
 		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
+		shield_collision.position.x = 25
+		shield_charge_collision.position.x = 35
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -30
 		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
+		shield_collision.position.x = -25
+		shield_charge_collision.position.x = -35
 
 #########################################
 # Movement handling
@@ -220,19 +258,18 @@ func jump() -> void:
 
 func air_dash() -> void:
 	is_dashing = true
-	can_dash = false
+	can_air_dash = false
 	can_be_damaged = false
 	slide_timer.start()
 
 func slide(time: float = 0.5) -> void:
 	is_dashing = true
-	can_dash = false
 	can_be_damaged = false
 	if is_on_floor():
-		normal_collision.disabled = true
-		hurtbox_collision.disabled = true
 		slide_collision.disabled = false
 		slide_fix_collision.disabled = false
+		normal_collision.disabled = true
+		hurtbox_collision.disabled = true
 	slide_timer.wait_time = time
 	slide_timer.start()
 
@@ -244,13 +281,13 @@ func check_edge_grab() -> void:
 	var checkHand = not grab_hand.is_colliding()
 	var checkGrabHeight = grab_check.is_colliding()
 	
-	var canGrab = isFalling && checkHand && checkGrabHeight && not is_grabbing
+	var canGrab = isFalling && checkHand && checkGrabHeight && !is_grabbing && (state == "start_jump" || state == "mid_jump") 
 	if canGrab: 
 		is_grabbing = true
 
-func check_dash() -> void:
-	if !can_dash && is_on_floor() && !is_dashing:
-		can_dash = true
+func check_air_dash() -> void:
+	if (is_on_floor() || is_grabbing) && !can_air_dash:
+		can_air_dash = true
 
 #########################################
 # Combat handling
@@ -265,31 +302,57 @@ func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:
 		throwables.get_children()[active_feather].throw(last_direction)
 
+func check_shield() -> void:
+	if (!is_shield_used && !is_charging) || !is_on_floor():
+		is_shield_used = false
+		is_charging = false
+		shield_collision.disabled = true
+		shield_collision.visible = false
+	else:
+		shield_collision.disabled = false
+		shield_collision.visible = true
+
+func shield_charge() -> void:
+	shield_charge_collision.disabled = false
+	is_charging = true
+	is_dashing = true
+	can_be_damaged = false
+	slide_timer.start()
+
 #########################################
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("slowing_platform"):
-		movement_speed = movement_speed/2
+	if area.is_in_group("slowing_platform") || area.is_in_group("mummy_hurtbox"):
+		movement_speed = movement_speed / 2
+	elif area.is_in_group("hp"):
+		gameplay.increase_hp(area.get_parent().heal)
+		area.get_parent().queue_free()
+	elif area.is_in_group("checkpoint"):
+		gameplay.increase_hp(area.get_parent().heal)
+		gameplay.set_checkpoint(area.get_parent().global_position)
 	else:
 		dmg_source_count += 1
 		for group in dmg_dictionary:
 			if area.is_in_group(group):
 				dmg_taken += dmg_dictionary[group]
 		if damage_timer.is_stopped():
+			if dmg_taken > 0:
+				knockback = knockback_force
+				var knockback_direction: int
+				if area.global_position.x > global_position.x:
+					knockback_direction = 1
+				else:
+					knockback_direction = -1
+				knockback.x *= knockback_direction
 			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
-			knockback = knockback_force
-			var knockback_direction: int
-			if area.global_position.x > global_position.x:
-				knockback_direction = 1
-			else:
-				knockback_direction = -1
-			knockback.x *= knockback_direction
 			damage_timer.start()
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
-	if area.is_in_group("slowing_platform"):
-		movement_speed = movement_speed*2
+	if area.is_in_group("hp") || area.is_in_group("checkpoint"):
+		return
+	elif area.is_in_group("slowing_platform") || area.is_in_group("mummy_hurtbox"):
+		movement_speed = movement_speed * 2
 	else:
 		dmg_source_count -= 1
 		for group in dmg_dictionary:
@@ -302,6 +365,8 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 func _on_slide_timer_timeout() -> void:
 	slide_timer.stop()
 	if can_stand_up == 0:
+		is_charging = false
+		shield_charge_collision.disabled = true
 		is_dashing = false
 		can_be_damaged = true
 		normal_collision.disabled = false
@@ -340,21 +405,21 @@ func ascend_to_level_3() -> void:
 #########################################
 func _on_push_fix_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
-		body.collision_layer = 33
-		body.collision_mask = 33
+		body.collision_layer = 97
+		body.collision_mask = 97
 
 func _on_push_fix_body_exited(body: Node2D) -> void:
 	if body.is_in_group("pushable_object"):
-		body.collision_layer = 32
-		body.collision_mask = 32
+		body.collision_layer = 96
+		body.collision_mask = 96
 
 #########################################
 # Slide fix
 #########################################
 func _on_slide_fix_body_entered(body: Node2D) -> void:
-	if !body.is_in_group("player"):
+	if !body.is_in_group("player") && !body.is_in_group("responsive_platform"):
 		can_stand_up += 1
 
 func _on_slide_fix_body_exited(body: Node2D) -> void:
-	if !body.is_in_group("player"):
+	if !body.is_in_group("player") || body.is_in_group("responsive_platform"):
 		can_stand_up -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://nvpnjg2xb8f4"]
+[gd_scene load_steps=3 format=3 uid="uid://cxs7n0w7ox18b"]
 
 [ext_resource type="Script" path="res://src/templates/puzzles/door.gd" id="1_tqgie"]
 
@@ -6,6 +6,8 @@
 size = Vector2(20, 500)
 
 [node name="Door" type="StaticBody2D"]
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_tqgie")
 
 [node name="ColorRect" type="ColorRect" parent="."]

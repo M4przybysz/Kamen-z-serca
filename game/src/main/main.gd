@@ -15,11 +15,11 @@ func _process(_delta: float) -> void:
 	pass
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("quit") && main_menu.visible == false:
+	if Input.is_action_just_pressed("quit") && main_menu.visible == false && get_tree().paused == false:
 		if !get_tree().paused:
 			pause_menu.visible = true
 			get_tree().paused = true
-		else:
+		elif pause_menu.visible == true:
 			pause_menu.visible = false
 			get_tree().paused = false
 

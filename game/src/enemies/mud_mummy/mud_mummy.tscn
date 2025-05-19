@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=18 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
@@ -8,11 +8,18 @@
 [ext_resource type="AudioStream" uid="uid://d2mu6t4bmsyuy" path="res://assets/sound/sfx/draugr_movement.wav" id="5_ibqi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
-radius = 25.0
-height = 70.0
+radius = 15.0
+height = 80.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl10x"]
-size = Vector2(70, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
+radius = 15.0
+height = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj1do"]
+size = Vector2(30, 60)
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_hb8k3"]
+length = 30.0
 
 [sub_resource type="Animation" id="Animation_g20w1"]
 length = 0.001
@@ -141,17 +148,25 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
-"loop": true,
-"name": &"charge",
-"speed": 5.0
+"loop": false,
+"name": &"attack",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
 "loop": true,
+"name": &"charge",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"combat",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,15 +174,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"combat_movement",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
-"loop": true,
+"loop": false,
+"name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,20 +198,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_movement",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_f5ld2")
 }],
 "loop": true,
+"name": &"idle_stay",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
+"name": &"lay_down",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
+"name": &"stand_up",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5ld2")
+}],
+"loop": false,
 "name": &"wrap_around_player",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="MudMummy" type="CharacterBody2D" groups=["no_push"]]
-collision_layer = 48
-collision_mask = 48
+collision_layer = 80
+collision_mask = 80
 script = ExtResource("1_ri1ep")
 
 [node name="Timers" type="Node" parent="."]
@@ -198,29 +245,83 @@ wait_time = 10.0
 
 [node name="ChargeTimer" type="Timer" parent="Timers"]
 
-[node name="WrapCooldownTimer" type="Timer" parent="Timers"]
+[node name="StunTimer" type="Timer" parent="Timers"]
 wait_time = 3.0
 
+[node name="IdleStayTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+
+[node name="HuhTimer" type="Timer" parent="Timers"]
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4h4jj")
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["enemy"]]
+[node name="ChargeCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4h4jj")
+disabled = true
+
+[node name="NormalHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
 position = Vector2(-35, -25)
 collision_layer = 6
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(35, 25)
-shape = SubResource("RectangleShape2D_bl10x")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -35.0
-offset_top = -25.0
-offset_right = 35.0
-offset_bottom = 25.0
+[node name="ColorRect" type="ColorRect" parent="NormalHurtbox"]
+offset_left = 20.0
+offset_top = -15.0
+offset_right = 50.0
+offset_bottom = 65.0
 color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalHurtbox"]
+position = Vector2(35, 25)
+shape = SubResource("CapsuleShape2D_06uet")
+
+[node name="ChargeHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
+collision_layer = 6
+collision_mask = 4
+
+[node name="ColorRect" type="ColorRect" parent="ChargeHurtbox"]
+visible = false
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 90.0
+rotation = 1.5708
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeHurtbox"]
+position = Vector2(0, 25)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_06uet")
+disabled = true
+
+[node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+visible = false
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_kj1do")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="AttackHitbox/CollisionShape2D"]
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = 30.0
+color = Color(1, 0, 0, 0.501961)
+
+[node name="WallDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetector"]
+rotation = -1.5708
+shape = SubResource("SeparationRayShape2D_hb8k3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -229,10 +330,10 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.369857, 2.5)
-scale = Vector2(-0.0498325, 0.152108)
+position = Vector2(-1, 26)
+scale = Vector2(-0.06, 0.1)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"wrap_around_player"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
@@ -261,6 +362,14 @@ attenuation = 1.56917
 
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeTimer" to="." method="_on_charge_timer_timeout"]
-[connection signal="timeout" from="Timers/WrapCooldownTimer" to="." method="_on_wrap_cooldown_timer_timeout"]
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
-[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="timeout" from="Timers/StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
+[connection signal="timeout" from="Timers/HuhTimer" to="." method="_on_huh_timer_timeout"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="area_entered" from="NormalHurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="ChargeHurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="WallDetector" to="." method="_on_wall_detector_body_entered"]
+[connection signal="body_exited" from="WallDetector" to="." method="_on_wall_detector_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
