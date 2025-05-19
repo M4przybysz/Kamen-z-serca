@@ -1,9 +1,15 @@
 extends Control
 
 @onready var dialogue_interface: Control = $DialogueInterface
-@onready var narrator: RichTextLabel = $DialogueInterface/Narrator
-@onready var dynamic_dialogue_box: RichTextLabel = $DialogueInterface/DynamicDialogueBox
-@onready var dialogue_timer: Timer = $DialogueInterface/DialogueTimer
+
+#Narrator Dialogue properities
+@onready var narrator: RichTextLabel = $DialogueInterface/Narrator/Control/RichTextLabel
+@onready var narrator_placement: MarginContainer = $DialogueInterface/Narrator
+
+#Floating Dialogue properities
+@onready var dynamic_dialogue_box_text: RichTextLabel = $DialogueInterface/DynamicDiaogueBox/Control/RichTextLabel
+@onready var dynamic_dialogue_box_placement: MarginContainer =$DialogueInterface/DynamicDiaogueBox
+
 @export var main: Node
 
 # HP_Interface variables
@@ -78,9 +84,12 @@ func get_scene(scene_name: String) -> Array:
 		index += 1
 	return scene
 
-func print_scene() -> void:
+func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
+	dynamic_dialogue_box_placement.position=dynamic_dialogue_position
 	narrator.text = ""
-	dynamic_dialogue_box.text = ""
+	narrator_placement.visible = false
+	dynamic_dialogue_box_placement.visible = false
+	dynamic_dialogue_box_text.text = ""
 	dialogue_interface.visible = true
 	dialgue_line_index = 0
 	print_line()
@@ -88,18 +97,21 @@ func print_scene() -> void:
 func print_line() -> void:
 	if dialgue_line_index != dialogue_scene.size():
 		if dialogue_scene[dialgue_line_index][0] == "N":
+			narrator_placement.visible = true
 			narrator.text = dialogue_scene[dialgue_line_index].substr(3, dialogue_scene[dialgue_line_index].length() - 3)
 		else:
-			dynamic_dialogue_box.text = dialogue_scene[dialgue_line_index].substr(3, dialogue_scene[dialgue_line_index].length() - 3)
+			dynamic_dialogue_box_placement.visible = true
+			dynamic_dialogue_box_text.text = dialogue_scene[dialgue_line_index].substr(3, dialogue_scene[dialgue_line_index].length() - 3)
 		dialgue_line_index += 1
-		dialogue_timer.start()
 	else:
 		dialogue_interface.visible = false
 		main.show_end_screen()
 		# trigger end screen
 
-func _on_dialogue_timer_timeout() -> void:
-	dialogue_timer.stop()
-	narrator.text = ""
-	dynamic_dialogue_box.text = ""
-	print_line()
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("wing_attack") or Input.is_action_just_pressed("shield_use"):
+		narrator_placement.visible = false
+		dynamic_dialogue_box_placement.visible = false
+		narrator.text = ""
+		dynamic_dialogue_box_text.text = ""
+		print_line()

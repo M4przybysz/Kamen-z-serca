@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=8 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chp3701n84ov2" path="res://assets/sprites/ui/damage3.png" id="4_ae1f5"]
 [ext_resource type="Texture2D" uid="uid://cnjfqhhop161g" path="res://assets/sprites/ui/damage4.png" id="5_bvfud"]
 [ext_resource type="Texture2D" uid="uid://baxh3886eo753" path="res://assets/sprites/ui/damage5.png" id="6_xwhx4"]
+[ext_resource type="PackedScene" uid="uid://csay8c0a0u5in" path="res://src/dialogues/text_box.tscn" id="7_jmgqw"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -68,24 +69,28 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="DialogueTimer" type="Timer" parent="DialogueInterface"]
-wait_time = 5.0
+[node name="DynamicDiaogueBox" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
+layout_mode = 1
+anchor_right = 0.106
+anchor_bottom = 0.225
+offset_left = 1320.0
+offset_top = 528.0
+offset_right = 2178.48
+offset_bottom = 682.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="Narrator" type="RichTextLabel" parent="DialogueInterface"]
-layout_mode = 0
-offset_top = 900.0
-offset_right = 1920.0
-offset_bottom = 1000.0
-bbcode_enabled = true
-text = "[center][i]Narrator:[/i][/center]"
+[node name="Narrator" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.106
+anchor_bottom = 0.225
+offset_left = 256.0
+offset_top = 907.0
+offset_right = 2666.48
+offset_bottom = 987.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="DynamicDialogueBox" type="RichTextLabel" parent="DialogueInterface"]
-layout_mode = 0
-offset_left = 1315.0
-offset_top = 343.0
-offset_right = 1615.0
-offset_bottom = 443.0
-bbcode_enabled = true
-text = "Plaeholder text"
-
-[connection signal="timeout" from="DialogueInterface/DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
+[editable path="DialogueInterface/DynamicDiaogueBox"]
+[editable path="DialogueInterface/Narrator"]

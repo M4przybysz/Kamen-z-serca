@@ -51,6 +51,7 @@ var can_air_dash: bool = true
 var can_be_damaged: bool = true
 var can_stand_up: int = 0
 var animation_locked: bool = false
+var movement_lock: bool = false
 var is_shield_used: bool = false
 var is_charging: bool = false
 
@@ -81,6 +82,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * movement_speed / 2
 	else: 
 		velocity.x = direction * movement_speed
+	
+	if movement_lock:
+		velocity=Vector2.ZERO + get_gravity()
 	
 	velocity += knockback
 	knockback = knockback.lerp(Vector2.ZERO, 0.16)
