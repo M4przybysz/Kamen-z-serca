@@ -43,11 +43,14 @@ size = Vector2(5000, 20)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Spike" parent="Obstacles" groups=["enemy"] instance=ExtResource("1_cc8v3")]
+[node name="Spike" parent="Obstacles" instance=ExtResource("1_cc8v3")]
 position = Vector2(1191, 651)
 
-[node name="Spike2" parent="Obstacles" groups=["enemy"] instance=ExtResource("1_cc8v3")]
+[node name="Spike2" parent="Obstacles" instance=ExtResource("1_cc8v3")]
 position = Vector2(1181, 651)
+
+[node name="Spike3" parent="Obstacles" instance=ExtResource("1_cc8v3")]
+position = Vector2(2257, 651)
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -182,11 +185,6 @@ position = Vector2(-1502, 622)
 [node name="Jeff" parent="NPC" instance=ExtResource("2_f5u2k")]
 position = Vector2(79, 550)
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
-position = Vector2(2962, 591)
-
 [node name="Puzzles" type="Node2D" parent="."]
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
@@ -207,6 +205,10 @@ position = Vector2(-705, 547)
 position = Vector2(648, 550)
 hp = 3
 
+[node name="BreakableWall2" parent="Puzzles" instance=ExtResource("8_2g65v")]
+position = Vector2(2780, 554)
+hp = 3
+
 [node name="Healing" type="Node2D" parent="."]
 
 [node name="HealthPack" parent="Healing" instance=ExtResource("15_r67vx")]
@@ -221,3 +223,8 @@ heal = 100
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("16_agdfy")]
 position = Vector2(706, 49)
 heal = 100
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
+position = Vector2(2962, 591)

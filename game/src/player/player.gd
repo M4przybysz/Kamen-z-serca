@@ -26,12 +26,14 @@ extends CharacterBody2D
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
-@export var jump_velocity: float = -575.0
+@export var jump_velocity: float = -550.0
 @export var knockback_force: Vector2 = Vector2(-1000, -100)
 
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
 	"enemy" : 1, 	# Test value 
+	"spike" : 1,
+	"mummy_attack": 1,
 	# Add more values here (format "attack_name" : damage)
 }
 
@@ -156,7 +158,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"start_slide":
 			state = "mid_slide"
 		_:
-			pass
+			print("(animation finished) undefined state: ", state)
+			state = "idle"
 
 #########################################
 # Input handling
@@ -316,7 +319,7 @@ func shield_charge() -> void:
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("slowing_platform"):
+	if area.is_in_group("slowing_platform") || area.is_in_group("mummy_hurtbox"):
 		movement_speed = movement_speed / 2
 	elif area.is_in_group("hp"):
 		gameplay.increase_hp(area.get_parent().heal)
@@ -330,20 +333,21 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			if area.is_in_group(group):
 				dmg_taken += dmg_dictionary[group]
 		if damage_timer.is_stopped():
+			if dmg_taken > 0:
+				knockback = knockback_force
+				var knockback_direction: int
+				if area.global_position.x > global_position.x:
+					knockback_direction = 1
+				else:
+					knockback_direction = -1
+				knockback.x *= knockback_direction
 			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
-			knockback = knockback_force
-			var knockback_direction: int
-			if area.global_position.x > global_position.x:
-				knockback_direction = 1
-			else:
-				knockback_direction = -1
-			knockback.x *= knockback_direction
 			damage_timer.start()
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("hp") || area.is_in_group("checkpoint"):
 		return
-	elif area.is_in_group("slowing_platform"):
+	elif area.is_in_group("slowing_platform") || area.is_in_group("mummy_hurtbox"):
 		movement_speed = movement_speed * 2
 	else:
 		dmg_source_count -= 1
