@@ -10,3 +10,4 @@ func _on_body_entered(body: Node2D) -> void:
 		ui.print_scene(dialogue_box_position)
 		dialogue_triggered = true
 		body.movement_lock = true
+		

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chp3701n84ov2" path="res://assets/sprites/ui/damage3.png" id="4_ae1f5"]
 [ext_resource type="Texture2D" uid="uid://cnjfqhhop161g" path="res://assets/sprites/ui/damage4.png" id="5_bvfud"]
 [ext_resource type="Texture2D" uid="uid://baxh3886eo753" path="res://assets/sprites/ui/damage5.png" id="6_xwhx4"]
-[ext_resource type="PackedScene" uid="uid://csay8c0a0u5in" path="res://src/dialogues/text_box.tscn" id="7_jmgqw"]
+[ext_resource type="PackedScene" uid="uid://b3ibyshlvp3wi" path="res://src/dialogues/text_box.tscn" id="7_jmgqw"]
 
 [node name="UI" type="Control"]
 process_mode = 3

@@ -23,6 +23,7 @@ var dialogue_text: String
 var dialogue_lines: Array = []
 var dialogue_scene: Array = []
 var dialgue_line_index: int = 0
+var dialofue_on: bool = false
 
 func _ready() -> void:
 	# Assign HP variables
@@ -92,6 +93,7 @@ func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
 	dynamic_dialogue_box_text.text = ""
 	dialogue_interface.visible = true
 	dialgue_line_index = 0
+	dialofue_on = true
 	print_line()
 
 func print_line() -> void:
@@ -106,10 +108,11 @@ func print_line() -> void:
 	else:
 		dialogue_interface.visible = false
 		main.show_end_screen()
+		dialofue_on = false
 		# trigger end screen
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("wing_attack") or Input.is_action_just_pressed("shield_use"):
+	if (Input.is_action_just_pressed("wing_attack") || Input.is_action_just_pressed("shield_use")) && dialofue_on:
 		narrator_placement.visible = false
 		dynamic_dialogue_box_placement.visible = false
 		narrator.text = ""

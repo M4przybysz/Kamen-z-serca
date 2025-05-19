@@ -29,3 +29,4 @@ func show_death_menu():
 
 func show_end_screen():
 	end_screen.visible = true
+	get_tree().paused = true

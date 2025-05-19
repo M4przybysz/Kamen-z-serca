@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://csay8c0a0u5in"]
+[gd_scene load_steps=2 format=3 uid="uid://b3ibyshlvp3wi"]
 
-[ext_resource type="Script" path="res://src/dialogues/text_box.gd" id="1_6yrq0"]
 [ext_resource type="Texture2D" uid="uid://b7j8y1qiw6aby" path="res://assets/dialogues/Chmurka_2.png" id="1_dn77y"]
 
 [node name="Control" type="MarginContainer"]
@@ -12,7 +11,6 @@ offset_bottom = 200.2
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_6yrq0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2

@@ -136,7 +136,7 @@ func state_machine():
 	check_distance_to_player()
 	check_charge()
 	
-	print(state)
+	#print(state)
 	
 	match state:
 		"idle":
@@ -220,7 +220,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			state = "charge"
 		"charge":
 			state = "combat_movement"
-		"idle", "wrap_around_player", "attack":
+		"idle", "wrap_around_player", "attack", "combat_movement":
 			pass
 		"die":
 			die()
