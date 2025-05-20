@@ -11,6 +11,7 @@ extends Control
 @onready var dynamic_dialogue_box_placement: MarginContainer =$DialogueInterface/DynamicDiaogueBox
 
 @export var main: Node
+@export var player: CharacterBody2D
 
 # HP_Interface variables
 var screen_break1: Array
@@ -23,7 +24,10 @@ var dialogue_text: String
 var dialogue_lines: Array = []
 var dialogue_scene: Array = []
 var dialgue_line_index: int = 0
-var dialofue_on: bool = false
+var dialogue_on: bool = false
+
+# Signals
+signal start_oak_fight
 
 func _ready() -> void:
 	# Assign HP variables
@@ -41,6 +45,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+#########################################
+# HP interface handling
+#########################################
 func set_hp(hp):
 	for img in hp_vfx:
 		img.visible = false
@@ -50,6 +57,9 @@ func set_max_hp():
 	for img in hp_vfx:
 		img.visible = false
 
+#########################################
+# Dialogue interface handling
+#########################################
 func load_text_from_file(path: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()
@@ -93,7 +103,7 @@ func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
 	dynamic_dialogue_box_text.text = ""
 	dialogue_interface.visible = true
 	dialgue_line_index = 0
-	dialofue_on = true
+	dialogue_on = true
 	print_line()
 
 func print_line() -> void:
@@ -107,14 +117,19 @@ func print_line() -> void:
 		dialgue_line_index += 1
 	else:
 		dialogue_interface.visible = false
-		main.show_end_screen()
-		dialofue_on = false
-		# trigger end screen
+		dialogue_on = false
+		player.movement_lock = false
+		emit_signal("start_oak_fight")
+		# main.show_end_screen() # show end screen
 
 func _input(_event: InputEvent) -> void:
-	if (Input.is_action_just_pressed("wing_attack") || Input.is_action_just_pressed("shield_use")) && dialofue_on:
+	if (Input.is_action_just_pressed("wing_attack") || Input.is_action_just_pressed("shield_use")) && dialogue_on:
 		narrator_placement.visible = false
 		dynamic_dialogue_box_placement.visible = false
 		narrator.text = ""
 		dynamic_dialogue_box_text.text = ""
 		print_line()
+
+#########################################
+# Boss interface handling
+#########################################

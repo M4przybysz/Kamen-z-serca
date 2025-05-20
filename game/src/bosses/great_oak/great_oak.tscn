@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=3 uid="uid://mpiwwwfe4es3"]
+
+[ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="1_gah10"]
+[ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="1_scwdp"]
+[ext_resource type="Script" path="res://src/bosses/great_oak/great_oak.gd" id="1_ynktw"]
+[ext_resource type="PackedScene" uid="uid://bsus3i2nxy6a6" path="res://src/dialogues/dialogue_trigger.tscn" id="2_5bsk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruw3r"]
+size = Vector2(1920, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xy0x"]
+size = Vector2(270, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prl7q"]
+size = Vector2(50, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co0hs"]
+size = Vector2(268, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01koh"]
+size = Vector2(338, 125.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irbjs"]
+size = Vector2(264.5, 303.208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxn3v"]
+size = Vector2(88, 306.772)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paaq8"]
+size = Vector2(76, 438)
+
+[node name="GreatOak" type="Node2D"]
+script = ExtResource("1_ynktw")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Environment"]
+position = Vector2(960, 670)
+collision_layer = 49
+collision_mask = 49
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Ground"]
+offset_left = -960.0
+offset_top = -50.0
+offset_right = 1140.0
+offset_bottom = 250.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Environment/Ground"]
+offset_left = 766.0
+offset_top = -733.0
+offset_right = 1151.0
+offset_bottom = -33.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground"]
+shape = SubResource("RectangleShape2D_ruw3r")
+
+[node name="ArenaClosing" type="Node2D" parent="Environment"]
+
+[node name="LockTrigger" type="Area2D" parent="Environment/ArenaClosing"]
+position = Vector2(1101, 487)
+script = ExtResource("1_scwdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/LockTrigger"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_1xy0x")
+
+[node name="ArenaLock" type="StaticBody2D" parent="Environment/ArenaClosing"]
+position = Vector2(-25, 320)
+collision_layer = 49
+collision_mask = 49
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/ArenaLock"]
+visible = false
+shape = SubResource("RectangleShape2D_prl7q")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Environment/ArenaClosing/ArenaLock/CollisionShape2D"]
+offset_left = -25.0
+offset_top = -400.0
+offset_right = 25.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Body"]
+offset_left = 1004.0
+offset_top = -51.0
+offset_right = 3886.0
+offset_bottom = 3045.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_gah10")
+
+[node name="Hurtbox" type="Area2D" parent="Body"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(1611, 202)
+shape = SubResource("RectangleShape2D_co0hs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(1622, 466.25)
+shape = SubResource("RectangleShape2D_01koh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(1543, 591)
+rotation = 0.436332
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_irbjs")
+
+[node name="PlayerLimiter" type="StaticBody2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/PlayerLimiter"]
+position = Vector2(1470, 539)
+rotation = 0.436332
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gxn3v")
+debug_color = Color(0.999481, 0, 0.111675, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/PlayerLimiter"]
+position = Vector2(1518, 208)
+shape = SubResource("RectangleShape2D_paaq8")
+debug_color = Color(1, 0, 0.109804, 0.419608)
+
+[node name="Attacks" type="Node2D" parent="Body"]
+
+[node name="ScreenSize" type="ColorRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 1, 0.239216)
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("2_5bsk2")]
+position = Vector2(1101, 489)
+
+[connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
+[connection signal="area_entered" from="Body/Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="Body/Hurtbox" to="." method="_on_hurtbox_area_exited"]
