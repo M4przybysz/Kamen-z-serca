@@ -43,7 +43,7 @@ collision_mask = 49
 offset_left = -960.0
 offset_top = -50.0
 offset_right = 1140.0
-offset_bottom = 250.0
+offset_bottom = 550.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Environment/Ground"]
@@ -112,6 +112,8 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_irbjs")
 
 [node name="PlayerLimiter" type="StaticBody2D" parent="Body"]
+collision_layer = 49
+collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/PlayerLimiter"]
 position = Vector2(1470, 539)

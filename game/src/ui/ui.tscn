@@ -92,5 +92,35 @@ offset_bottom = 987.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="BossHPBar" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 150.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BossHPBar"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 1920.0
+offset_bottom = 50.0
+bbcode_enabled = true
+text = "[center]Boss[/center]"
+
+[node name="ColorRect" type="ColorRect" parent="BossHPBar"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 67.0
+offset_right = 1310.0
+offset_bottom = 97.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="BossHPBar/ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 695.0
+offset_bottom = 25.0
+color = Color(1, 0, 0, 1)
+
 [editable path="DialogueInterface/DynamicDiaogueBox"]
 [editable path="DialogueInterface/Narrator"]

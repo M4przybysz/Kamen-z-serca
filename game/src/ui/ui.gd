@@ -2,13 +2,18 @@ extends Control
 
 @onready var dialogue_interface: Control = $DialogueInterface
 
-#Narrator Dialogue properities
+# Narrator Dialogue properities
 @onready var narrator: RichTextLabel = $DialogueInterface/Narrator/Control/RichTextLabel
 @onready var narrator_placement: MarginContainer = $DialogueInterface/Narrator
 
-#Floating Dialogue properities
+# Floating Dialogue properities
 @onready var dynamic_dialogue_box_text: RichTextLabel = $DialogueInterface/DynamicDiaogueBox/Control/RichTextLabel
 @onready var dynamic_dialogue_box_placement: MarginContainer =$DialogueInterface/DynamicDiaogueBox
+
+# Boss hp bar
+@onready var boss_hp_bar: Control = $BossHPBar
+@onready var boss_name: RichTextLabel = $BossHPBar/RichTextLabel
+@onready var inner_boss_hp_bar: ColorRect = $BossHPBar/ColorRect/ColorRect
 
 @export var main: Node
 @export var player: CharacterBody2D
@@ -40,6 +45,8 @@ func _ready() -> void:
 	dialogue_text = load_text_from_file("res://assets/dialogues/dialogues.txt")
 	dialogue_lines = get_dialogue_as_lines()
 	dialogue_scene = get_scene("#Tree talk")
+	
+	# Connect boss 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -133,3 +140,13 @@ func _input(_event: InputEvent) -> void:
 #########################################
 # Boss interface handling
 #########################################
+func show_boss_hp_bar(name: String) -> void:
+	boss_name.text = "[center]" + name + "[/center]"
+	inner_boss_hp_bar.size.x = 690
+	boss_hp_bar.visible = true
+
+func hide_boss_hp_bar() -> void:
+	boss_hp_bar.visible = false
+
+func set_boss_hp(max_hp: int, hp: int) -> void:
+	inner_boss_hp_bar.size.x = 690 / max_hp * hp
