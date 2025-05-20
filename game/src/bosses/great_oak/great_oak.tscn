@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mpiwwwfe4es3"]
+[gd_scene load_steps=14 format=3 uid="uid://mpiwwwfe4es3"]
 
 [ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="1_gah10"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="1_scwdp"]
@@ -23,6 +23,9 @@ size = Vector2(338, 125.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irbjs"]
 size = Vector2(264.5, 303.208)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d6ee"]
+size = Vector2(648, 630)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxn3v"]
 size = Vector2(88, 306.772)
 
@@ -31,6 +34,11 @@ size = Vector2(76, 438)
 
 [node name="GreatOak" type="Node2D"]
 script = ExtResource("1_ynktw")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="WindTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -111,6 +119,15 @@ rotation = 0.436332
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_irbjs")
 
+[node name="Wind" type="Area2D" parent="Body" groups=["wind"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Wind"]
+position = Vector2(1183, 312)
+shape = SubResource("RectangleShape2D_3d6ee")
+disabled = true
+
 [node name="PlayerLimiter" type="StaticBody2D" parent="Body"]
 collision_layer = 49
 collision_mask = 49
@@ -138,6 +155,7 @@ color = Color(0, 0, 1, 0.239216)
 [node name="DialogueTrigger" parent="." instance=ExtResource("2_5bsk2")]
 position = Vector2(1101, 489)
 
+[connection signal="timeout" from="Timers/WindTimer" to="." method="_on_wind_timer_timeout"]
 [connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
 [connection signal="area_entered" from="Body/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Body/Hurtbox" to="." method="_on_hurtbox_area_exited"]

@@ -426,6 +426,7 @@ player = NodePath("../..")
 [node name="StoneFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 
 [node name="Hitbox" parent="Throwables/StoneFeather" index="2" groups=["stone_feather"]]
 
@@ -436,6 +437,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CopperFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 cooldown = 4.0
 
 [node name="Hitbox" parent="Throwables/CopperFeather" index="2" groups=["copper_feather"]]
@@ -447,6 +449,7 @@ metadata/_edit_use_anchors_ = true
 [node name="BronzeFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 cooldown = 5.0
 
 [node name="Hitbox" parent="Throwables/BronzeFeather" index="2" groups=["bronze_feather"]]

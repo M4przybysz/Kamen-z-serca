@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
 
+@onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
+
+@onready var wind_timer: Timer = $Timers/WindTimer
+
 @export var ui: Control
 
 # Constant variables
@@ -33,6 +37,8 @@ func _process(delta: float) -> void:
 		arena_lock.disabled = true
 		arena_lock.visible = false
 	
+	if !wind_timer.is_stopped(): wind_collision.disabled = false
+	
 	if !is_in_fight: return
 	
 	print("kill")
@@ -45,25 +51,35 @@ func start_fight() -> void:
 # HP handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	dmg_source_count += 1
-	for group in dmg_dictionary:
-		if area.is_in_group(group):
-			dmg_taken += dmg_dictionary[group]
-	decrease_hp(floor(dmg_taken/dmg_source_count))
+	if is_in_fight:
+		dmg_source_count += 1
+		for group in dmg_dictionary:
+			if area.is_in_group(group):
+				dmg_taken += dmg_dictionary[group]
+		decrease_hp(floor(dmg_taken/dmg_source_count))
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
-	dmg_source_count -= 1
-	for group in dmg_dictionary:
-		if area.is_in_group(group):
-			dmg_taken -= dmg_dictionary[group]
+	if is_in_fight:
+		dmg_source_count -= 1
+		for group in dmg_dictionary:
+			if area.is_in_group(group):
+				dmg_taken -= dmg_dictionary[group]
 
 func decrease_hp(value: int) -> void:
 	if hp - value > 0: 
 		hp -= value
 		ui.set_boss_hp(max_hp, hp)
+		wind_timer.start()
 	else:
 		hp = 0
 		ui.hide_boss_hp_bar()
 		is_in_fight = false
 		unlock_arena = true
 	#print(hp)
+
+#########################################
+# Timers handling
+#########################################
+func _on_wind_timer_timeout() -> void:
+	wind_timer.stop()
+	wind_collision.disabled = true

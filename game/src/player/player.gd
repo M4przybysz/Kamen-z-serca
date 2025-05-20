@@ -28,6 +28,7 @@ extends CharacterBody2D
 @export var movement_speed: float = 350.0
 @export var jump_velocity: float = -550.0
 @export var knockback_force: Vector2 = Vector2(-1000, -100)
+@export var knockback_boost: Vector2 = Vector2(12, 5)
 
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
@@ -332,12 +333,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		gameplay.increase_hp(area.get_parent().heal)
 		gameplay.set_checkpoint(area.get_parent().global_position)
 	else:
+		var got_winded = area.is_in_group("wind")
+		
 		dmg_source_count += 1
 		for group in dmg_dictionary:
 			if area.is_in_group(group):
 				dmg_taken += dmg_dictionary[group]
 		if damage_timer.is_stopped():
-			if dmg_taken > 0:
+			if dmg_taken > 0 || got_winded:
 				knockback = knockback_force
 				var knockback_direction: int
 				if area.global_position.x > global_position.x:
@@ -345,6 +348,10 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 				else:
 					knockback_direction = -1
 				knockback.x *= knockback_direction
+				if got_winded:
+					knockback.x *= -knockback_boost.x
+					if is_on_floor():
+						knockback.y *= knockback_boost.y
 			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
 			damage_timer.start()
 
