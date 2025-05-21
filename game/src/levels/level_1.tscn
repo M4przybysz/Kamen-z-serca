@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqdvehj1hnuf5"]
+[gd_scene load_steps=8 format=3 uid="uid://dqdvehj1hnuf5"]
 
-[ext_resource type="Texture2D" uid="uid://b31b63qpot8lk" path="res://assets/Background/duchy/duch_na_kolanach1.png" id="1_xgck0"]
-[ext_resource type="Texture2D" uid="uid://cvmaenam3vwk4" path="res://assets/Background/duchy/duch_maly5.png" id="2_pwqno"]
-[ext_resource type="Texture2D" uid="uid://urecpb681col" path="res://assets/Background/duchy/duch_maly4.png" id="3_0dqtx"]
-[ext_resource type="Texture2D" uid="uid://gbbq5lb1inv5" path="res://assets/Background/duchy/duch_maly2.png" id="4_85u15"]
-[ext_resource type="Texture2D" uid="uid://c1dcu0oi3hsys" path="res://assets/Background/duchy/duch_para1.png" id="5_5mghc"]
-[ext_resource type="Texture2D" uid="uid://bllkxtycqu73f" path="res://assets/Background/duchy/duch_para4.png" id="6_q1rl3"]
+[ext_resource type="Texture2D" uid="uid://bumv758icdkti" path="res://assets/Background/niebo.png" id="1_2hlu5"]
+[ext_resource type="Texture2D" uid="uid://ckyc5yvlprwdu" path="res://assets/Background/chura2.png" id="1_tshyv"]
+[ext_resource type="Script" path="res://src/levels/clouds_paralax.gd" id="2_tbx7c"]
+[ext_resource type="Texture2D" uid="uid://c6r2373olfx5n" path="res://assets/Background/chmura3.png" id="4_yptrn"]
+[ext_resource type="Texture2D" uid="uid://cbjk6ef2kvkyx" path="res://assets/Background/chmura1.png" id="5_ol1gj"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="7_mwy8p"]
 [ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="8_afh11"]
 
@@ -14,45 +13,40 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1910, 0)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2362.57, 0)
 
-[node name="DuchNaKolanach1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(1361, 766)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("1_xgck0")
-offset = Vector2(-200, 100)
-
-[node name="DuchMaly5" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(1496, 863)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("2_pwqno")
-offset = Vector2(-200, 100)
-
-[node name="DuchMaly4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(156, 831)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("3_0dqtx")
-offset = Vector2(-200, 100)
-
-[node name="DuchMaly2" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(367, 820)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("4_85u15")
-offset = Vector2(-200, 100)
-
-[node name="DuchPara1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(505, 745)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("5_5mghc")
-offset = Vector2(-200, 100)
-
-[node name="DuchPara4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
-position = Vector2(972, 825)
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("6_q1rl3")
-offset = Vector2(-200, 100)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1049.52, 657.708)
+scale = Vector2(0.35088, 0.38013)
+texture = ExtResource("1_2hlu5")
 
 [node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(3200, 0)
+script = ExtResource("2_tbx7c")
+cloud_speed = -25
+
+[node name="Chura2" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(841, 106)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_tshyv")
+
+[node name="Chmura3" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(1348, 1706)
+scale = Vector2(1, 1.123)
+texture = ExtResource("4_yptrn")
+
+[node name="Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(3000, 0)
+script = ExtResource("2_tbx7c")
+cloud_speed = -60
+
+[node name="Chmura1" type="Sprite2D" parent="ParallaxBackground/Clouds2"]
+position = Vector2(-801, 1475)
+scale = Vector2(0.651778, 0.651778)
+texture = ExtResource("5_ol1gj")
 
 [node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -76,5 +70,5 @@ position = Vector2(167, 704)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="PlatformBasic" parent="." instance=ExtResource("8_afh11")]
-position = Vector2(77, 1055)
+position = Vector2(66, 817)
 width = 5000
