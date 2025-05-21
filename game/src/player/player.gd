@@ -38,7 +38,7 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 	"short_branch" : 1, 
 	"long_branch" : 1,
 	"moving_root" : 1,
-	"spiked_root" : 1,
+	"spiked_roots" : 1,
 	"falling_acorn" : 1,
 	# Add more values here (format "attack_name" : damage)
 }

@@ -139,6 +139,7 @@ wait_time = 0.5
 
 [node name="WarningTop" type="TextureRect" parent="BossWarnings"]
 visible = false
+layout_mode = 0
 offset_left = 1920.0
 offset_right = 1960.0
 offset_bottom = 1920.0
@@ -157,6 +158,7 @@ texture = SubResource("GradientTexture1D_4ouk5")
 
 [node name="WarningBottom" type="TextureRect" parent="BossWarnings"]
 visible = false
+layout_mode = 0
 offset_top = 1080.0
 offset_right = 40.0
 offset_bottom = 3000.0
@@ -165,6 +167,7 @@ texture = SubResource("GradientTexture1D_4ouk5")
 
 [node name="WarningLeft" type="TextureRect" parent="BossWarnings"]
 visible = false
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 1080.0
 texture = SubResource("GradientTexture1D_4ouk5")
