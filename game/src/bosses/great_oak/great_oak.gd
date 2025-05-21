@@ -5,6 +5,7 @@ extends Node2D
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
 @onready var wind_timer: Timer = $Timers/WindTimer
+@onready var attack_cooldown_timer: Timer = $Timers/AttackCooldownTimer
 
 @export var ui: Control
 
@@ -20,18 +21,46 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 	# Add more values here (format "attack_name" : damage)
 }
 
+# Possible attacks:
+# 0 - reset pattern
+# 1 - short range branch attack
+# 2 - long range branch attack
+# 3 - moving root on the ground attack
+# 4 - spiked roots attack
+# 5 - falling acorns attack (breaking leftover acorn creates a health pack)
+
+# Attack patterns
+const attack_patterns1 = [
+	[2, 3, 1],
+	[2, 4, 2, 5],
+	[4, 5, 2, 1, 4]
+]
+
+const attack_patterns2 = [
+	[3, 4, 3, 2],
+	[5, 3, 2, 1, 3],
+	[4, 3, 2, 5, 2, 1]
+]
+
 # Dynamic variables
 var hp: int
 var is_in_fight: bool = false
 var dmg_source_count: int
 var dmg_taken: int
 var unlock_arena: bool = false
+var fight_phase: int = 1
+var active_attack_pattern: Array
+var active_attack_index: int = 0
+
+# Random number generator
+var RNG = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	ui.connect("start_oak_fight", start_fight)
 	hp = max_hp
+	active_attack_pattern = attack_patterns1[RNG.randi_range(0, 2)]
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Don't do anything unless the fight starts
 	if unlock_arena && !arena_lock.disabled:
 		arena_lock.disabled = true
@@ -41,8 +70,41 @@ func _process(delta: float) -> void:
 	
 	if !is_in_fight: return
 	
-	print("kill")
+	state_machine()
 
+#########################################
+# Handling attack patterns
+#########################################
+func state_machine() -> void:
+	print(active_attack_pattern, active_attack_pattern[active_attack_index])
+	
+	if attack_cooldown_timer.is_stopped():
+		match active_attack_pattern[active_attack_index]:
+			0: reset_attack_pattern()
+			1: pass
+			2: pass
+			3: pass
+			4: pass
+			5: pass
+			_:
+				print("This pokemon doesn't know a move number ", active_attack_index)
+		
+		active_attack_index += 1
+		attack_cooldown_timer.start()
+
+#########################################
+# Attacks handling
+#########################################
+func reset_attack_pattern() -> void:
+	active_attack_index = 0
+	if fight_phase == 1:
+		active_attack_pattern = attack_patterns1[RNG.randi_range(0, 2)]
+	elif fight_phase == 2:
+		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
+
+#########################################
+# Starting a bloodbath
+#########################################
 func start_fight() -> void:
 	is_in_fight = true
 	ui.show_boss_hp_bar("GREAT OAK")
@@ -70,11 +132,14 @@ func decrease_hp(value: int) -> void:
 		hp -= value
 		ui.set_boss_hp(max_hp, hp)
 		wind_timer.start()
+		reset_attack_pattern()
 	else:
 		hp = 0
 		ui.hide_boss_hp_bar()
 		is_in_fight = false
 		unlock_arena = true
+	if hp <= max_hp / 2:
+		fight_phase = 2
 	#print(hp)
 
 #########################################
@@ -83,3 +148,10 @@ func decrease_hp(value: int) -> void:
 func _on_wind_timer_timeout() -> void:
 	wind_timer.stop()
 	wind_collision.disabled = true
+
+func _on_attack_cooldown_timer_timeout() -> void:
+	attack_cooldown_timer.stop()
+	
+	# Set new random attack pattern
+	if active_attack_index == active_attack_pattern.size() - 1:
+		reset_attack_pattern()

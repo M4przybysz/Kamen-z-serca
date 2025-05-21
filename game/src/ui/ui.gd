@@ -140,8 +140,8 @@ func _input(_event: InputEvent) -> void:
 #########################################
 # Boss interface handling
 #########################################
-func show_boss_hp_bar(name: String) -> void:
-	boss_name.text = "[center]" + name + "[/center]"
+func show_boss_hp_bar(b_name: String) -> void:
+	boss_name.text = "[center]" + b_name + "[/center]"
 	inner_boss_hp_bar.size.x = 690
 	boss_hp_bar.visible = true
 
@@ -150,3 +150,6 @@ func hide_boss_hp_bar() -> void:
 
 func set_boss_hp(max_hp: int, hp: int) -> void:
 	inner_boss_hp_bar.size.x = 690 / max_hp * hp
+
+func boss_attack_warning(number: int) -> void:
+	pass
