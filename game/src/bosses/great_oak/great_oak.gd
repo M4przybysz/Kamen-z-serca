@@ -10,7 +10,6 @@ extends Node2D
 
 # Assign attack collisions to variables
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
-@onready var short_branch_attack: CollisionShape2D = $Body/Attacks/ShortBranchAttack/CollisionShape2D
 
 @export var ui: Control
 
@@ -93,8 +92,6 @@ func state_machine() -> void:
 		2, 3: active_warning = 1
 		4: active_warning = 2
 		_: print("idk where the attack is comming from")
-	
-	# Update attack collisions
 
 #########################################
 # Attacks handling
@@ -105,12 +102,6 @@ func reset_attack_pattern() -> void:
 		active_attack_pattern = attack_patterns1[RNG.randi_range(0, 2)]
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
-
-func short_branch() -> void:
-	print("short_branch_attack")
-
-func long_branch() -> void:
-	print("long_branch_attack")
 
 func moving_root() -> void:
 	print("moving_root_attack")
@@ -175,7 +166,7 @@ func _on_attack_cooldown_timer_timeout() -> void:
 	match active_attack_pattern[active_attack_index]:
 		0: reset_attack_pattern()
 		1: attack_player.play("short_branch_attack")
-		2: long_branch()
+		2: attack_player.play("long_branch_attack")
 		3: moving_root()
 		4: spiked_roots()
 		5: falling_acorns()
