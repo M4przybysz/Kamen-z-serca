@@ -12,6 +12,7 @@ extends Node2D
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
 @export var ui: Control
+@onready var main: Node = $"../../../"
 
 # Constant variables
 const max_hp: int = 10
@@ -146,6 +147,7 @@ func decrease_hp(value: int) -> void:
 		ui.hide_boss_hp_bar()
 		is_in_fight = false
 		unlock_arena = true
+		main.show_end_screen()
 	if hp <= max_hp / 2:
 		fight_phase = 2
 	#print(hp)

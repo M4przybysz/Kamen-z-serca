@@ -41,3 +41,4 @@ visible = false
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
 [editable path="Gameplay"]
+[editable path="Gameplay/Alfa_v1"]
