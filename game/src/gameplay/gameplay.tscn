@@ -3,17 +3,19 @@
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
-[ext_resource type="PackedScene" uid="uid://mpiwwwfe4es3" path="res://src/bosses/great_oak/great_oak.tscn" id="4_pa2u7"]
+[ext_resource type="PackedScene" uid="uid://bem0xf8p8cvhd" path="res://src/levels/alfa/alfa_v1.tscn" id="4_83t1u"]
 
 [node name="Gameplay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_i11ig")
 
-[node name="GreatOak" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("4_pa2u7")]
-ui = NodePath("../UI/UI")
+[node name="Alfa_v1" parent="." instance=ExtResource("4_83t1u")]
+
+[node name="GreatOak" parent="Alfa_v1" index="5" node_paths=PackedStringArray("ui")]
+ui = NodePath("../../UI/UI")
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(770, 355)
+position = Vector2(668, 151)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)
@@ -23,3 +25,5 @@ position_smoothing_enabled = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
+
+[editable path="Alfa_v1"]
