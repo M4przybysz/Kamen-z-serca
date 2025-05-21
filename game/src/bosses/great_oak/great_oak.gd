@@ -2,10 +2,15 @@ extends Node2D
 
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
 
-@onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
+@onready var attack_player: AnimationPlayer = $Body/AttackPlayer
 
+# Assign Timers to variables
 @onready var wind_timer: Timer = $Timers/WindTimer
 @onready var attack_cooldown_timer: Timer = $Timers/AttackCooldownTimer
+
+# Assign attack collisions to variables
+@onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
+@onready var short_branch_attack: CollisionShape2D = $Body/Attacks/ShortBranchAttack/CollisionShape2D
 
 @export var ui: Control
 
@@ -31,15 +36,15 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 
 # Attack patterns
 const attack_patterns1 = [
-	[2, 3, 1],
-	[2, 4, 2, 5],
-	[4, 5, 2, 1, 4]
+	[2, 3, 1, 0],
+	[2, 4, 2, 5, 0],
+	[4, 5, 2, 1, 4, 0]
 ]
 
 const attack_patterns2 = [
-	[3, 4, 3, 2],
-	[5, 3, 2, 1, 3],
-	[4, 3, 2, 5, 2, 1]
+	[3, 4, 3, 2, 0],
+	[5, 3, 2, 1, 3, 0],
+	[4, 3, 2, 5, 2, 1, 0]
 ]
 
 # Dynamic variables
@@ -51,6 +56,7 @@ var unlock_arena: bool = false
 var fight_phase: int = 1
 var active_attack_pattern: Array
 var active_attack_index: int = 0
+var active_warning: int
 
 # Random number generator
 var RNG = RandomNumberGenerator.new()
@@ -71,6 +77,9 @@ func _process(_delta: float) -> void:
 	if !is_in_fight: return
 	
 	state_machine()
+	
+	if attack_cooldown_timer.time_left <= 0.5:
+		ui.boss_attack_warning(active_warning)
 
 #########################################
 # Handling attack patterns
@@ -78,19 +87,14 @@ func _process(_delta: float) -> void:
 func state_machine() -> void:
 	print(active_attack_pattern, active_attack_pattern[active_attack_index])
 	
-	if attack_cooldown_timer.is_stopped():
-		match active_attack_pattern[active_attack_index]:
-			0: reset_attack_pattern()
-			1: pass
-			2: pass
-			3: pass
-			4: pass
-			5: pass
-			_:
-				print("This pokemon doesn't know a move number ", active_attack_index)
-		
-		active_attack_index += 1
-		attack_cooldown_timer.start()
+	# Show correct attack warning
+	match active_attack_pattern[active_attack_index]:
+		1, 5: active_warning = 0
+		2, 3: active_warning = 1
+		4: active_warning = 2
+		_: print("idk where the attack is comming from")
+	
+	# Update attack collisions
 
 #########################################
 # Attacks handling
@@ -102,11 +106,27 @@ func reset_attack_pattern() -> void:
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
 
+func short_branch() -> void:
+	print("short_branch_attack")
+
+func long_branch() -> void:
+	print("long_branch_attack")
+
+func moving_root() -> void:
+	print("moving_root_attack")
+
+func spiked_roots() -> void:
+	print("spiked_roots_attack")
+
+func falling_acorns() -> void:
+	print("falling_acorns_attack")
+
 #########################################
 # Starting a bloodbath
 #########################################
 func start_fight() -> void:
 	is_in_fight = true
+	attack_cooldown_timer.start()
 	ui.show_boss_hp_bar("GREAT OAK")
 
 #########################################
@@ -152,6 +172,16 @@ func _on_wind_timer_timeout() -> void:
 func _on_attack_cooldown_timer_timeout() -> void:
 	attack_cooldown_timer.stop()
 	
-	# Set new random attack pattern
-	if active_attack_index == active_attack_pattern.size() - 1:
+	match active_attack_pattern[active_attack_index]:
+		0: reset_attack_pattern()
+		1: attack_player.play("short_branch_attack")
+		2: long_branch()
+		3: moving_root()
+		4: spiked_roots()
+		5: falling_acorns()
+		_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
+	
+	active_attack_index += 1
+	if active_attack_pattern[active_attack_index] == active_attack_pattern[-1]:
 		reset_attack_pattern()
+	attack_cooldown_timer.start()

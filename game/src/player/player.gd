@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
+@onready var gameplay: Node2D = $".." # Assign gameplay (parent node) to variable
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variable
 @onready var throwables: Node2D = $Throwables
 
 # Assign physical collision to variables
@@ -35,6 +35,11 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 	"enemy" : 1, 	# Test value 
 	"spike" : 1,
 	"mummy_attack": 1,
+	"short_branch" : 1, 
+	"long_branch" : 1,
+	"moving_root" : 1,
+	"spiked_root" : 1,
+	"falling_acorn" : 1,
 	# Add more values here (format "attack_name" : damage)
 }
 

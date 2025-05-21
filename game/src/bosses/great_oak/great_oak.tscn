@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://mpiwwwfe4es3"]
+[gd_scene load_steps=18 format=3 uid="uid://mpiwwwfe4es3"]
 
 [ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="1_gah10"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="1_scwdp"]
@@ -31,6 +31,118 @@ size = Vector2(88, 306.772)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_paaq8"]
 size = Vector2(76, 438)
+
+[sub_resource type="Animation" id="Animation_hsyyr"]
+resource_name = "short_branch_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1325, 254), Vector2(1400, 510)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.610865, -0.872665]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vk68o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1325, 254)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.610865]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attacks/ShortBranchAttack/CollisionShape2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_56seq"]
+_data = {
+"RESET": SubResource("Animation_vk68o"),
+"short_branch_attack": SubResource("Animation_hsyyr")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q6aq"]
+size = Vector2(425.028, 91.8109)
 
 [node name="GreatOak" type="Node2D"]
 script = ExtResource("1_ynktw")
@@ -119,7 +231,6 @@ shape = SubResource("RectangleShape2D_01koh")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Body/Hurtbox"]
 position = Vector2(1543, 591)
 rotation = 0.436332
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_irbjs")
 
 [node name="Wind" type="Area2D" parent="Body" groups=["wind"]]
@@ -127,7 +238,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Wind"]
-position = Vector2(1183, 312)
+position = Vector2(1182, 312)
 shape = SubResource("RectangleShape2D_3d6ee")
 disabled = true
 
@@ -138,7 +249,6 @@ collision_mask = 49
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/PlayerLimiter"]
 position = Vector2(1470, 539)
 rotation = 0.436332
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gxn3v")
 debug_color = Color(0.999481, 0, 0.111675, 0.42)
 
@@ -147,7 +257,38 @@ position = Vector2(1518, 208)
 shape = SubResource("RectangleShape2D_paaq8")
 debug_color = Color(1, 0, 0.109804, 0.419608)
 
+[node name="AttackPlayer" type="AnimationPlayer" parent="Body"]
+libraries = {
+"": SubResource("AnimationLibrary_56seq")
+}
+
 [node name="Attacks" type="Node2D" parent="Body"]
+
+[node name="ShortBranchAttack" type="Area2D" parent="Body/Attacks" groups=["short_branch"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Attacks/ShortBranchAttack"]
+visible = false
+position = Vector2(1325, 254)
+rotation = 0.610865
+shape = SubResource("RectangleShape2D_0q6aq")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/ShortBranchAttack/CollisionShape2D"]
+offset_left = -213.0
+offset_top = -46.0
+offset_right = 213.0
+offset_bottom = 46.0
+color = Color(1, 0, 0, 1)
+
+[node name="LongBranchAttack" type="Area2D" parent="Body/Attacks"]
+
+[node name="MovingRootAttack" type="Area2D" parent="Body/Attacks"]
+
+[node name="SpikedRootsAttack" type="Area2D" parent="Body/Attacks"]
+
+[node name="FallingAcornsAttack" type="Area2D" parent="Body/Attacks"]
 
 [node name="ScreenSize" type="ColorRect" parent="."]
 visible = false

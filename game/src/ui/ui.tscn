@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=10 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -7,6 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cnjfqhhop161g" path="res://assets/sprites/ui/damage4.png" id="5_bvfud"]
 [ext_resource type="Texture2D" uid="uid://baxh3886eo753" path="res://assets/sprites/ui/damage5.png" id="6_xwhx4"]
 [ext_resource type="PackedScene" uid="uid://b3ibyshlvp3wi" path="res://src/dialogues/text_box.tscn" id="7_jmgqw"]
+
+[sub_resource type="Gradient" id="Gradient_4g2bo"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ouk5"]
+gradient = SubResource("Gradient_4g2bo")
+width = 40
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -121,6 +128,48 @@ offset_top = 5.0
 offset_right = 695.0
 offset_bottom = 25.0
 color = Color(1, 0, 0, 1)
+
+[node name="BossWarnings" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="WarningTimer" type="Timer" parent="BossWarnings"]
+wait_time = 0.5
+
+[node name="WarningTop" type="TextureRect" parent="BossWarnings"]
+visible = false
+offset_left = 1920.0
+offset_right = 1960.0
+offset_bottom = 1920.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_4ouk5")
+
+[node name="WarningRight" type="TextureRect" parent="BossWarnings"]
+visible = false
+layout_mode = 0
+offset_left = 1920.0
+offset_top = 1080.0
+offset_right = 1960.0
+offset_bottom = 2160.0
+rotation = 3.14159
+texture = SubResource("GradientTexture1D_4ouk5")
+
+[node name="WarningBottom" type="TextureRect" parent="BossWarnings"]
+visible = false
+offset_top = 1080.0
+offset_right = 40.0
+offset_bottom = 3000.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_4ouk5")
+
+[node name="WarningLeft" type="TextureRect" parent="BossWarnings"]
+visible = false
+offset_right = 40.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture1D_4ouk5")
+
+[connection signal="timeout" from="BossWarnings/WarningTimer" to="." method="_on_warning_timer_timeout"]
 
 [editable path="DialogueInterface/DynamicDiaogueBox"]
 [editable path="DialogueInterface/Narrator"]

@@ -15,6 +15,9 @@ extends Control
 @onready var boss_name: RichTextLabel = $BossHPBar/RichTextLabel
 @onready var inner_boss_hp_bar: ColorRect = $BossHPBar/ColorRect/ColorRect
 
+# Timers
+@onready var warning_timer: Timer = $BossWarnings/WarningTimer
+
 @export var main: Node
 @export var player: CharacterBody2D
 
@@ -23,6 +26,7 @@ var screen_break1: Array
 var screen_break2: Array
 var screen_break3: Array
 var hp_vfx: Array
+var attack_warining_vfx: Array
 
 # DialogueInterface variables
 var dialogue_text: String
@@ -46,7 +50,8 @@ func _ready() -> void:
 	dialogue_lines = get_dialogue_as_lines()
 	dialogue_scene = get_scene("#Tree talk")
 	
-	# Connect boss 
+	# Assign attack warnings
+	attack_warining_vfx = [$BossWarnings/WarningTop, $BossWarnings/WarningRight, $BossWarnings/WarningBottom, $BossWarnings/WarningLeft]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -152,4 +157,11 @@ func set_boss_hp(max_hp: int, hp: int) -> void:
 	inner_boss_hp_bar.size.x = 690 / max_hp * hp
 
 func boss_attack_warning(number: int) -> void:
-	pass
+	for img in attack_warining_vfx:
+		img.visible = false
+	attack_warining_vfx[number].visible = true
+	warning_timer.start()
+
+func _on_warning_timer_timeout() -> void:
+	for img in attack_warining_vfx:
+		img.visible = false
