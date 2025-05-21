@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cnjfqhhop161g" path="res://assets/sprites/ui/damage4.png" id="5_bvfud"]
 [ext_resource type="Texture2D" uid="uid://baxh3886eo753" path="res://assets/sprites/ui/damage5.png" id="6_xwhx4"]
 [ext_resource type="PackedScene" uid="uid://b3ibyshlvp3wi" path="res://src/dialogues/text_box.tscn" id="7_jmgqw"]
+[ext_resource type="Texture2D" uid="uid://cbo6uxx0kuo7p" path="res://assets/sprites/throwables/spear.png" id="8_sbj7u"]
+[ext_resource type="Texture2D" uid="uid://md4b4rduxwaf" path="res://assets/sprites/throwables/bronze.png" id="9_7ow6w"]
+[ext_resource type="Texture2D" uid="uid://oc2hf7ojfhde" path="res://assets/sprites/throwables/copper.png" id="10_avsow"]
+[ext_resource type="Texture2D" uid="uid://dlbegmst44h3y" path="res://assets/sprites/throwables/stone.png" id="11_srjus"]
 
 [sub_resource type="Gradient" id="Gradient_4g2bo"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
@@ -21,6 +25,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlrv2")
@@ -98,6 +106,45 @@ offset_right = 2666.48
 offset_bottom = 987.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="in_game_ui" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Spear" type="TextureRect" parent="in_game_ui"]
+visible = false
+layout_mode = 0
+offset_left = 122.0
+offset_top = 583.0
+offset_right = 422.0
+offset_bottom = 1283.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_sbj7u")
+
+[node name="Bronze" type="TextureRect" parent="in_game_ui"]
+visible = false
+layout_mode = 0
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
+texture = ExtResource("9_7ow6w")
+
+[node name="Copper" type="TextureRect" parent="in_game_ui"]
+visible = false
+layout_mode = 0
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
+texture = ExtResource("10_avsow")
+
+[node name="Stone" type="TextureRect" parent="in_game_ui"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
+texture = ExtResource("11_srjus")
 
 [node name="BossHPBar" type="Control" parent="."]
 visible = false
