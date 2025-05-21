@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://mpiwwwfe4es3"]
+[gd_scene load_steps=22 format=3 uid="uid://mpiwwwfe4es3"]
 
 [ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="1_gah10"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="1_scwdp"]
@@ -190,6 +190,42 @@ tracks/12/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1493, 627)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_i5who"]
 resource_name = "long_branch_attack"
@@ -355,10 +391,51 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_naxl5"]
+resource_name = "moving_root_attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1500, 620), Vector2(50, 620)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attacks/MovingRootAttack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_56seq"]
 _data = {
 "RESET": SubResource("Animation_vk68o"),
 "long_branch_attack": SubResource("Animation_i5who"),
+"moving_root_attack": SubResource("Animation_naxl5"),
 "short_branch_attack": SubResource("Animation_hsyyr")
 }
 
@@ -367,6 +444,9 @@ size = Vector2(425.028, 91.8109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgy6o"]
 size = Vector2(960.5, 43.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_li4ra"]
+radius = 50.0
 
 [node name="GreatOak" type="Node2D"]
 script = ExtResource("1_ynktw")
@@ -552,7 +632,77 @@ offset_bottom = 22.0
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="MovingRootAttack" type="Area2D" parent="Body/Attacks"]
+[node name="MovingRootAttack" type="Area2D" parent="Body/Attacks" groups=["moving_root"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Attacks/MovingRootAttack"]
+visible = false
+position = Vector2(1493, 627)
+shape = SubResource("CircleShape2D_li4ra")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+rotation = 0.785398
+
+[node name="ColorRect2" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D/Node2D"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D2" type="Node2D" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+rotation = 0.261799
+
+[node name="ColorRect2" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D/Node2D2"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D3" type="Node2D" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+rotation = 0.523599
+
+[node name="ColorRect2" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D/Node2D3"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D4" type="Node2D" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+rotation = 1.0472
+
+[node name="ColorRect2" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D/Node2D4"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D5" type="Node2D" parent="Body/Attacks/MovingRootAttack/CollisionShape2D"]
+rotation = 1.309
+
+[node name="ColorRect2" type="ColorRect" parent="Body/Attacks/MovingRootAttack/CollisionShape2D/Node2D5"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="SpikedRootsAttack" type="Area2D" parent="Body/Attacks"]
 

@@ -103,9 +103,6 @@ func reset_attack_pattern() -> void:
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
 
-func moving_root() -> void:
-	print("moving_root_attack")
-
 func spiked_roots() -> void:
 	print("spiked_roots_attack")
 
@@ -163,16 +160,17 @@ func _on_wind_timer_timeout() -> void:
 func _on_attack_cooldown_timer_timeout() -> void:
 	attack_cooldown_timer.stop()
 	
-	match active_attack_pattern[active_attack_index]:
-		0: reset_attack_pattern()
-		1: attack_player.play("short_branch_attack")
-		2: attack_player.play("long_branch_attack")
-		3: moving_root()
-		4: spiked_roots()
-		5: falling_acorns()
-		_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
-	
-	active_attack_index += 1
-	if active_attack_pattern[active_attack_index] == active_attack_pattern[-1]:
-		reset_attack_pattern()
-	attack_cooldown_timer.start()
+	if is_in_fight:
+		match active_attack_pattern[active_attack_index]:
+			0: reset_attack_pattern()
+			1: attack_player.play("short_branch_attack")
+			2: attack_player.play("long_branch_attack")
+			3: attack_player.play("moving_root_attack")
+			4: spiked_roots()
+			5: falling_acorns()
+			_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
+		
+		active_attack_index += 1
+		if active_attack_pattern[active_attack_index] == active_attack_pattern[-1]:
+			reset_attack_pattern()
+		attack_cooldown_timer.start()
