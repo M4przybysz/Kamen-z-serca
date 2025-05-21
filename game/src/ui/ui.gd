@@ -11,12 +11,15 @@ extends Control
 @onready var dynamic_dialogue_box_placement: MarginContainer =$DialogueInterface/DynamicDiaogueBox
 
 @export var main: Node
+@export var	player: CharacterBody2D
 
 # HP_Interface variables
 var screen_break1: Array
 var screen_break2: Array
 var screen_break3: Array
 var hp_vfx: Array
+
+var throwable_icon: Array
 
 # DialogueInterface variables
 var dialogue_text: String
@@ -31,6 +34,8 @@ func _ready() -> void:
 	screen_break2 = [$HP_interface/HP5,$HP_interface/HP4,$HP_interface/HP3,$HP_interface/HP1,$HP_interface/HP_Max]
 	screen_break3 = [$HP_interface/HP5,$HP_interface/HP4,$HP_interface/HP3,$HP_interface/HP2,$HP_interface/HP1,$HP_interface/HP_Max]
 	hp_vfx = screen_break1
+	
+	throwable_icon = [$in_game_ui/Spear,$in_game_ui/Stone,$in_game_ui/Copper,$in_game_ui/Bronze]
 	
 	# Assign dialogue variables
 	dialogue_text = load_text_from_file("res://assets/dialogues/dialogues.txt")
@@ -49,7 +54,12 @@ func set_hp(hp):
 func set_max_hp():
 	for img in hp_vfx:
 		img.visible = false
-
+		
+func throwables(active_feather):
+	for img in throwable_icon:
+		img.visible = false
+	throwable_icon[active_feather].visible=true
+	
 func load_text_from_file(path: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()

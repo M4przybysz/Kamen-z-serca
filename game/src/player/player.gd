@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
+@onready var ui: Control = $"../UI/UI"
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
 @onready var throwables: Node2D = $Throwables
 
@@ -213,6 +215,7 @@ func _input(_event: InputEvent) -> void:
 		
 		if active_feather == level: active_feather = 0
 		else: active_feather += 1
+		ui.throwables(active_feather)
 	
 	if Input.is_action_pressed("change_throwable_up"):
 		if !is_spear_unlocked:
@@ -220,6 +223,7 @@ func _input(_event: InputEvent) -> void:
 		
 		if active_feather == 0: active_feather = level
 		else: active_feather -= 1
+		ui.throwables(active_feather)
 	
 	# Handle spear return
 	if Input.is_action_just_pressed("spear_return") && !is_grabbing:

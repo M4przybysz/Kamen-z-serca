@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=53 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="Texture2D" uid="uid://f7yv2xqggk4r" path="res://assets/sprites/player/jump/grab.png" id="2_ff48u"]
@@ -31,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
 [ext_resource type="PackedScene" uid="uid://co24k8ymn44rp" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
+[ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
+[ext_resource type="Texture2D" uid="uid://djsh8i7hu05fn" path="res://assets/sprites/throwables/copper_shoot.png" id="33_8mfua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cojr7"]
 radius = 20.0
@@ -430,8 +433,17 @@ player = NodePath("../..")
 [node name="Hitbox" parent="Throwables/StoneFeather" index="2" groups=["stone_feather"]]
 
 [node name="ColorRect" parent="Throwables/StoneFeather" index="3"]
+visible = false
 color = Color(0.501961, 0.501961, 0.501961, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Throwables/StoneFeather"]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 179.0
+offset_bottom = 178.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("32_eycl2")
 
 [node name="CopperFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
@@ -441,8 +453,17 @@ cooldown = 4.0
 [node name="Hitbox" parent="Throwables/CopperFeather" index="2" groups=["copper_feather"]]
 
 [node name="ColorRect" parent="Throwables/CopperFeather" index="3"]
+visible = false
 color = Color(0.721569, 0.45098, 0.2, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Throwables/CopperFeather"]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 179.0
+offset_bottom = 178.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("33_8mfua")
 
 [node name="BronzeFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
@@ -452,8 +473,17 @@ cooldown = 5.0
 [node name="Hitbox" parent="Throwables/BronzeFeather" index="2" groups=["bronze_feather"]]
 
 [node name="ColorRect" parent="Throwables/BronzeFeather" index="3"]
+visible = false
 color = Color(0.803922, 0.498039, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Throwables/BronzeFeather"]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 179.0
+offset_bottom = 178.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("32_764bl")
 
 [node name="PushFix" type="Area2D" parent="."]
 collision_layer = 33
