@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
 [ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
 [ext_resource type="Texture2D" uid="uid://djsh8i7hu05fn" path="res://assets/sprites/throwables/copper_shoot.png" id="33_8mfua"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cojr7"]
 radius = 20.0
 height = 100.0
@@ -429,6 +428,7 @@ player = NodePath("../..")
 [node name="StoneFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 
 [node name="Hitbox" parent="Throwables/StoneFeather" index="2" groups=["stone_feather"]]
 
@@ -448,6 +448,7 @@ texture = ExtResource("32_eycl2")
 [node name="CopperFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 cooldown = 4.0
 
 [node name="Hitbox" parent="Throwables/CopperFeather" index="2" groups=["copper_feather"]]
@@ -468,6 +469,7 @@ texture = ExtResource("33_8mfua")
 [node name="BronzeFeather" parent="Throwables" node_paths=PackedStringArray("player") instance=ExtResource("3_pj0em")]
 visible = false
 player = NodePath("../..")
+flight_time = 0.7
 cooldown = 5.0
 
 [node name="Hitbox" parent="Throwables/BronzeFeather" index="2" groups=["bronze_feather"]]

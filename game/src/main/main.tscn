@@ -16,8 +16,9 @@ script = ExtResource("1_2nm2t")
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
-[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main", "player")]
 main = NodePath("../../..")
+player = NodePath("../../Player")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
