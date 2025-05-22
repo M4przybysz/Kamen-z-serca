@@ -15,7 +15,7 @@ script = ExtResource("1_i11ig")
 ui = NodePath("../../UI/UI")
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(668, 151)
+position = Vector2(359, 128)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)

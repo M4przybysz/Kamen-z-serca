@@ -3887,7 +3887,7 @@ position = Vector2(23478, 1007)
 scale = Vector2(0.298397, 1.11106)
 
 [node name="DeathZone" parent="Environment" instance=ExtResource("13_xofsb")]
-position = Vector2(2, 5229)
+position = Vector2(0, 5000)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 9730.0

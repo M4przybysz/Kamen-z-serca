@@ -50,7 +50,28 @@ func _ready() -> void:
 	throwable_icon = [$in_game_ui/Spear,$in_game_ui/Stone,$in_game_ui/Copper,$in_game_ui/Bronze]
 	
 	# Assign dialogue variables
-	dialogue_text = load_text_from_file("res://assets/dialogues/dialogues.txt")
+	dialogue_text = "#Tree talk
+N: [center][i]Bohater podszedł powoli do Pradawnego Dębu, stojącego na jego drodze. Jego cień skulał się pośród bezkresnego cienia drzewa.[/i][/center]
+N: [center][i]Poczuł skręt trzewi i narastające tętno w żyłach, gdy gałęzie Dębu obracały się nienaturalnie w jego stronę.[/i][/center]
+D: Śmiertelniku…
+D: Co robisz tutaj, na granicy światów?
+D: Czego szukasz w krainie, do której żywi wstępu nie mają?
+D: Zawróć, póki me gałęzie i korzenie nie wplotły cię w jedności ziemi.
+N: [center][i]Kręcił głową, nie zgadzał się. Wyrównał krok.[/i][/center]
+D: Gorzko się mylisz, sądząc że twe uczucia ugodzą we mnie czy w bogów.
+D: Twoja [b]pycha[/b] zepchnie cię do poziomu niewolników służących w kopalni.
+D: [b]Zawiścią, cierpieniem[/b] i [b]zgryzotą[/b] - oto czym się staniesz.
+D: Nie zawiniłeś przeciwko mnie, nie mam więc wobec ciebie urazy. Zawróć, zachowaj płomień gniewu – niech ci dalej w życiu służy.
+N: [center][i]Ogarnął go kolejny ścisk żołądka, a rękę ukłożył na broni trzymanej przy ciele.[/i][/center]
+D: Cokolwiek chcesz zdobyć w Głębinach zobaczysz w Wyznaczonym Czasie.
+N: [center][i]Wiedział, że nie ma czasu ani sił na Wyznaczony Czas.[/i][/center]
+N: [center][i]Wyciągnął broń, pocierając się o nowowyrosłe pióra.[/i][/center]
+D: Zatem podjąłeś wybór…
+N: [center][i]Potężny huk rozniósł się po okolicy, gdy Dąb uniósł jedną gałąź nad drugą ku górze.[/i][/center]
+D: Zabaw mnie zatem. Zważmy twoje serce, zobaczymy jak głęboko cię pociągnie.
+###
+#####
+"
 	dialogue_lines = get_dialogue_as_lines()
 	dialogue_scene = get_scene("#Tree talk")
 	
@@ -117,7 +138,7 @@ func get_scene(scene_name: String) -> Array:
 	return scene
 
 func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
-	dynamic_dialogue_box_placement.position=dynamic_dialogue_position
+	dynamic_dialogue_box_placement.position = dynamic_dialogue_position
 	narrator.text = ""
 	narrator_placement.visible = false
 	dynamic_dialogue_box_placement.visible = false
@@ -128,6 +149,7 @@ func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
 	print_line()
 
 func print_line() -> void:
+	print("sex")
 	if dialgue_line_index != dialogue_scene.size():
 		if dialogue_scene[dialgue_line_index][0] == "N":
 			narrator_placement.visible = true
