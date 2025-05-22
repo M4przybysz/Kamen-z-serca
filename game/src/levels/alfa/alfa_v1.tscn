@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/external_assets/skala-gen.png" id="16_6g4ad"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="17_lv4so"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="18_j2urr"]
-[ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="19_n3byk"]
-[ext_resource type="PackedScene" uid="uid://bsus3i2nxy6a6" path="res://src/dialogues/dialogue_trigger.tscn" id="20_ljk8w"]
+[ext_resource type="PackedScene" uid="uid://mpiwwwfe4es3" path="res://src/bosses/great_oak/great_oak.tscn" id="20_wijuu"]
+[ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="21_k80ta"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -3528,20 +3528,6 @@ position = Vector2(10754, 807)
 position = Vector2(22565, 1175)
 scale = Vector2(0.789954, 0.274169)
 
-[node name="Block63" parent="Environment/Finish" instance=ExtResource("3_rx068")]
-position = Vector2(23736, 786)
-scale = Vector2(0.789954, 0.274169)
-
-[node name="ColorRect" parent="Environment/Finish/Block63" index="0"]
-visible = false
-
-[node name="Block70" parent="Environment/Finish" instance=ExtResource("3_rx068")]
-position = Vector2(23973, 762)
-scale = Vector2(2.65548, 0.394257)
-
-[node name="ColorRect" parent="Environment/Finish/Block70" index="0"]
-visible = false
-
 [node name="Block64" parent="Environment/Finish" instance=ExtResource("3_rx068")]
 position = Vector2(23719, 867)
 scale = Vector2(0.281513, 0.472882)
@@ -3937,7 +3923,7 @@ position = Vector2(23478, 1007)
 scale = Vector2(0.298397, 1.11106)
 
 [node name="DeathZone" parent="Environment" instance=ExtResource("13_xofsb")]
-position = Vector2(2, 5229)
+position = Vector2(0, 5000)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 9730.0
@@ -4054,23 +4040,12 @@ scale = Vector2(0.660547, 0.745469)
 position = Vector2(5765, 371)
 rotation = 0.261799
 
-[node name="Block26" parent="enemies" instance=ExtResource("12_2rkfp")]
-position = Vector2(24767, 752)
-scale = Vector2(6.43998, 3.728)
+[node name="Checkpoint" parent="." instance=ExtResource("21_k80ta")]
+position = Vector2(23761, 746)
+heal = 1
 
-[node name="TextureRect" type="TextureRect" parent="enemies"]
-offset_left = 23576.0
-offset_top = -1886.0
-offset_right = 26458.0
-offset_bottom = 1210.0
-texture = ExtResource("19_n3byk")
-
-[node name="DialogueTrigger" parent="." instance=ExtResource("20_ljk8w")]
-position = Vector2(24187, 631)
+[node name="GreatOak" parent="." instance=ExtResource("20_wijuu")]
+position = Vector2(23741, 162)
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]
-
-[editable path="Environment/Finish/Block63"]
-[editable path="Environment/Finish/Block70"]
-[editable path="DialogueTrigger"]

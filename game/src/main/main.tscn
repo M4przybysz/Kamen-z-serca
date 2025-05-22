@@ -58,12 +58,9 @@ death_menu = NodePath("../Menus/DeathMenu")
 [node name="Player" parent="Gameplay" index="2"]
 position = Vector2(456, 439)
 
-[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
-offset_left = -328.0
-offset_top = 232.0
-offset_right = -328.0
-offset_bottom = 232.0
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main", "player")]
 main = NodePath("../../..")
+player = NodePath("../../Player")
 
 [node name="Beta" type="Node2D" parent="Gameplay"]
 position = Vector2(-13800, -12296)
@@ -3087,3 +3084,4 @@ visible = false
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
 [editable path="Gameplay"]
+[editable path="Gameplay/Alfa_v1"]
