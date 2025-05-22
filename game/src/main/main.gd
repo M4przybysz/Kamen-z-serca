@@ -5,6 +5,9 @@ extends Node
 @onready var main_menu: Control = $Menus/MainMenu
 @onready var end_screen: Control = $Menus/EndScreen
 
+@export var player: CharacterBody2D
+@export var gameplay: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().paused = true
@@ -29,4 +32,8 @@ func show_death_menu():
 
 func show_end_screen():
 	end_screen.visible = true
+	player.global_position = Vector2(11225, -8995)
+	player.is_shield_unlocked = true
+	player.is_spear_unlocked = true
+	gameplay.revive_position = Vector2(11225, -8995)
 	get_tree().paused = true

@@ -1,12 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=46 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
 [ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
 [ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="3_h1nt1"]
-[ext_resource type="PackedScene" uid="uid://dtia7hhj7hqme" path="res://f_level_1 (2).tscn" id="4_8u66r"]
-[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="4_yug2y"]
+[ext_resource type="PackedScene" uid="uid://cc65aab64llqr" path="res://f_level_1 (2).tscn" id="4_8u66r"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="5_23g3h"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="6_aake2"]
@@ -15,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://src/krzesimirowe_sceny/za_daleki.tscn" id="8_b8xv4"]
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="9_hgkt3"]
 [ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="10_sy7so"]
-[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="11_dn4ot"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="11_dn4ot"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_x53qv"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="14_t74el"]
 [ext_resource type="Texture2D" uid="uid://dxx73sc7v2tql" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik2.png" id="15_etc0l"]
@@ -23,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://nr23tf1nf44b" path="res://assets/sprites/environment/Platformy i teren/trawa_pathdzik.png" id="17_203i0"]
 [ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="18_c86x4"]
 [ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="19_br0ki"]
-[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="19_m0yo5"]
+[ext_resource type="PackedScene" path="res://assets/sprites/environment/schod_ozd.tscn" id="19_m0yo5"]
 [ext_resource type="Texture2D" uid="uid://cl7iei4wgeq2e" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-sucheCZ.png" id="20_d2knp"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="21_fskej"]
 [ext_resource type="Texture2D" uid="uid://dr67rxq84xahe" path="res://assets/sprites/environment/Platformy i teren/skal 1.png" id="25_l10ss"]
@@ -40,23 +39,25 @@
 [ext_resource type="Texture2D" uid="uid://nr8dcotl3ss8" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-2.png" id="31_xbud5"]
 [ext_resource type="Texture2D" uid="uid://bmadqcxl62yc1" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzak.png" id="32_4yv0k"]
 [ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="32_a35c7"]
-[ext_resource type="PackedScene" uid="uid://cq67h5a3g88ui" path="res://assets/sprites/fil_ozd.tscn" id="33_0lmm1"]
+[ext_resource type="PackedScene" path="res://assets/sprites/fil_ozd.tscn" id="33_0lmm1"]
 [ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="33_elobw"]
-[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/krzesimirowe_sceny/czarn.tscn" id="34_aer1j"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="34_aer1j"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="35_3tuqd"]
 [ext_resource type="Texture2D" uid="uid://wgqpii67nk18" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Krzak2CZ.png" id="36_38vah"]
 [ext_resource type="Texture2D" uid="uid://c5ptg80gs71xn" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-suche2CZ.png" id="37_l3xen"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("player", "gameplay")]
 process_mode = 3
 script = ExtResource("1_2nm2t")
+player = NodePath("Gameplay/Player")
+gameplay = NodePath("Gameplay")
 
 [node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
-[node name="Player" parent="Gameplay" index="2"]
-position = Vector2(456, 439)
+[node name="Player" parent="Gameplay" index="1"]
+position = Vector2(24372, 419)
 
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main", "player")]
 main = NodePath("../../..")
@@ -458,7 +459,7 @@ scale = Vector2(0.861395, 0.216732)
 position = Vector2(26904, 6880)
 scale = Vector2(0.904241, 0.638672)
 
-[node name="Block2" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("4_yug2y")]
+[node name="Block2" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("34_aer1j")]
 position = Vector2(26488, 8440)
 
 [node name="Block56" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("5_23g3h")]
@@ -473,7 +474,7 @@ position = Vector2(26488, 8440)
 [node name="ZaDaleki" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("8_b8xv4")]
 position = Vector2(27337.2, 8941.52)
 
-[node name="Block11" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("4_yug2y")]
+[node name="Block11" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("34_aer1j")]
 position = Vector2(30616, 8240)
 scale = Vector2(0.164366, 0.349679)
 
@@ -586,7 +587,6 @@ position = Vector2(28297, 7024)
 [node name="Skal2" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1"]
 position = Vector2(15392, 12752)
 rotation = -0.436332
-scale = Vector2(1, 1)
 texture = ExtResource("25_l10ss")
 
 [node name="Kamien-3" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1"]

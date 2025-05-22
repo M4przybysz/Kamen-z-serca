@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb4d81lw7dag7"]
+[gd_scene load_steps=11 format=3 uid="uid://b4363e8k1pf0c"]
 
-[ext_resource type="PackedScene" uid="uid://dtia7hhj7hqme" path="res://src/levels/beta/f_level_1 (1).tscn" id="1_20uxo"]
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="2_j7h1o"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="3_4jj8l"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="4_e1hg7"]
@@ -8,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="6_ymyax"]
 [ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://src/krzesimirowe_sceny/za_daleki.tscn" id="7_6xs3a"]
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="8_gsst6"]
-[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="9_40uh3"]
-[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="10_m6gin"]
+[ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="9_40uh3"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="10_m6gin"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="11_pekwj"]
 
 [node name="Beta" type="Node2D"]
@@ -23,11 +22,31 @@ position = Vector2(-16328, -16064)
 
 [node name="FLevel1" type="Node2D" parent="Enviroment/LD/Level2Podzm"]
 
-[node name="FLevel1" parent="Enviroment/LD/Level2Podzm/FLevel1" instance=ExtResource("1_20uxo")]
+[node name="FLevel1" parent="Enviroment/LD/Level2Podzm/FLevel1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-9304, 8720)
+script = null
 
-[node name="FLevel2" parent="Enviroment/LD/Level2Podzm/FLevel1" instance=ExtResource("1_20uxo")]
+[node name="FLevel2" parent="Enviroment/LD/Level2Podzm/FLevel1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-9304, 8720)
+script = null
 
 [node name="KLevel1" type="Node2D" parent="Enviroment/LD/Level2Podzm"]
 

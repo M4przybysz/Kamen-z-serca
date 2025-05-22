@@ -1,15 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtia7hhj7hqme"]
+[gd_scene load_steps=13 format=3 uid="uid://cc65aab64llqr"]
 
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="1_2wubv"]
 [ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://src/krzesimirowe_sceny/za_daleki.tscn" id="2_wakg4"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="3_a5hp6"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="4_x0ms7"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="5_ifa0t"]
-[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="6_82l88"]
-[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="7_ckcx7"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="6_82l88"]
+[ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="7_ckcx7"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="8_uflf3"]
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="9_rcnll"]
-[ext_resource type="PackedScene" uid="uid://qnjxd6fe4n2a" path="res://src/templates/puzzles/breakable_wall.tscn" id="10_1dvme"]
+[ext_resource type="PackedScene" path="res://src/templates/puzzles/breakable_wall.tscn" id="10_1dvme"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a8bce"]
 
