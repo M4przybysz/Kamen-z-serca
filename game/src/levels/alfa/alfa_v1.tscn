@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bem0xf8p8cvhd"]
+[gd_scene load_steps=46 format=3 uid="uid://bem0xf8p8cvhd"]
 
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="1_eibag"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="2_om41w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="8_c7vtu"]
 [ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="9_5257e"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="10_s0h4d"]
+[ext_resource type="PackedScene" uid="uid://cq67h5a3g88ui" path="res://assets/sprites/fil_ozd.tscn" id="11_66tih"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="11_se4u3"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="12_2rkfp"]
 [ext_resource type="Texture2D" uid="uid://b8od1vctqyayo" path="res://assets/sprites/spikes/spikes.png" id="13_mxkye"]
@@ -1568,6 +1569,25 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level1/Floor3"]
+position = Vector2(500, 10)
+shape = SubResource("RectangleShape2D_lpeq8")
+
+[node name="Floor4" type="StaticBody2D" parent="Environment/Level1"]
+position = Vector2(4678, 261)
+rotation = -0.334259
+scale = Vector2(0.0366243, 1.15247)
+collision_layer = 49
+collision_mask = 49
+physics_material_override = SubResource("PhysicsMaterial_fdvim")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Level1/Floor4"]
+offset_left = -500.0
+offset_right = 1500.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level1/Floor4"]
 position = Vector2(500, 10)
 shape = SubResource("RectangleShape2D_lpeq8")
 
@@ -3415,18 +3435,34 @@ scale = Vector2(1, 0.574831)
 [node name="PushableObject3" parent="Environment/Puzzles2" instance=ExtResource("10_s0h4d")]
 position = Vector2(720, 512)
 
+[node name="FilOzd" parent="Environment/Puzzles2/PushableObject3" instance=ExtResource("11_66tih")]
+position = Vector2(-4, 4.76837e-07)
+scale = Vector2(1.06007, 0.987261)
+
 [node name="PushableObject4" parent="Environment/Puzzles2" instance=ExtResource("10_s0h4d")]
 position = Vector2(-1035, 266)
+
+[node name="FilOzd" parent="Environment/Puzzles2/PushableObject4" instance=ExtResource("11_66tih")]
+position = Vector2(-4, 4.76837e-07)
+scale = Vector2(1.06007, 0.987261)
 
 [node name="PushableObject5" parent="Environment/Puzzles2" instance=ExtResource("10_s0h4d")]
 position = Vector2(1666.89, -1196)
 rotation = 3.14159
 scale = Vector2(1.02559, -1)
 
+[node name="FilOzd" parent="Environment/Puzzles2/PushableObject5" instance=ExtResource("11_66tih")]
+position = Vector2(-4, 4.76837e-07)
+scale = Vector2(1.06007, 0.987261)
+
 [node name="PushableObject6" parent="Environment/Puzzles2" instance=ExtResource("10_s0h4d")]
 position = Vector2(5681.02, 1246.99)
 rotation = 3.14159
 scale = Vector2(1.02559, -1)
+
+[node name="FilOzd" parent="Environment/Puzzles2/PushableObject6" instance=ExtResource("11_66tih")]
+position = Vector2(-4, 4.76837e-07)
+scale = Vector2(1.06007, 0.987261)
 
 [node name="Graf" type="Node2D" parent="Environment"]
 
@@ -3977,19 +4013,24 @@ combat_movement_range_left = 550
 position = Vector2(17166, 345)
 
 [node name="SpikeTest" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5689, 306)
+position = Vector2(5688, 312)
+rotation = 1.0472
 
 [node name="SpikeTest2" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5725, 416)
+position = Vector2(5728, 422)
 
 [node name="SpikeTest3" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(5764, 289)
+rotation = 0.261799
 
 [node name="SpikeTest5" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(8084, 625)
+rotation = 0.0
 
 [node name="SpikeTest6" parent="enemies" instance=ExtResource("18_j2urr")]
+z_index = 5
 position = Vector2(8489, 290)
+rotation = -2.35619
 
 [node name="SpikeTest7" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(17869, 404.001)
@@ -3997,6 +4038,7 @@ scale = Vector2(0.660547, 0.745469)
 
 [node name="SpikeTest4" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(5765, 371)
+rotation = 0.261799
 
 [node name="Checkpoint" parent="." instance=ExtResource("21_k80ta")]
 position = Vector2(23761, 746)
