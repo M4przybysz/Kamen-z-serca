@@ -15,7 +15,7 @@ script = ExtResource("1_i11ig")
 [node name="Beta" parent="." instance=ExtResource("3_6ts5c")]
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(9928, 1092)
+position = Vector2(23412, 515)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)
@@ -24,4 +24,5 @@ position_smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
+[node name="UI" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("3_2j3cv")]
+player = NodePath("../../Player")

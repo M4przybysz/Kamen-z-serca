@@ -83,6 +83,7 @@ func throwables(active_feather):
 #########################################
 func load_text_from_file(path: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
+	print(FileAccess.get_open_error())
 	return file.get_as_text()
 
 func get_dialogue_as_lines() -> Array:
