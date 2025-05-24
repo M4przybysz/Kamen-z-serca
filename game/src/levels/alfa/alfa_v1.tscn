@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="1_eibag"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="2_om41w"]
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="3_rx068"]
-[ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://src/krzesimirowe_sceny/za_daleki.tscn" id="4_kuiac"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="5_eaew0"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="6_w85h7"]
 [ext_resource type="Texture2D" uid="uid://dkg53p0oyf6q1" path="res://assets/sprites/environment/brown.png" id="7_m1wh5"]
@@ -21,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="18_j2urr"]
 [ext_resource type="PackedScene" uid="uid://mpiwwwfe4es3" path="res://src/bosses/great_oak/great_oak.tscn" id="20_wijuu"]
 [ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="21_k80ta"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="21_muiwh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -2190,12 +2190,16 @@ position = Vector2(10897, 1384)
 scale = Vector2(0.684545, 0.448613)
 
 [node name="Block113" parent="Environment/Level2" instance=ExtResource("3_rx068")]
-position = Vector2(10757, 805)
+position = Vector2(10711, 805)
 scale = Vector2(1.13025, 0.219395)
 
 [node name="Block119" parent="Environment/Level2" instance=ExtResource("3_rx068")]
-position = Vector2(10841, 838)
+position = Vector2(10795, 838)
 scale = Vector2(1.13025, 0.219395)
+
+[node name="Block236" parent="Environment/Level2" instance=ExtResource("3_rx068")]
+position = Vector2(10822, 1335)
+scale = Vector2(0.476673, 0.263153)
 
 [node name="Block105" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(10918, 1519)
@@ -2592,8 +2596,9 @@ position = Vector2(10011, 690)
 [node name="Drab9" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9233, 978)
 
-[node name="ZaDaleki" parent="Environment/Level2" instance=ExtResource("4_kuiac")]
-position = Vector2(1711, 1010)
+[node name="Block237" parent="Environment/Level2" instance=ExtResource("3_rx068")]
+position = Vector2(9995, 291)
+scale = Vector2(0.116673, 1.14316)
 
 [node name="Level3" type="Node2D" parent="Environment"]
 
@@ -3197,7 +3202,7 @@ rotation = 3.14159
 scale = Vector2(1.02559, -1)
 
 [node name="Block111" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
-position = Vector2(1286, 71.9995)
+position = Vector2(1292.82, 23.9995)
 scale = Vector2(1.01442, 0.223152)
 
 [node name="Block114" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
@@ -3230,10 +3235,10 @@ position = Vector2(-3091.89, 1845)
 position = Vector2(520.998, 594)
 
 [node name="Block117" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
-position = Vector2(687.412, 726)
+position = Vector2(711.788, 745.999)
 
 [node name="Block118" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
-position = Vector2(688.387, 646)
+position = Vector2(712.763, 665.999)
 
 [node name="Block113" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(143.998, 261)
@@ -3259,7 +3264,7 @@ position = Vector2(144.307, 92)
 physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block139" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
-position = Vector2(1625.41, 130)
+position = Vector2(1632.23, 82)
 physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block115" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
@@ -3323,7 +3328,7 @@ position = Vector2(1480.13, 423)
 scale = Vector2(0.153979, 0.595411)
 
 [node name="Block137" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
-position = Vector2(1583.48, 71)
+position = Vector2(1590.3, 23)
 scale = Vector2(0.110635, 0.619455)
 
 [node name="Block138" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
@@ -3331,8 +3336,7 @@ position = Vector2(1525.96, 423)
 scale = Vector2(0.491388, 0.222099)
 
 [node name="Block146" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
-position = Vector2(687.413, 557)
-rotation = -0.0105221
+position = Vector2(711.789, 576.999)
 scale = Vector2(0.190511, 0.817343)
 
 [node name="PlatformBreaking2w" parent="Environment" instance=ExtResource("5_eaew0")]
@@ -3419,7 +3423,7 @@ position = Vector2(720, 512)
 position = Vector2(-1035, 266)
 
 [node name="PushableObject5" parent="Environment/Puzzles2" instance=ExtResource("10_s0h4d")]
-position = Vector2(1666.89, -1196)
+position = Vector2(1659.89, -1244)
 rotation = 3.14159
 scale = Vector2(1.02559, -1)
 
@@ -3484,7 +3488,7 @@ position = Vector2(9932, 797)
 position = Vector2(10001, 675)
 
 [node name="OzGrab19" parent="Environment/Graf" instance=ExtResource("11_se4u3")]
-position = Vector2(10754, 807)
+position = Vector2(10708, 807)
 
 [node name="Finish" type="Node2D" parent="Environment"]
 
@@ -3992,18 +3996,34 @@ position = Vector2(8084, 625)
 position = Vector2(8489, 290)
 
 [node name="SpikeTest7" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(17869, 404.001)
+position = Vector2(17844, 424)
 scale = Vector2(0.660547, 0.745469)
 
 [node name="SpikeTest4" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(5765, 371)
 
-[node name="Checkpoint" parent="." instance=ExtResource("21_k80ta")]
+[node name="GreatOak" parent="." instance=ExtResource("20_wijuu")]
+position = Vector2(23741, 162)
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("21_k80ta")]
 position = Vector2(23761, 746)
 heal = 1
 
-[node name="GreatOak" parent="." instance=ExtResource("20_wijuu")]
-position = Vector2(23741, 162)
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("21_k80ta")]
+position = Vector2(16210, 1159)
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("21_k80ta")]
+position = Vector2(9891, 1522)
+
+[node name="Healing" type="Node2D" parent="."]
+
+[node name="HealthPack" parent="Healing" instance=ExtResource("21_muiwh")]
+position = Vector2(10882, 787)
+
+[node name="HealthPack2" parent="Healing" instance=ExtResource("21_muiwh")]
+position = Vector2(15842, 1484)
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]

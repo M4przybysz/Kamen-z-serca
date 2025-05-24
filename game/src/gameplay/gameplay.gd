@@ -57,6 +57,8 @@ func increase_hp(value: int) -> void:
 
 func revive_player() -> void:
 	player.global_position = revive_position
+	player.state = "idle"
+	player.is_grabbing = false
 	hp = max_hp
 	ui.set_max_hp()
 

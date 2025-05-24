@@ -11,7 +11,7 @@ extends Node2D
 # Assign attack collisions to variables
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
-@export var ui: Control
+@onready var ui: Control = $"../../UI/UI"
 @onready var main: Node = $"../../../"
 
 # Constant variables

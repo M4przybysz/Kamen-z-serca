@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://w86chk0k7rbt"]
+[gd_scene load_steps=6 format=3 uid="uid://w86chk0k7rbt"]
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
+[ext_resource type="PackedScene" uid="uid://b4363e8k1pf0c" path="res://src/levels/beta/beta.tscn" id="3_6ts5c"]
 [ext_resource type="PackedScene" uid="uid://bem0xf8p8cvhd" path="res://src/levels/alfa/alfa_v1.tscn" id="4_83t1u"]
 
 [node name="Gameplay" type="Node2D"]
@@ -11,11 +12,10 @@ script = ExtResource("1_i11ig")
 
 [node name="Alfa_v1" parent="." instance=ExtResource("4_83t1u")]
 
-[node name="GreatOak" parent="Alfa_v1" index="5" node_paths=PackedStringArray("ui")]
-ui = NodePath("../../UI/UI")
+[node name="Beta" parent="." instance=ExtResource("3_6ts5c")]
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(359, 128)
+position = Vector2(9928, 1092)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)
@@ -25,5 +25,3 @@ position_smoothing_enabled = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
-
-[editable path="Alfa_v1"]
