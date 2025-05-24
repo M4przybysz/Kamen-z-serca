@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var gameplay: Node2D = $".." # Assign gameplay(parent node) to variables
+@onready var ui: Control = $"../UI/UI"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
 @onready var throwables: Node2D = $Throwables
 
@@ -23,19 +24,30 @@ extends CharacterBody2D
 @onready var slide_timer: Timer = $Timers/SlideTimer
 @onready var wing_attack_timer: Timer = $Timers/WingAttackTimer
 @onready var damage_timer: Timer = $Timers/DamageTimer
+@onready var kojot: Timer = $Timers/Kojot
 
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
 @export var jump_velocity: float = -550.0
 @export var knockback_force: Vector2 = Vector2(-1000, -100)
+@export var knockback_boost: Vector2 = Vector2(12, 5)
 
 # Dictionaries
 var dmg_dictionary = { # Disctionary used to determine the dmg taken by the player by the name of the enemy's attack
 	"enemy" : 1, 	# Test value 
 	"spike" : 1,
 	"mummy_attack": 1,
+	"short_branch" : 1, 
+	"long_branch" : 1,
+	"moving_root" : 1,
+	"spiked_roots" : 1,
+	"falling_acorn" : 1,
 	# Add more values here (format "attack_name" : damage)
 }
+
+# Coyote time variables
+var coyote_frames: float = 5  # How many in-air frames to allow jumping
+var is_coyote: bool = false  # Track whether we're in coyote time or not
 
 # Dynamic playthrough variables
 var state: String = "idle"
@@ -54,12 +66,16 @@ var animation_locked: bool = false
 var movement_lock: bool = false
 var is_shield_used: bool = false
 var is_charging: bool = false
+var is_jumping: bool = false
 
 # Player progression variables
 var level: int = 1
 var max_level: int = 3
 var is_shield_unlocked: bool = false
 var is_spear_unlocked: bool = false
+
+func _ready() -> void:
+	kojot.wait_time = coyote_frames / 60.0
 
 func _physics_process(delta: float) -> void:
 	state_machine()
@@ -92,6 +108,11 @@ func _physics_process(delta: float) -> void:
 		knockback.y = 0
 	
 	move_and_slide()
+	
+	# Check coyote 
+	if !is_on_floor() && !is_jumping:
+		is_coyote = true
+		kojot.start()
 
 #########################################
 # State machine handling
@@ -101,56 +122,62 @@ func state_machine() -> void:
 	check_shield()
 	check_air_dash()
 	
-	# print(state, " - ", animation_locked)
+	print(state, " - ", is_coyote)
 	
-	match state:
-		"idle":
-			if !is_on_floor(): state = "mid_jump"
-			elif direction != 0: state = "movement"
-			
-			animated_sprite.play(state)
-		"movement":
-			if !is_on_floor(): state = "mid_jump"
-			elif direction == 0: state = "idle"
-			
-			animated_sprite.play(state)
-		"start_jump":
-			if is_grabbing: state = "grab_edge"
-			elif !animation_locked:
+	if !movement_lock:
+		match state:
+			"idle":
+				if !is_on_floor(): state = "mid_jump"
+				elif direction != 0: state = "movement"
+				
 				animated_sprite.play(state)
-				animation_locked = true
-		"mid_jump":
-			if is_grabbing: state = "grab_edge"
-			elif is_on_floor(): state = "end_jump"
-			else: animated_sprite.play(state)
-		"mid_slide":
-			animated_sprite.play(state)
-			if slide_timer.is_stopped():
-				state = "end_slide"
-		"grab_edge":
-			if Input.is_action_just_pressed("jump"):
-				state = "grab_jump"
-				jump()
-			
-			if Input.is_action_pressed("look_down") && is_grabbing:
-				state = "mid_jump"
-				is_grabbing = false
-			
-			animated_sprite.play(state)
-		"use_shield":
-			if !is_shield_used: state = "idle"
-			elif !is_on_floor(): state = "mid_jump"
-			else: animated_sprite.play(state)
-		"shield_charge":
-			if !is_shield_used && !is_charging: state = "idle"
-			else: animated_sprite.play(state)
-		"start_jump", "end_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
-			if !animation_locked:
+			"movement":
+				if !is_on_floor(): state = "mid_jump"
+				elif direction == 0: state = "idle"
+				
 				animated_sprite.play(state)
-				animation_locked = true
-		_:
-			print("undefined state: ", state)
-			state = "idle"
+			"start_jump":
+				if is_grabbing: state = "grab_edge"
+				elif !animation_locked:
+					animated_sprite.play(state)
+					animation_locked = true
+			"mid_jump":
+				if is_grabbing: state = "grab_edge"
+				elif is_on_floor(): state = "end_jump"
+				else: animated_sprite.play(state)
+			"end_jump":
+				is_jumping = false
+				if !animation_locked:
+					animated_sprite.play(state)
+					animation_locked = true
+			"mid_slide":
+				animated_sprite.play(state)
+				if slide_timer.is_stopped():
+					state = "end_slide"
+			"grab_edge":
+				if Input.is_action_just_pressed("jump"):
+					state = "grab_jump"
+					jump()
+				
+				if Input.is_action_pressed("look_down") && is_grabbing:
+					state = "mid_jump"
+					is_grabbing = false
+				
+				animated_sprite.play(state)
+			"use_shield":
+				if !is_shield_used: state = "idle"
+				elif !is_on_floor(): state = "mid_jump"
+				else: animated_sprite.play(state)
+			"shield_charge":
+				if !is_shield_used && !is_charging: state = "idle"
+				else: animated_sprite.play(state)
+			"start_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
+				if !animation_locked:
+					animated_sprite.play(state)
+					animation_locked = true
+			_:
+				print("undefined state: ", state)
+				state = "idle"
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animation_locked = false
@@ -171,7 +198,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _input(_event: InputEvent) -> void:
 	# Handle jumping
 	if Input.is_action_just_pressed("jump"):
-		if state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" && is_on_floor():
+		if (state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" || "mid_jump") && (is_on_floor() || is_coyote):
 			state = "start_jump"
 			jump()
 	
@@ -213,6 +240,7 @@ func _input(_event: InputEvent) -> void:
 		
 		if active_feather == level: active_feather = 0
 		else: active_feather += 1
+		ui.change_throwable(active_feather)
 	
 	if Input.is_action_pressed("change_throwable_up"):
 		if !is_spear_unlocked:
@@ -220,6 +248,7 @@ func _input(_event: InputEvent) -> void:
 		
 		if active_feather == 0: active_feather = level
 		else: active_feather -= 1
+		ui.change_throwable(active_feather)
 	
 	# Handle spear return
 	if Input.is_action_just_pressed("spear_return") && !is_grabbing:
@@ -254,6 +283,7 @@ func flip_h():
 #########################################
 func jump() -> void:
 	is_grabbing = false
+	is_jumping = true
 	velocity.y = jump_velocity
 
 func air_dash() -> void:
@@ -332,12 +362,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		gameplay.increase_hp(area.get_parent().heal)
 		gameplay.set_checkpoint(area.get_parent().global_position)
 	else:
+		var got_winded = area.is_in_group("wind")
+		
 		dmg_source_count += 1
 		for group in dmg_dictionary:
 			if area.is_in_group(group):
 				dmg_taken += dmg_dictionary[group]
 		if damage_timer.is_stopped():
-			if dmg_taken > 0:
+			if dmg_taken > 0 || got_winded:
 				knockback = knockback_force
 				var knockback_direction: int
 				if area.global_position.x > global_position.x:
@@ -345,6 +377,10 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 				else:
 					knockback_direction = -1
 				knockback.x *= knockback_direction
+				if got_winded:
+					knockback.x *= -knockback_boost.x
+					if is_on_floor():
+						knockback.y *= knockback_boost.y
 			gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
 			damage_timer.start()
 
@@ -386,6 +422,10 @@ func _on_damage_timer_timeout() -> void:
 	if dmg_source_count > 0:
 		gameplay.decrease_hp(floor(dmg_taken/dmg_source_count))
 		damage_timer.start()
+
+func _on_kojot_timeout() -> void:
+	kojot.stop()
+	is_coyote = false
 
 #########################################
 # Leveling up

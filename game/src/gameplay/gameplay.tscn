@@ -2,21 +2,20 @@
 
 [ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_i11ig"]
 [ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="1_m47ch"]
-[ext_resource type="PackedScene" uid="uid://c2hu2t4j0od5o" path="res://src/test_elements/levels/programmers_playground.tscn" id="2_mqp7o"]
 [ext_resource type="PackedScene" uid="uid://c4ffy2ihhl0s2" path="res://src/ui/ui.tscn" id="3_2j3cv"]
-[ext_resource type="PackedScene" uid="uid://bem0xf8p8cvhd" path="res://src/levels/alfa/alfa_v1.tscn" id="5_8r2m4"]
+[ext_resource type="PackedScene" uid="uid://b4363e8k1pf0c" path="res://src/levels/beta/beta.tscn" id="3_6ts5c"]
+[ext_resource type="PackedScene" uid="uid://bem0xf8p8cvhd" path="res://src/levels/alfa/alfa_v1.tscn" id="4_83t1u"]
 
 [node name="Gameplay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_i11ig")
 
-[node name="ProgrammersPlayground" parent="." instance=ExtResource("2_mqp7o")]
-position = Vector2(3479, -3698)
+[node name="Alfa_v1" parent="." instance=ExtResource("4_83t1u")]
 
-[node name="Alfa_v1" parent="." instance=ExtResource("5_8r2m4")]
+[node name="Beta" parent="." instance=ExtResource("3_6ts5c")]
 
 [node name="Player" parent="." instance=ExtResource("1_m47ch")]
-position = Vector2(770, 355)
+position = Vector2(577, 331)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.39098e-06, 1.50204e-05)
@@ -25,4 +24,5 @@ position_smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="UI" instance=ExtResource("3_2j3cv")]
+[node name="UI" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("3_2j3cv")]
+player = NodePath("../../Player")

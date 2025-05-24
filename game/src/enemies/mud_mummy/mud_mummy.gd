@@ -245,8 +245,7 @@ func flip_h() -> void:
 # Hitboxes and hurtboxes handling
 #########################################
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	var got_charged = false
-	if area.is_in_group("shield_charge"): got_charged = true
+	var got_charged = area.is_in_group("shield_charge")
 	
 	dmg_source_count += 1
 	for group in dmg_dictionary:
@@ -263,7 +262,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		if got_charged: 
 			stun_timer.start()
 			knockback.x *= knockback_boost.x
-			knockback.y *= knockback_boost.y
+			if is_on_floor():
+				knockback.y *= knockback_boost.y
 		if !stun_timer.is_stopped():
 			dmg_taken *= 2
 	decrease_hp(floor(dmg_taken/dmg_source_count))

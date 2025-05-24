@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://drxv3r1w44i2h"]
+[gd_scene load_steps=4 format=3 uid="uid://drxv3r1w44i2h"]
+
+[ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="1_51mjl"]
+[ext_resource type="Texture2D" uid="uid://dmh7m5fbcrs3x" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kam mech1.png" id="2_qxk3h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_okbey"]
 
@@ -10,6 +13,7 @@ collision_mask = 49
 physics_material_override = SubResource("PhysicsMaterial_okbey")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 300.0
 offset_bottom = 300.0
 scale = Vector2(1.03226, 0.762791)
@@ -28,3 +32,16 @@ offset_right = 31.0
 offset_bottom = 183.626
 scale = Vector2(9.96228, 2.08691)
 color = Color(0.201527, 0.201527, 0.201527, 1)
+
+[node name="Kamien-2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(158.036, 33.1447)
+scale = Vector2(3.66611, 3.44369)
+texture = ExtResource("1_51mjl")
+
+[node name="Kamien-3" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(158.036, 55.2411)
+scale = Vector2(3.92497, 3.63962)
+texture = ExtResource("2_qxk3h")
