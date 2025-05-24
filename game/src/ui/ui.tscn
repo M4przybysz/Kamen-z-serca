@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=14 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -107,44 +107,46 @@ offset_bottom = 987.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="in_game_ui" type="Control" parent="."]
+[node name="Throwables" type="Control" parent="."]
 anchors_preset = 0
+offset_left = 50.0
+offset_top = 670.0
+offset_right = 50.0
+offset_bottom = 670.0
 
-[node name="Spear" type="TextureRect" parent="in_game_ui"]
+[node name="Spear" type="TextureRect" parent="Throwables"]
 visible = false
 layout_mode = 0
-offset_left = 122.0
-offset_top = 583.0
-offset_right = 422.0
-offset_bottom = 1283.0
+offset_right = 300.0
+offset_bottom = 700.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_sbj7u")
 
-[node name="Bronze" type="TextureRect" parent="in_game_ui"]
-visible = false
+[node name="Stone" type="TextureRect" parent="Throwables"]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 770.0
-offset_right = 277.0
-offset_bottom = 898.0
-texture = ExtResource("9_7ow6w")
+offset_left = 24.0
+offset_top = 175.0
+offset_right = 152.0
+offset_bottom = 303.0
+texture = ExtResource("11_srjus")
 
-[node name="Copper" type="TextureRect" parent="in_game_ui"]
+[node name="Copper" type="TextureRect" parent="Throwables"]
 visible = false
 layout_mode = 0
-offset_left = 149.0
-offset_top = 770.0
-offset_right = 277.0
-offset_bottom = 898.0
+offset_left = 24.0
+offset_top = 175.0
+offset_right = 152.0
+offset_bottom = 303.0
 texture = ExtResource("10_avsow")
 
-[node name="Stone" type="TextureRect" parent="in_game_ui"]
+[node name="Bronze" type="TextureRect" parent="Throwables"]
+visible = false
 layout_mode = 0
-offset_left = 149.0
-offset_top = 770.0
-offset_right = 277.0
-offset_bottom = 898.0
-texture = ExtResource("11_srjus")
+offset_left = 24.0
+offset_top = 175.0
+offset_right = 152.0
+offset_bottom = 303.0
+texture = ExtResource("9_7ow6w")
 
 [node name="BossHPBar" type="Control" parent="."]
 visible = false

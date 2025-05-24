@@ -3890,9 +3890,6 @@ scale = Vector2(0.298397, 1.11106)
 position = Vector2(23478, 1007)
 scale = Vector2(0.298397, 1.11106)
 
-[node name="DeathZone" parent="Environment" instance=ExtResource("13_xofsb")]
-position = Vector2(0, 5000)
-
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 9730.0
 offset_top = 1639.0
@@ -4024,6 +4021,9 @@ position = Vector2(10882, 787)
 
 [node name="HealthPack2" parent="Healing" instance=ExtResource("21_muiwh")]
 position = Vector2(15842, 1484)
+
+[node name="DeathZone" parent="." instance=ExtResource("13_xofsb")]
+position = Vector2(0, 5000)
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]

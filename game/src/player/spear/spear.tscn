@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://co24k8ymn44rp"]
+[gd_scene load_steps=5 format=3 uid="uid://cuqm1dsbcx8cf"]
 
 [ext_resource type="Script" path="res://src/player/spear/spear.gd" id="1_nv0ro"]
 [ext_resource type="Texture2D" uid="uid://cbo6uxx0kuo7p" path="res://assets/sprites/throwables/spear.png" id="2_apk7l"]

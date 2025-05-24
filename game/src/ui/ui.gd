@@ -47,7 +47,7 @@ func _ready() -> void:
 	screen_break3 = [$HP_interface/HP5,$HP_interface/HP4,$HP_interface/HP3,$HP_interface/HP2,$HP_interface/HP1,$HP_interface/HP_Max]
 	hp_vfx = screen_break1
 	
-	throwable_icon = [$in_game_ui/Spear,$in_game_ui/Stone,$in_game_ui/Copper,$in_game_ui/Bronze]
+	throwable_icon = [$Throwables/Spear,$Throwables/Stone,$Throwables/Copper,$Throwables/Bronze]
 	
 	# Assign dialogue variables
 	dialogue_text = load_text_from_file("res://assets/dialogues/dialogues.txt")
@@ -64,26 +64,28 @@ func _process(_delta: float) -> void:
 #########################################
 # HP interface handling
 #########################################
-func set_hp(hp):
+func set_hp(hp) -> void:
 	for img in hp_vfx:
 		img.visible = false
 	hp_vfx[hp].visible = true
 
-func set_max_hp():
+func set_max_hp() -> void:
 	for img in hp_vfx:
 		img.visible = false
-		
-func throwables(active_feather):
+
+#########################################
+# Throwables handling
+#########################################
+func change_throwable(active_feather) -> void:
 	for img in throwable_icon:
 		img.visible = false
-	throwable_icon[active_feather].visible=true
+	throwable_icon[active_feather].visible = true
 
 #########################################
 # Dialogue interface handling
 #########################################
 func load_text_from_file(path: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
-	print(FileAccess.get_open_error())
 	return file.get_as_text()
 
 func get_dialogue_as_lines() -> Array:
@@ -145,8 +147,8 @@ func print_line() -> void:
 		emit_signal("start_oak_fight")
 		# main.show_end_screen() # show end screen
 
-func _input(_event: InputEvent) -> void:
-	if (Input.is_action_just_pressed("wing_attack") || Input.is_action_just_pressed("shield_use")) && dialogue_on:
+func _input(event: InputEvent) -> void:
+	if event.is_pressed() && dialogue_on:
 		narrator_placement.visible = false
 		dynamic_dialogue_box_placement.visible = false
 		narrator.text = ""

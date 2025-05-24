@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://psxhxflpo0ys" path="res://assets/sprites/player/slide/slide2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
-[ext_resource type="PackedScene" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="PackedScene" uid="uid://cuqm1dsbcx8cf" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 [ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
 [ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
 [ext_resource type="Texture2D" uid="uid://djsh8i7hu05fn" path="res://assets/sprites/throwables/copper_shoot.png" id="33_8mfua"]
@@ -345,6 +345,8 @@ wait_time = 0.5
 
 [node name="DamageTimer" type="Timer" parent="Timers"]
 
+[node name="Kojot" type="Timer" parent="Timers"]
+
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cojr7")
 
@@ -506,6 +508,7 @@ disabled = true
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="Timers/Kojot" to="." method="_on_kojot_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
