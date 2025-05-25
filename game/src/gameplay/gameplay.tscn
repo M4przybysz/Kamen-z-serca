@@ -10,6 +10,23 @@
 process_mode = 1
 script = ExtResource("1_i11ig")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 533.0
+offset_top = 269.0
+offset_right = 905.0
+offset_bottom = 526.0
+text = "A/D - chodzenie
+Space - skok
+Shift - wślizg/zryw w powietrzu
+LPM - atak skrzydłem
+ŚPM - rzut piórem/włócznią
+Scroll - zmiana broni do rzucania
+PPM - użycie tarczy
+Shift + PPM - szarża z tarczą
+W/S - kamera w górę/dół
+E - (cheat) odblokowanie włóczni i tarczy
+"
+
 [node name="Alfa_v1" parent="." instance=ExtResource("4_83t1u")]
 
 [node name="Beta" parent="." instance=ExtResource("3_6ts5c")]
