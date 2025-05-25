@@ -84,6 +84,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if !is_on_floor(): 
 		velocity += get_gravity() * delta
+		
 
 	# Get direction: -1, 0, 1
 	direction = Input.get_axis("move_left", "move_right")
@@ -374,6 +375,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			if dmg_taken > 0 || got_winded:
 				knockback = knockback_force
 				var knockback_direction: int
+				$SFX/damage.play()
 				if area.global_position.x > global_position.x:
 					knockback_direction = 1
 				else:
