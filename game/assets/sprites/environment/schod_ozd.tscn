@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://co21ckupkt803"]
+
+[ext_resource type="Texture2D" uid="uid://dr67rxq84xahe" path="res://assets/sprites/environment/Platformy i teren/skal 1.png" id="1_rv8og"]
+[ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="2_x1lk1"]
+
+[node name="Schod ozd" type="Node2D"]
+position = Vector2(19096, 12501)
+rotation = -0.436332
+scale = Vector2(1, 1)
+
+[node name="Skal3" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
+texture = ExtResource("1_rv8og")
+
+[node name="Kamien-13" type="Sprite2D" parent="."]
+position = Vector2(-46.395, 4.84656)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")
+
+[node name="Kamien-18" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-88.988, 1.53487)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")
+
+[node name="Kamien-14" type="Sprite2D" parent="."]
+position = Vector2(-11.8992, 6.58838)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")
+
+[node name="Kamien-15" type="Sprite2D" parent="."]
+position = Vector2(31.5378, 8.08582)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")
+
+[node name="Kamien-16" type="Sprite2D" parent="."]
+position = Vector2(68.1465, 5.29614)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")
+
+[node name="Kamien-17" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(104.754, 2.50474)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("2_x1lk1")

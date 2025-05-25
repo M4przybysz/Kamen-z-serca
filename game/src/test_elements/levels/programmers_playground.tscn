@@ -1,18 +1,27 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2hu2t4j0od5o"]
+[gd_scene load_steps=26 format=3 uid="uid://c2hu2t4j0od5o"]
 
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="1_cc8v3"]
 [ext_resource type="PackedScene" uid="uid://fiiq6mgymvyn" path="res://src/test_elements/enemy/jeff.tscn" id="2_f5u2k"]
-[ext_resource type="PackedScene" uid="uid://df6sgaa02ae60" path="res://src/test_elements/enemy/enemy_template.tscn" id="3_tev26"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="4_frxwc"]
 [ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="5_8lnfh"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="5_x4klb"]
 [ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="6_kn8ie"]
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="6_w0u7d"]
-[ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
+[ext_resource type="PackedScene" uid="uid://gtogh0qnp8um" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pushable_object.tscn" id="8_7rcs7"]
+[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="9_e0jtf"]
+[ext_resource type="PackedScene" uid="uid://nvpnjg2xb8f4" path="res://src/templates/puzzles/door.tscn" id="10_7wred"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_23iqs"]
+[ext_resource type="Texture2D" uid="uid://b31b63qpot8lk" path="res://assets/Background/duchy/duch_na_kolanach1.png" id="14_dcwbb"]
+[ext_resource type="Texture2D" uid="uid://cvmaenam3vwk4" path="res://assets/Background/duchy/duch_maly5.png" id="15_ylrmj"]
+[ext_resource type="Texture2D" uid="uid://urecpb681col" path="res://assets/Background/duchy/duch_maly4.png" id="16_ycci6"]
+[ext_resource type="Texture2D" uid="uid://gbbq5lb1inv5" path="res://assets/Background/duchy/duch_maly2.png" id="17_3veqr"]
+[ext_resource type="Texture2D" uid="uid://c1dcu0oi3hsys" path="res://assets/Background/duchy/duch_para1.png" id="18_nl50v"]
+[ext_resource type="Texture2D" uid="uid://bllkxtycqu73f" path="res://assets/Background/duchy/duch_para4.png" id="19_l8t1r"]
+[ext_resource type="PackedScene" uid="uid://c0ksg8yaii172" path="res://src/templates/enviroment/interactable_object.tscn" id="7_hixf1"]
+[ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="8_02asq"]
+[ext_resource type="PackedScene" uid="uid://c84uj4l8am2lt" path="res://src/templates/puzzles/breakable_wall.tscn" id="8_2g65v"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="15_r67vx"]
+[ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="16_agdfy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yoxu6"]
 
@@ -40,11 +49,14 @@ size = Vector2(5000, 20)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Spike" parent="Obstacles" groups=["enemy"] instance=ExtResource("1_cc8v3")]
+[node name="Spike" parent="Obstacles" instance=ExtResource("1_cc8v3")]
 position = Vector2(1191, 651)
 
-[node name="Spike2" parent="Obstacles" groups=["enemy"] instance=ExtResource("1_cc8v3")]
+[node name="Spike2" parent="Obstacles" instance=ExtResource("1_cc8v3")]
 position = Vector2(1181, 651)
+
+[node name="Spike3" parent="Obstacles" instance=ExtResource("1_cc8v3")]
+position = Vector2(2257, 651)
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -158,33 +170,99 @@ position = Vector2(183, 491)
 script = SubResource("GDScript_6jpx3")
 
 [node name="ResponsivePlatform" parent="Environment" instance=ExtResource("6_w0u7d")]
-position = Vector2(1604, 304)
+position = Vector2(1195, 243)
+
+[node name="ResponsivePlatform2" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(1495, 243)
+rotation = 0.785398
+
+[node name="ResponsivePlatform3" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(651, 99)
+
+[node name="ResponsivePlatform4" parent="Environment" instance=ExtResource("6_w0u7d")]
+position = Vector2(951, 97)
+rotation = 0.523599
+
+[node name="InteractableObject" parent="Environment" instance=ExtResource("7_hixf1")]
+position = Vector2(-1502, 622)
 
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Jeff" parent="NPC" instance=ExtResource("2_f5u2k")]
 position = Vector2(79, 550)
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="EnemyTemplate" parent="Enemies" instance=ExtResource("3_tev26")]
-position = Vector2(5860, 555)
-script = null
-
-[node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
-position = Vector2(2962, 591)
-
 [node name="Puzzles" type="Node2D" parent="."]
 
 [node name="PushableObject" parent="Puzzles" instance=ExtResource("8_7rcs7")]
-position = Vector2(798, 565)
+position = Vector2(-832, 586)
 
-[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("connected_thing") instance=ExtResource("9_e0jtf")]
-position = Vector2(-399, 643)
-connected_thing = NodePath("../Door")
+[node name="PressurePlate" parent="Puzzles" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("9_e0jtf")]
+position = Vector2(-1080, 643)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../PushableObject3")
 
 [node name="Door" parent="Puzzles" instance=ExtResource("10_7wred")]
-position = Vector2(-576, 404)
+position = Vector2(-1257, 404)
 
 [node name="PushableObject3" parent="Puzzles" instance=ExtResource("12_23iqs")]
-position = Vector2(649, 503)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="DuchNaKolanach1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1361, 766)
+texture = ExtResource("14_dcwbb")
+
+[node name="DuchMaly5" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1496, 863)
+texture = ExtResource("15_ylrmj")
+
+[node name="DuchMaly4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(156, 831)
+texture = ExtResource("16_ycci6")
+
+[node name="DuchMaly2" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(367, 820)
+texture = ExtResource("17_3veqr")
+
+[node name="DuchPara1" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(505, 745)
+texture = ExtResource("18_nl50v")
+
+[node name="DuchPara4" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(972, 825)
+texture = ExtResource("19_l8t1r")
+
+[node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-705, 547)
+
+[node name="BreakableWall" parent="Puzzles" instance=ExtResource("8_2g65v")]
+position = Vector2(648, 550)
+hp = 3
+
+[node name="BreakableWall2" parent="Puzzles" instance=ExtResource("8_2g65v")]
+position = Vector2(2780, 554)
+hp = 3
+
+[node name="Healing" type="Node2D" parent="."]
+
+[node name="HealthPack" parent="Healing" instance=ExtResource("15_r67vx")]
+position = Vector2(1547, 427)
+
+[node name="HealthPack2" parent="Healing" instance=ExtResource("15_r67vx")]
+position = Vector2(3658, 617)
+heal = 100
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("16_agdfy")]
+position = Vector2(706, 49)
+heal = 100
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="MudMummy" parent="Enemies" instance=ExtResource("8_02asq")]
+position = Vector2(2962, 591)

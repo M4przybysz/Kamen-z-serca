@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuqm1dsbcx8cf"]
+
+[ext_resource type="Script" path="res://src/player/spear/spear.gd" id="1_nv0ro"]
+[ext_resource type="Texture2D" uid="uid://cbo6uxx0kuo7p" path="res://assets/sprites/throwables/spear.png" id="2_apk7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pou8x"]
+size = Vector2(3, 75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ox58h"]
+radius = 3.0
+height = 22.0
+
+[node name="Spear" type="RigidBody2D" groups=["spear"]]
+collision_layer = 16
+collision_mask = 16
+collision_priority = 10.0
+continuous_cd = 2
+script = ExtResource("1_nv0ro")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 275.0
+offset_bottom = 650.0
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_apk7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_pou8x")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["spear"]]
+collision_layer = 36
+collision_mask = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_ox58h")
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

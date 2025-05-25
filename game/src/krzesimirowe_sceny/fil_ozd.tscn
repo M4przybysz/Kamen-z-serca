@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq67h5a3g88ui"]
+
+[ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="1_d2sbj"]
+[ext_resource type="Texture2D" uid="uid://bxh5xe2kawx1e" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-symbole.png" id="2_16oln"]
+[ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="3_comib"]
+
+[node name="FilOzd" type="Node2D"]
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(8, -17)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("1_d2sbj")
+
+[node name="Kolumna-2-symbole" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(8, -29)
+scale = Vector2(1.21142, 1.22436)
+texture = ExtResource("2_16oln")
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="."]
+position = Vector2(-8, -4)
+scale = Vector2(0.966303, 0.865151)
+texture = ExtResource("3_comib")

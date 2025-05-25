@@ -25,23 +25,32 @@ label_settings = SubResource("LabelSettings_x4q5h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tryagain" type="Button" parent="."]
-layout_mode = 0
-offset_left = 733.0
-offset_top = 511.0
-offset_right = 1233.0
-offset_bottom = 591.0
+[node name="Revive" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 400.0
+offset_right = 1210.0
+offset_bottom = 480.0
 theme_override_font_sizes/font_size = 50
-text = "Spróbuj jeszcze raz"
+text = "Odrodzenie"
+
+[node name="Tryagain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 550.0
+offset_right = 1210.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 50
+text = "Zacznij od nowa"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 733.0
-offset_top = 370.0
-offset_right = 1233.0
-offset_bottom = 450.0
+offset_left = 710.0
+offset_top = 700.0
+offset_right = 1210.0
+offset_bottom = 780.0
 theme_override_font_sizes/font_size = 50
 text = "Wyjdź z gry"
 
-[connection signal="button_down" from="tryagain" to="." method="_on_tryagain_button_down"]
+[connection signal="button_down" from="Revive" to="." method="_on_revive_button_down"]
+[connection signal="button_down" from="Tryagain" to="." method="_on_tryagain_button_down"]
 [connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
