@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var player: CharacterBody2D = $"../.."
 @onready var flight_timer: Timer = $FlightTimer
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 
+@export var player: CharacterBody2D
 @export var flight_time: float = 1.0
 @export var cooldown: float = 2.0
 @export var speed: int = 550
@@ -12,7 +12,7 @@ extends Node2D
 var isThrown: bool = false
 var isOnCooldown: bool = false
 var flight_direction: int = 1
-var reset = false
+var reset: bool = false
 
 func _ready() -> void:
 	flight_timer.wait_time = flight_time
@@ -33,17 +33,15 @@ func _process(delta: float) -> void:
 		reset = false
 
 func throw(direction: int) -> void:
-	if isOnCooldown:
-		return
-		
-	flight_direction = direction
-	global_position = player.global_position  # Start from player position
-	visible = true
-	hitbox_collision.disabled = false
-	isThrown = true
-	isOnCooldown = true
-	flight_timer.start()
-	cooldown_timer.start()
+	if !isOnCooldown:
+		flight_direction = direction
+		global_position = player.global_position  # Start from player position
+		visible = true
+		hitbox_collision.disabled = false
+		isThrown = true
+		isOnCooldown = true
+		flight_timer.start()
+		cooldown_timer.start()
 
 func _on_flight_timer_timeout() -> void:
 	flight_timer.stop()

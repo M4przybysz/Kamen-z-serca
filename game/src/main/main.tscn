@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dwwfucydt1x2p" path="res://src/music/music.tscn" id="7_fc0gw"]
 [ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("player", "gameplay")]
 process_mode = 3
 script = ExtResource("1_2nm2t")
+player = NodePath("Gameplay/Player")
+gameplay = NodePath("Gameplay")
 
 [node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
 main = NodePath("..")
@@ -21,12 +23,14 @@ main = NodePath("../../..")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
+layer = 2
 
 [node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
 visible = false
 
-[node name="DeathMenu" parent="Menus" instance=ExtResource("5_saqgk")]
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("5_saqgk")]
 visible = false
+gameplay = NodePath("../../Gameplay")
 
 [node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
 visible = false
@@ -38,7 +42,3 @@ visible = false
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
 [editable path="Gameplay"]
-[editable path="Gameplay/Alfa_v1"]
-[editable path="Gameplay/Alfa_v1/Environment/Finish/Block63"]
-[editable path="Gameplay/Alfa_v1/Environment/Finish/Block70"]
-[editable path="Gameplay/Alfa_v1/DialogueTrigger"]
