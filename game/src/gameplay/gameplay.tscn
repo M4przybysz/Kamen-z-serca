@@ -11,18 +11,19 @@ process_mode = 1
 script = ExtResource("1_i11ig")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 533.0
-offset_top = 269.0
-offset_right = 905.0
-offset_bottom = 526.0
+offset_left = 539.0
+offset_top = 249.0
+offset_right = 911.0
+offset_bottom = 532.0
 text = "A/D - chodzenie
 Space - skok
 Shift - wślizg/zryw w powietrzu
 LPM - atak skrzydłem
 ŚPM - rzut piórem/włócznią
+Q - przyzwanie włóczni
 Scroll - zmiana broni do rzucania
 PPM - użycie tarczy
-Shift + PPM - szarża z tarczą
+LShift + PPM - szarża z tarczą
 W/S - kamera w górę/dół
 E - (cheat) odblokowanie włóczni i tarczy
 "
@@ -42,4 +43,8 @@ position_smoothing_enabled = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("3_2j3cv")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 player = NodePath("../../Player")
