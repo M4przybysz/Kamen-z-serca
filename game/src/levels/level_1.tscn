@@ -1,12 +1,52 @@
-[gd_scene format=3 uid="uid://dqdvehj1hnuf5"]
+[gd_scene load_steps=8 format=3 uid="uid://dqdvehj1hnuf5"]
+
+[ext_resource type="Texture2D" uid="uid://bumv758icdkti" path="res://assets/Background/niebo.png" id="1_2hlu5"]
+[ext_resource type="Texture2D" uid="uid://ckyc5yvlprwdu" path="res://assets/Background/chura2.png" id="1_tshyv"]
+[ext_resource type="Script" path="res://src/levels/clouds_paralax.gd" id="2_tbx7c"]
+[ext_resource type="Texture2D" uid="uid://c6r2373olfx5n" path="res://assets/Background/chmura3.png" id="4_yptrn"]
+[ext_resource type="Texture2D" uid="uid://cbjk6ef2kvkyx" path="res://assets/Background/chmura1.png" id="5_ol1gj"]
+[ext_resource type="PackedScene" uid="uid://ctso286u1j6so" path="res://src/player/player.tscn" id="7_mwy8p"]
+[ext_resource type="PackedScene" uid="uid://dr1pgdanv45c4" path="res://src/templates/enviroment/Platform_basic.tscn" id="8_afh11"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2362.57, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1049.52, 657.708)
+scale = Vector2(0.35088, 0.38013)
+texture = ExtResource("1_2hlu5")
 
 [node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(3200, 0)
+script = ExtResource("2_tbx7c")
+cloud_speed = -25
+
+[node name="Chura2" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(841, 106)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_tshyv")
+
+[node name="Chmura3" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(1348, 1706)
+scale = Vector2(1, 1.123)
+texture = ExtResource("4_yptrn")
+
+[node name="Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(3000, 0)
+script = ExtResource("2_tbx7c")
+cloud_speed = -60
+
+[node name="Chmura1" type="Sprite2D" parent="ParallaxBackground/Clouds2"]
+position = Vector2(-801, 1475)
+scale = Vector2(0.651778, 0.651778)
+texture = ExtResource("5_ol1gj")
 
 [node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -23,3 +63,12 @@
 [node name="PlatformTextures" type="Node2D" parent="."]
 
 [node name="Foreground" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("7_mwy8p")]
+position = Vector2(167, 704)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="PlatformBasic" parent="." instance=ExtResource("8_afh11")]
+position = Vector2(66, 817)
+width = 5000
