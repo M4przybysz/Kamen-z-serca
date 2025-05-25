@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://psxhxflpo0ys" path="res://assets/sprites/player/slide/slide2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
-[ext_resource type="PackedScene" uid="uid://cuqm1dsbcx8cf" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="PackedScene" uid="uid://bdcvgpwp28cql" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 [ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
 [ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
 [ext_resource type="Texture2D" uid="uid://djsh8i7hu05fn" path="res://assets/sprites/throwables/copper_shoot.png" id="33_8mfua"]
@@ -388,7 +388,6 @@ stream = ExtResource("3_c42qk")
 
 [node name="feather" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("4_w1gi1")
-volume_db = 24.0
 
 [node name="step" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("5_xp028")
