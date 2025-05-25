@@ -85,6 +85,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if !is_on_floor(): 
 		velocity += get_gravity() * delta
+		
 
 	# Get direction: -1, 0, 1
 	direction = Input.get_axis("move_left", "move_right")
@@ -331,10 +332,12 @@ func wing_attack() -> void:
 		wing_attack_timer.start()
 	wing_attack_collision.disabled = false
 	wing_attack_collision.visible = true
+	$SFX/attack.play()
 
 func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:
 		throwables.get_children()[active_feather].throw(last_direction)
+		$SFX/feather.play()
 
 func check_shield() -> void:
 	if (!is_shield_used && !is_charging) || !is_on_floor():
@@ -376,6 +379,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			if dmg_taken > 0 || got_winded:
 				knockback = knockback_force
 				var knockback_direction: int
+				$SFX/damage.play()
 				if area.global_position.x > global_position.x:
 					knockback_direction = 1
 				else:
