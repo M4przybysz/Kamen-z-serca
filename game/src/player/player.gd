@@ -46,8 +46,9 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 }
 
 # Coyote time variables
-var coyote_frames: float = 5  # How many in-air frames to allow jumping
+var coyote_frames: float = 7  # How many in-air frames to allow jumping
 var is_coyote: bool = false  # Track whether we're in coyote time or not
+var coyote_activated: bool = false
 
 # Dynamic playthrough variables
 var state: String = "idle"
@@ -110,8 +111,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	# Check coyote 
-	if !is_on_floor() && !is_jumping:
+	if !is_on_floor() && !is_jumping && !coyote_activated:
 		is_coyote = true
+		coyote_activated = true
 		kojot.start()
 
 #########################################
@@ -147,6 +149,7 @@ func state_machine() -> void:
 				else: animated_sprite.play(state)
 			"end_jump":
 				is_jumping = false
+				coyote_activated = false
 				if !animation_locked:
 					animated_sprite.play(state)
 					animation_locked = true
@@ -284,6 +287,7 @@ func flip_h():
 func jump() -> void:
 	is_grabbing = false
 	is_jumping = true
+	is_coyote = false
 	velocity.y = jump_velocity
 
 func air_dash() -> void:
