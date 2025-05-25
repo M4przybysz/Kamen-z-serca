@@ -327,10 +327,12 @@ func wing_attack() -> void:
 		wing_attack_timer.start()
 	wing_attack_collision.disabled = false
 	wing_attack_collision.visible = true
+	$SFX/attack.play()
 
 func throw() -> void:
 	if !throwables.get_children()[active_feather].isOnCooldown:
 		throwables.get_children()[active_feather].throw(last_direction)
+		$SFX/feather.play()
 
 func check_shield() -> void:
 	if (!is_shield_used && !is_charging) || !is_on_floor():

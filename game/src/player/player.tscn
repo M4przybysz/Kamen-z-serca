@@ -1,16 +1,21 @@
-[gd_scene load_steps=53 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=58 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
+[ext_resource type="AudioStream" uid="uid://3cjvktl7qq2e" path="res://assets/sound/sfx/player/player-attack.wav" id="2_au1jn"]
 [ext_resource type="Texture2D" uid="uid://f7yv2xqggk4r" path="res://assets/sprites/player/jump/grab.png" id="2_ff48u"]
 [ext_resource type="Texture2D" uid="uid://b2h6qjkopuk0" path="res://assets/sprites/player/combat/attack1.png" id="2_g4atu"]
+[ext_resource type="AudioStream" uid="uid://dm8lg0gi5oh4o" path="res://assets/sound/sfx/player/player-damage.wav" id="3_c42qk"]
 [ext_resource type="Texture2D" uid="uid://btpq8b74e01ix" path="res://assets/sprites/player/combat/attack2.png" id="3_i4645"]
 [ext_resource type="PackedScene" uid="uid://bouo875wigdd8" path="res://src/player/feather/feather.tscn" id="3_pj0em"]
 [ext_resource type="Texture2D" uid="uid://chryb4qa4720f" path="res://assets/sprites/player/combat/attack3.png" id="4_ki1la"]
+[ext_resource type="AudioStream" uid="uid://b4rpodqelw6tb" path="res://assets/sound/sfx/player/player-feather.wav" id="4_w1gi1"]
 [ext_resource type="Texture2D" uid="uid://f2x1d2fc35pt" path="res://assets/sprites/player/jump/jump.png" id="4_ws3vt"]
 [ext_resource type="Texture2D" uid="uid://dgg0nufb0rgem" path="res://assets/sprites/player/movement/1.png" id="5_njf6p"]
 [ext_resource type="Texture2D" uid="uid://ce2lkpmdnmat5" path="res://assets/sprites/player/combat/attack4.png" id="5_vy2g8"]
+[ext_resource type="AudioStream" uid="uid://dbuhq2er4p8xv" path="res://assets/sound/sfx/player/player-step.wav" id="5_xp028"]
 [ext_resource type="Texture2D" uid="uid://b025uaiy77y88" path="res://assets/sprites/player/movement/2.png" id="6_e13ip"]
 [ext_resource type="Texture2D" uid="uid://djjqnt328k1ji" path="res://assets/sprites/player/combat/attack5.png" id="6_gfcbk"]
+[ext_resource type="AudioStream" uid="uid://c6csl275sj4ly" path="res://assets/sound/sfx/player/player-attack-hit.wav" id="6_l6ij5"]
 [ext_resource type="Texture2D" uid="uid://chnt5fbscxedb" path="res://assets/sprites/player/movement/3.png" id="7_5sva1"]
 [ext_resource type="Texture2D" uid="uid://dvd0wje851exw" path="res://assets/sprites/player/combat/attack6.png" id="7_kmqv2"]
 [ext_resource type="Texture2D" uid="uid://7doq81mcd8n2" path="res://assets/sprites/player/movement/4.png" id="8_eux0j"]
@@ -373,10 +378,28 @@ collision_mask = 2
 position = Vector2(0, 50)
 shape = SubResource("CapsuleShape2D_ejvj4")
 
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="attack" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("2_au1jn")
+
+[node name="damage" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_c42qk")
+
+[node name="feather" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_w1gi1")
+volume_db = 24.0
+
+[node name="step" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_xp028")
+
+[node name="attack-hit" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_l6ij5")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"idle"
+animation = &"movement"
 autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]
