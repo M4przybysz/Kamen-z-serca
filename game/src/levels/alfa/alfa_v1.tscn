@@ -1611,8 +1611,12 @@ shape = SubResource("RectangleShape2D_gxmnd")
 [node name="Level2" type="Node2D" parent="Environment"]
 
 [node name="Block56" parent="Environment/Level2" instance=ExtResource("3_rx068")]
+position = Vector2(7360, -223)
+scale = Vector2(0.653286, 0.183152)
+
+[node name="Block238" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(7304, -223)
-scale = Vector2(0.636693, 0.183152)
+scale = Vector2(0.719656, 0.103409)
 
 [node name="Block57" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(7425, -171)
@@ -2629,8 +2633,24 @@ position = Vector2(13725, -373)
 scale = Vector2(1.02788, 4.14583)
 
 [node name="Block118" parent="Environment/Level3" instance=ExtResource("3_rx068")]
-position = Vector2(16110, -373)
-scale = Vector2(1.97083, 2.41802)
+position = Vector2(16112, 143)
+scale = Vector2(1.98355, 0.746396)
+
+[node name="Block201" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16024, -104)
+scale = Vector2(1.98355, 0.986396)
+
+[node name="Block202" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16616, 78)
+scale = Vector2(0.30759, 0.2436)
+
+[node name="Block119" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16114, -432)
+scale = Vector2(1.97829, 0.916577)
+
+[node name="Block203" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16024, -351)
+scale = Vector2(1.97829, 0.916577)
 
 [node name="Block120" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(18500, -166)
@@ -2677,8 +2697,16 @@ position = Vector2(16114, -1132)
 scale = Vector2(1.05444, 2.80099)
 
 [node name="Block121" parent="Environment/Level3" instance=ExtResource("3_rx068")]
-position = Vector2(17626, 2517)
+position = Vector2(18128, 2522)
 scale = Vector2(7.49277, 0.777623)
+
+[node name="Block199" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(17435, 2560)
+scale = Vector2(7.49277, 0.777623)
+
+[node name="Block200" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(17464, 2522)
+scale = Vector2(1.68513, 0.777623)
 
 [node name="Block123" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(17344, 1429)
@@ -3113,9 +3141,9 @@ scale = Vector2(0.857738, 0.149554)
 position = Vector2(15782, 1506)
 scale = Vector2(0.624336, 0.19223)
 
-[node name="Block68" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+[node name="Block205" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(15897, 1345)
-scale = Vector2(0.418511, 0.540251)
+scale = Vector2(0.319452, 0.539077)
 
 [node name="Block69" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(16087, 1211)
@@ -3208,6 +3236,72 @@ physics_material_override = SubResource("PhysicsMaterial_a8bce")
 position = Vector2(0, -51)
 shape = SubResource("RectangleShape2D_ue20i")
 
+[node name="Block112" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block112"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block113" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block113"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block114" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block114"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block115" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block115"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block116" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block116"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block204" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block204"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
 [node name="Block83" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(14414, 1554)
 
@@ -3280,6 +3374,10 @@ physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block139" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(1625.41, 130)
+physics_material_override = SubResource("PhysicsMaterial_v3bg1")
+
+[node name="Block140" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
+position = Vector2(1635.16, 143.996)
 physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block115" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
@@ -3968,10 +4066,10 @@ texture = ExtResource("16_6g4ad")
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="MudMummy" parent="enemies" instance=ExtResource("17_lv4so")]
-position = Vector2(7847, 851)
+position = Vector2(7847, 820)
 
 [node name="MudMummy2" parent="enemies" instance=ExtResource("17_lv4so")]
-position = Vector2(8793, 855)
+position = Vector2(8793, 825)
 
 [node name="MudMummy3" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(12126, 1550)

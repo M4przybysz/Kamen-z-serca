@@ -1,0 +1,4099 @@
+[gd_scene load_steps=44 format=3 uid="uid://b4363e8k1pf0c"]
+
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="1_3c6d5"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="2_2s78a"]
+[ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="3_sqpjo"]
+[ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="4_70and"]
+[ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="5_gqg1j"]
+[ext_resource type="PackedScene" uid="uid://cm1vjcxraynlk" path="res://src/krzesimirowe_sceny/za_daleki.tscn" id="6_4ipf3"]
+[ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="7_m7ae4"]
+[ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="8_fak7k"]
+[ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="9_cn73g"]
+[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="10_k5gon"]
+[ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="11_50dmx"]
+[ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_uytng"]
+[ext_resource type="PackedScene" uid="uid://cq67h5a3g88ui" path="res://src/krzesimirowe_sceny/fil_ozd.tscn" id="13_mihgn"]
+[ext_resource type="PackedScene" uid="uid://c84uj4l8am2lt" path="res://src/templates/puzzles/breakable_wall.tscn" id="14_rntfh"]
+[ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="15_yvdq7"]
+[ext_resource type="Texture2D" uid="uid://dr67rxq84xahe" path="res://assets/sprites/environment/Platformy i teren/skal 1.png" id="16_ptdho"]
+[ext_resource type="Texture2D" uid="uid://ouuvnt12wb1m" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-3.png" id="17_y4emi"]
+[ext_resource type="Texture2D" uid="uid://crtf3q5tl4ytd" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/byk_jaskinia.png" id="18_1ty7u"]
+[ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="19_xmnkw"]
+[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="20_iwe5a"]
+[ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="21_wopbi"]
+[ext_resource type="Texture2D" uid="uid://p5yoodjxipwt" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-3.png" id="22_xytma"]
+[ext_resource type="Texture2D" uid="uid://nr8dcotl3ss8" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-2.png" id="23_ise2u"]
+[ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="24_jeo02"]
+[ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="25_iteq5"]
+[ext_resource type="Texture2D" uid="uid://wgqpii67nk18" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Krzak2CZ.png" id="26_mqtto"]
+[ext_resource type="Texture2D" uid="uid://c5ptg80gs71xn" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-suche2CZ.png" id="27_xkl18"]
+[ext_resource type="Texture2D" uid="uid://ch0y5gtmy3qjk" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-5.png" id="28_e1ij3"]
+[ext_resource type="Texture2D" uid="uid://ci6pei36fc15t" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-4.png" id="29_3sb3q"]
+[ext_resource type="Texture2D" uid="uid://cxjpd8uycbv05" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-suche.png" id="30_3e0ss"]
+[ext_resource type="Texture2D" uid="uid://cqss8jlxnfxdj" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzak2.png" id="31_2cgwa"]
+[ext_resource type="Texture2D" uid="uid://bmadqcxl62yc1" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzak.png" id="32_4xgoo"]
+[ext_resource type="Texture2D" uid="uid://dxx73sc7v2tql" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik2.png" id="33_ygsch"]
+[ext_resource type="Texture2D" uid="uid://cqln8g0dr6eoj" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik.png" id="34_bbvwb"]
+[ext_resource type="Texture2D" uid="uid://nr23tf1nf44b" path="res://assets/sprites/environment/Platformy i teren/trawa_pathdzik.png" id="35_831nb"]
+[ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="36_gcahc"]
+[ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="37_dp5jn"]
+[ext_resource type="Texture2D" uid="uid://cl7iei4wgeq2e" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-sucheCZ.png" id="38_p1uc1"]
+[ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="39_w14d5"]
+[ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="40_f3ql8"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="41_efofl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_el4hk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee37y"]
+size = Vector2(30, 132)
+
+[node name="Beta" type="Node2D"]
+position = Vector2(-13800, -12296)
+
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="LD" type="Node2D" parent="Enviroment"]
+
+[node name="Level2Podzm" type="Node2D" parent="Enviroment/LD"]
+
+[node name="FLevel1" type="Node2D" parent="Enviroment/LD/Level2Podzm"]
+
+[node name="KLevel1" type="Node2D" parent="Enviroment/LD/Level2Podzm"]
+
+[node name="Block1" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30576, 7608)
+scale = Vector2(0.553011, 0.999149)
+
+[node name="Block12" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30392, 7896)
+scale = Vector2(1.16696, 0.630462)
+
+[node name="Block15" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30200, 7896)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block16" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30028, 7848)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block19" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30456, 8224)
+scale = Vector2(-4.28472, 0.591426)
+
+[node name="Block21" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29800, 7632)
+scale = Vector2(1.80955, 0.383234)
+
+[node name="Block23" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29568, 7576)
+scale = Vector2(2.06635, 0.206616)
+
+[node name="Block27" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29568, 7632)
+scale = Vector2(0.244568, 0.612251)
+
+[node name="Block37" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28800, 7724)
+scale = Vector2(2.5784, 0.147065)
+
+[node name="Block66" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28543, 7968)
+scale = Vector2(2.5784, 0.147065)
+
+[node name="Block62" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28400, 8224)
+scale = Vector2(2.5784, 0.147065)
+
+[node name="Block63" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28474, 7720)
+scale = Vector2(0.228791, 1.69957)
+
+[node name="Block61" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28400, 7592)
+scale = Vector2(1.5366, 0.089881)
+
+[node name="Block36" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27880, 7592)
+scale = Vector2(2.32594, 0.534764)
+
+[node name="Block65" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27688, 7594)
+scale = Vector2(2.32594, 0.534764)
+
+[node name="Block102" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27689, 7739)
+scale = Vector2(2.47737, 1.67977)
+
+[node name="Block103" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26869, 7911)
+scale = Vector2(3.54441, 0.327343)
+
+[node name="Block98" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26144, 7600)
+scale = Vector2(2.32594, 0.534764)
+
+[node name="Block91" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27000, 8216)
+scale = Vector2(4.72988, 0.440355)
+
+[node name="Block22" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30200, 7712)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block10" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30712, 7632)
+scale = Vector2(0.279603, 0.746659)
+
+[node name="Block24" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30776, 7431)
+scale = Vector2(0.279603, 0.746659)
+
+[node name="Block90" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30808, 7216)
+scale = Vector2(0.279603, 0.746659)
+
+[node name="Block9" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30584, 8248)
+scale = Vector2(0.236673, 4.62448)
+
+[node name="Block3" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30472, 8584)
+scale = Vector2(6.10955, 0.21948)
+
+[node name="Block13" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(31008, 8656)
+scale = Vector2(1.17748, 0.178632)
+
+[node name="Block14" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(31848, 8664)
+scale = Vector2(1.17748, 0.178632)
+
+[node name="Block108" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(33016, 8464)
+scale = Vector2(0.229409, 0.472307)
+
+[node name="Block109" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(33216, 8200)
+scale = Vector2(0.760903, 0.157169)
+
+[node name="Block110" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(34488, 7996)
+scale = Vector2(0.760903, 0.157169)
+
+[node name="Block5" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(33200, 8584)
+scale = Vector2(3.98442, 0.195245)
+
+[node name="Block4" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(32304, 8608)
+scale = Vector2(3.04073, 0.612006)
+
+[node name="Block6" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30296, 8568)
+scale = Vector2(0.573591, 4.82183)
+
+[node name="Block7" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(34400, 8600)
+scale = Vector2(0.573591, 4.82183)
+
+[node name="Block92" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(43216, 5048)
+scale = Vector2(0.573591, 4.82183)
+
+[node name="Block93" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(43216, 6451)
+scale = Vector2(0.573591, 4.82183)
+
+[node name="Block94" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(41640, 7728)
+scale = Vector2(5.47425, 0.526399)
+
+[node name="Block95" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(40000, 7848)
+scale = Vector2(5.47425, 0.526399)
+
+[node name="Block96" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(38360, 7968)
+scale = Vector2(5.47425, 0.526399)
+
+[node name="Block97" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(36704, 8088)
+scale = Vector2(5.47425, 0.526399)
+
+[node name="Block99" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(34451, 8587)
+scale = Vector2(25.2533, 2.45333)
+
+[node name="Block100" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(36514, 8129)
+scale = Vector2(25.2533, 2.45333)
+
+[node name="Block101" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(35381, 8387)
+scale = Vector2(25.2533, 2.45333)
+
+[node name="Block8" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30328, 8224)
+scale = Vector2(1.16691, 0.0851763)
+
+[node name="Block17" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30096, 8376)
+scale = Vector2(0.771982, 0.211552)
+
+[node name="Block20" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29848, 8376)
+scale = Vector2(0.861395, 0.216732)
+
+[node name="Block18" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30328, 8248)
+scale = Vector2(0.904241, 0.638672)
+
+[node name="Block25" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26776, 6528)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block26" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26776, 6344)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block48" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26224, 6248)
+scale = Vector2(1.19469, 0.506395)
+
+[node name="Block75" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26384, 6016)
+scale = Vector2(0.704888, 0.506395)
+
+[node name="Block57" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25832, 6312)
+scale = Vector2(1.65723, 0.140736)
+
+[node name="Block55" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25640, 6112)
+rotation = 0.428956
+scale = Vector2(1.79101, 0.307801)
+
+[node name="Block38" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(24928, 6112)
+scale = Vector2(2.34923, 0.17656)
+
+[node name="Block28" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26776, 6712)
+scale = Vector2(0.12818, 0.801458)
+
+[node name="Block29" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26552, 6248)
+scale = Vector2(0.12818, 0.801458)
+
+[node name="Block30" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26688, 6064)
+scale = Vector2(0.29732, 1.04831)
+
+[node name="Block31" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26672, 7008)
+scale = Vector2(0.771982, 0.211552)
+
+[node name="Block32" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26576, 6760)
+scale = Vector2(0.362327, 0.949715)
+
+[node name="Block33" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26576, 6480)
+scale = Vector2(0.362327, 0.949715)
+
+[node name="Block39" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 5600)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block40" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 5416)
+scale = Vector2(0.659259, 0.626973)
+
+[node name="Block41" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 5784)
+scale = Vector2(0.12818, 0.801458)
+
+[node name="Block46" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 5784)
+scale = Vector2(0.591655, 0.834342)
+
+[node name="Block42" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(24872, 5832)
+scale = Vector2(0.362327, 0.949715)
+
+[node name="Block43" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(24872, 5552)
+scale = Vector2(0.362327, 0.949715)
+
+[node name="Block44" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(24864, 4824)
+scale = Vector2(0.384117, 2.46585)
+
+[node name="Block45" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 4704)
+scale = Vector2(0.384117, 2.46585)
+
+[node name="Block51" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(24864, 3256)
+scale = Vector2(0.384117, 5.26585)
+
+[node name="Block54" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25072, 3168)
+scale = Vector2(0.384117, 5.26585)
+
+[node name="Block47" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25528, 6112)
+scale = Vector2(0.37411, 2.46585)
+
+[node name="Block53" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26144, 6352)
+scale = Vector2(1.12725, 0.128839)
+
+[node name="Block49" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25224, 5656)
+scale = Vector2(1.94715, 0.75222)
+
+[node name="Block50" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(25792, 5720)
+scale = Vector2(1.94715, 0.75222)
+
+[node name="Block52" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26192, 5880)
+scale = Vector2(1.94715, 0.75222)
+
+[node name="Block58" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27800, 7080)
+scale = Vector2(1.65723, 0.140736)
+
+[node name="Block59" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27368, 7080)
+scale = Vector2(1.65723, 0.140736)
+
+[node name="Block64" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26487, 7291)
+scale = Vector2(1.30413, 0.177925)
+
+[node name="Block104" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26749, 7331)
+scale = Vector2(0.387823, 1.00834)
+
+[node name="Block105" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26713, 7619)
+scale = Vector2(0.576847, 1.20289)
+
+[node name="Block106" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26463, 7047)
+scale = Vector2(0.576847, 1.20289)
+
+[node name="Block107" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27533, 7760)
+scale = Vector2(0.576847, 1.20289)
+
+[node name="Block60" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27176, 6880)
+rotation = 0.428956
+scale = Vector2(1.79101, 0.307801)
+
+[node name="Block67" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27064, 6880)
+scale = Vector2(0.37411, 2.46585)
+
+[node name="Block68" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27760, 6744)
+scale = Vector2(4.06715, 0.75222)
+
+[node name="Block82" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28816, 6736)
+scale = Vector2(2.68448, 0.645924)
+
+[node name="Block83" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29464, 6833)
+scale = Vector2(2.68448, 0.645924)
+
+[node name="Block84" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30184, 7159)
+scale = Vector2(0.806969, 1.82668)
+
+[node name="Block89" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(30742, 6632)
+scale = Vector2(0.806969, 1.82668)
+
+[node name="Block69" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28288, 7080)
+scale = Vector2(2.31822, 0.134287)
+
+[node name="Block70" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27680, 7120)
+scale = Vector2(1.12725, 0.128839)
+
+[node name="Block71" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28736, 7104)
+scale = Vector2(0.840403, 0.152802)
+
+[node name="Block87" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28104, 7224)
+scale = Vector2(0.50617, 0.0846875)
+
+[node name="Block72" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29472, 7144)
+scale = Vector2(0.840403, 0.152802)
+
+[node name="Block80" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29472, 7144)
+scale = Vector2(0.840403, 0.268897)
+
+[node name="Block81" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29642, 7200)
+scale = Vector2(0.169903, 0.500077)
+
+[node name="Block73" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29595, 7216)
+scale = Vector2(0.159939, 0.759408)
+
+[node name="Block88" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29376, 7392)
+scale = Vector2(0.159939, 0.759408)
+
+[node name="Block77" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(29152, 7392)
+scale = Vector2(1.47827, 0.183117)
+
+[node name="Block78" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28736, 7144)
+scale = Vector2(0.184962, 0.678001)
+
+[node name="Block85" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28764, 7376)
+scale = Vector2(0.491477, 0.184245)
+
+[node name="Block86" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28728, 7344)
+scale = Vector2(0.285844, 0.19726)
+
+[node name="Block79" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(28896, 7392)
+scale = Vector2(0.964171, 0.200845)
+
+[node name="Block74" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(27208, 6536)
+rotation = 0.202511
+scale = Vector2(2.30924, 0.75269)
+
+[node name="Block76" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26792, 6536)
+scale = Vector2(1.94715, 0.75222)
+
+[node name="Block34" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26424, 7008)
+scale = Vector2(0.861395, 0.216732)
+
+[node name="Block35" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(26904, 6880)
+scale = Vector2(0.904241, 0.638672)
+
+[node name="Block2" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("2_2s78a")]
+position = Vector2(26488, 8440)
+
+[node name="Block56" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("3_sqpjo")]
+position = Vector2(26488, 8440)
+
+[node name="OzGrab" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("4_70and")]
+position = Vector2(26488, 8440)
+
+[node name="Stairs6" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("5_gqg1j")]
+position = Vector2(26488, 8440)
+
+[node name="ZaDaleki" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("6_4ipf3")]
+position = Vector2(27337.2, 8941.52)
+
+[node name="Block11" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("2_2s78a")]
+position = Vector2(30616, 8240)
+scale = Vector2(0.164366, 0.349679)
+
+[node name="ResponsivePlatform" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(27976, 7435)
+scale = Vector2(1.52176, 0.684681)
+
+[node name="ResponsivePlatform9" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26857, 8104)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform10" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26960, 8000)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform11" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(27016, 7904)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform12" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26920, 7832)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform13" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26872, 7747)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform14" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26856, 7655)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform15" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(14915, 6802)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform16" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26888, 7527)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform17" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(14923, 6747)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform18" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26810, 7396)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform19" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26931, 7351)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform3" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(29424, 7584)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform4" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(26816, 6880)
+scale = Vector2(0.303334, 0.608835)
+
+[node name="ResponsivePlatform2" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("7_m7ae4")]
+position = Vector2(28861, 7592)
+rotation = 0.523598
+scale = Vector2(0.974929, 0.77229)
+
+[node name="FLevel2" type="Node2D" parent="Enviroment/LD/Level2Podzm"]
+position = Vector2(-9264, 8718)
+
+[node name="Block236" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50016.8, -5034.66)
+rotation = -1.11999
+scale = Vector2(0.227127, 1.09948)
+
+[node name="Block237" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50304, -4896)
+rotation = -1.11999
+scale = Vector2(0.227127, 1.09948)
+
+[node name="Block242" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50584, -4760)
+rotation = -1.11999
+scale = Vector2(0.227127, 1.09948)
+
+[node name="Block243" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50638.1, -4911.62)
+rotation = -1.11999
+scale = Vector2(0.227127, 1.09948)
+
+[node name="Block240" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49872, -4732.25)
+rotation = -1.11999
+scale = Vector2(1.17779, 2.2351)
+
+[node name="Block241" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50192, -5192)
+rotation = -1.11999
+scale = Vector2(1.17779, 2.2351)
+
+[node name="Block244" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50359.1, -5115.58)
+rotation = -1.11999
+scale = Vector2(1.17779, 2.2351)
+
+[node name="Block245" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50128, -4600)
+rotation = -1.11999
+scale = Vector2(1.17779, 2.2351)
+
+[node name="Block238" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50083.9, -5174)
+rotation = -1.12654
+scale = Vector2(0.227127, 1.09948)
+
+[node name="Block239" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50368, -5040)
+rotation = -1.12654
+scale = Vector2(0.227127, 1.09948)
+
+[node name="ZaDaleki" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("6_4ipf3")]
+position = Vector2(41936, 72)
+
+[node name="Block4" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39488, -1576)
+scale = Vector2(2.79197, 0.234807)
+
+[node name="Block18" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39864, -2400)
+scale = Vector2(2.07184, 1.204)
+
+[node name="Block19" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40000, -2128)
+scale = Vector2(1.29718, 0.864474)
+
+[node name="Block23" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39680, -2728)
+scale = Vector2(3.81367, 0.797555)
+
+[node name="Block20" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40328, -2496)
+scale = Vector2(1.52841, 2.27619)
+
+[node name="Block5" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39440, -1968)
+scale = Vector2(0.349886, 0.881885)
+
+[node name="Block6" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39416, -2224)
+scale = Vector2(0.331557, 0.961844)
+
+[node name="Block7" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39456, -2256)
+scale = Vector2(0.296848, 0.344424)
+
+[node name="Block16" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39784, -2496)
+scale = Vector2(2.13906, 0.728392)
+
+[node name="Block8" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38904, -2280)
+scale = Vector2(2.59843, 0.22522)
+
+[node name="Block10" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38816, -3064)
+scale = Vector2(3.74631, 1.18032)
+
+[node name="Block17" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40696, -3064)
+scale = Vector2(1.73686, 2.72559)
+
+[node name="Block31" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41192, -2920)
+scale = Vector2(1.67769, 2.17664)
+
+[node name="Block29" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41320, -3064)
+scale = Vector2(0.431948, 0.291711)
+
+[node name="Block30" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41552, -3064)
+scale = Vector2(2.7754, 2.0714)
+
+[node name="Block22" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39744, -3480)
+scale = Vector2(2.34886, 1.16788)
+
+[node name="Block27" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39024, -3368)
+scale = Vector2(2.4363, 0.211252)
+
+[node name="Block25" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40944, -3592)
+scale = Vector2(2.62079, 1.16788)
+
+[node name="Block28" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40936, -3560)
+scale = Vector2(0.513702, 1.0653)
+
+[node name="Block37" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41400, -4872)
+scale = Vector2(1.81508, 4.38084)
+
+[node name="Block38" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41304, -4008)
+scale = Vector2(0.952743, 1.63149)
+
+[node name="Block45" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41672, -3600)
+scale = Vector2(0.955727, 1.55046)
+
+[node name="Block46" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42072, -3464)
+scale = Vector2(2.69593, 2.53662)
+
+[node name="Block47" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42088, -3720)
+scale = Vector2(2.38958, 1.08202)
+
+[node name="Block48" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42072, -3608)
+scale = Vector2(2.02216, 0.427821)
+
+[node name="Block60" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42440, -3720)
+scale = Vector2(1.84137, 0.892453)
+
+[node name="Block62" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42760, -3688)
+scale = Vector2(2.10581, 3.06546)
+
+[node name="Block63" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43088, -3624)
+scale = Vector2(2.29911, 3.08886)
+
+[node name="Block82" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43144, -3368)
+scale = Vector2(2.29911, 3.08886)
+
+[node name="Block83" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43216, -3176)
+scale = Vector2(2.29911, 3.08886)
+
+[node name="Block160" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43483, -2909)
+scale = Vector2(1.49284, 5.59737)
+
+[node name="Block50" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42072, -3752)
+scale = Vector2(2.47975, 0.428171)
+
+[node name="Block54" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42064, -3992)
+scale = Vector2(2.29458, 0.426232)
+
+[node name="Block55" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42048, -4056)
+scale = Vector2(2.5203, 0.404698)
+
+[node name="Block58" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42040, -4136)
+scale = Vector2(3.34419, 0.428171)
+
+[node name="Block59" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42032, -4240)
+scale = Vector2(3.68125, 0.464107)
+
+[node name="Block61" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42040, -4448)
+scale = Vector2(3.84332, 0.735746)
+
+[node name="Block65" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(42720, -4768)
+scale = Vector2(3.58002, 1.52005)
+
+[node name="Block67" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43712, -4704)
+scale = Vector2(2.34579, 1.46694)
+
+[node name="Block68" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44352, -4896)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block71" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45144, -5224)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block142" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45200, -5640)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block143" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46016, -5984)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block144" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46912, -6112)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block146" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47936, -5984)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block147" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49024, -5920)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block148" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50083.8, -5614.11)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block151" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50935, -5208)
+scale = Vector2(3.29947, 1.46658)
+
+[node name="Block155" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(51776, -5344)
+scale = Vector2(3.29947, 1.46658)
+
+[node name="Block157" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(52736, -5288)
+scale = Vector2(3.29947, 1.46658)
+
+[node name="Block156" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(52928, -4896)
+scale = Vector2(3.29947, 1.46658)
+
+[node name="Block102" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46400, -5296)
+scale = Vector2(2.12753, 1.51958)
+
+[node name="Block114" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47744, -5288)
+scale = Vector2(2.12753, 1.51958)
+
+[node name="Block122" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47976, -4872)
+scale = Vector2(2.12753, 1.51958)
+
+[node name="Block133" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47976, -4872)
+scale = Vector2(2.12753, 1.51958)
+
+[node name="Block89" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46864, -3816)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block103" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47744, -4072)
+scale = Vector2(2.63988, 1.75122)
+
+[node name="Block150" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49616, -4136)
+scale = Vector2(2.63988, 1.75122)
+
+[node name="Block117" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48520, -3816)
+scale = Vector2(3.58992, 1.84965)
+
+[node name="Block119" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49536, -4200)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block135" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49864, -4648)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block149" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50832, -4456)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block154" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(51400, -4456)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block152" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50360, -4200)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block140" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(50088.1, -4677.62)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block136" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49224, -5096)
+scale = Vector2(2.74172, 2.05623)
+
+[node name="Block104" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47768, -4408)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block109" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47752, -4568)
+scale = Vector2(2.69132, 0.461178)
+
+[node name="Block106" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47768, -4336)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block108" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47768, -4488)
+scale = Vector2(2.60872, 0.465425)
+
+[node name="Block111" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47808, -4808)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block113" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47776, -4936)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block112" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(47808, -4680)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block134" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48584, -4784)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block137" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48120, -4656)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block153" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(52672, -4712)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block158" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(52656, -3984)
+rotation = -1.06357
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block159" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(52479.3, -3665.41)
+rotation = -1.06357
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block138" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(49128, -4696)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block139" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48528, -4936)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block145" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48552, -4864)
+scale = Vector2(2.55523, 0.452988)
+
+[node name="Block90" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46832, -3640)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block91" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46792, -3408)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block92" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46848, -3200)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block100" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46768, -2920)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block141" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46832, -2528)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block86" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44392, -5088)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block87" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44472, -5128)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block88" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44536, -5168)
+scale = Vector2(3.63363, 1.46694)
+
+[node name="Block66" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43648, -4200)
+scale = Vector2(2.56295, 0.529099)
+
+[node name="Block69" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(43704, -4576)
+scale = Vector2(2.56295, 0.529099)
+
+[node name="Block70" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44928, -4648)
+scale = Vector2(0.641677, 1.49118)
+
+[node name="Block72" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45080, -4368)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block73" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45184, -3752)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block78" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45136, -3544)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block79" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45296, -3360)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block95" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45272, -2968)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block96" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45136, -2872)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block97" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45080, -2712)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block99" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45256, -2552)
+scale = Vector2(0.683199, 1.46067)
+
+[node name="Block98" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45376, -2688)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block118" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46192, -3048)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block123" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46088, -3088)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block124" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45992, -2704)
+scale = Vector2(1.12822, 1.69544)
+
+[node name="Block126" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46128, -2648)
+scale = Vector2(1.12822, 1.69544)
+
+[node name="Block127" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45856, -2720)
+scale = Vector2(1.12822, 1.69544)
+
+[node name="Block131" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46032, -3544)
+scale = Vector2(0.943985, 1.89282)
+
+[node name="Block120" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46032, -3456)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block128" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46064, -3808)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block129" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46000, -4152)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block130" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46032, -4456)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block132" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45920, -4456)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block121" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45952, -3880)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block125" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45920, -3064)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block80" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45248, -3608)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block81" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45112, -3208)
+scale = Vector2(0.614245, 1.41237)
+
+[node name="Block75" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45064, -3952)
+scale = Vector2(0.667422, 0.080505)
+
+[node name="Block115" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45304, -2944)
+scale = Vector2(0.667422, 0.080505)
+
+[node name="Block105" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46376, -4848)
+scale = Vector2(1.35939, 0.080505)
+
+[node name="Block116" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(46656, -4848)
+scale = Vector2(1.35939, 0.080505)
+
+[node name="Block110" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(48152, -4072)
+scale = Vector2(1.35939, 0.080505)
+
+[node name="Block84" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(44912, -4224)
+scale = Vector2(0.667422, 0.080505)
+
+[node name="Block85" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45256, -4480)
+scale = Vector2(0.667422, 0.080505)
+
+[node name="Block76" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45184, -4120)
+scale = Vector2(0.667422, 0.080505)
+
+[node name="Block74" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45104, -4528)
+scale = Vector2(0.853368, 1.41398)
+
+[node name="Block77" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45120, -4560)
+scale = Vector2(0.799996, 1.41167)
+
+[node name="Block101" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(45952, -4944)
+scale = Vector2(0.799996, 1.41167)
+
+[node name="Block49" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41880, -3880)
+scale = Vector2(0.409344, 2.28051)
+
+[node name="Block51" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41888, -4032)
+scale = Vector2(0.409344, 2.28051)
+
+[node name="Block52" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41896, -4168)
+scale = Vector2(0.409344, 2.28051)
+
+[node name="Block53" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(41904, -4320)
+scale = Vector2(0.409344, 2.28051)
+
+[node name="Block40" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40304, -4616)
+scale = Vector2(2.95966, 2.81437)
+
+[node name="Block24" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(36920, -4200)
+scale = Vector2(1.54892, 1.72746)
+
+[node name="Block33" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(36584, -5096)
+scale = Vector2(3.51005, 1.93076)
+
+[node name="Block34" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(37496, -5216)
+scale = Vector2(3.51005, 1.93076)
+
+[node name="Block35" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38056, -5048)
+scale = Vector2(3.51005, 1.93076)
+
+[node name="Block36" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38464, -4776)
+scale = Vector2(3.51005, 1.93076)
+
+[node name="Block41" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38680, -5352)
+scale = Vector2(3.55313, 3.34864)
+
+[node name="Block42" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39256, -5824)
+scale = Vector2(2.64064, 3.59781)
+
+[node name="Block43" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39680, -5920)
+scale = Vector2(3.62887, 3.38741)
+
+[node name="Block44" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(40704, -5856)
+scale = Vector2(3.62887, 3.38741)
+
+[node name="Block39" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39320, -4616)
+scale = Vector2(3.51005, 1.93076)
+
+[node name="Block32" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38128, -3880)
+scale = Vector2(1.54892, 1.72746)
+
+[node name="Block26" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(36568, -4568)
+scale = Vector2(1.67528, 4.3102)
+
+[node name="Block9" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39272, -2544)
+scale = Vector2(1.10619, 0.904027)
+
+[node name="Block14" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38584, -2448)
+scale = Vector2(1.09534, 0.786619)
+
+[node name="Block21" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(38456, -2600)
+scale = Vector2(1.09534, 0.786619)
+
+[node name="Block15" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(36944, -3880)
+scale = Vector2(5.08044, 5.04789)
+
+[node name="Block11" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39096, -2728)
+scale = Vector2(1.8476, 0.168547)
+
+[node name="Block12" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39272, -2712)
+scale = Vector2(0.807145, 0.279322)
+
+[node name="Block13" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("1_3c6d5")]
+position = Vector2(39320, -2664)
+scale = Vector2(0.495101, 0.223981)
+
+[node name="Block1" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("3_sqpjo")]
+position = Vector2(39528, -1952)
+scale = Vector2(3.22895, -1.08389)
+
+[node name="SpikeTest8" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(38928, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest9" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(38968, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest10" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39008, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest11" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39048, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest12" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39088, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest13" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39128, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest14" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39168, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest15" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39208, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest16" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39248, -2280)
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest17" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39944, -2752)
+rotation = 2.3461
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest18" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39944, -2792)
+rotation = 2.3461
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest19" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39944, -2832)
+rotation = 2.3461
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest41" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(48552.4, -4047.78)
+rotation = 3.1393
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest47" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(48536, -4232)
+rotation = 2.46422
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest48" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(48536, -4272)
+rotation = 2.46422
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest42" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(48536.9, -4010.17)
+rotation = 2.46886
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest43" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(48533.6, -3975.28)
+rotation = 2.45379
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest44" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(49536, -3840)
+rotation = -0.724911
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest45" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(49536, -3880)
+rotation = -0.724911
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest46" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(49536, -3920)
+rotation = -0.724911
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest49" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(49536, -3960)
+rotation = -0.724911
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest23" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39048, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest38" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39016, -3360)
+rotation = -0.687026
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest39" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39016, -3320)
+rotation = -0.687026
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest40" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39048, -3296)
+rotation = -2.25006
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest24" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39096, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest25" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39144, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest26" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39192, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest27" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39240, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest28" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39288, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest29" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39336, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest30" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39384, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest31" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39432, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest32" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39480, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest33" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39528, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest34" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39576, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest35" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39624, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest36" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39672, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest37" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(39720, -3368)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest20" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(40696, -2752)
+rotation = 5.40457
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest21" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(40696, -2792)
+rotation = 5.40457
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest22" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("8_fak7k")]
+position = Vector2(40696, -2832)
+rotation = 5.40457
+scale = Vector2(0.660547, 0.745469)
+
+[node name="PlatformBreaking" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("9_cn73g")]
+position = Vector2(39328, -3544)
+break_counter = 2
+
+[node name="PlatformBreaking2" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("9_cn73g")]
+position = Vector2(38872, -3688)
+break_counter = 2
+
+[node name="PressurePlate" parent="Enviroment/LD/Level2Podzm/FLevel2" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("10_k5gon")]
+position = Vector2(40800, -3072)
+thing_to_open = NodePath("../Door2")
+activator = NodePath("../Pillar3")
+
+[node name="PressurePlate2" parent="Enviroment/LD/Level2Podzm/FLevel2" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("10_k5gon")]
+position = Vector2(37728, -3888)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../Pillar2")
+
+[node name="Door2" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("11_50dmx")]
+position = Vector2(40672, -3376)
+scale = Vector2(28.0165, 0.405211)
+
+[node name="Door" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("11_50dmx")]
+position = Vector2(41712, -3096)
+scale = Vector2(3.70767, 0.417847)
+
+[node name="Pillar" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("12_uytng")]
+position = Vector2(38096, -3960)
+
+[node name="FilOzd2" parent="Enviroment/LD/Level2Podzm/FLevel2/Pillar" instance=ExtResource("13_mihgn")]
+
+[node name="Pillar2" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("12_uytng")]
+position = Vector2(37240, -4288)
+
+[node name="FilOzd2" parent="Enviroment/LD/Level2Podzm/FLevel2/Pillar2" instance=ExtResource("13_mihgn")]
+
+[node name="Pillar3" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("12_uytng")]
+position = Vector2(41384, -3152)
+
+[node name="FilOzd2" parent="Enviroment/LD/Level2Podzm/FLevel2/Pillar3" instance=ExtResource("13_mihgn")]
+
+[node name="Pillar4" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("12_uytng")]
+position = Vector2(49038, -3902)
+
+[node name="FilOzd2" parent="Enviroment/LD/Level2Podzm/FLevel2/Pillar4" instance=ExtResource("13_mihgn")]
+
+[node name="Block93" type="StaticBody2D" parent="Enviroment/LD/Level2Podzm/FLevel2"]
+position = Vector2(41272, -3056)
+scale = Vector2(3.77637, 0.0685927)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_el4hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/LD/Level2Podzm/FLevel2/Block93"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ee37y")
+
+[node name="Block94" type="StaticBody2D" parent="Enviroment/LD/Level2Podzm/FLevel2"]
+position = Vector2(41456, -3064)
+scale = Vector2(0.575552, 0.247545)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_el4hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/LD/Level2Podzm/FLevel2/Block94"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ee37y")
+
+[node name="ResponsivePlatform" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("7_m7ae4")]
+position = Vector2(41208, -3064)
+scale = Vector2(1.14661, 0.797976)
+
+[node name="ResponsivePlatform2" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("7_m7ae4")]
+position = Vector2(41952, -3216)
+scale = Vector2(0.414424, 0.797976)
+
+[node name="Block56" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("3_sqpjo")]
+position = Vector2(41400, -4264)
+
+[node name="Block57" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("3_sqpjo")]
+position = Vector2(41192, -4456)
+
+[node name="Block64" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("3_sqpjo")]
+position = Vector2(43136, -4104)
+
+[node name="Block107" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("3_sqpjo")]
+position = Vector2(47736, -5080)
+
+[node name="BreakableWall" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("14_rntfh")]
+position = Vector2(48504, -4136)
+
+[node name="BreakableWall2" parent="Enviroment/LD/Level2Podzm/FLevel2" instance=ExtResource("14_rntfh")]
+position = Vector2(47832, -4136)
+
+[node name="Door" parent="." instance=ExtResource("11_50dmx")]
+position = Vector2(30006, 8056)
+scale = Vector2(1.79396, 0.681336)
+
+[node name="PressurePlate" parent="." node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("10_k5gon")]
+position = Vector2(26736, 7297)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../Pillar")
+
+[node name="Pillar" parent="." instance=ExtResource("12_uytng")]
+position = Vector2(26858, 7207)
+
+[node name="FilOzd" parent="." instance=ExtResource("13_mihgn")]
+
+[node name="Pillar2" parent="." instance=ExtResource("12_uytng")]
+position = Vector2(29240, 7312)
+
+[node name="FilOzd2" parent="Pillar2" instance=ExtResource("13_mihgn")]
+
+[node name="EnemBeta" type="Node2D" parent="."]
+
+[node name="MudMummy" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(31296, 5920)
+
+[node name="MudMummy2" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(30848, 5928)
+
+[node name="MudMummy3" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(26016, 6160)
+
+[node name="MudMummy4" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(28049, 7024)
+
+[node name="DraugrZDemobilu" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(28176, 7177)
+
+[node name="MudMummy5" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(28414, 7024)
+
+[node name="MudMummy6" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(28297, 7024)
+
+[node name="MudMummy7" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(39486, 4854)
+
+[node name="MudMummy8" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(40144, 4836)
+
+[node name="MudMummy9" parent="EnemBeta" instance=ExtResource("15_yvdq7")]
+position = Vector2(40330, 4486)
+
+[node name="OZD" type="Node2D" parent="."]
+
+[node name="Dz1" type="Node2D" parent="OZD"]
+
+[node name="Skal2" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15392, 12752)
+rotation = -0.436332
+texture = ExtResource("16_ptdho")
+
+[node name="Kamien-3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(14709, 12889)
+texture = ExtResource("17_y4emi")
+
+[node name="Kamien-10" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(13936, 12612)
+texture = ExtResource("17_y4emi")
+
+[node name="Kamien-11" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(13944, 12778)
+texture = ExtResource("17_y4emi")
+
+[node name="Kamien-4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(14056, 12900)
+texture = ExtResource("17_y4emi")
+
+[node name="Kamien-17" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(18960, 12502)
+texture = ExtResource("17_y4emi")
+
+[node name="BykJaskinia" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(14057, 12905)
+scale = Vector2(0.162106, 0.200002)
+texture = ExtResource("18_1ty7u")
+
+[node name="Kamien-2" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15352, 12776)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-9" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(15310, 12795)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-5" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15384, 12763)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-13" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13729, 12057)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-14" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13722, 11968)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-15" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13717, 11912)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-16" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13728, 12128)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-6" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15424, 12746)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-7" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15456, 12728)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-8" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(15488, 12707)
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Schod ozd" parent="OZD/Dz1" instance=ExtResource("20_iwe5a")]
+
+[node name="Schod ozd3" parent="OZD/Dz1" instance=ExtResource("20_iwe5a")]
+position = Vector2(19712, 12227)
+
+[node name="Schod ozd4" parent="OZD/Dz1" instance=ExtResource("20_iwe5a")]
+position = Vector2(20040, 12120)
+
+[node name="Schod ozd2" type="Node2D" parent="OZD/Dz1"]
+position = Vector2(19288, 12416)
+rotation = -0.436332
+
+[node name="Skal3" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+texture = ExtResource("16_ptdho")
+
+[node name="Kamien-13" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+position = Vector2(-36.1867, 1.88439)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-18" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+z_index = 2
+position = Vector2(-71.5278, 1.95522)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-14" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+position = Vector2(-0.000391006, 0.000904083)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-15" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+position = Vector2(35.3409, -0.0698862)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-16" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+position = Vector2(70.6818, -0.140822)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-17" type="Sprite2D" parent="OZD/Dz1/Schod ozd2"]
+z_index = 1
+position = Vector2(106.445, -1.11801)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Kamien-12" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(16485, 12883)
+rotation = -3.12901
+scale = Vector2(0.415831, 0.50627)
+texture = ExtResource("19_xmnkw")
+
+[node name="Skal4" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15631, 12702)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal5" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15696, 12702)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal6" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(15968, 12960)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal10" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16224, 12335)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal12" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16219, 12344)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal11" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16344, 12347)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal7" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(16216, 12961)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal18" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(21416, 13063)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal8" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16512, 12864)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal13" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17336, 12897)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal15" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18712, 12563)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal16" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18928, 12560)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal17" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18928, 12563)
+texture = ExtResource("21_wopbi")
+
+[node name="Skal14" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(17208, 13045)
+rotation = -1.57079
+texture = ExtResource("21_wopbi")
+
+[node name="Skal9" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16592, 12924)
+texture = ExtResource("21_wopbi")
+
+[node name="Krzaki-3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(14120, 12896)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(14512, 12881)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-5" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(14008, 12768)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-6" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(15283, 12746)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-10" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(16487, 12469)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-11" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(17632, 12896)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-12" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(18312, 12896)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-13" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(18728, 12485)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-14" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(19960, 12152)
+texture = ExtResource("22_xytma")
+
+[node name="Krzaki-2" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(14568, 12881)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-8" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(14728, 12808)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-9" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(14912, 12800)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-7" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(14072, 12856)
+texture = ExtResource("23_ise2u")
+
+[node name="DzikSkal3" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13992, 12889)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal4" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13968, 12713)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal8" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15799, 12790)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal9" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15840, 12915)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal84" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16015, 12990)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal85" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16033, 12986)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal86" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16012, 12986)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal10" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16256, 12915)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal11" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16344, 12855)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal12" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16384, 12832)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal87" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16384, 12832)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal83" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16384, 12860)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal5" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13944, 12536)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal6" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13944, 12280)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal53" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13856, 12197)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal107" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13632, 11848)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal54" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13816, 12195)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal106" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13568, 11843)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal110" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13476, 11848)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal111" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13336, 11848)
+rotation = 1.5708
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal55" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13722, 12120)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal56" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(13722, 12131)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal108" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(13722, 11958)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal109" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13722, 11941)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal7" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(13944, 12370)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal13" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15484, 12234)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal16" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15509, 12448)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal17" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15509, 12335)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal18" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15536, 12424)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal19" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15562, 12408)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal20" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15592, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal21" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15616, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal22" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15635, 12404)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal23" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15664, 12392)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal24" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15688, 12392)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal25" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15707, 12418)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal26" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15732, 12427)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal27" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15744, 12410)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal28" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15760, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal29" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15824, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal30" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15796, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal31" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15784, 12395)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal32" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15864, 12364)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal57" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16328, 12663)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal59" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16352, 12663)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal60" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16376, 12663)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal61" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16400, 12667)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal62" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16424, 12667)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal63" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16471, 12596)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal68" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17912, 12785)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal69" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17864, 12790)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal78" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17888, 12790)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal79" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17907, 12788)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal70" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17864, 12889)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal88" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18404, 12854)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal92" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19424, 12454)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal93" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19608, 12362)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal102" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19912, 12200)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal103" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(20296, 12089)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal112" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(20201, 12329)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal113" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21225, 12290)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal114" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21289, 12386)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal115" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(20200, 12497)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal116" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21536, 12444)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal117" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21579, 12584)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal118" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21643, 12520)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal132" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21560, 12444)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal119" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21600, 12584)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal120" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21616, 12523)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal121" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21800, 12545)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal122" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21888, 12692)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal123" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21840, 12692)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal130" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21864, 12692)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal131" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21824, 12544)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal124" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21922, 12457)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal125" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21884, 12569)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal133" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21896, 12457)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal126" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(22309, 12411)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal127" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(22245, 12427)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal128" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(22267, 12504)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal129" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(22285, 12501)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal104" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(20244, 12089)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal105" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(21192, 12096)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal94" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19608, 12412)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal95" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19576, 12572)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal97" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19488, 12707)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal98" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19576, 12731)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal99" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19576, 12736)
+rotation = -4.71238
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal100" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19376, 12504)
+rotation = -4.71238
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal101" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19407, 12618)
+rotation = -4.71238
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal96" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(19469, 12593)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal89" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18380, 12671)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal90" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18518, 12576)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal91" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18480, 12585)
+rotation = -4.71238
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal71" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(18000, 12913)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal72" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17976, 12912)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal74" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17520, 12885)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal75" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(17448, 12885)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal80" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(17473, 12885)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal81" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17496, 12885)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal76" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17562, 12977)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal82" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17533, 12977)
+rotation = -6.28318
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal77" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17848, 12953)
+rotation = -7.85397
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal73" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(17960, 12913)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal64" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16456, 12424)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal65" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16093, 12424)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal66" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16091, 12440)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal67" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16112, 12587)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal58" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16471, 12664)
+rotation = 3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal48" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15798, 12483)
+rotation = -1.55665
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal49" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16237, 12685)
+rotation = -1.55665
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal50" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16197, 12685)
+rotation = -1.55665
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal51" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16106, 12692)
+rotation = -1.55665
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal52" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16106, 12685)
+rotation = -1.55665
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal33" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15888, 12240)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal34" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15929, 12102)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal47" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15937, 12022)
+rotation = -3.14159
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal35" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15968, 12017)
+rotation = -3.07339
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal36" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16192, 12029)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal37" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16155, 12096)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal38" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16170, 12029)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal39" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16243, 11920)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal40" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16219, 11920)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal41" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16048, 11986)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal42" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16068, 12045)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal43" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16082, 12096)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal44" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16106, 12096)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal45" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16128, 12096)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal46" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16004, 12037)
+rotation = -1.57079
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal14" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15483, 12054)
+texture = ExtResource("24_jeo02")
+
+[node name="DzikSkal15" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15483, 11872)
+texture = ExtResource("24_jeo02")
+
+[node name="CzzernDzik" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13944, 12678)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13968, 12824)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik9" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13968, 12824)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik5" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(14848, 12902)
+rotation = -0.523598
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik10" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(14880, 12882)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik6" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13856, 12582)
+rotation = 0.523598
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik2" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13928, 12676)
+rotation = 1.57079
+scale = Vector2(1.23862, 2.55719)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13960, 12810)
+rotation = 1.57079
+scale = Vector2(1.23862, 2.55719)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik7" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13944, 12810)
+rotation = 1.57079
+scale = Vector2(1.23862, 2.55719)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik8" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 2
+position = Vector2(13936, 12658)
+rotation = 1.57079
+scale = Vector2(1.23862, 2.55719)
+texture = ExtResource("25_iteq5")
+
+[node name="Block2" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+position = Vector2(13722, 12627)
+
+[node name="Block3" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+position = Vector2(13904, 12827)
+scale = Vector2(0.206603, 0.223025)
+
+[node name="Block4" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(13912, 12860)
+scale = Vector2(0.206603, 0.417377)
+
+[node name="Block9" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14001.1, 12983.2)
+scale = Vector2(0.293777, 0.237228)
+
+[node name="Block10" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14709, 12969)
+scale = Vector2(0.327352, 0.492028)
+
+[node name="Block11" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14746, 12955)
+scale = Vector2(0.327352, 0.492028)
+
+[node name="Block12" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14752, 12908)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block20" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15528, 12252)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block21" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15515, 12108)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block22" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15544, 12308)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block23" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15635, 12290)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block24" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15636, 12200)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block25" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15636, 12200)
+scale = Vector2(0.73152, 0.496466)
+
+[node name="Block40" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15535, 12483)
+scale = Vector2(0.109127, -0.0963468)
+
+[node name="Block41" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15556, 12467)
+scale = Vector2(0.109127, -0.0963468)
+
+[node name="Block42" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15644, 12476)
+rotation = -1.30555
+scale = Vector2(0.109127, -0.0963468)
+
+[node name="Block43" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15743, 12487)
+rotation = -1.30555
+scale = Vector2(0.109127, -0.0963468)
+
+[node name="Block44" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15744, 12480)
+rotation = 1.5708
+scale = Vector2(0.0737275, 0.0534365)
+
+[node name="Block46" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15560, 12471)
+rotation = 1.83604
+scale = Vector2(0.0257982, 0.0423407)
+
+[node name="Block26" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15777, 12192)
+scale = Vector2(0.321155, 0.245296)
+
+[node name="Block27" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15792, 12099)
+scale = Vector2(0.321155, 0.245296)
+
+[node name="Block28" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15784, 12144)
+scale = Vector2(0.321155, 0.245296)
+
+[node name="Block29" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15892, 11910)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block34" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16088, 11968)
+scale = Vector2(0.143875, 0.327867)
+
+[node name="Block35" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16096, 12013)
+scale = Vector2(0.150454, 0.512572)
+
+[node name="Block32" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15816, 11962)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block33" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15792, 12013)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block30" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16016, 11880)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block36" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16016, 11880)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block37" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16012, 11896)
+scale = Vector2(0.296875, 0.341659)
+
+[node name="Block38" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16149, 11808)
+scale = Vector2(0.296875, 0.341659)
+
+[node name="Block39" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16141, 11851)
+scale = Vector2(0.296875, 0.341659)
+
+[node name="Block31" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16094, 11896)
+scale = Vector2(0.346249, 0.318119)
+
+[node name="Block16" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16288, 12955)
+scale = Vector2(0.329151, 0.215358)
+
+[node name="Block17" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16249, 12993)
+scale = Vector2(0.329151, 0.215358)
+
+[node name="Block71" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15969, 12996)
+scale = Vector2(0.486665, 0.373323)
+
+[node name="Block72" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15969, 12996)
+scale = Vector2(0.486665, 0.373323)
+
+[node name="Block73" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15734, 12998)
+scale = Vector2(0.486665, 0.373323)
+
+[node name="Block74" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15656, 12897)
+scale = Vector2(0.486665, 0.373323)
+
+[node name="Block75" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(15656, 12882)
+scale = Vector2(0.486665, 0.373323)
+
+[node name="Block18" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16432, 12911)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block57" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17185, 12981)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block59" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17351, 12931)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block64" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17452, 12985)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block65" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17453, 13005)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block67" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17890, 12860)
+scale = Vector2(0.287998, 0.627961)
+
+[node name="Block68" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17872, 12848)
+scale = Vector2(0.105413, 0.641727)
+
+[node name="Block69" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17872, 12731)
+scale = Vector2(0.148198, 0.617236)
+
+[node name="Block70" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17916, 12978)
+scale = Vector2(0.312929, 0.185878)
+
+[node name="Block66" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17444, 12922)
+scale = Vector2(0.375247, 0.310665)
+
+[node name="Block63" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17475, 12907)
+scale = Vector2(0.270523, 0.20211)
+
+[node name="Block60" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17429, 12942)
+rotation = -1.11582
+scale = Vector2(0.0978882, 0.125299)
+
+[node name="Block61" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17491, 12918)
+rotation = -1.11582
+scale = Vector2(0.0978882, 0.125299)
+
+[node name="Block62" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17491, 12930)
+rotation = -1.11582
+scale = Vector2(0.0978882, 0.125299)
+
+[node name="Block58" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(17181, 13010)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block76" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18416, 12618)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block77" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18474, 12584)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block79" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18856, 12692)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block80" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18912, 12618)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block81" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18814, 12629)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block82" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19061, 12557)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block83" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19288, 12487)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block84" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19328, 12582)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block86" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19419, 12763)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block87" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19528, 12766)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block88" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19608, 12698)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block89" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19328, 12536)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block90" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19618, 12544)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block91" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19608, 12624)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block92" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19372, 12662)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block85" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19256, 12582)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block93" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19896, 12231)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block94" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(19960, 12208)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block95" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(20020, 12181)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block96" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(20032, 12167)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block78" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(18416, 12808)
+scale = Vector2(0.683745, 0.728403)
+
+[node name="Block45" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16249, 12551)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block47" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16238, 12577)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block48" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16144, 12585)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block49" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16149, 12408)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block50" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16146, 12472)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block51" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16146, 12523)
+scale = Vector2(0.683745, 0.260353)
+
+[node name="Block52" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16354, 12641)
+scale = Vector2(0.278352, 0.305075)
+
+[node name="Block53" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16352, 12648)
+scale = Vector2(0.278352, 0.305075)
+
+[node name="Block19" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16360, 12860)
+scale = Vector2(0.340345, 0.197589)
+
+[node name="Block54" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16296, 12860)
+scale = Vector2(0.373901, 0.185673)
+
+[node name="Block55" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16283, 12881)
+scale = Vector2(0.373901, 0.185673)
+
+[node name="Block56" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(16283, 12910)
+scale = Vector2(0.373901, 0.185673)
+
+[node name="Block13" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14896, 12864)
+scale = Vector2(0.231946, 0.148795)
+
+[node name="Block14" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14939, 12860)
+scale = Vector2(0.231946, 0.148795)
+
+[node name="Block15" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(14952, 12848)
+scale = Vector2(0.231946, 0.148795)
+
+[node name="Block5" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(13896, 12672)
+scale = Vector2(0.206603, 0.417377)
+
+[node name="Block6" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(13888, 12636)
+scale = Vector2(0.206603, 0.417377)
+
+[node name="Block7" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(13867, 12539)
+scale = Vector2(0.206603, 0.417377)
+
+[node name="Block8" parent="OZD/Dz1" instance=ExtResource("2_2s78a")]
+z_index = 3
+position = Vector2(13896, 12746)
+scale = Vector2(0.206603, 0.417377)
+
+[node name="Krzak2cz" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(15288, 12788)
+scale = Vector2(1.13418, 1.46845)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzak2cz3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(16440, 12327)
+scale = Vector2(1.13418, 1.46845)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzak2cz5" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(20333, 12747)
+scale = Vector2(1.13418, 1.46845)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzak2cz6" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(20890, 13130)
+scale = Vector2(1.13418, 1.46845)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzak2cz4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 3
+position = Vector2(16624, 12876)
+scale = Vector2(0.683921, 1.09255)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzak2cz2" type="Sprite2D" parent="OZD/Dz1"]
+visible = false
+z_index = 3
+position = Vector2(14024, 12911)
+scale = Vector2(1.57651, 1.92561)
+texture = ExtResource("26_mqtto")
+
+[node name="Krzaki-suche2cz" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(14220, 12896)
+scale = Vector2(2.59255, 2.43197)
+texture = ExtResource("27_xkl18")
+
+[node name="Krzaki-suche2cz2" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(14904, 12807)
+scale = Vector2(1.92433, 1.79284)
+texture = ExtResource("27_xkl18")
+
+[node name="Krzaki-suche2cz4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(21344, 13004)
+scale = Vector2(2.6625, 2.41971)
+texture = ExtResource("27_xkl18")
+
+[node name="Krzaki-suche2cz5" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(20668, 13049)
+scale = Vector2(2.12955, 1.88913)
+texture = ExtResource("27_xkl18")
+
+[node name="Krzaki-suche2cz6" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(20427, 12997)
+scale = Vector2(2.12955, 1.88913)
+texture = ExtResource("27_xkl18")
+
+[node name="Krzaki-suche2cz3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 5
+position = Vector2(16720, 12913)
+scale = Vector2(1.92433, 1.79284)
+texture = ExtResource("27_xkl18")
+
+[node name="OzGrab" parent="OZD/Dz1" instance=ExtResource("4_70and")]
+z_index = 6
+position = Vector2(15865, 12455)
+
+[node name="OzGrab2" parent="OZD/Dz1" instance=ExtResource("4_70and")]
+z_index = 6
+position = Vector2(16016, 12656)
+
+[node name="OzGrab3" parent="OZD/Dz1" instance=ExtResource("4_70and")]
+z_index = 6
+position = Vector2(15989, 12894)
+
+[node name="OzGrab4" parent="OZD/Dz1" instance=ExtResource("4_70and")]
+z_index = 6
+position = Vector2(16033, 12896)
+
+[node name="CzzernDzik11" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15657, 12477)
+rotation = 3.14159
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik12" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15729, 12473)
+rotation = 3.14159
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik28" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16266, 12675)
+rotation = 3.14159
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik35" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16048, 12986)
+rotation = 6.28318
+scale = Vector2(0.689898, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik48" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15819, 12970)
+rotation = 7.85397
+scale = Vector2(0.689898, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik49" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15819, 12966)
+rotation = 7.06857
+scale = Vector2(0.689898, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik37" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17509, 12897)
+rotation = 7.85397
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik39" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17524, 12897)
+rotation = 7.12387
+scale = Vector2(0.34688, 0.73342)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik40" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17512, 12903)
+rotation = 6.21712
+scale = Vector2(0.34688, 0.73342)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik38" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17440, 12897)
+rotation = 10.9956
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik43" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17856, 12810)
+rotation = 10.9956
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik50" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18492, 12600)
+rotation = 12.5664
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik51" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18552, 12593)
+rotation = 12.8282
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik54" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18584, 12598)
+rotation = 12.8282
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik52" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18429, 12667)
+rotation = 11.2574
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik53" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18404, 12692)
+rotation = 10.9956
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik56" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18960, 12616)
+rotation = 12.0428
+scale = Vector2(1.15345, 1.71311)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik57" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19040, 12702)
+rotation = 10.9956
+scale = Vector2(1.15345, 1.71311)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik55" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(18404, 12913)
+rotation = 10.9956
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik58" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19552, 12754)
+rotation = 12.5664
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik59" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19491, 12739)
+rotation = 14.1371
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik60" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19384, 12643)
+rotation = 12.5664
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik61" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19407, 12497)
+rotation = 14.1371
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik66" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19968, 12195)
+rotation = 12.0428
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik62" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19600, 12585)
+rotation = 17.2787
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik63" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19594, 12680)
+rotation = 17.2787
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik64" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19448, 12629)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik65" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(19608, 12424)
+rotation = 23.5619
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik44" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17927, 12810)
+rotation = 14.1371
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik47" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17930, 12832)
+rotation = 12.8282
+scale = Vector2(0.405672, 1.20335)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik45" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17985, 12929)
+rotation = 14.1371
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik46" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17856, 12949)
+rotation = 10.9956
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik41" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17576, 12996)
+rotation = 13.8071
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik42" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 7
+position = Vector2(17501, 12976)
+rotation = 12.5806
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik36" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16272, 12952)
+rotation = 4.71238
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik29" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16456, 12611)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik33" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16344, 12611)
+rotation = 4.71238
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik34" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16132, 12535)
+rotation = 4.71238
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik13" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15520, 12340)
+rotation = -1.5708
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik14" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15536, 12347)
+rotation = -1.8326
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik15" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15824, 12368)
+rotation = 2.09439
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik16" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15840, 12260)
+rotation = 2.09439
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik17" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15920, 12119)
+rotation = 1.83259
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik30" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15533.9, 12359.8)
+rotation = -1.44714
+scale = Vector2(1.05117, 0.665997)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik26" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15754, 12462)
+rotation = 1.57079
+scale = Vector2(0.314939, 0.433432)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik27" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15707, 12468)
+rotation = -2.0944
+scale = Vector2(0.314939, 0.433432)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik31" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15595.9, 12460.8)
+rotation = 2.54741
+scale = Vector2(0.55377, 0.610675)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik32" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15593, 12460)
+rotation = 2.54741
+scale = Vector2(0.55377, 0.610675)
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik18" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15992, 12024)
+rotation = 3.14159
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik19" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(15880, 12102)
+rotation = 2.35619
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik20" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16166, 12045)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik22" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16192, 12032)
+rotation = 1.83259
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik23" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16208, 11975)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik24" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16256, 11859)
+rotation = 1.57079
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik25" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16187, 12057)
+rotation = 2.09439
+texture = ExtResource("25_iteq5")
+
+[node name="CzzernDzik21" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(16068, 12056)
+rotation = -1.8326
+texture = ExtResource("25_iteq5")
+
+[node name="Kamien-18" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(19917, 12146)
+texture = ExtResource("28_e1ij3")
+
+[node name="Krzaki-15" type="Sprite2D" parent="OZD/Dz1"]
+position = Vector2(18040, 12920)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-16" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(18368, 12919)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-17" type="Sprite2D" parent="OZD/Dz1"]
+z_index = 1
+position = Vector2(21266, 13029)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-27" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(21009, 12896)
+scale = Vector2(1.38637, 1.51559)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-18" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(21116, 13018)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-19" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(20460, 13018)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-20" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(20789, 13148)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-21" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(21090, 12883)
+scale = Vector2(1.64456, 2.50703)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-26" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(20965, 13004)
+scale = Vector2(2.48241, 3.00065)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-22" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(20339, 12716)
+scale = Vector2(1.64456, 1.88444)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-23" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(20555, 12969)
+scale = Vector2(1.64456, 1.88444)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-24" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(20723, 12965)
+scale = Vector2(2.54415, 3.18597)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-25" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(20264, 12570)
+rotation = 0.179638
+scale = Vector2(1.73051, 2.29657)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(20953, 12985)
+scale = Vector2(2.31053, 2.76508)
+texture = ExtResource("30_3e0ss")
+
+[node name="Megdrzew" type="Node2D" parent="OZD/Dz1"]
+position = Vector2(-163, 242)
+rotation = -0.0113738
+scale = Vector2(1.00093, 1.00289)
+
+[node name="Krzaki-26" type="Sprite2D" parent="OZD/Dz1/Megdrzew"]
+z_index = -2
+position = Vector2(20454.4, 12771.4)
+rotation = 0.513398
+scale = Vector2(1.99015, 2.21947)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche2" type="Sprite2D" parent="OZD/Dz1/Megdrzew"]
+z_index = -2
+position = Vector2(20454.4, 12761.4)
+rotation = 0.513398
+scale = Vector2(1.95958, 2.44305)
+texture = ExtResource("30_3e0ss")
+
+[node name="Megdrzew2" type="Node2D" parent="OZD/Dz1"]
+position = Vector2(26725, 13839)
+rotation = -0.0113738
+scale = Vector2(1.00093, 1.00289)
+
+[node name="Krzaki-26" type="Sprite2D" parent="OZD/Dz1/Megdrzew2"]
+z_index = -2
+position = Vector2(20454.4, 12771.4)
+rotation = 0.513398
+scale = Vector2(1.99015, 2.21947)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche2" type="Sprite2D" parent="OZD/Dz1/Megdrzew2"]
+z_index = -2
+position = Vector2(20454.4, 12761.4)
+rotation = 0.513398
+scale = Vector2(1.95958, 2.44305)
+texture = ExtResource("30_3e0ss")
+
+[node name="Krzaki-28" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(25445, 13878)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-29" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(25774, 14008)
+texture = ExtResource("29_3sb3q")
+
+[node name="Krzaki-30" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(26075, 13743)
+scale = Vector2(1.64456, 2.50703)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-31" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(25950, 13864)
+scale = Vector2(2.48241, 3.00065)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-32" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(27177, 13911)
+scale = Vector2(1.64456, 1.88444)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-33" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(25540, 13829)
+scale = Vector2(1.64456, 1.88444)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-34" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(25708, 13825)
+scale = Vector2(2.54415, 3.18597)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-35" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -1
+position = Vector2(26924, 13803)
+rotation = 0.179638
+scale = Vector2(1.73051, 2.29657)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche2" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -2
+position = Vector2(25938, 13845)
+scale = Vector2(2.31053, 2.76508)
+texture = ExtResource("30_3e0ss")
+
+[node name="Megdrzew3" type="Node2D" parent="OZD/Dz1"]
+position = Vector2(5986, 1116)
+rotation = -0.0113738
+scale = Vector2(1.00093, 1.00289)
+
+[node name="Krzaki-26" type="Sprite2D" parent="OZD/Dz1/Megdrzew3"]
+z_index = -2
+position = Vector2(20454.4, 12771.4)
+rotation = 0.513398
+scale = Vector2(1.99015, 2.21947)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche2" type="Sprite2D" parent="OZD/Dz1/Megdrzew3"]
+z_index = -2
+position = Vector2(20454.4, 12761.4)
+rotation = 0.513398
+scale = Vector2(1.95958, 2.44305)
+texture = ExtResource("30_3e0ss")
+
+[node name="Megdrzew4" type="Node2D" parent="OZD/Dz1"]
+position = Vector2(31710, 14699)
+rotation = -0.0113738
+scale = Vector2(1.00093, 1.00289)
+
+[node name="Krzaki-26" type="Sprite2D" parent="OZD/Dz1/Megdrzew4"]
+z_index = -2
+position = Vector2(20454.4, 12771.4)
+rotation = 0.513398
+scale = Vector2(1.99015, 2.21947)
+texture = ExtResource("23_ise2u")
+
+[node name="Krzaki-suche2" type="Sprite2D" parent="OZD/Dz1/Megdrzew4"]
+z_index = -2
+position = Vector2(20454.4, 12761.4)
+rotation = 0.513398
+scale = Vector2(1.95958, 2.44305)
+texture = ExtResource("30_3e0ss")
+
+[node name="Krzak2" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(20968, 12909)
+scale = Vector2(3.6994, 3.99147)
+texture = ExtResource("31_2cgwa")
+
+[node name="Krzak5" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(25205, 13777)
+scale = Vector2(3.6994, 3.99147)
+texture = ExtResource("31_2cgwa")
+
+[node name="Krzak3" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(20333, 12671)
+scale = Vector2(3.6994, 3.99147)
+texture = ExtResource("31_2cgwa")
+
+[node name="Krzak" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(20512, 12956)
+scale = Vector2(3.27338, 2.79597)
+texture = ExtResource("32_4xgoo")
+
+[node name="Krzak4" type="Sprite2D" parent="OZD/Dz1"]
+z_index = -3
+position = Vector2(21216, 12962)
+scale = Vector2(3.27338, 2.79597)
+texture = ExtResource("32_4xgoo")
+
+[node name="TrawaDzik2" type="Sprite2D" parent="OZD"]
+z_index = 2
+position = Vector2(14832, 12835)
+texture = ExtResource("33_ygsch")
+
+[node name="TrawaDzik6" type="Sprite2D" parent="OZD"]
+z_index = 2
+position = Vector2(16367, 12336)
+texture = ExtResource("33_ygsch")
+
+[node name="TrawaDzik" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(14440, 12924)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik5" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(14608, 12924)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik7" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(17712, 12943)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik7" type="Sprite2D" parent="OZD/TrawaDzik7"]
+z_index = 1
+position = Vector2(19933, 11607)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik8" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(18128, 12940)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik9" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(18368, 12940)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik10" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(18648, 12537)
+scale = Vector2(0.99728, 1.15775)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik4" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(14136, 12939)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik3" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(14256, 12939)
+rotation = -0.261799
+scale = Vector2(0.482383, 1.1269)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaPathdzik" type="Sprite2D" parent="OZD"]
+z_index = 2
+position = Vector2(15056, 12791)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik2" type="Sprite2D" parent="OZD"]
+z_index = 2
+position = Vector2(15184, 12790)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik6" type="Sprite2D" parent="OZD"]
+z_index = 2
+position = Vector2(17330, 12878)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik3" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(16848, 12949)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik7" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(17083, 12949)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik4" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(18880, 12540)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik5" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(18680, 12540)
+texture = ExtResource("35_831nb")
+
+[node name="ZiemiaDzik" type="Sprite2D" parent="OZD"]
+position = Vector2(14136, 12940)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik4" type="Sprite2D" parent="OZD"]
+position = Vector2(14416, 12929)
+texture = ExtResource("36_gcahc")
+
+[node name="TrawaDzik" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(6784, 114)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik2" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(7008, 119)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik3" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(11800, 821)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik4" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(12032, 821)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik5" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(12087, 823)
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik6" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(12574.7, 765.778)
+rotation = -0.389148
+texture = ExtResource("34_bbvwb")
+
+[node name="TrawaDzik7" type="Sprite2D" parent="OZD/ZiemiaDzik4"]
+z_index = 1
+position = Vector2(12428.7, 829.778)
+rotation = -0.389148
+texture = ExtResource("34_bbvwb")
+
+[node name="ZiemiaDzik5" type="Sprite2D" parent="OZD"]
+position = Vector2(14608, 12929)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik11" type="Sprite2D" parent="OZD"]
+position = Vector2(18664, 12540)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik12" type="Sprite2D" parent="OZD"]
+position = Vector2(18880, 12543)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik13" type="Sprite2D" parent="OZD"]
+position = Vector2(18280, 12942)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik14" type="Sprite2D" parent="OZD"]
+position = Vector2(18112, 12940)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik21" type="Sprite2D" parent="OZD"]
+position = Vector2(21053, 13099)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik22" type="Sprite2D" parent="OZD"]
+position = Vector2(21208, 13051)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik23" type="Sprite2D" parent="OZD"]
+position = Vector2(20838, 13178)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik24" type="Sprite2D" parent="OZD"]
+position = Vector2(20620, 13081)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik25" type="Sprite2D" parent="OZD"]
+position = Vector2(20461, 13039)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik15" type="Sprite2D" parent="OZD"]
+position = Vector2(17712, 12946)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik16" type="Sprite2D" parent="OZD"]
+position = Vector2(17096, 12963)
+texture = ExtResource("36_gcahc")
+
+[node name="TrawaPathdzik8" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(13856, 12176)
+texture = ExtResource("35_831nb")
+
+[node name="ZiemiaDzik18" type="Sprite2D" parent="OZD"]
+position = Vector2(13840, 12176)
+texture = ExtResource("36_gcahc")
+
+[node name="TrawaPathdzik9" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(13608, 11824)
+texture = ExtResource("35_831nb")
+
+[node name="TrawaPathdzik10" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(13376, 11824)
+texture = ExtResource("35_831nb")
+
+[node name="ZiemiaDzik19" type="Sprite2D" parent="OZD"]
+position = Vector2(13608, 11824)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik20" type="Sprite2D" parent="OZD"]
+position = Vector2(13400, 11824)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik17" type="Sprite2D" parent="OZD"]
+position = Vector2(16856, 12964)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik8" type="Sprite2D" parent="OZD"]
+position = Vector2(15055, 12800)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik10" type="Sprite2D" parent="OZD"]
+position = Vector2(14864, 12854)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik9" type="Sprite2D" parent="OZD"]
+position = Vector2(15173, 12799)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik7" type="Sprite2D" parent="OZD"]
+z_index = 1
+position = Vector2(14712, 12976)
+rotation = -1.57079
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik6" type="Sprite2D" parent="OZD"]
+position = Vector2(14264, 12942)
+texture = ExtResource("36_gcahc")
+
+[node name="ZiemiaDzik2" type="Sprite2D" parent="OZD"]
+position = Vector2(14262, 12939)
+rotation = -0.261799
+scale = Vector2(0.497108, 0.659872)
+texture = ExtResource("36_gcahc")
+
+[node name="Kamien" type="Sprite2D" parent="OZD"]
+z_index = -1
+position = Vector2(14808, 12808)
+texture = ExtResource("37_dp5jn")
+
+[node name="Kamien2" type="Sprite2D" parent="OZD"]
+z_index = -1
+position = Vector2(17397, 12855)
+texture = ExtResource("37_dp5jn")
+
+[node name="Kamien3" type="Sprite2D" parent="OZD"]
+z_index = -1
+position = Vector2(18256, 12926)
+texture = ExtResource("37_dp5jn")
+
+[node name="Krzaki-sucheCz" type="Sprite2D" parent="OZD"]
+visible = false
+z_index = 1
+position = Vector2(14042.1, 12881.2)
+scale = Vector2(2.78355, 2.95668)
+texture = ExtResource("38_p1uc1")
+
+[node name="FilOzd" type="Node2D" parent="OZD"]
+position = Vector2(20574, 12981)
+rotation = -0.944571
+scale = Vector2(1.00445, 1.70807)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd"]
+z_index = 1
+position = Vector2(1.76881, -19.5393)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("39_w14d5")
+
+[node name="FilOzd3" type="Node2D" parent="OZD"]
+position = Vector2(20782, 13080)
+rotation = -0.700151
+scale = Vector2(1.01372, 1.32555)
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="OZD/FilOzd3"]
+position = Vector2(8.70268, -16.095)
+rotation = 0.103965
+scale = Vector2(1.052, 1.14144)
+texture = ExtResource("40_f3ql8")
+
+[node name="Kolumna-glowna2" type="Sprite2D" parent="OZD/FilOzd3"]
+position = Vector2(2945.4, 2576.54)
+rotation = -0.210545
+scale = Vector2(1.35677, 1.6161)
+texture = ExtResource("40_f3ql8")
+
+[node name="Kolumna-glowna3" type="Sprite2D" parent="OZD/FilOzd3"]
+position = Vector2(4060.61, 3372.06)
+rotation = 1.89198
+scale = Vector2(1.74558, 3.78308)
+texture = ExtResource("40_f3ql8")
+
+[node name="Kolumna-glowna4" type="Sprite2D" parent="OZD/FilOzd3"]
+position = Vector2(4429.28, 3588.89)
+rotation = 0.331613
+scale = Vector2(1.64521, 2.5048)
+texture = ExtResource("40_f3ql8")
+
+[node name="FilOzd4" type="Node2D" parent="OZD"]
+position = Vector2(20673, 12933)
+rotation = 1.27515
+scale = Vector2(0.493752, 0.758465)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd4"]
+z_index = 1
+position = Vector2(8, -17)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("39_w14d5")
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="OZD/FilOzd4"]
+position = Vector2(-1.30174, -37.0196)
+scale = Vector2(0.966303, 0.865151)
+texture = ExtResource("40_f3ql8")
+
+[node name="FilOzd5" type="Node2D" parent="OZD"]
+position = Vector2(20949, 13053)
+rotation = 1.27515
+scale = Vector2(0.986997, 1.39148)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd5"]
+z_index = 1
+position = Vector2(8, -17)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("39_w14d5")
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="OZD/FilOzd5"]
+position = Vector2(-1.30174, -37.0196)
+scale = Vector2(0.966303, 0.865151)
+texture = ExtResource("40_f3ql8")
+
+[node name="FilOzd6" type="Node2D" parent="OZD"]
+position = Vector2(20832, 13000)
+rotation = -1.12617
+scale = Vector2(0.599357, 0.672035)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd6"]
+z_index = 1
+position = Vector2(8, -17)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("39_w14d5")
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="OZD/FilOzd6"]
+position = Vector2(-1.30174, -37.0196)
+scale = Vector2(0.966303, 0.865151)
+texture = ExtResource("40_f3ql8")
+
+[node name="FilOzd7" type="Node2D" parent="OZD"]
+position = Vector2(20408, 12191)
+rotation = -1.12617
+scale = Vector2(0.599357, 0.672035)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd7"]
+z_index = 1
+position = Vector2(110.577, -145.884)
+rotation = -0.379938
+scale = Vector2(0.677828, -0.717746)
+texture = ExtResource("39_w14d5")
+
+[node name="Kolumna-2-glowna2" type="Sprite2D" parent="OZD/FilOzd7"]
+z_index = 1
+position = Vector2(68.6777, -175.88)
+rotation = -0.379938
+scale = Vector2(0.677828, -0.717746)
+texture = ExtResource("39_w14d5")
+
+[node name="FilOzd2" type="Node2D" parent="OZD"]
+position = Vector2(19907, 15113)
+scale = Vector2(1, 1.04146)
+
+[node name="Kolumna-2-glowna" type="Sprite2D" parent="OZD/FilOzd2"]
+z_index = 1
+position = Vector2(8, -17)
+scale = Vector2(1.30642, 1.03885)
+texture = ExtResource("39_w14d5")
+
+[node name="Kolumna-glowna" type="Sprite2D" parent="OZD/FilOzd2"]
+position = Vector2(-8, -4)
+scale = Vector2(0.966303, 0.865151)
+texture = ExtResource("40_f3ql8")
+
+[node name="Pillar" parent="OZD" instance=ExtResource("12_uytng")]
+z_index = -1
+position = Vector2(13384, 11728)
+
+[node name="FilOzd2" parent="OZD/Pillar" instance=ExtResource("13_mihgn")]
+
+[node name="Spike" parent="." instance=ExtResource("8_fak7k")]
+position = Vector2(33040, 8448)
+scale = Vector2(1.72547, 2.13691)
+
+[node name="Spike2" parent="." instance=ExtResource("8_fak7k")]
+position = Vector2(33912, 8167)
+scale = Vector2(1.72547, 2.13691)
+
+[node name="HealthPack" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33336, 8128)
+
+[node name="HealthPack4" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33728, 8520)
+
+[node name="HealthPack5" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33617, 8520)
+
+[node name="HealthPack6" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33968, 8536)
+
+[node name="HealthPack7" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34112, 8512)
+
+[node name="HealthPack8" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34112, 8512)
+
+[node name="HealthPack2" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34568, 7944)
+
+[node name="HealthPack3" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33452, 8536)
