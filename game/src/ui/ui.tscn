@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -11,13 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://md4b4rduxwaf" path="res://assets/sprites/throwables/bronze.png" id="9_7ow6w"]
 [ext_resource type="Texture2D" uid="uid://oc2hf7ojfhde" path="res://assets/sprites/throwables/copper.png" id="10_avsow"]
 [ext_resource type="Texture2D" uid="uid://dlbegmst44h3y" path="res://assets/sprites/throwables/stone.png" id="11_srjus"]
-
-[sub_resource type="Gradient" id="Gradient_4g2bo"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ouk5"]
-gradient = SubResource("Gradient_4g2bo")
-width = 40
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -107,121 +100,44 @@ offset_bottom = 987.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Throwables" type="Control" parent="."]
+[node name="in_game_ui" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 50.0
-offset_top = 670.0
-offset_right = 50.0
-offset_bottom = 670.0
 
-[node name="Spear" type="TextureRect" parent="Throwables"]
+[node name="Spear" type="TextureRect" parent="in_game_ui"]
 visible = false
 layout_mode = 0
-offset_right = 300.0
-offset_bottom = 700.0
+offset_left = 122.0
+offset_top = 583.0
+offset_right = 422.0
+offset_bottom = 1283.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_sbj7u")
 
-[node name="Stone" type="TextureRect" parent="Throwables"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 175.0
-offset_right = 152.0
-offset_bottom = 303.0
-texture = ExtResource("11_srjus")
-
-[node name="Copper" type="TextureRect" parent="Throwables"]
+[node name="Bronze" type="TextureRect" parent="in_game_ui"]
 visible = false
 layout_mode = 0
-offset_left = 24.0
-offset_top = 175.0
-offset_right = 152.0
-offset_bottom = 303.0
-texture = ExtResource("10_avsow")
-
-[node name="Bronze" type="TextureRect" parent="Throwables"]
-visible = false
-layout_mode = 0
-offset_left = 24.0
-offset_top = 175.0
-offset_right = 152.0
-offset_bottom = 303.0
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
 texture = ExtResource("9_7ow6w")
 
-[node name="BossHPBar" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 150.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BossHPBar"]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 1920.0
-offset_bottom = 50.0
-bbcode_enabled = true
-text = "[center]Boss[/center]"
-
-[node name="ColorRect" type="ColorRect" parent="BossHPBar"]
-layout_mode = 0
-offset_left = 610.0
-offset_top = 67.0
-offset_right = 1310.0
-offset_bottom = 97.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="BossHPBar/ColorRect"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 695.0
-offset_bottom = 25.0
-color = Color(1, 0, 0, 1)
-
-[node name="BossWarnings" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="WarningTimer" type="Timer" parent="BossWarnings"]
-wait_time = 0.5
-
-[node name="WarningTop" type="TextureRect" parent="BossWarnings"]
+[node name="Copper" type="TextureRect" parent="in_game_ui"]
 visible = false
 layout_mode = 0
-offset_left = 1920.0
-offset_right = 1960.0
-offset_bottom = 1920.0
-rotation = 1.5708
-texture = SubResource("GradientTexture1D_4ouk5")
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
+texture = ExtResource("10_avsow")
 
-[node name="WarningRight" type="TextureRect" parent="BossWarnings"]
-visible = false
+[node name="Stone" type="TextureRect" parent="in_game_ui"]
 layout_mode = 0
-offset_left = 1920.0
-offset_top = 1080.0
-offset_right = 1960.0
-offset_bottom = 2160.0
-rotation = 3.14159
-texture = SubResource("GradientTexture1D_4ouk5")
-
-[node name="WarningBottom" type="TextureRect" parent="BossWarnings"]
-visible = false
-layout_mode = 0
-offset_top = 1080.0
-offset_right = 40.0
-offset_bottom = 3000.0
-rotation = -1.5708
-texture = SubResource("GradientTexture1D_4ouk5")
-
-[node name="WarningLeft" type="TextureRect" parent="BossWarnings"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 1080.0
-texture = SubResource("GradientTexture1D_4ouk5")
-
-[connection signal="timeout" from="BossWarnings/WarningTimer" to="." method="_on_warning_timer_timeout"]
+offset_left = 149.0
+offset_top = 770.0
+offset_right = 277.0
+offset_bottom = 898.0
+texture = ExtResource("11_srjus")
 
 [editable path="DialogueInterface/DynamicDiaogueBox"]
 [editable path="DialogueInterface/Narrator"]
