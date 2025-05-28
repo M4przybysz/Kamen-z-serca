@@ -1,7 +1,10 @@
 extends Control
 
+@export var main_menu: Control
+
 func _on_exit_button_down() -> void:
-	get_tree().quit()
+	hide()
+	main_menu.show()
 
 func _on_resume_button_down() -> void:
 	hide()

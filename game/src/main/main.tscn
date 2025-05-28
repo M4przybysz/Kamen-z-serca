@@ -1506,19 +1506,22 @@ main = NodePath("../../..")
 process_mode = 2
 layer = 2
 
-[node name="PauseMenu" parent="Menus" instance=ExtResource("3_apl8s")]
+[node name="PauseMenu" parent="Menus" node_paths=PackedStringArray("main_menu") instance=ExtResource("3_apl8s")]
 visible = false
+main_menu = NodePath("../MainMenu")
 
-[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("5_saqgk")]
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("gameplay", "main_menu") instance=ExtResource("5_saqgk")]
 visible = false
 gameplay = NodePath("../../Gameplay")
+main_menu = NodePath("../MainMenu")
 
 [node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
 visible = false
 main = NodePath("../..")
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("2_s1k2l")]
+[node name="MainMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("2_s1k2l")]
 visible = false
+gameplay = NodePath("../../Gameplay")
 
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
