@@ -36,8 +36,9 @@ main_menu = NodePath("../MainMenu")
 visible = false
 main = NodePath("../..")
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("2_s1k2l")]
+[node name="MainMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("2_s1k2l")]
 visible = false
+gameplay = NodePath("../../Gameplay")
 
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 

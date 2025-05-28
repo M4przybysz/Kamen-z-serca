@@ -20,6 +20,7 @@ func _on_tryagain_button_down() -> void:
 	$Revive.hide() 
 	$Tryagain.hide()
 	$RUSure.show()
+
 func _on_no_button_down() -> void:
 	a = false
 	b = false
@@ -30,11 +31,15 @@ func _on_no_button_down() -> void:
 	$Tryagain.show()
 
 func _on_yes_button_down() -> void:
-	if a == true:
+	$RUSure.hide()
+	$Exit.show()
+	$Label.show()
+	$Revive.show() 
+	$Tryagain.show()
+	if b == true:
 		hide()
 		main_menu.show()
-		
-	elif b == true:
+	elif a == true:
 		hide()
 		get_tree().paused = false
 		get_tree().reload_current_scene()
