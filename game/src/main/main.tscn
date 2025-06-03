@@ -1525,66 +1525,6 @@ gameplay = NodePath("../../Gameplay")
 
 [node name="Music" parent="." instance=ExtResource("7_fc0gw")]
 
-[node name="Kamien" type="Sprite2D" parent="."]
-position = Vector2(10735, 819)
-rotation = -3.14159
-scale = Vector2(0.569195, 0.552171)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien2" type="Sprite2D" parent="."]
-position = Vector2(9232, 977)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien3" type="Sprite2D" parent="."]
-position = Vector2(8823, 1321)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien4" type="Sprite2D" parent="."]
-position = Vector2(8758, 1460)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien5" type="Sprite2D" parent="."]
-position = Vector2(8751, 1601)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien6" type="Sprite2D" parent="."]
-position = Vector2(9768, 1170)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien7" type="Sprite2D" parent="."]
-position = Vector2(9825, 1048)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien9" type="Sprite2D" parent="."]
-position = Vector2(9944, 811)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien10" type="Sprite2D" parent="."]
-position = Vector2(10013, 690)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien8" type="Sprite2D" parent="."]
-position = Vector2(9872, 950)
-rotation = -3.14159
-scale = Vector2(-0.398746, 0.513456)
-texture = ExtResource("9_2pipl")
-
 [editable path="Gameplay"]
 [editable path="Gameplay/Beta"]
 [editable path="Gameplay/Beta/OZD/Dz1/Schod ozd4"]
