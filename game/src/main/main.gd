@@ -5,8 +5,12 @@ extends Node
 @onready var main_menu: Control = $Menus/MainMenu
 @onready var end_screen: Control = $Menus/EndScreen
 
+@onready var las_walka: AudioStreamPlayer = $"Musica/LasWalka1"
+@onready var las_spokoj: AudioStreamPlayer = $"Musica/LasSpokoj1"
+
 @export var player: CharacterBody2D
 @export var gameplay: Node2D
+var combat_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,3 +41,19 @@ func show_end_screen():
 	player.is_spear_unlocked = true
 	gameplay.revive_position = Vector2(11225, -8995)
 	get_tree().paused = true
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("mummy_hurtbox"):
+		combat_counter+=1
+		print(combat_counter)
+		if combat_counter > 0:
+			las_spokoj.volume_db = -80
+			las_walka.volume_db = 0
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("mummy_hurtbox"):
+		combat_counter-=1
+		print(combat_counter)
+		if combat_counter <= 0:
+			las_spokoj.volume_db = 0
+			las_walka.volume_db = -80
