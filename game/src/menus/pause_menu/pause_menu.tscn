@@ -18,7 +18,7 @@ offset_top = 193.0
 offset_right = 1210.0
 offset_bottom = 273.0
 theme_override_font_sizes/font_size = 50
-text = "Wyjdź z gry"
+text = "Wróć do Menu"
 
 [node name="Resume" type="Button" parent="."]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b4363e8k1pf0c"]
+[gd_scene load_steps=44 format=3 uid="uid://b4363e8k1pf0c"]
 
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="1_3c6d5"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="2_2s78a"]
@@ -9,17 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="7_m7ae4"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="8_fak7k"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="9_cn73g"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="10_k5gon"]
+[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="10_k5gon"]
 [ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="11_50dmx"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="12_uytng"]
 [ext_resource type="PackedScene" uid="uid://cq67h5a3g88ui" path="res://src/krzesimirowe_sceny/fil_ozd.tscn" id="13_mihgn"]
-[ext_resource type="PackedScene" path="res://src/templates/puzzles/breakable_wall.tscn" id="14_rntfh"]
+[ext_resource type="PackedScene" uid="uid://c84uj4l8am2lt" path="res://src/templates/puzzles/breakable_wall.tscn" id="14_rntfh"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="15_yvdq7"]
 [ext_resource type="Texture2D" uid="uid://dr67rxq84xahe" path="res://assets/sprites/environment/Platformy i teren/skal 1.png" id="16_ptdho"]
 [ext_resource type="Texture2D" uid="uid://ouuvnt12wb1m" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-3.png" id="17_y4emi"]
 [ext_resource type="Texture2D" uid="uid://crtf3q5tl4ytd" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/byk_jaskinia.png" id="18_1ty7u"]
 [ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="19_xmnkw"]
-[ext_resource type="PackedScene" path="res://assets/sprites/environment/schod_ozd.tscn" id="20_iwe5a"]
+[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="20_iwe5a"]
 [ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="21_wopbi"]
 [ext_resource type="Texture2D" uid="uid://p5yoodjxipwt" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-3.png" id="22_xytma"]
 [ext_resource type="Texture2D" uid="uid://nr8dcotl3ss8" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-2.png" id="23_ise2u"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cl7iei4wgeq2e" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-sucheCZ.png" id="38_p1uc1"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="39_w14d5"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="40_f3ql8"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="41_efofl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_el4hk"]
 
@@ -166,6 +167,18 @@ scale = Vector2(1.17748, 0.178632)
 [node name="Block14" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
 position = Vector2(31848, 8664)
 scale = Vector2(1.17748, 0.178632)
+
+[node name="Block108" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(33016, 8464)
+scale = Vector2(0.229409, 0.472307)
+
+[node name="Block109" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(33216, 8200)
+scale = Vector2(0.760903, 0.157169)
+
+[node name="Block110" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
+position = Vector2(34488, 7996)
+scale = Vector2(0.760903, 0.157169)
 
 [node name="Block5" parent="Enviroment/LD/Level2Podzm/KLevel1" instance=ExtResource("1_3c6d5")]
 position = Vector2(33200, 8584)
@@ -4052,3 +4065,35 @@ z_index = -1
 position = Vector2(13384, 11728)
 
 [node name="FilOzd2" parent="OZD/Pillar" instance=ExtResource("13_mihgn")]
+
+[node name="Spike" parent="." instance=ExtResource("8_fak7k")]
+position = Vector2(33040, 8448)
+scale = Vector2(1.72547, 2.13691)
+
+[node name="Spike2" parent="." instance=ExtResource("8_fak7k")]
+position = Vector2(33912, 8167)
+scale = Vector2(1.72547, 2.13691)
+
+[node name="HealthPack" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33336, 8128)
+
+[node name="HealthPack4" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33728, 8520)
+
+[node name="HealthPack5" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33617, 8520)
+
+[node name="HealthPack6" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33968, 8536)
+
+[node name="HealthPack7" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34112, 8512)
+
+[node name="HealthPack8" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34112, 8512)
+
+[node name="HealthPack2" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(34568, 7944)
+
+[node name="HealthPack3" parent="." instance=ExtResource("41_efofl")]
+position = Vector2(33452, 8536)

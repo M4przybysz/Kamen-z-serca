@@ -1,9 +1,15 @@
-[gd_scene load_steps=45 format=3 uid="uid://bem0xf8p8cvhd"]
+[gd_scene load_steps=52 format=3 uid="uid://bem0xf8p8cvhd"]
 
+[ext_resource type="Script" path="res://src/levels/parallax_background.gd" id="1_46qi8"]
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="1_eibag"]
+[ext_resource type="Texture2D" uid="uid://bumv758icdkti" path="res://assets/Background/niebo.png" id="1_sairl"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="2_om41w"]
+[ext_resource type="Script" path="res://src/levels/clouds_paralax.gd" id="2_sr5oq"]
+[ext_resource type="Texture2D" uid="uid://ckyc5yvlprwdu" path="res://assets/Background/chura2.png" id="3_aig4g"]
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="3_rx068"]
+[ext_resource type="Texture2D" uid="uid://c6r2373olfx5n" path="res://assets/Background/chmura3.png" id="4_lbckg"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="5_eaew0"]
+[ext_resource type="Texture2D" uid="uid://cbjk6ef2kvkyx" path="res://assets/Background/chmura1.png" id="5_vtaro"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="6_w85h7"]
 [ext_resource type="Texture2D" uid="uid://dkg53p0oyf6q1" path="res://assets/sprites/environment/brown.png" id="7_m1wh5"]
 [ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="8_c7vtu"]
@@ -21,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://mpiwwwfe4es3" path="res://src/bosses/great_oak/great_oak.tscn" id="20_wijuu"]
 [ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="21_k80ta"]
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="21_muiwh"]
+[ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="22_xpo1j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -84,6 +91,51 @@ size = Vector2(100, 14)
 size = Vector2(20, 10)
 
 [node name="Alfa_v1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_46qi8")
+
+[node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-41, -805)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(2362.57, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarLandscape"]
+position = Vector2(1049.52, 657.708)
+scale = Vector2(0.35088, 0.38013)
+texture = ExtResource("1_sairl")
+
+[node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -1137)
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(3200, 0)
+script = ExtResource("2_sr5oq")
+cloud_speed = -25
+
+[node name="Chura2" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(841, 106)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_aig4g")
+
+[node name="Chmura3" type="Sprite2D" parent="ParallaxBackground/MiddleLandscape"]
+position = Vector2(1348, 1706)
+scale = Vector2(1, 1.123)
+texture = ExtResource("4_lbckg")
+
+[node name="Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-41, -805)
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(3000, 0)
+script = ExtResource("2_sr5oq")
+cloud_speed = -60
+
+[node name="Chmura1" type="Sprite2D" parent="ParallaxBackground/Clouds2"]
+position = Vector2(-801, 1475)
+scale = Vector2(0.651778, 0.651778)
+texture = ExtResource("5_vtaro")
+
+[node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-41, -805)
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -1591,8 +1643,12 @@ shape = SubResource("RectangleShape2D_gxmnd")
 [node name="Level2" type="Node2D" parent="Environment"]
 
 [node name="Block56" parent="Environment/Level2" instance=ExtResource("3_rx068")]
+position = Vector2(7360, -223)
+scale = Vector2(0.653286, 0.183152)
+
+[node name="Block238" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(7304, -223)
-scale = Vector2(0.636693, 0.183152)
+scale = Vector2(0.719656, 0.103409)
 
 [node name="Block57" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(7425, -171)
@@ -2614,8 +2670,24 @@ position = Vector2(13725, -373)
 scale = Vector2(1.02788, 4.14583)
 
 [node name="Block118" parent="Environment/Level3" instance=ExtResource("3_rx068")]
-position = Vector2(16110, -373)
-scale = Vector2(1.97083, 2.41802)
+position = Vector2(16112, 143)
+scale = Vector2(1.98355, 0.746396)
+
+[node name="Block201" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16024, -104)
+scale = Vector2(1.98355, 0.986396)
+
+[node name="Block202" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16616, 78)
+scale = Vector2(0.30759, 0.2436)
+
+[node name="Block119" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16114, -432)
+scale = Vector2(1.97829, 0.916577)
+
+[node name="Block203" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(16024, -351)
+scale = Vector2(1.97829, 0.916577)
 
 [node name="Block120" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(18500, -166)
@@ -2662,8 +2734,16 @@ position = Vector2(16114, -1132)
 scale = Vector2(1.05444, 2.80099)
 
 [node name="Block121" parent="Environment/Level3" instance=ExtResource("3_rx068")]
-position = Vector2(17626, 2517)
+position = Vector2(18128, 2522)
 scale = Vector2(7.49277, 0.777623)
+
+[node name="Block199" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(17435, 2560)
+scale = Vector2(7.49277, 0.777623)
+
+[node name="Block200" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+position = Vector2(17464, 2522)
+scale = Vector2(1.68513, 0.777623)
 
 [node name="Block123" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(17344, 1429)
@@ -3098,9 +3178,9 @@ scale = Vector2(0.857738, 0.149554)
 position = Vector2(15782, 1506)
 scale = Vector2(0.624336, 0.19223)
 
-[node name="Block68" parent="Environment/Level3" instance=ExtResource("3_rx068")]
+[node name="Block205" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(15897, 1345)
-scale = Vector2(0.418511, 0.540251)
+scale = Vector2(0.319452, 0.539077)
 
 [node name="Block69" parent="Environment/Level3" instance=ExtResource("3_rx068")]
 position = Vector2(16087, 1211)
@@ -3193,6 +3273,72 @@ physics_material_override = SubResource("PhysicsMaterial_a8bce")
 position = Vector2(0, -51)
 shape = SubResource("RectangleShape2D_ue20i")
 
+[node name="Block112" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block112"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block113" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block113"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block114" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block114"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block115" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block115"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block116" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block116"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
+[node name="Block204" type="StaticBody2D" parent="Environment/Level3"]
+position = Vector2(16688, 62)
+scale = Vector2(1, 2)
+collision_layer = 32
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block204"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_ue20i")
+
 [node name="Block83" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(14414, 1554)
 
@@ -3265,6 +3411,10 @@ physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block139" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(1632.23, 82)
+physics_material_override = SubResource("PhysicsMaterial_v3bg1")
+
+[node name="Block140" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
+position = Vector2(1635.16, 143.996)
 physics_material_override = SubResource("PhysicsMaterial_v3bg1")
 
 [node name="Block115" parent="Environment/Level 4" instance=ExtResource("3_rx068")]
@@ -3933,10 +4083,10 @@ texture = ExtResource("16_6g4ad")
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="MudMummy" parent="enemies" instance=ExtResource("17_lv4so")]
-position = Vector2(7847, 851)
+position = Vector2(7847, 820)
 
 [node name="MudMummy2" parent="enemies" instance=ExtResource("17_lv4so")]
-position = Vector2(8793, 855)
+position = Vector2(8793, 825)
 
 [node name="MudMummy3" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(12126, 1550)
@@ -4024,6 +4174,68 @@ position = Vector2(15842, 1484)
 
 [node name="DeathZone" parent="." instance=ExtResource("13_xofsb")]
 position = Vector2(0, 5000)
+
+[node name="Stones" type="Node2D" parent="."]
+
+[node name="Kamien" type="Sprite2D" parent="Stones"]
+position = Vector2(10735, 819)
+rotation = -3.14159
+scale = Vector2(0.569195, 0.552171)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien2" type="Sprite2D" parent="Stones"]
+position = Vector2(9232, 977)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien3" type="Sprite2D" parent="Stones"]
+position = Vector2(8823, 1321)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien4" type="Sprite2D" parent="Stones"]
+position = Vector2(8758, 1460)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien5" type="Sprite2D" parent="Stones"]
+position = Vector2(8751, 1601)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien6" type="Sprite2D" parent="Stones"]
+position = Vector2(9768, 1170)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien7" type="Sprite2D" parent="Stones"]
+position = Vector2(9825, 1048)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien9" type="Sprite2D" parent="Stones"]
+position = Vector2(9944, 811)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien10" type="Sprite2D" parent="Stones"]
+position = Vector2(10013, 690)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
+
+[node name="Kamien8" type="Sprite2D" parent="Stones"]
+position = Vector2(9872, 950)
+rotation = -3.14159
+scale = Vector2(-0.398746, 0.513456)
+texture = ExtResource("22_xpo1j")
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]

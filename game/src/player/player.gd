@@ -29,7 +29,7 @@ extends CharacterBody2D
 # Assign exportable variables <--- add more exportables if needed later
 @export var movement_speed: float = 350.0
 @export var jump_velocity: float = -550.0
-@export var knockback_force: Vector2 = Vector2(-1000, -100)
+@export var knockback_force: Vector2 = Vector2(-1000, -50)
 @export var knockback_boost: Vector2 = Vector2(12, 5)
 
 # Dictionaries
@@ -46,8 +46,9 @@ var dmg_dictionary = { # Disctionary used to determine the dmg taken by the play
 }
 
 # Coyote time variables
-var coyote_frames: float = 5  # How many in-air frames to allow jumping
+var coyote_frames: float = 7  # How many in-air frames to allow jumping
 var is_coyote: bool = false  # Track whether we're in coyote time or not
+var coyote_activated: bool = false
 
 # Dynamic playthrough variables
 var state: String = "idle"
@@ -111,8 +112,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	# Check coyote 
-	if !is_on_floor() && !is_jumping:
+	if !is_on_floor() && !is_jumping && !coyote_activated:
 		is_coyote = true
+		coyote_activated = true
 		kojot.start()
 
 #########################################
@@ -148,6 +150,7 @@ func state_machine() -> void:
 				else: animated_sprite.play(state)
 			"end_jump":
 				is_jumping = false
+				coyote_activated = false
 				if !animation_locked:
 					animated_sprite.play(state)
 					animation_locked = true
@@ -187,6 +190,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			state = "mid_jump"
 		"end_jump", "wing_attack", "throw_feather", "throw_spear", "end_slide":
 			state = "idle"
+		"use_shield", "shield_charge":
+			state = "movement"
 		"start_slide":
 			state = "mid_slide"
 		_:
@@ -199,7 +204,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _input(_event: InputEvent) -> void:
 	# Handle jumping
 	if Input.is_action_just_pressed("jump"):
-		if (state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump" || "mid_jump") && (is_on_floor() || is_coyote):
+		if (state == "idle" || state == "movement" || state == "end_slide" || state == "end_jump") && (is_on_floor() || is_coyote):
 			state = "start_jump"
 			jump()
 	
@@ -269,15 +274,15 @@ func flip_h():
 		grab_hand.target_position.x = 30
 		grab_check.target_position.x = 30
 		wing_attack_collision.position.x = 25
-		shield_collision.position.x = 25
-		shield_charge_collision.position.x = 35
+		shield_collision.position.x = 35
+		shield_charge_collision.position.x = 40
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		grab_hand.target_position.x = -30
 		grab_check.target_position.x = -30
 		wing_attack_collision.position.x = -25
-		shield_collision.position.x = -25
-		shield_charge_collision.position.x = -35
+		shield_collision.position.x = -35
+		shield_charge_collision.position.x = -40
 
 #########################################
 # Movement handling
@@ -285,6 +290,7 @@ func flip_h():
 func jump() -> void:
 	is_grabbing = false
 	is_jumping = true
+	is_coyote = false
 	velocity.y = jump_velocity
 
 func air_dash() -> void:

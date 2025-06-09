@@ -41,7 +41,7 @@ offset_top = 550.0
 offset_right = 1210.0
 offset_bottom = 630.0
 theme_override_font_sizes/font_size = 50
-text = "Zacznij od nowa"
+text = "Zacznij grę od nowa"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
@@ -52,6 +52,41 @@ offset_bottom = 780.0
 theme_override_font_sizes/font_size = 50
 text = "Wyjdź z gry"
 
+[node name="RUSure" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="RUSure"]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 301.0
+offset_right = 1171.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 60
+text = "Czy napewno?"
+
+[node name="Yes" type="Button" parent="RUSure"]
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 474.0
+offset_right = 1133.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 50
+text = "Tak"
+
+[node name="No" type="Button" parent="RUSure"]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 479.0
+offset_right = 878.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 50
+text = "Nie"
+
 [connection signal="button_down" from="Revive" to="." method="_on_revive_button_down"]
 [connection signal="button_down" from="Tryagain" to="." method="_on_tryagain_button_down"]
 [connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
+[connection signal="button_down" from="RUSure/Yes" to="." method="_on_yes_button_down"]
+[connection signal="button_down" from="RUSure/No" to="." method="_on_no_button_down"]
