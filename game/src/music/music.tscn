@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwwfucydt1x2p"]
-
-[ext_resource type="AudioStream" uid="uid://cjtbd6r5wqj4k" path="res://assets/sound/music/music_beginning.wav" id="1_5ifn1"]
-
-[node name="Music" type="AudioStreamPlayer"]
-process_mode = 3
-stream = ExtResource("1_5ifn1")
-autoplay = true
-bus = &"Music"

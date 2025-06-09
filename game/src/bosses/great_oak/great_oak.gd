@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 # Handling attack patterns
 #########################################
 func state_machine() -> void:
-	print(active_attack_pattern, active_attack_pattern[active_attack_index])
+	#print(active_attack_pattern, active_attack_pattern[active_attack_index])
 	
 	# Show correct attack warning
 	match active_attack_pattern[active_attack_index]:
@@ -116,7 +116,7 @@ func falling_acorns() -> void:
 func start_fight() -> void:
 	is_in_fight = true
 	attack_cooldown_timer.start()
-	ui.show_boss_hp_bar("GREAT OAK")
+	ui.show_boss_hp_bar("PRADAWNY DĄB")
 
 #########################################
 # HP handling
