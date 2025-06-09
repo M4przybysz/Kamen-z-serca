@@ -133,7 +133,6 @@ func print_scene(dynamic_dialogue_position:Vector2=Vector2(1320,500)) -> void:
 	print_line()
 
 func print_line() -> void:
-	print("sex")
 	if dialgue_line_index != dialogue_scene.size():
 		if dialogue_scene[dialgue_line_index][0] == "N":
 			narrator_placement.visible = true

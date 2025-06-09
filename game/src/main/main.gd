@@ -42,16 +42,19 @@ func show_end_screen():
 	gameplay.revive_position = Vector2(11225, -8995)
 	get_tree().paused = true
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("mummy_hurtbox"):
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("mud_mummy"):
 		combat_counter+=1
 		print(combat_counter)
 		if combat_counter > 0:
 			las_spokoj.volume_db = -80
 			las_walka.volume_db = 0
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.is_in_group("mummy_hurtbox"):
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("mud_mummy"):
 		combat_counter-=1
 		print(combat_counter)
 		if combat_counter <= 0:
