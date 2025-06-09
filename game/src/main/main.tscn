@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=22 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -12,11 +12,22 @@
 [ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="5_7afl8"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="AudioStream" uid="uid://6jpixbsybplc" path="res://assets/sound/music/drzewo spokój.mp3" id="7_sm4c8"]
+[ext_resource type="AudioStream" uid="uid://cusu168j3sbjv" path="res://assets/sound/music/drzewo walka.mp3" id="8_pwxx4"]
+[ext_resource type="AudioStream" uid="uid://bn0f5kl4vqo4o" path="res://assets/sound/music/las spokoj1.mp3" id="9_l6hkt"]
+[ext_resource type="AudioStream" uid="uid://c0q3qnfw2h6m6" path="res://assets/sound/music/las walka1.mp3" id="10_5mg8o"]
+[ext_resource type="Script" path="res://src/main/tree_triger_music.gd" id="11_351p3"]
 [ext_resource type="PackedScene" uid="uid://dwwfucydt1x2p" path="res://src/music/music.tscn" id="7_fc0gw"]
 [ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="9_0c2w1"]
 [ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="9_2pipl"]
 [ext_resource type="Texture2D" uid="uid://cqln8g0dr6eoj" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik.png" id="9_xkmbh"]
 [ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
+radius = 523.409
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24a2n"]
+size = Vector2(280.457, 559)
 
 [node name="Main" type="Node" node_paths=PackedStringArray("player", "gameplay")]
 process_mode = 3
@@ -27,6 +38,16 @@ gameplay = NodePath("Gameplay")
 [node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
+
+[node name="Player" parent="Gameplay" index="2"]
+position = Vector2(1177.29, -46.8699)
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
+shape = SubResource("CircleShape2D_klkfr")
 
 [node name="ResponsivePlatform20" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="122" instance=ExtResource("3_ybejy")]
 position = Vector2(31968, 8291)
@@ -1523,7 +1544,45 @@ main = NodePath("../..")
 visible = false
 gameplay = NodePath("../../Gameplay")
 
-[node name="Music" parent="." instance=ExtResource("7_fc0gw")]
+[node name="Musica" type="Node" parent="."]
+
+[node name="DrzewoSpokój" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("7_sm4c8")
+volume_db = -80.0
+autoplay = true
+bus = &"tree calm"
+parameters/looping = true
+
+[node name="LasWalka1" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("10_5mg8o")
+volume_db = -80.0
+autoplay = true
+bus = &"las fight"
+parameters/looping = true
+
+[node name="LasSpokoj1" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("9_l6hkt")
+autoplay = true
+bus = &"las calm"
+parameters/looping = true
+
+[node name="DrzewoWalka" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("8_pwxx4")
+volume_db = -80.0
+autoplay = true
+bus = &"tree fight"
+parameters/looping = true
+
+[node name="Node2D" type="Area2D" parent="Musica"]
+script = ExtResource("11_351p3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
+position = Vector2(22655.8, 894.5)
+shape = SubResource("RectangleShape2D_24a2n")
+
+[connection signal="area_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_exited" from="Musica/Node2D" to="Musica/Node2D" method="_on_node_2d_body_exited"]
 
 [editable path="Gameplay"]
 [editable path="Gameplay/Beta"]

@@ -1,6 +1,8 @@
 extends Control
 
 @onready var dialogue_interface: Control = $DialogueInterface
+@onready var drzewo_spokoj: AudioStreamPlayer = $"../../../Musica/DrzewoSpokój"
+@onready var drzewo_walka: AudioStreamPlayer = $"../../../Musica/DrzewoWalka"
 
 # Narrator Dialogue properities
 @onready var narrator: RichTextLabel = $DialogueInterface/Narrator/Control/RichTextLabel
@@ -144,6 +146,8 @@ func print_line() -> void:
 		dialogue_interface.visible = false
 		dialogue_on = false
 		player.movement_lock = false
+		drzewo_walka.volume_db = 0
+		drzewo_spokoj.volume_db = -80
 		emit_signal("start_oak_fight")
 		# main.show_end_screen() # show end screen
 

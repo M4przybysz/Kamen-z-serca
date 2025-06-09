@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cusu168j3sbjv"
+path="res://.godot/imported/drzewo walka.mp3-e8e562e794c47d516823a9d2ebaff9a1.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/drzewo walka.mp3"
+dest_files=["res://.godot/imported/drzewo walka.mp3-e8e562e794c47d516823a9d2ebaff9a1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
