@@ -38,6 +38,12 @@ gameplay = NodePath("Gameplay")
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
+[node name="Label" parent="Gameplay" index="0"]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Alfa_v1" parent="Gameplay" index="1"]
+position = Vector2(-1, 0)
+
 [node name="ResponsivePlatform20" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="122" instance=ExtResource("3_ybejy")]
 position = Vector2(31968, 8291)
 scale = Vector2(0.48176, 0.684681)
@@ -1507,7 +1513,7 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(728, 154)
+position = Vector2(22237.1, 626.412)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128

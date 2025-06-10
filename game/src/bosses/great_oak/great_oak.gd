@@ -169,7 +169,7 @@ func _on_attack_cooldown_timer_timeout() -> void:
 			2: attack_player.play("long_branch_attack")
 			3: attack_player.play("moving_root_attack")
 			4: attack_player.play("spiked_roots_attack")
-			5: falling_acorns()
+			5: attack_player.play("Faling_Acorns_Attack")
 			_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
 		
 		active_attack_index += 1
