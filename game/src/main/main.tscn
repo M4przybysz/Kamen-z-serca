@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=25 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -24,6 +24,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
 radius = 523.409
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nd8d"]
+height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a2n"]
 size = Vector2(280.457, 559)
@@ -1513,7 +1516,7 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(22237.1, 626.412)
+position = Vector2(427.464, 459.066)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128
@@ -1522,8 +1525,34 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
 shape = SubResource("CircleShape2D_klkfr")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gameplay/Player" index="15"]
+position = Vector2(451, -35)
+shape = SubResource("CapsuleShape2D_4nd8d")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Player/CollisionShape2D7"]
+offset_left = -10.0
+offset_top = -54.0
+offset_right = 10.0
+offset_bottom = 46.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
 main = NodePath("../../..")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gameplay/UI/UI" index="5"]
+position = Vector2(451, -35)
+shape = SubResource("CapsuleShape2D_4nd8d")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/UI/UI/CollisionShape2D7"]
+offset_left = -10.0
+offset_top = -54.0
+offset_right = 10.0
+offset_bottom = 46.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
