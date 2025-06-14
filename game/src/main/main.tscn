@@ -23,10 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
-radius = 523.409
+radius = 525.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a2n"]
-size = Vector2(280.457, 559)
+size = Vector2(1216.43, 869)
 
 [node name="Main" type="Node" node_paths=PackedStringArray("player", "gameplay")]
 process_mode = 3
@@ -1513,7 +1513,7 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(427.464, 459.066)
+position = Vector2(609, 149)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128
@@ -1575,12 +1575,12 @@ parameters/looping = true
 script = ExtResource("11_351p3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
-position = Vector2(22655.8, 894.5)
+position = Vector2(23123.8, 861.5)
 shape = SubResource("RectangleShape2D_24a2n")
 
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="Musica/Node2D" to="Musica/Node2D" method="_on_node_2d_body_exited"]
+[connection signal="body_entered" from="Musica/Node2D" to="Musica/Node2D" method="_on_body_entered"]
 
 [editable path="Gameplay"]
 [editable path="Gameplay/Beta"]

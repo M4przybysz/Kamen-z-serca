@@ -87,7 +87,7 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor(): velocity += get_gravity() * delta
 	
 	# particle :33
-	if state == "movement" || state == "mid_slide":
+	if ["movement", "start_slide", "mid_slide", "end_slide", "start_jump", "end_jump"].find(state) != -1:
 		cpu_particles_2d.emitting = true
 	else: cpu_particles_2d.emitting = false
 

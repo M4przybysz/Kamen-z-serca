@@ -339,25 +339,25 @@ autoplay = "idle"
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4o23v")
 volume_db = 2.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="wrapAroundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ph1a7")
 volume_db = 2.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="chargeDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qyjaw")
 volume_db = 5.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="walkindDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ibqi1")
 volume_db = 5.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]

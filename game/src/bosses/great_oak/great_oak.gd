@@ -131,7 +131,7 @@ func reset_fight() -> void:
 	unlock_arena = true
 	lock_trigger.reset()
 	dialogue_trigger.dialogue_triggered = false
-	main.drzewo_spokoj.volume_db = 0
+	main.las_spokoj.volume_db = 0
 	main.drzewo_walka.volume_db = -80
 
 #########################################
