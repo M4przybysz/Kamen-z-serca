@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var ui: Control = $"../UI/UI"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D # Assign animated sprite to variables
 @onready var throwables: Node2D = $Throwables
+@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 
 # Assign physical collision to variables
 @onready var normal_collision: CollisionShape2D = $NormalCollision
@@ -83,10 +84,14 @@ func _physics_process(delta: float) -> void:
 	if is_grabbing: return
 	
 	# Add the gravity.
-	if !is_on_floor(): 
-		velocity += get_gravity() * delta
-		
+	if !is_on_floor(): velocity += get_gravity() * delta
+	
+	# particle :33
+	if state == "movement" || state == "mid_slide":
+		cpu_particles_2d.emitting = true
+	else: cpu_particles_2d.emitting = false
 
+	
 	# Get direction: -1, 0, 1
 	direction = Input.get_axis("move_left", "move_right")
 	if direction != 0: last_direction = direction

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=59 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="AudioStream" uid="uid://3cjvktl7qq2e" path="res://assets/sound/sfx/player/player-attack.wav" id="2_au1jn"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://psxhxflpo0ys" path="res://assets/sprites/player/slide/slide2.png" id="23_h1ebp"]
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
-[ext_resource type="PackedScene" uid="uid://co24k8ymn44rp" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="PackedScene" uid="uid://cuqm1dsbcx8cf" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 [ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
 [ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
 [ext_resource type="Texture2D" uid="uid://djsh8i7hu05fn" path="res://assets/sprites/throwables/copper_shoot.png" id="33_8mfua"]
@@ -336,6 +336,10 @@ size = Vector2(20, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42bjv"]
 size = Vector2(60, 60)
 
+[sub_resource type="Gradient" id="Gradient_dpvnp"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.2365, 0.33, 0.2178, 1, 0.17916, 0.18, 0.1548, 1, 0.16, 0.1152, 0.0832, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 33
 script = ExtResource("1_golh8")
@@ -525,6 +529,21 @@ shape = SubResource("RectangleShape2D_or1cx")
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_42bjv")
 disabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 43)
+emitting = false
+amount = 15
+lifetime = 1.5
+speed_scale = 0.5
+randomness = 0.45
+emission_shape = 3
+emission_rect_extents = Vector2(10, 1)
+direction = Vector2(0, -1)
+initial_velocity_min = 54.01
+initial_velocity_max = 63.55
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_dpvnp")
 
 [connection signal="timeout" from="Timers/SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="Timers/WingAttackTimer" to="." method="_on_wing_attack_timer_timeout"]
