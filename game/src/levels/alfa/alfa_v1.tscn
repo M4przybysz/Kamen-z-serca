@@ -4155,7 +4155,7 @@ position = Vector2(23741, 162)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("21_k80ta")]
-position = Vector2(23969, 746)
+position = Vector2(23496, 848)
 heal = 1
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("21_k80ta")]

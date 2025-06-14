@@ -1685,6 +1685,9 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground"]
 shape = SubResource("RectangleShape2D_ruw3r")
 
+[node name="DialogueTrigger" parent="Environment" instance=ExtResource("2_5bsk2")]
+position = Vector2(1101, 489)
+
 [node name="ArenaClosing" type="Node2D" parent="Environment"]
 
 [node name="LockTrigger" type="Area2D" parent="Environment/ArenaClosing"]
@@ -1696,13 +1699,12 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1xy0x")
 
 [node name="ArenaLock" type="StaticBody2D" parent="Environment/ArenaClosing"]
-position = Vector2(-25, 320)
+position = Vector2(50, 320)
 collision_layer = 49
 collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/ArenaLock"]
 visible = false
-position = Vector2(172.709, 12.9217)
 shape = SubResource("RectangleShape2D_prl7q")
 disabled = true
 
@@ -2146,9 +2148,6 @@ visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 1, 0.239216)
-
-[node name="DialogueTrigger" parent="." instance=ExtResource("2_5bsk2")]
-position = Vector2(1101, 489)
 
 [connection signal="timeout" from="Timers/WindTimer" to="." method="_on_wind_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]

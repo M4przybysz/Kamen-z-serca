@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
+@onready var lock_trigger: Area2D = $Environment/ArenaClosing/LockTrigger
+@onready var dialogue_trigger: Area2D = $Environment/DialogueTrigger
 
 @onready var attack_player: AnimationPlayer = $Body/AttackPlayer
 
@@ -68,9 +70,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# Don't do anything unless the fight starts
-	if unlock_arena && !arena_lock.disabled:
+	if unlock_arena:
 		arena_lock.disabled = true
 		arena_lock.visible = false
+		if arena_lock.disabled && !arena_lock.visible:
+			unlock_arena = false
 	
 	if !wind_timer.is_stopped(): wind_collision.disabled = false
 	
@@ -120,6 +124,16 @@ func start_fight() -> void:
 	attack_cooldown_timer.start()
 	ui.show_boss_hp_bar("PRADAWNY DĄB")
 
+func reset_fight() -> void:
+	hp = max_hp
+	ui.hide_boss_hp_bar()
+	is_in_fight = false
+	unlock_arena = true
+	lock_trigger.reset()
+	dialogue_trigger.dialogue_triggered = false
+	main.drzewo_spokoj.volume_db = 0
+	main.drzewo_walka.volume_db = -80
+
 #########################################
 # HP handling
 #########################################
@@ -150,6 +164,8 @@ func decrease_hp(value: int) -> void:
 		is_in_fight = false
 		unlock_arena = true
 		main.show_end_screen()
+		main.las_spokoj.volume_db = 0
+		main.drzewo_walka.volume_db = -80
 	if hp <= max_hp / 2:
 		fight_phase = 2
 	#print(hp)
