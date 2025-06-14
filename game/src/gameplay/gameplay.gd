@@ -4,6 +4,8 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var camera: Camera2D = $Player/Camera2D
 
+@onready var great_oak: Node2D = $Alfa_v1/GreatOak
+
 @export var main: Node
 @export var death_menu: Control
 
@@ -61,6 +63,7 @@ func revive_player() -> void:
 	player.is_grabbing = false
 	hp = max_hp
 	ui.set_max_hp()
+	great_oak.reset_fight()
 
 func set_checkpoint(checkpoint_position: Vector2) ->void:
 	revive_position = checkpoint_position

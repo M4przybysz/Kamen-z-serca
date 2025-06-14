@@ -96,7 +96,7 @@ size = Vector2(20, 10)
 script = ExtResource("1_46qi8")
 
 [node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(2362.57, 0)
 
@@ -106,7 +106,7 @@ scale = Vector2(0.35088, 0.38013)
 texture = ExtResource("1_sairl")
 
 [node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-5, -1137)
+position = Vector2(-5, -1050)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(3200, 0)
 script = ExtResource("2_sr5oq")
@@ -123,7 +123,7 @@ scale = Vector2(1, 1.123)
 texture = ExtResource("4_lbckg")
 
 [node name="Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(3000, 0)
 script = ExtResource("2_sr5oq")
@@ -135,7 +135,7 @@ scale = Vector2(0.651778, 0.651778)
 texture = ExtResource("5_vtaro")
 
 [node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -4155,7 +4155,7 @@ position = Vector2(23741, 162)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("21_k80ta")]
-position = Vector2(23969, 746)
+position = Vector2(23496, 848)
 heal = 1
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("21_k80ta")]
