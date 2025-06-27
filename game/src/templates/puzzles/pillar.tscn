@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnc0aw0gl43a4"]
 
 [ext_resource type="Script" path="res://src/templates/puzzles/pillar.gd" id="1_mbvpu"]
-[ext_resource type="PackedScene" uid="uid://cq67h5a3g88ui" path="res://src/krzesimirowe_sceny/fil_ozd.tscn" id="2_6212e"]
+[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/fil_ozd.tscn" id="2_6212e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0oo6"]
 size = Vector2(80, 160)

@@ -47,6 +47,8 @@ var right_idle_movement_limit: float	# Idle movement limiting point to the right
 var knockback: Vector2 = Vector2.ZERO						# Dynamic knockback force
 
 @export var charge_distance: float = 400.0	# Distnce from player to start charging
+@export var can_push_pillars: bool = false
+@export var no_charge: bool = false
 
 # Combat variables
 @export var max_hp: int = 3
@@ -88,6 +90,9 @@ func _ready() -> void:
 	hp = max_hp
 	target = global_position.x
 	movement_speed = movement_speed_input
+	
+	if can_push_pillars:
+		collision_mask = 144
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -172,12 +177,12 @@ func state_machine():
 					animated_sprite.play(state)
 		"combat":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "lay_down"
+			elif player_in_charge_range && !no_charge: state = "lay_down"
 			elif player_in_attack_range: state = "attack"
 			else: state = "combat_movement"
 		"combat_movement":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "lay_down"
+			elif player_in_charge_range && !no_charge: state = "lay_down"
 			elif player_in_attack_range: state = "attack"
 			else: 
 				combat_movement()

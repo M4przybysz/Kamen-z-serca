@@ -4104,6 +4104,7 @@ position = Vector2(16778, 1794)
 position = Vector2(15462, 2026)
 idle_movement_range_left = 2
 idle_movement_range_right = 2
+can_push_pillars = true
 
 [node name="MudMummy8" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(17118, 617)
@@ -4119,6 +4120,7 @@ idle_movement_range_right = 2
 
 [node name="MudMummy12" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(3318, 609)
+no_charge = true
 
 [node name="MudMummy10" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(18133, 371)
