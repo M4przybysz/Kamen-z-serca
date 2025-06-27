@@ -256,6 +256,9 @@ wait_time = 5.0
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
 
+[node name="TurnCooldownTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4h4jj")
 
@@ -366,6 +369,7 @@ attenuation = 1.56917
 [connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
 [connection signal="timeout" from="Timers/HuhTimer" to="." method="_on_huh_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/TurnCooldownTimer" to="." method="_on_turn_cooldown_timer_timeout"]
 [connection signal="area_entered" from="NormalHurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]

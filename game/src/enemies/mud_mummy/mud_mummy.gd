@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var idle_stay_timer: Timer = $Timers/IdleStayTimer
 @onready var huh_timer: Timer = $Timers/HuhTimer			# Timer used for delaying enemy turning XD
 @onready var attack_timer: Timer = $Timers/AttackTimer
+@onready var turn_cooldown_timer: Timer = $Timers/TurnCooldownTimer
 
 # Assign player to variable
 @onready var player: CharacterBody2D = $"../../../Player"
@@ -72,6 +73,7 @@ var is_wrapping: bool = false
 var can_wrap: bool = false
 var animation_locked: bool = false
 var can_break_wall: bool = false
+var can_turn: bool = true
 
 # Random number generator
 var RNG = RandomNumberGenerator.new()
@@ -98,20 +100,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		normal_hurtbox_collision.disabled = false
 	
-	# Decide what to do
+	# Decide what to do and play animation
 	state_machine()
 	
-	# Change direction to the target (player or random point on X axis)
-	if target > global_position.x:
-		direction = 1
-	elif target < global_position.x:
-		direction = -1
-	else:
-		direction = 0
+	if can_turn:
+		# Change direction to the target (player or random point on X axis)
+		if target > global_position.x:
+			direction = 1
+		elif target < global_position.x:
+			direction = -1
+		else:
+			direction = 0
 	
-	# Animate enemy
-	flip_h()
-	# animated_sprite.play(state)
+		# Turn right or left
+		flip_h()
 	
 	velocity.x = direction * movement_speed
 	if !stun_timer.is_stopped(): velocity.x = 0
@@ -240,6 +242,9 @@ func flip_h() -> void:
 		animated_sprite.flip_h = true
 		attack_hitbox_collision.position.x = -25
 		wall_detector_collision.rotation_degrees = 90
+	
+	can_turn = false
+	turn_cooldown_timer.start()
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -299,6 +304,10 @@ func _on_idle_stay_timer_timeout() -> void:
 
 func _on_huh_timer_timeout() -> void:
 	huh_timer.stop()
+
+func _on_turn_cooldown_timer_timeout() -> void:
+	turn_cooldown_timer.stop()
+	can_turn = true
 
 #########################################
 # Combat handling
