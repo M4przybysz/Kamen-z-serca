@@ -27,13 +27,6 @@ offset_bottom = 80.0
 color = Color(0.144063, 0.144063, 0.144062, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -40.0
-offset_top = -80.0
-offset_right = 40.0
-offset_bottom = 80.0
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0oo6")
 

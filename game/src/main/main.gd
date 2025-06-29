@@ -47,7 +47,7 @@ func show_end_screen():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("mud_mummy"):
 		combat_counter+=1
-		print(combat_counter)
+		#print(combat_counter)
 		if combat_counter > 0:
 			las_spokoj.volume_db = -80
 			las_walka.volume_db = 0
@@ -55,7 +55,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("mud_mummy"):
 		combat_counter-=1
-		print(combat_counter)
+		#print(combat_counter)
 		if combat_counter <= 0:
 			las_spokoj.volume_db = 0
 			las_walka.volume_db = -80

@@ -1513,7 +1513,7 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(629, 292)
+position = Vector2(15818, 1153)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128

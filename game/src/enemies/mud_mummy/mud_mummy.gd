@@ -325,7 +325,7 @@ func decrease_hp(value: int) -> void:
 	#print(hp)
 
 func die() -> void:
-	print("Deleting enemy...")
+	#print("Deleting enemy...")
 	queue_free()
 
 func attack() -> void:

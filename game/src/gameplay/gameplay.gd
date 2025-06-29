@@ -73,7 +73,7 @@ func player_level_up() -> void:
 	player_level += 1
 	max_hp = 2 + player_level
 	hp = max_hp
-	print(player_level, max_hp, hp)
+	#print(player_level, max_hp, hp)
 
 func load_level(level_number: int) -> void:
 	var level_paths = {
