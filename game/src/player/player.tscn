@@ -1,9 +1,8 @@
-[gd_scene load_steps=59 format=3 uid="uid://ctso286u1j6so"]
+[gd_scene load_steps=58 format=3 uid="uid://ctso286u1j6so"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_golh8"]
 [ext_resource type="AudioStream" uid="uid://3cjvktl7qq2e" path="res://assets/sound/sfx/player/player-attack.wav" id="2_au1jn"]
 [ext_resource type="Texture2D" uid="uid://f7yv2xqggk4r" path="res://assets/sprites/player/jump/grab.png" id="2_ff48u"]
-[ext_resource type="Texture2D" uid="uid://b2h6qjkopuk0" path="res://assets/sprites/player/combat/attack1.png" id="2_g4atu"]
 [ext_resource type="AudioStream" uid="uid://dm8lg0gi5oh4o" path="res://assets/sound/sfx/player/player-damage.wav" id="3_c42qk"]
 [ext_resource type="Texture2D" uid="uid://btpq8b74e01ix" path="res://assets/sprites/player/combat/attack2.png" id="3_i4645"]
 [ext_resource type="PackedScene" uid="uid://bouo875wigdd8" path="res://src/player/feather/feather.tscn" id="3_pj0em"]
@@ -297,28 +296,15 @@ animations = [{
 "name": &"use_shield",
 "speed": 15.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_g4atu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_i4645")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ki1la")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_vy2g8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_gfcbk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_kmqv2")
-}],
+"frames": [],
 "loop": false,
-"name": &"wing_attack",
+"name": &"wing_attack1",
 "speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"wing_attack2",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
@@ -402,7 +388,7 @@ stream = ExtResource("6_l6ij5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"movement"
+animation = &"wing_attack1"
 autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]

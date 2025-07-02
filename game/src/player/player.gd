@@ -52,6 +52,8 @@ var is_coyote: bool = false  # Track whether we're in coyote time or not
 var coyote_activated: bool = false
 
 # Dynamic playthrough variables
+var rng = RandomNumberGenerator.new()
+var wing_attack_rng: int
 var state: String = "idle"
 var last_direction = 1
 var direction
@@ -180,7 +182,7 @@ func state_machine() -> void:
 			"shield_charge":
 				if !is_shield_used && !is_charging: state = "idle"
 				else: animated_sprite.play(state)
-			"start_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack", "throw_feather", "throw_spear":
+			"start_jump", "grab_jump", "start_slide", "end_slide", "air_dash", "wing_attack1", "wing_attack2", "throw_feather", "throw_spear":
 				if !animation_locked:
 					animated_sprite.play(state)
 					animation_locked = true
@@ -193,7 +195,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	match state:
 		"start_jump", "grab_jump", "air_dash":
 			state = "mid_jump"
-		"end_jump", "wing_attack", "throw_feather", "throw_spear", "end_slide":
+		"end_jump", "wing_attack1", "wing_attack2", "throw_feather", "throw_spear", "end_slide":
 			state = "idle"
 		"use_shield", "shield_charge":
 			state = "movement"
@@ -234,7 +236,11 @@ func _input(_event: InputEvent) -> void:
 	
 	# Handle attacks
 	if Input.is_action_just_pressed("wing_attack") && wing_attack_timer.is_stopped() && (state == "idle" || state == "movement" || state == "mid_jump"): 
-		state = "wing_attack"
+		wing_attack_rng = rng.randi_range(0, 1)
+		if wing_attack_rng:
+			state = "wing_attack1"
+		else:
+			state = "wing_attack2"
 		wing_attack()
 	
 	if Input.is_action_just_pressed("throw") && !throwables.get_children()[active_feather].isOnCooldown && (state == "idle" || state == "movement" || state == "mid_jump"):
