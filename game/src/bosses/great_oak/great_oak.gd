@@ -11,6 +11,7 @@ extends Node2D
 # Assign attack collisions to variables
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
+# Main stuff
 @onready var ui: Control = $"../../UI/UI"
 @onready var main: Node = $"../../../"
 
@@ -103,12 +104,6 @@ func reset_attack_pattern() -> void:
 		active_attack_pattern = attack_patterns1[RNG.randi_range(0, 2)]
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
-
-func spiked_roots() -> void:
-	print("spiked_roots_attack")
-
-func falling_acorns() -> void:
-	print("falling_acorns_attack")
 
 #########################################
 # Starting a bloodbath

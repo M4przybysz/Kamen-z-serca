@@ -26,7 +26,11 @@ script = ExtResource("1_du6mr")
 
 [node name="Timers" type="Node" parent="."]
 
+[node name="AttackCooldownTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
+
 [node name="ScreenSize" type="ColorRect" parent="."]
+visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 1, 0.239216)
@@ -97,6 +101,7 @@ collision_layer = 49
 collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/ArenaLock"]
+visible = false
 shape = SubResource("RectangleShape2D_n8nwx")
 disabled = true
 
@@ -108,5 +113,7 @@ offset_bottom = 150.0
 color = Color(0, 0, 1, 1)
 
 [node name="Body" type="Node2D" parent="."]
+
+[node name="AttackPlayer" type="AnimationPlayer" parent="Body"]
 
 [connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
