@@ -1,9 +1,11 @@
 extends Node2D
 
+# Arena "door"
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
 @onready var lock_trigger: Area2D = $Environment/ArenaClosing/LockTrigger
 @onready var dialogue_trigger: Area2D = $Environment/DialogueTrigger
 
+# Assign AnimationPlayer to variables
 @onready var attack_player: AnimationPlayer = $Body/AttackPlayer
 
 # Assign Timers to variables
@@ -13,6 +15,7 @@ extends Node2D
 # Assign attack collisions to variables
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
+# Main stuff
 @onready var ui: Control = $"../../UI/UI"
 @onready var main: Node = $"../../../"
 
@@ -25,7 +28,7 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 	"bronze_feather" : 2,
 	"spear" : 3,
 	"spike" : 1,
-	# Add more values here (format "attack_name" : damage)
+	# Add more values here ("attack_name" : damage)
 }
 
 # Possible attacks:

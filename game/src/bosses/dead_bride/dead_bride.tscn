@@ -1,0 +1,321 @@
+[gd_scene load_steps=14 format=3 uid="uid://3lsfd6pikghv"]
+
+[ext_resource type="Script" path="res://src/bosses/dead_bride/dead_bride.gd" id="1_du6mr"]
+[ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="2_e62hm"]
+[ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="3_dfavh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmhox"]
+size = Vector2(1400, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viaan"]
+size = Vector2(1000, 2000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3cwj"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvvy0"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avvhg"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8nwx"]
+size = Vector2(50, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhx7e"]
+size = Vector2(150, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhyyh"]
+size = Vector2(150, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q31op"]
+size = Vector2(90, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue8h3"]
+size = Vector2(50, 100)
+
+[node name="DeadBride" type="Node2D"]
+script = ExtResource("1_du6mr")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackCooldownTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+
+[node name="ScreenSize" type="ColorRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 1, 0.239216)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Arena" type="StaticBody2D" parent="Environment"]
+collision_layer = 49
+collision_mask = 49
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Arena"]
+position = Vector2(1700, 1350)
+shape = SubResource("RectangleShape2D_gmhox")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Arena/CollisionShape2D"]
+offset_left = -700.0
+offset_top = -50.0
+offset_right = 700.0
+offset_bottom = 550.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Environment/Arena"]
+position = Vector2(2900, 900)
+shape = SubResource("RectangleShape2D_viaan")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Arena/CollisionShape2D3"]
+offset_left = -500.0
+offset_top = -1000.0
+offset_right = 500.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Arena"]
+position = Vector2(500, 1350)
+shape = SubResource("RectangleShape2D_f3cwj")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Arena/CollisionShape2D2"]
+offset_left = -500.0
+offset_top = -50.0
+offset_right = 500.0
+offset_bottom = 550.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Environment/Arena"]
+position = Vector2(500, 500)
+shape = SubResource("RectangleShape2D_cvvy0")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Arena/CollisionShape2D4"]
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
+
+[node name="ArenaClosing" type="Node2D" parent="Environment"]
+
+[node name="LockTrigger" type="Area2D" parent="Environment/ArenaClosing"]
+script = ExtResource("2_e62hm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/LockTrigger"]
+position = Vector2(1605, 1250)
+shape = SubResource("RectangleShape2D_avvhg")
+
+[node name="ArenaLock" type="StaticBody2D" parent="Environment/ArenaClosing"]
+position = Vector2(975, 1150)
+collision_layer = 49
+collision_mask = 49
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ArenaClosing/ArenaLock"]
+visible = false
+shape = SubResource("RectangleShape2D_n8nwx")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Environment/ArenaClosing/ArenaLock/CollisionShape2D"]
+offset_left = -25.0
+offset_top = -150.0
+offset_right = 25.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 1)
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="MainPlatforms" type="StaticBody2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/MainPlatforms"]
+position = Vector2(1400, 1075)
+shape = SubResource("RectangleShape2D_lhx7e")
+
+[node name="ColorRect" type="ColorRect" parent="Body/MainPlatforms/CollisionShape2D"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="Spike" parent="Body/MainPlatforms/CollisionShape2D" instance=ExtResource("3_dfavh")]
+position = Vector2(-44, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike2" parent="Body/MainPlatforms/CollisionShape2D" instance=ExtResource("3_dfavh")]
+position = Vector2(-22, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike3" parent="Body/MainPlatforms/CollisionShape2D" instance=ExtResource("3_dfavh")]
+position = Vector2(0, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike4" parent="Body/MainPlatforms/CollisionShape2D" instance=ExtResource("3_dfavh")]
+position = Vector2(22, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike5" parent="Body/MainPlatforms/CollisionShape2D" instance=ExtResource("3_dfavh")]
+position = Vector2(44, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/MainPlatforms"]
+position = Vector2(2000, 1075)
+shape = SubResource("RectangleShape2D_lhx7e")
+
+[node name="ColorRect" type="ColorRect" parent="Body/MainPlatforms/CollisionShape2D2"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="Spike" parent="Body/MainPlatforms/CollisionShape2D2" instance=ExtResource("3_dfavh")]
+position = Vector2(-44, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike2" parent="Body/MainPlatforms/CollisionShape2D2" instance=ExtResource("3_dfavh")]
+position = Vector2(-22, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike3" parent="Body/MainPlatforms/CollisionShape2D2" instance=ExtResource("3_dfavh")]
+position = Vector2(0, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike4" parent="Body/MainPlatforms/CollisionShape2D2" instance=ExtResource("3_dfavh")]
+position = Vector2(22, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike5" parent="Body/MainPlatforms/CollisionShape2D2" instance=ExtResource("3_dfavh")]
+position = Vector2(44, 15)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+
+[node name="DynamicPlatforms1" type="StaticBody2D" parent="Body"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/DynamicPlatforms1"]
+position = Vector2(1700, 925)
+shape = SubResource("RectangleShape2D_nhyyh")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms1/CollisionShape2D"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/DynamicPlatforms1"]
+position = Vector2(1300, 775)
+shape = SubResource("RectangleShape2D_nhyyh")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms1/CollisionShape2D2"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Body/DynamicPlatforms1"]
+position = Vector2(2100, 775)
+shape = SubResource("RectangleShape2D_nhyyh")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms1/CollisionShape2D3"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DynamicPlatforms2" type="StaticBody2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/DynamicPlatforms2"]
+position = Vector2(1400, 775)
+shape = SubResource("RectangleShape2D_nhyyh")
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms2/CollisionShape2D"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/DynamicPlatforms2"]
+position = Vector2(1075, 925)
+shape = SubResource("RectangleShape2D_nhyyh")
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms2/CollisionShape2D2"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Body/DynamicPlatforms2"]
+position = Vector2(2325, 925)
+shape = SubResource("RectangleShape2D_nhyyh")
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms2/CollisionShape2D3"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Body/DynamicPlatforms2"]
+position = Vector2(2000, 775)
+shape = SubResource("RectangleShape2D_nhyyh")
+
+[node name="ColorRect" type="ColorRect" parent="Body/DynamicPlatforms2/CollisionShape2D4"]
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Hurtbox" type="Area2D" parent="Body"]
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(1700, 1210)
+shape = SubResource("RectangleShape2D_q31op")
+
+[node name="ColorRect" type="ColorRect" parent="Body/Hurtbox/CollisionShape1"]
+offset_left = -45.0
+offset_top = -90.0
+offset_right = 45.0
+offset_bottom = 90.0
+color = Color(1, 0, 1, 1)
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(1700, 1250)
+shape = SubResource("RectangleShape2D_ue8h3")
+
+[node name="ColorRect" type="ColorRect" parent="Body/Hurtbox/CollisionShape2"]
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 25.0
+offset_bottom = 50.0
+color = Color(1, 0, 0.305882, 1)
+
+[node name="AttackPlayer" type="AnimationPlayer" parent="Body"]
+
+[connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
