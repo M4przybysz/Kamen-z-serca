@@ -243,7 +243,6 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="DynamicPlatforms2" type="StaticBody2D" parent="Body"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/DynamicPlatforms2"]
 position = Vector2(1400, 775)

@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 func start_fight() -> void:
 	is_in_fight = true
 	attack_cooldown_timer.start()
-	ui.show_boss_hp_bar("PRADAWNY DĄB")
+	ui.show_boss_hp_bar("OBLUBIENICA")
 
 #########################################
 # Attacks handling
@@ -175,7 +175,7 @@ func decrease_hp(value: int) -> void:
 	if hp - value > 0: 
 		hp -= value
 		ui.set_boss_hp(max_hp, hp)
-		reset_attack_pattern()
+		#reset_attack_pattern()
 	else:
 		hp = 0
 		ui.hide_boss_hp_bar()
