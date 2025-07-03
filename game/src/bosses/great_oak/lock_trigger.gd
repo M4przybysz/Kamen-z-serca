@@ -14,3 +14,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") && !got_triggered:
 		lock_arena = true
+
+func reset() -> void:
+	got_triggered = false
+	lock_arena = false

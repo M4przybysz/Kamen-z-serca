@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var ui: Control = $"../../../UI/UI"
+@onready var ui: Control = $"../../../../UI/UI"
 @export var dialogue_box_position:Vector2=Vector2(1320,500)
 @export var one_time_trigger: bool = true
 
