@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=24 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://cqln8g0dr6eoj" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik.png" id="9_xkmbh"]
 [ext_resource type="AudioStream" uid="uid://c0q3qnfw2h6m6" path="res://assets/sound/music/las walka1.mp3" id="10_5mg8o"]
 [ext_resource type="Script" path="res://src/main/tree_triger_music.gd" id="11_351p3"]
-[ext_resource type="PackedScene" uid="uid://3lsfd6pikghv" path="res://src/bosses/dead_bride/dead_bride.tscn" id="22_csvyj"]
 [ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
@@ -1508,7 +1507,7 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(4228.43, -5524.86)
+position = Vector2(32778.3, -5254.53)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128
@@ -1572,9 +1571,6 @@ script = ExtResource("11_351p3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
 position = Vector2(22655.8, 894.5)
 shape = SubResource("RectangleShape2D_24a2n")
-
-[node name="DeadBride" parent="." instance=ExtResource("22_csvyj")]
-position = Vector2(4709, -6054)
 
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]

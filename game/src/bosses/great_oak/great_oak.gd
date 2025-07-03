@@ -1,7 +1,9 @@
 extends Node2D
 
+# Arena "door"
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
 
+# Assign AnimationPlayer to variables
 @onready var attack_player: AnimationPlayer = $Body/AttackPlayer
 
 # Assign Timers to variables
@@ -24,7 +26,7 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 	"bronze_feather" : 2,
 	"spear" : 3,
 	"spike" : 1,
-	# Add more values here (format "attack_name" : damage)
+	# Add more values here ("attack_name" : damage)
 }
 
 # Possible attacks:
@@ -104,6 +106,12 @@ func reset_attack_pattern() -> void:
 		active_attack_pattern = attack_patterns1[RNG.randi_range(0, 2)]
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
+
+func spiked_roots() -> void:
+	print("spiked_roots_attack")
+
+func falling_acorns() -> void:
+	print("falling_acorns_attack")
 
 #########################################
 # Starting a bloodbath
