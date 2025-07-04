@@ -33,10 +33,9 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 # 0 - reset pattern
 # 1 - breaking walls
 # 2 - hit and wave (only in phase one)
-# 3 - platform crush
-# 4 - floor is lava
-# 5 - fall on spikes
-# 6 - falling stones
+# 3 - floor is lava
+# 4 - fall on spikes
+# 5 - falling stones
 
 # Possible counter attacks 
 # 0 - throw feather back
@@ -97,7 +96,7 @@ func start_fight() -> void:
 	ui.show_boss_hp_bar("OBLUBIENICA")
 
 #########################################
-# Attacks handling
+# Normal attacks handling
 #########################################
 func reset_attack_pattern() -> void:
 	active_attack_index = 0
@@ -111,9 +110,6 @@ func breaking_walls() -> void:
 
 func hit_and_wave() -> void:
 	print("hit and wave")
-
-func platform_crush() -> void:
-	print("platform crush")
 
 func floor_is_lava() -> void:
 	print("floor is lava")
@@ -132,16 +128,27 @@ func _on_attack_cooldown_timer_timeout() -> void:
 			0: reset_attack_pattern()
 			1: breaking_walls()
 			2: hit_and_wave()
-			3: platform_crush()
-			4: floor_is_lava()
-			5: fall_on_spikes()
-			6: falling_stones()
+			3: floor_is_lava()
+			4: fall_on_spikes()
+			5: falling_stones()
 			_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
 		
 		active_attack_index += 1
 		if active_attack_pattern[active_attack_index] == active_attack_pattern[-1]:
 			reset_attack_pattern()
 		attack_cooldown_timer.start()
+
+#########################################
+# Counter attacks handling
+#########################################
+func counter_feather() -> void:
+	pass
+
+func counter_melee() -> void:
+	pass
+
+func teleport() -> void:
+	pass
 
 #########################################
 # Arena changes handling

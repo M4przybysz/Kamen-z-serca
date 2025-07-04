@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3lsfd6pikghv"]
+[gd_scene load_steps=16 format=3 uid="uid://3lsfd6pikghv"]
 
 [ext_resource type="Script" path="res://src/bosses/dead_bride/dead_bride.gd" id="1_du6mr"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="2_e62hm"]
@@ -33,6 +33,14 @@ size = Vector2(90, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ue8h3"]
 size = Vector2(50, 100)
+
+[sub_resource type="Animation" id="Animation_jd23c"]
+resource_name = "breaking_walls"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfg6r"]
+_data = {
+"breaking_walls": SubResource("Animation_jd23c")
+}
 
 [node name="DeadBride" type="Node2D"]
 script = ExtResource("1_du6mr")
@@ -317,5 +325,10 @@ offset_bottom = 50.0
 color = Color(1, 0, 0.305882, 1)
 
 [node name="AttackPlayer" type="AnimationPlayer" parent="Body"]
+libraries = {
+"": SubResource("AnimationLibrary_vfg6r")
+}
+
+[node name="CounterPlayer" type="AnimationPlayer" parent="Body"]
 
 [connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
