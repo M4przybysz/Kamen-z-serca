@@ -132,7 +132,7 @@ func state_machine() -> void:
 	check_shield()
 	check_air_dash()
 	
-	#print(state, " - ", is_coyote)
+	#print(state)
 	
 	if !movement_lock:
 		match state:

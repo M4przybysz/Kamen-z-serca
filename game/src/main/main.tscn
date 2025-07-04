@@ -1513,7 +1513,6 @@ scale = Vector2(0.677828, -0.717746)
 texture = ExtResource("5_q74c7")
 
 [node name="Player" parent="Gameplay" index="3"]
-
 position = Vector2(32778.3, -5254.53)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
