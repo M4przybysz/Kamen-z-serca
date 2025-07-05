@@ -2214,10 +2214,16 @@ position = Vector2(12702, 1611)
 rotation = -0.401976
 scale = Vector2(2.2058, 0.339222)
 
+[node name="ColorRect" parent="Environment/Level2/Block135" index="0"]
+visible = false
+
 [node name="Block221" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(22791, 1155)
 rotation = -0.401976
 scale = Vector2(2.2058, 0.339222)
+
+[node name="ColorRect" parent="Environment/Level2/Block221" index="0"]
+visible = false
 
 [node name="Block222" type="StaticBody2D" parent="Environment/Level2"]
 position = Vector2(21883, 1488)
@@ -2240,6 +2246,9 @@ scale = Vector2(1.3539, 0.287319)
 position = Vector2(13556, 1800)
 rotation = -2.07222
 scale = Vector2(1.9431, 0.42558)
+
+[node name="ColorRect" parent="Environment/Level2/Block136" index="0"]
+visible = false
 
 [node name="Block104" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(10897, 1384)
@@ -2349,6 +2358,9 @@ scale = Vector2(0.0516895, 0.128489)
 position = Vector2(21595, 1911)
 scale = Vector2(0.773988, 0.183152)
 
+[node name="ColorRect" parent="Environment/Level2/Block209" index="0"]
+visible = false
+
 [node name="Block210" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(21695, 1963)
 scale = Vector2(0.707803, 0.238656)
@@ -2410,10 +2422,16 @@ position = Vector2(6600, 598)
 rotation = -0.936955
 scale = Vector2(0.227127, 1.09948)
 
+[node name="ColorRect" parent="Environment/Level2/Block67" index="0"]
+visible = false
+
 [node name="Block125" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(11310, 1392)
 rotation = -0.936955
 scale = Vector2(0.227127, 1.09948)
+
+[node name="ColorRect" parent="Environment/Level2/Block125" index="0"]
+visible = false
 
 [node name="Block167" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(16703, 183)
@@ -2425,20 +2443,32 @@ position = Vector2(6955, 694)
 rotation = -1.12105
 scale = Vector2(0.155434, 0.42454)
 
+[node name="ColorRect" parent="Environment/Level2/Block70" index="0"]
+visible = false
+
 [node name="Block71" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(6821, 674)
 rotation = -1.87311
 scale = Vector2(0.11543, 0.446885)
+
+[node name="ColorRect" parent="Environment/Level2/Block71" index="0"]
+visible = false
 
 [node name="Block68" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(6862, 685)
 rotation = -0.677369
 scale = Vector2(0.227127, 0.868428)
 
+[node name="ColorRect" parent="Environment/Level2/Block68" index="0"]
+visible = false
+
 [node name="Block69" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(7056, 818)
 rotation = -1.88139
 scale = Vector2(0.227127, 0.868428)
+
+[node name="ColorRect" parent="Environment/Level2/Block69" index="0"]
+visible = false
 
 [node name="Block62" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(6609, 749)
@@ -2625,11 +2655,20 @@ scale = Vector2(0.174123, 0.474264)
 [node name="Drab2" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(8751, 1601)
 
+[node name="ColorRect" parent="Environment/Level2/Drab2" index="0"]
+visible = false
+
 [node name="Drab4" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(8757, 1462)
 
+[node name="ColorRect" parent="Environment/Level2/Drab4" index="0"]
+visible = false
+
 [node name="Drab5" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(8823, 1320)
+
+[node name="ColorRect" parent="Environment/Level2/Drab5" index="0"]
+visible = false
 
 [node name="Drab6" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(8586, 685)
@@ -2637,20 +2676,38 @@ position = Vector2(8586, 685)
 [node name="Drab7" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9765, 1170)
 
+[node name="ColorRect" parent="Environment/Level2/Drab7" index="0"]
+visible = false
+
 [node name="Drab8" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9822, 1049)
+
+[node name="ColorRect" parent="Environment/Level2/Drab8" index="0"]
+visible = false
 
 [node name="Drab12" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9943, 812)
 
+[node name="ColorRect" parent="Environment/Level2/Drab12" index="0"]
+visible = false
+
 [node name="Drab10" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9872, 950)
+
+[node name="ColorRect" parent="Environment/Level2/Drab10" index="0"]
+visible = false
 
 [node name="Drab13" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(10011, 690)
 
+[node name="ColorRect" parent="Environment/Level2/Drab13" index="0"]
+visible = false
+
 [node name="Drab9" parent="Environment/Level2" instance=ExtResource("2_om41w")]
 position = Vector2(9233, 978)
+
+[node name="ColorRect" parent="Environment/Level2/Drab9" index="0"]
+visible = false
 
 [node name="Block237" parent="Environment/Level2" instance=ExtResource("3_rx068")]
 position = Vector2(9995, 291)
@@ -3259,9 +3316,15 @@ scale = Vector2(0.171485, 0.899484)
 [node name="Block59" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(14415, 1656)
 
+[node name="ColorRect" parent="Environment/Level3/Block59" index="0"]
+visible = false
+
 [node name="Block98" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(15898, 1372)
 physics_material_override = SubResource("PhysicsMaterial_a8bce")
+
+[node name="ColorRect" parent="Environment/Level3/Block98" index="0"]
+visible = false
 
 [node name="Block93" type="StaticBody2D" parent="Environment/Level3"]
 position = Vector2(15324, 1893)
@@ -3342,6 +3405,9 @@ shape = SubResource("RectangleShape2D_ue20i")
 [node name="Block83" parent="Environment/Level3" instance=ExtResource("2_om41w")]
 position = Vector2(14414, 1554)
 
+[node name="ColorRect" parent="Environment/Level3/Block83" index="0"]
+visible = false
+
 [node name="Level 4" type="Node2D" parent="Environment"]
 position = Vector2(18606, -152)
 rotation = 3.14159
@@ -3365,17 +3431,29 @@ position = Vector2(117.983, 1109)
 [node name="Block104" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-2543.91, 2290)
 
+[node name="ColorRect" parent="Environment/Level 4/Block104" index="0"]
+visible = false
+
 [node name="Block105" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-2593.64, 2173)
 
+[node name="ColorRect" parent="Environment/Level 4/Block105" index="0"]
+visible = false
+
 [node name="Block106" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-2604.36, 2074)
+
+[node name="ColorRect" parent="Environment/Level 4/Block106" index="0"]
+visible = false
 
 [node name="Block107" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-2913.45, 2077)
 
 [node name="Block108" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(-3091.89, 1845)
+
+[node name="ColorRect" parent="Environment/Level 4/Block108" index="0"]
+visible = false
 
 [node name="Block112" parent="Environment/Level 4" instance=ExtResource("2_om41w")]
 position = Vector2(520.998, 594)
@@ -4128,16 +4206,19 @@ combat_movement_range_left = 550
 position = Vector2(17166, 345)
 
 [node name="SpikeTest" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5689, 306)
+position = Vector2(5688, 311)
 
 [node name="SpikeTest2" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5725, 416)
+position = Vector2(5720, 426)
+rotation = 1.0472
 
 [node name="SpikeTest3" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5764, 289)
+position = Vector2(5769, 288)
+rotation = 0.261799
 
 [node name="SpikeTest5" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(8084, 625)
+rotation = -0.261799
 
 [node name="SpikeTest6" parent="enemies" instance=ExtResource("18_j2urr")]
 position = Vector2(8489, 290)
@@ -4147,7 +4228,8 @@ position = Vector2(17844, 424)
 scale = Vector2(0.660547, 0.745469)
 
 [node name="SpikeTest4" parent="enemies" instance=ExtResource("18_j2urr")]
-position = Vector2(5765, 371)
+position = Vector2(5768, 376)
+rotation = 0.0
 
 [node name="GreatOak" parent="." instance=ExtResource("20_wijuu")]
 position = Vector2(23741, 162)
@@ -4239,3 +4321,31 @@ texture = ExtResource("22_xpo1j")
 
 [connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
 [connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]
+
+[editable path="Environment/Level2/Block135"]
+[editable path="Environment/Level2/Block221"]
+[editable path="Environment/Level2/Block136"]
+[editable path="Environment/Level2/Block209"]
+[editable path="Environment/Level2/Block67"]
+[editable path="Environment/Level2/Block125"]
+[editable path="Environment/Level2/Block167"]
+[editable path="Environment/Level2/Block70"]
+[editable path="Environment/Level2/Block71"]
+[editable path="Environment/Level2/Block68"]
+[editable path="Environment/Level2/Block69"]
+[editable path="Environment/Level2/Drab2"]
+[editable path="Environment/Level2/Drab4"]
+[editable path="Environment/Level2/Drab5"]
+[editable path="Environment/Level2/Drab7"]
+[editable path="Environment/Level2/Drab8"]
+[editable path="Environment/Level2/Drab12"]
+[editable path="Environment/Level2/Drab10"]
+[editable path="Environment/Level2/Drab13"]
+[editable path="Environment/Level2/Drab9"]
+[editable path="Environment/Level3/Block59"]
+[editable path="Environment/Level3/Block98"]
+[editable path="Environment/Level3/Block83"]
+[editable path="Environment/Level 4/Block104"]
+[editable path="Environment/Level 4/Block105"]
+[editable path="Environment/Level 4/Block106"]
+[editable path="Environment/Level 4/Block108"]
