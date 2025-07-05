@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="4_0xais"]
 [ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="4_4i2tu"]
 [ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="4_o6day"]
-[ext_resource type="PackedScene" uid="uid://j8ypnmnq51x8" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="5_1lbou"]
+[ext_resource type="PackedScene" uid="uid://bbc4dta7s3n87" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="5_1lbou"]
 [ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="5_6y5ve"]
 [ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="5_7afl8"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ptg80gs71xn" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-suche2CZ.png" id="13_vquwt"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="15_mlicb"]
 [ext_resource type="Texture2D" uid="uid://dxx73sc7v2tql" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik2.png" id="17_1od8p"]
-[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
+[ext_resource type="PackedScene" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
 [ext_resource type="Texture2D" uid="uid://nr23tf1nf44b" path="res://assets/sprites/environment/Platformy i teren/trawa_pathdzik.png" id="18_hcjcj"]
 [ext_resource type="Texture2D" uid="uid://dmh7m5fbcrs3x" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kam mech1.png" id="24_c5onk"]
 [ext_resource type="Texture2D" uid="uid://ckyvq403wkw5i" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany2.png" id="25_t08e5"]
@@ -2128,7 +2128,6 @@ position = Vector2(-44, 27)
 shape = SubResource("CircleShape2D_klkfr")
 
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
-visible = false
 main = NodePath("../../..")
 
 [node name="Level Design" type="Node2D" parent="Gameplay"]
