@@ -1,0 +1,1587 @@
+[gd_scene load_steps=24 format=3 uid="uid://d3gn4eoxa2lh0"]
+
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
+[ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
+[ext_resource type="PackedScene" uid="uid://hc0bafam4ly2" path="res://src/menus/main_menu/main_menu.tscn" id="2_s1k2l"]
+[ext_resource type="PackedScene" uid="uid://cxp55no4h5r02" path="res://src/menus/pause_menu/pause_menu.tscn" id="3_apl8s"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="3_t6lq6"]
+[ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="3_ybejy"]
+[ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="4_4i2tu"]
+[ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="4_o6day"]
+[ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="5_6y5ve"]
+[ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="5_7afl8"]
+[ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
+[ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="AudioStream" uid="uid://6jpixbsybplc" path="res://assets/sound/music/drzewo spokój.mp3" id="7_sm4c8"]
+[ext_resource type="AudioStream" uid="uid://cusu168j3sbjv" path="res://assets/sound/music/drzewo walka.mp3" id="8_pwxx4"]
+[ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="9_0c2w1"]
+[ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="9_2pipl"]
+[ext_resource type="AudioStream" uid="uid://bn0f5kl4vqo4o" path="res://assets/sound/music/las spokoj1.mp3" id="9_l6hkt"]
+[ext_resource type="Texture2D" uid="uid://cqln8g0dr6eoj" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik.png" id="9_xkmbh"]
+[ext_resource type="AudioStream" uid="uid://c0q3qnfw2h6m6" path="res://assets/sound/music/las walka1.mp3" id="10_5mg8o"]
+[ext_resource type="Script" path="res://src/main/tree_triger_music.gd" id="11_351p3"]
+[ext_resource type="PackedScene" uid="uid://ci0n5flna6gp5" path="res://src/menus/end_screen/end_screen.tscn" id="27_qlefr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
+radius = 525.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24a2n"]
+size = Vector2(1216.43, 869)
+
+[node name="Main" type="Node" node_paths=PackedStringArray("player", "gameplay")]
+process_mode = 3
+script = ExtResource("1_2nm2t")
+player = NodePath("Gameplay/Player")
+gameplay = NodePath("Gameplay")
+
+[node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
+main = NodePath("..")
+death_menu = NodePath("../Menus/DeathMenu")
+
+[node name="Label" parent="Gameplay" index="0"]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Alfa_v1" parent="Gameplay" index="1"]
+position = Vector2(-1, 0)
+
+[node name="ResponsivePlatform20" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="122" instance=ExtResource("3_ybejy")]
+position = Vector2(31968, 8291)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform21" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="123" instance=ExtResource("3_ybejy")]
+position = Vector2(31920, 8206)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform22" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="124" instance=ExtResource("3_ybejy")]
+position = Vector2(31904, 8114)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform23" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="125" instance=ExtResource("3_ybejy")]
+position = Vector2(31936, 7986)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform24" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="126" instance=ExtResource("3_ybejy")]
+position = Vector2(31984, 7897)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform25" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="127" instance=ExtResource("3_ybejy")]
+position = Vector2(31936, 7812)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform26" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="128" instance=ExtResource("3_ybejy")]
+position = Vector2(31920, 7720)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="ResponsivePlatform27" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="129" instance=ExtResource("3_ybejy")]
+position = Vector2(31952, 7592)
+scale = Vector2(0.48176, 0.684681)
+
+[node name="Kamien-19" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1/Schod ozd4" index="2"]
+position = Vector2(205.61, 91.4638)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("4_4i2tu")
+
+[node name="Kamien-20" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1/Schod ozd4" index="3"]
+position = Vector2(168.461, 107.242)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("4_4i2tu")
+
+[node name="Kamien-21" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1/Schod ozd4" index="4"]
+position = Vector2(140.436, 129.482)
+rotation = 0.436332
+scale = Vector2(0.415832, 0.50627)
+texture = ExtResource("4_4i2tu")
+
+[node name="Skal19" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="30"]
+z_index = 1
+position = Vector2(21662, 13176)
+texture = ExtResource("5_7afl8")
+
+[node name="Skal23" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="31"]
+z_index = 1
+position = Vector2(21545, 13193)
+rotation = 1.57079
+texture = ExtResource("5_7afl8")
+
+[node name="Skal21" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="32"]
+z_index = 1
+position = Vector2(20283, 12792)
+texture = ExtResource("5_7afl8")
+
+[node name="Skal22" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="33"]
+z_index = 1
+position = Vector2(20155, 12655)
+texture = ExtResource("5_7afl8")
+
+[node name="Skal20" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="34"]
+z_index = 1
+position = Vector2(21912, 13176)
+texture = ExtResource("5_7afl8")
+
+[node name="Skal24" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="35"]
+z_index = 1
+position = Vector2(22008, 12878)
+texture = ExtResource("5_7afl8")
+
+[node name="Skal25" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="36"]
+z_index = 1
+position = Vector2(22024, 12878)
+texture = ExtResource("5_7afl8")
+
+[node name="DzikSkal163" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="117"]
+position = Vector2(20201, 12329)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal164" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="118"]
+z_index = 2
+position = Vector2(20185, 12593)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal165" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="119"]
+z_index = 2
+position = Vector2(20249, 12766)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal159" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="120"]
+position = Vector2(20416, 12952)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal160" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="121"]
+position = Vector2(20416, 12885)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal161" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="122"]
+position = Vector2(20288, 12750)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal162" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="123"]
+position = Vector2(20223, 12568)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal134" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="124"]
+position = Vector2(20234, 12153)
+rotation = -3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal166" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="131"]
+position = Vector2(21538, 13162)
+rotation = -3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal171" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="137"]
+position = Vector2(22128, 13203)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal172" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="138"]
+position = Vector2(22304, 13203)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal173" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="139"]
+position = Vector2(22464, 13202)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal174" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="140"]
+position = Vector2(22632, 13200)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal175" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="141"]
+position = Vector2(22680, 13200)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal176" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="142"]
+position = Vector2(22862, 13156)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal177" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="143"]
+position = Vector2(22944, 13156)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal178" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="144"]
+position = Vector2(22862, 13176)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal179" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="145"]
+position = Vector2(22864, 13279)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal180" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="146"]
+position = Vector2(22944, 13280)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal182" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="147"]
+position = Vector2(22760, 13293)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal183" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="148"]
+position = Vector2(22688, 13349)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal184" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="149"]
+position = Vector2(22656, 13441)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal185" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="150"]
+position = Vector2(22684, 13384)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal186" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="151"]
+position = Vector2(22517, 13627)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal187" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="152"]
+position = Vector2(22600, 13512)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal188" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="153"]
+position = Vector2(22623, 13469)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal189" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="154"]
+position = Vector2(22528, 13686)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal190" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="155"]
+position = Vector2(22528, 13820)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal191" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="156"]
+position = Vector2(22528, 13982)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal192" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="157"]
+position = Vector2(22528, 14016)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal193" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="158"]
+position = Vector2(22696, 14128)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal194" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="159"]
+position = Vector2(22616, 14128)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal195" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="160"]
+position = Vector2(22872, 14262)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal196" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="161"]
+position = Vector2(22963, 14262)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal197" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="162"]
+position = Vector2(23021, 14353)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal198" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="163"]
+position = Vector2(23068, 14366)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal199" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="164"]
+position = Vector2(23248, 14400)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal200" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="165"]
+position = Vector2(23424, 14400)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal201" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="166"]
+position = Vector2(23472, 14400)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal202" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="167"]
+position = Vector2(23650, 14438)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal203" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="168"]
+position = Vector2(23826, 14438)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal204" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="169"]
+position = Vector2(23697, 14000)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal205" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="170"]
+position = Vector2(23788, 13967)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal206" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="171"]
+position = Vector2(23808, 14028)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal207" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="172"]
+position = Vector2(23848, 14104)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal208" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="173"]
+position = Vector2(23888, 14214)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal209" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="174"]
+position = Vector2(23861, 14360)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal210" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="175"]
+position = Vector2(23826, 14440)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal211" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="176"]
+position = Vector2(23830, 14440)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal212" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="177"]
+position = Vector2(23875, 14104)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal213" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="178"]
+position = Vector2(23830, 14029)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal214" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="179"]
+position = Vector2(23650, 13952)
+rotation = 10.9956
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal215" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="180"]
+position = Vector2(23649, 13889)
+rotation = 10.9956
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal216" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="181"]
+position = Vector2(23821, 13889)
+rotation = 10.9956
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal217" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="182"]
+position = Vector2(23877, 13888)
+rotation = 10.9956
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal218" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="183"]
+position = Vector2(23861, 13770)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal219" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="184"]
+position = Vector2(23864, 13716)
+rotation = 9.42476
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal220" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="185"]
+position = Vector2(23920, 13718)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal221" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="186"]
+position = Vector2(23920, 13780)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal222" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="187"]
+position = Vector2(23872, 13712)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal223" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="188"]
+position = Vector2(24094, 14091)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal224" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="189"]
+position = Vector2(24024, 14005)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal225" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="190"]
+position = Vector2(23944, 13952)
+rotation = 6.28318
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal226" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="191"]
+position = Vector2(24720, 13730)
+rotation = 3.14159
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal227" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="192"]
+position = Vector2(24713, 13686)
+rotation = 1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal230" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="193"]
+position = Vector2(24712, 13656)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal231" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="194"]
+position = Vector2(24592, 14084)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal232" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="195"]
+position = Vector2(24415, 14084)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal233" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="196"]
+position = Vector2(24240, 14084)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal234" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="197"]
+position = Vector2(24082, 14084)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal235" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="198"]
+position = Vector2(24017, 14028)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal236" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="199"]
+position = Vector2(23960, 13920)
+rotation = 1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal237" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="200"]
+position = Vector2(24792, 13943)
+rotation = 1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal238" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="201"]
+position = Vector2(24713, 13662)
+rotation = 1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal239" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="202"]
+position = Vector2(24888, 13659)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal240" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="203"]
+position = Vector2(23654, 13922)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal241" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="204"]
+position = Vector2(23697, 13976)
+rotation = 4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal228" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="205"]
+position = Vector2(24682, 14029)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal229" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="206"]
+position = Vector2(24720, 13901)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal181" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="207"]
+position = Vector2(23014, 13200)
+rotation = 6.28318
+scale = Vector2(0.90262, 0.725683)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal135" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="220"]
+position = Vector2(21227, 12104)
+rotation = -4.71238
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal136" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="221"]
+position = Vector2(21392, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal156" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="222"]
+position = Vector2(21256, 12313)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal157" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="223"]
+position = Vector2(21202, 12148)
+scale = Vector2(0.905339, 0.735752)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal158" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="224"]
+position = Vector2(21240, 12157)
+rotation = 4.71238
+scale = Vector2(0.905339, 0.735752)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal137" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="225"]
+position = Vector2(21560, 12477)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal138" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="226"]
+position = Vector2(21744, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal139" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="227"]
+position = Vector2(22032, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal140" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="228"]
+position = Vector2(22208, 12477)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal141" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="229"]
+position = Vector2(22416, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal142" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="230"]
+position = Vector2(22594, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal143" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="231"]
+position = Vector2(22768, 12476)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal144" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="232"]
+position = Vector2(22884, 12477)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal145" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="233"]
+position = Vector2(22968, 12486)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal146" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="234"]
+position = Vector2(23057, 12576)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal147" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="235"]
+position = Vector2(23232, 12576)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal148" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="236"]
+position = Vector2(23344, 12576)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal149" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="237"]
+position = Vector2(23424, 12655)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal150" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="238"]
+position = Vector2(23424, 12832)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal151" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="239"]
+position = Vector2(23424, 13010)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal152" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="240"]
+position = Vector2(23424, 13192)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal167" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="241"]
+position = Vector2(21968, 13003)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal169" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="242"]
+position = Vector2(21888, 12945)
+scale = Vector2(1.22084, 0.672826)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal170" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="243"]
+position = Vector2(22114, 12943)
+scale = Vector2(1.22084, 0.672826)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal168" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="244"]
+position = Vector2(22056, 13005)
+rotation = -1.57079
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal153" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="245"]
+position = Vector2(23424, 13369)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal155" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="246"]
+position = Vector2(23424, 13380)
+texture = ExtResource("5_6y5ve")
+
+[node name="DzikSkal154" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="247"]
+position = Vector2(23486, 13499)
+rotation = -1.57079
+scale = Vector2(1.27844, 0.720842)
+texture = ExtResource("5_6y5ve")
+
+[node name="Block77" parent="Gameplay/Beta/OZD/Dz1" index="362"]
+position = Vector2(18474, 12601)
+
+[node name="Block97" parent="Gameplay/Beta/OZD/Dz1" index="381" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20080, 12192)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block98" parent="Gameplay/Beta/OZD/Dz1" index="382" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21256, 12220)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block135" parent="Gameplay/Beta/OZD/Dz1" index="383" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21240, 12092)
+scale = Vector2(0.27172, 0.256638)
+
+[node name="Block136" parent="Gameplay/Beta/OZD/Dz1" index="384" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21195, 12089)
+scale = Vector2(0.243041, 0.121057)
+
+[node name="Block99" parent="Gameplay/Beta/OZD/Dz1" index="385" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21512, 12320)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block144" parent="Gameplay/Beta/OZD/Dz1" index="386" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20142, 12736)
+scale = Vector2(0.389348, 0.464386)
+
+[node name="Block146" parent="Gameplay/Beta/OZD/Dz1" index="387" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20225, 12828)
+scale = Vector2(0.389348, 0.464386)
+
+[node name="Block145" parent="Gameplay/Beta/OZD/Dz1" index="388" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20008, 12598)
+scale = Vector2(0.620105, 0.460604)
+
+[node name="Block100" parent="Gameplay/Beta/OZD/Dz1" index="389" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21858, 12316)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block103" parent="Gameplay/Beta/OZD/Dz1" index="390" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21832, 12459)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block104" parent="Gameplay/Beta/OZD/Dz1" index="391" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21848, 12465)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block105" parent="Gameplay/Beta/OZD/Dz1" index="392" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21864, 12349)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block106" parent="Gameplay/Beta/OZD/Dz1" index="393" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21848, 12347)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block107" parent="Gameplay/Beta/OZD/Dz1" index="394" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21848, 12478)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block108" parent="Gameplay/Beta/OZD/Dz1" index="395" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22280, 12370)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block109" parent="Gameplay/Beta/OZD/Dz1" index="396" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22267, 12368)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block110" parent="Gameplay/Beta/OZD/Dz1" index="397" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21612, 12456)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block111" parent="Gameplay/Beta/OZD/Dz1" index="398" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21600, 12450)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block112" parent="Gameplay/Beta/OZD/Dz1" index="399" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21579, 12386)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block113" parent="Gameplay/Beta/OZD/Dz1" index="400" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21568, 12384)
+scale = Vector2(0.0789864, 0.403593)
+
+[node name="Block114" parent="Gameplay/Beta/OZD/Dz1" index="401" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21320, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block115" parent="Gameplay/Beta/OZD/Dz1" index="402" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21522, 12424)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block116" parent="Gameplay/Beta/OZD/Dz1" index="403" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21720, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block117" parent="Gameplay/Beta/OZD/Dz1" index="404" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21922, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block118" parent="Gameplay/Beta/OZD/Dz1" index="405" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22088, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block119" parent="Gameplay/Beta/OZD/Dz1" index="406" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22224, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block120" parent="Gameplay/Beta/OZD/Dz1" index="407" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22401, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block121" parent="Gameplay/Beta/OZD/Dz1" index="408" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22537, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block122" parent="Gameplay/Beta/OZD/Dz1" index="409" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22696, 12421)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block123" parent="Gameplay/Beta/OZD/Dz1" index="410" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22848, 12416)
+scale = Vector2(0.636697, 0.0902404)
+
+[node name="Block124" parent="Gameplay/Beta/OZD/Dz1" index="411" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23000, 12440)
+scale = Vector2(0.227801, 0.330608)
+
+[node name="Block125" parent="Gameplay/Beta/OZD/Dz1" index="412" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23046, 12494)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block126" parent="Gameplay/Beta/OZD/Dz1" index="413" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23208, 12492)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block127" parent="Gameplay/Beta/OZD/Dz1" index="414" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23336, 12494)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block128" parent="Gameplay/Beta/OZD/Dz1" index="415" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23448, 12521)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block129" parent="Gameplay/Beta/OZD/Dz1" index="416" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23456, 12557)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block137" parent="Gameplay/Beta/OZD/Dz1" index="417" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21478, 13207)
+scale = Vector2(0.236917, 0.497391)
+
+[node name="Block148" parent="Gameplay/Beta/OZD/Dz1" index="418" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21928, 12915)
+scale = Vector2(0.575093, 0.198466)
+
+[node name="Block147" parent="Gameplay/Beta/OZD/Dz1" index="419" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(21124, 13156)
+scale = Vector2(0.236917, 0.497391)
+
+[node name="Block138" parent="Gameplay/Beta/OZD/Dz1" index="420" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20952, 13144)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block139" parent="Gameplay/Beta/OZD/Dz1" index="421" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20480, 13144)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block140" parent="Gameplay/Beta/OZD/Dz1" index="422" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20480, 13101)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block141" parent="Gameplay/Beta/OZD/Dz1" index="423" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20524, 13146)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block142" parent="Gameplay/Beta/OZD/Dz1" index="424" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20524, 13105)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block130" parent="Gameplay/Beta/OZD/Dz1" index="425" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23456, 12607)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block131" parent="Gameplay/Beta/OZD/Dz1" index="426" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23456, 12653)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block132" parent="Gameplay/Beta/OZD/Dz1" index="427" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23456, 12698)
+scale = Vector2(0.643311, 0.171944)
+
+[node name="Block133" parent="Gameplay/Beta/OZD/Dz1" index="428" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(23456, 12790)
+scale = Vector2(0.386949, 0.43938)
+
+[node name="Block134" parent="Gameplay/Beta/OZD/Dz1" index="429" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(19824, 12392)
+scale = Vector2(0.510891, 0.556334)
+
+[node name="Block101" parent="Gameplay/Beta/OZD/Dz1" index="430" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22232, 12316)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="Block143" parent="Gameplay/Beta/OZD/Dz1" index="431" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(20319, 13013)
+scale = Vector2(0.277804, 0.320814)
+
+[node name="Block102" parent="Gameplay/Beta/OZD/Dz1" index="432" instance=ExtResource("3_t6lq6")]
+z_index = 3
+position = Vector2(22936, 12321)
+scale = Vector2(0.366457, 0.430129)
+
+[node name="CzzernDzik54" parent="Gameplay/Beta/OZD/Dz1" index="482"]
+position = Vector2(18536, 12580)
+rotation = 12.5664
+scale = Vector2(0.481766, 1.89405)
+
+[node name="CzzernDzik111" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="495"]
+z_index = 7
+position = Vector2(20409, 13063)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik112" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="496"]
+z_index = 7
+position = Vector2(20552, 13087)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik113" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="497"]
+z_index = 7
+position = Vector2(20512, 13154)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik124" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="498"]
+z_index = 7
+position = Vector2(20472, 13063)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik126" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="499"]
+z_index = 7
+position = Vector2(20472, 13063)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik125" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="500"]
+z_index = 7
+position = Vector2(20608, 13141)
+rotation = 19.8967
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik114" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="501"]
+z_index = 7
+position = Vector2(20784, 13205)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik115" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="502"]
+z_index = 7
+position = Vector2(20904, 13208)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik119" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="503"]
+z_index = 7
+position = Vector2(20816, 13186)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik120" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="504"]
+z_index = 7
+position = Vector2(20776, 13185)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik121" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="505"]
+z_index = 7
+position = Vector2(20952, 13186)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik122" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="506"]
+z_index = 7
+position = Vector2(20628, 13100)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik116" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="507"]
+z_index = 7
+position = Vector2(21048, 13136)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik117" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="508"]
+z_index = 7
+position = Vector2(21128, 13135)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik118" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="509"]
+z_index = 7
+position = Vector2(20944, 13229)
+rotation = 17.2787
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik133" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="510"]
+z_index = 7
+position = Vector2(21200, 13086)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik134" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="511"]
+z_index = 7
+position = Vector2(21287, 13095)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik135" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="512"]
+z_index = 7
+position = Vector2(21200, 13112)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik136" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="513"]
+z_index = 7
+position = Vector2(21104, 13178)
+rotation = 17.2787
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik139" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="514"]
+z_index = 7
+position = Vector2(21528, 13186)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik140" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="515"]
+z_index = 7
+position = Vector2(22016, 12992)
+rotation = 21.9911
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik142" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="516"]
+z_index = 7
+position = Vector2(21912, 12946)
+rotation = 17.2787
+scale = Vector2(0.243486, 1.08469)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik137" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="517"]
+z_index = 7
+position = Vector2(21032, 13113)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik127" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="518"]
+z_index = 7
+position = Vector2(20304, 12819)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik130" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="519"]
+z_index = 7
+position = Vector2(20304, 12803)
+rotation = 18.8495
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik131" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="520"]
+z_index = 7
+position = Vector2(20400, 12898)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik132" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="521"]
+z_index = 7
+position = Vector2(20400, 12942)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik128" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="522"]
+z_index = 7
+position = Vector2(20265, 12783)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik129" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="523"]
+z_index = 7
+position = Vector2(20200, 12607)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik138" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="524"]
+z_index = 7
+position = Vector2(20200, 12546)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik123" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="525"]
+z_index = 7
+position = Vector2(20736, 13190)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik67" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="526"]
+z_index = 7
+position = Vector2(20200, 12267)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik68" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="527"]
+z_index = 7
+position = Vector2(20201, 12192)
+rotation = 20.4203
+scale = Vector2(0.702002, 0.999993)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik69" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="528"]
+z_index = 7
+position = Vector2(20225, 12162)
+rotation = 20.4203
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik73" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="529"]
+z_index = 7
+position = Vector2(21248, 12282)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik74" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="530"]
+z_index = 7
+position = Vector2(21304, 12384)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik75" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="531"]
+z_index = 7
+position = Vector2(21320, 12363)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik76" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="532"]
+z_index = 7
+position = Vector2(21376, 12462)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik77" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="533"]
+z_index = 7
+position = Vector2(21504, 12462)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik108" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="534"]
+z_index = 7
+position = Vector2(21256, 12152)
+rotation = 22.2529
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik109" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="535"]
+z_index = 7
+position = Vector2(21224, 12120)
+rotation = 21.9911
+scale = Vector2(0.520067, 0.647859)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik110" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="536"]
+z_index = 7
+position = Vector2(21224, 12084)
+rotation = 18.8495
+scale = Vector2(0.520067, 0.647859)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik78" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="537"]
+z_index = 7
+position = Vector2(21626, 12465)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik81" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="538"]
+z_index = 7
+position = Vector2(21752, 12465)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik84" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="539"]
+z_index = 7
+position = Vector2(21872, 12464)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik85" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="540"]
+z_index = 7
+position = Vector2(21820, 12514)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik86" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="541"]
+z_index = 7
+position = Vector2(21820, 12549)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik87" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="542"]
+z_index = 7
+position = Vector2(21888, 12566)
+rotation = 20.4203
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik88" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="543"]
+z_index = 7
+position = Vector2(21912, 12459)
+rotation = 20.6821
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik89" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="544"]
+z_index = 7
+position = Vector2(21993.4, 12457)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik90" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="545"]
+z_index = 7
+position = Vector2(22121.4, 12457)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik91" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="546"]
+z_index = 7
+position = Vector2(22245, 12457)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik92" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="547"]
+z_index = 7
+position = Vector2(22364, 12458)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik93" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="548"]
+z_index = 7
+position = Vector2(22488, 12458)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik94" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="549"]
+z_index = 7
+position = Vector2(22611, 12459)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik95" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="550"]
+z_index = 7
+position = Vector2(22736, 12459)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik96" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="551"]
+z_index = 7
+position = Vector2(22856, 12459)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik97" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="552"]
+z_index = 7
+position = Vector2(22944, 12462)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik98" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="553"]
+z_index = 7
+position = Vector2(22989, 12486)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik99" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="554"]
+z_index = 7
+position = Vector2(23057, 12557)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik100" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="555"]
+z_index = 7
+position = Vector2(23168, 12555)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik101" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="556"]
+z_index = 7
+position = Vector2(23272, 12552)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik102" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="557"]
+z_index = 7
+position = Vector2(23376, 12555)
+rotation = 21.9911
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik103" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="558"]
+z_index = 7
+position = Vector2(23432, 12560)
+rotation = 23.0383
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik104" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="559"]
+z_index = 7
+position = Vector2(23448, 12660)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik105" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="560"]
+z_index = 7
+position = Vector2(23448, 12854)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik106" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="561"]
+z_index = 7
+position = Vector2(22256, 12427)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik107" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="562"]
+z_index = 7
+position = Vector2(22312, 12427)
+rotation = 26.7035
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik79" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="563"]
+z_index = 7
+position = Vector2(21648, 12514)
+rotation = 20.4203
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik80" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="564"]
+z_index = 7
+position = Vector2(21592, 12513)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik82" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="565"]
+z_index = 7
+position = Vector2(21560, 12447)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik83" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="566"]
+z_index = 7
+position = Vector2(21587, 12441)
+rotation = 23.5619
+scale = Vector2(0.51109, 0.96808)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik70" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="567"]
+z_index = 7
+position = Vector2(20222, 12119)
+rotation = 21.9911
+scale = Vector2(0.425915, 0.803674)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik71" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="568"]
+z_index = 7
+position = Vector2(20216, 12084)
+rotation = 18.8495
+scale = Vector2(0.425915, 0.803674)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik72" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="569"]
+z_index = 7
+position = Vector2(20120, 12114)
+rotation = 18.3259
+scale = Vector2(0.425915, 0.803674)
+texture = ExtResource("4_o6day")
+
+[node name="Kamien" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1" index="633"]
+position = Vector2(22384, 12983)
+rotation = -3.14159
+scale = Vector2(0.408508, 0.637536)
+texture = ExtResource("9_2pipl")
+
+[node name="TrawaDzik8" type="Sprite2D" parent="Gameplay/Beta/OZD/ZiemiaDzik4" index="2"]
+z_index = 1
+position = Vector2(5756, -281)
+texture = ExtResource("9_xkmbh")
+
+[node name="TrawaDzik9" type="Sprite2D" parent="Gameplay/Beta/OZD/ZiemiaDzik4" index="3"]
+z_index = 1
+position = Vector2(5884, -153)
+texture = ExtResource("9_xkmbh")
+
+[node name="ZiemiaDzik26" type="Sprite2D" parent="Gameplay/Beta/OZD" index="26"]
+position = Vector2(21208, 13080)
+texture = ExtResource("9_0c2w1")
+
+[node name="ZiemiaDzik27" type="Sprite2D" parent="Gameplay/Beta/OZD" index="27"]
+position = Vector2(21048, 13144)
+texture = ExtResource("9_0c2w1")
+
+[node name="ZiemiaDzik31" type="Sprite2D" parent="Gameplay/Beta/OZD" index="28"]
+position = Vector2(21048, 13144)
+texture = ExtResource("9_0c2w1")
+
+[node name="ZiemiaDzik29" type="Sprite2D" parent="Gameplay/Beta/OZD" index="29"]
+position = Vector2(20620, 13152)
+texture = ExtResource("9_0c2w1")
+
+[node name="ZiemiaDzik30" type="Sprite2D" parent="Gameplay/Beta/OZD" index="30"]
+position = Vector2(20620, 13118)
+texture = ExtResource("9_0c2w1")
+
+[node name="Kolumna-2-glowna4" type="Sprite2D" parent="Gameplay/Beta/OZD/FilOzd7" index="2"]
+z_index = 1
+position = Vector2(-88.0805, -279.042)
+rotation = -0.379938
+scale = Vector2(0.677828, -0.717746)
+texture = ExtResource("5_q74c7")
+
+[node name="Kolumna-2-glowna5" type="Sprite2D" parent="Gameplay/Beta/OZD/FilOzd7" index="3"]
+z_index = 1
+position = Vector2(-19.9292, -255.256)
+rotation = -0.379938
+scale = Vector2(0.677828, -0.717746)
+texture = ExtResource("5_q74c7")
+
+[node name="Kolumna-2-glowna3" type="Sprite2D" parent="Gameplay/Beta/OZD/FilOzd7" index="4"]
+z_index = 1
+position = Vector2(-216.331, -249.27)
+rotation = -0.379938
+scale = Vector2(0.677828, -0.717746)
+texture = ExtResource("5_q74c7")
+
+[node name="Player" parent="Gameplay" index="3"]
+position = Vector2(406.561, 416.33)
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
+shape = SubResource("CircleShape2D_klkfr")
+
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
+main = NodePath("../../..")
+
+[node name="Menus" type="CanvasLayer" parent="."]
+process_mode = 2
+layer = 2
+
+[node name="PauseMenu" parent="Menus" node_paths=PackedStringArray("main_menu") instance=ExtResource("3_apl8s")]
+visible = false
+main_menu = NodePath("../MainMenu")
+
+[node name="DeathMenu" parent="Menus" node_paths=PackedStringArray("gameplay", "main_menu") instance=ExtResource("5_saqgk")]
+visible = false
+gameplay = NodePath("../../Gameplay")
+main_menu = NodePath("../MainMenu")
+
+[node name="EndScreen" parent="Menus" node_paths=PackedStringArray("main") instance=ExtResource("27_qlefr")]
+visible = false
+main = NodePath("../..")
+
+[node name="MainMenu" parent="Menus" node_paths=PackedStringArray("gameplay") instance=ExtResource("2_s1k2l")]
+visible = false
+gameplay = NodePath("../../Gameplay")
+
+[node name="Musica" type="Node" parent="."]
+
+[node name="DrzewoSpokój" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("7_sm4c8")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
+
+[node name="LasWalka1" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("10_5mg8o")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
+
+[node name="LasSpokoj1" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("9_l6hkt")
+autoplay = true
+parameters/looping = true
+
+[node name="DrzewoWalka" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("8_pwxx4")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
+
+[node name="Node2D" type="Area2D" parent="Musica"]
+script = ExtResource("11_351p3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
+position = Vector2(23123.8, 861.5)
+shape = SubResource("RectangleShape2D_24a2n")
+
+[connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Musica/Node2D" to="Musica/Node2D" method="_on_body_entered"]
+
+[editable path="Gameplay"]
+[editable path="Gameplay/Beta"]
+[editable path="Gameplay/Beta/OZD/Dz1/Schod ozd4"]
