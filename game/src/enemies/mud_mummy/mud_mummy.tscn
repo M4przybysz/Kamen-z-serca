@@ -233,7 +233,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="MudMummy" type="CharacterBody2D" groups=["mud_mummy", "no_push"]]
+[node name="MudMummy" type="CharacterBody2D" groups=["mud_mummy"]]
 collision_layer = 208
 collision_mask = 208
 script = ExtResource("1_ri1ep")
@@ -254,6 +254,9 @@ wait_time = 5.0
 [node name="HuhTimer" type="Timer" parent="Timers"]
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+
+[node name="TurnCooldownTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
@@ -339,25 +342,25 @@ autoplay = "idle"
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4o23v")
 volume_db = 2.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="wrapAroundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ph1a7")
 volume_db = 2.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="chargeDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qyjaw")
 volume_db = 5.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [node name="walkindDraugr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ibqi1")
 volume_db = 5.0
-max_distance = 1200.0
+max_distance = 750.0
 attenuation = 1.56917
 
 [connection signal="timeout" from="Timers/ResetHPTimer" to="." method="_on_reset_hp_timer_timeout"]
@@ -366,6 +369,7 @@ attenuation = 1.56917
 [connection signal="timeout" from="Timers/IdleStayTimer" to="." method="_on_idle_stay_timer_timeout"]
 [connection signal="timeout" from="Timers/HuhTimer" to="." method="_on_huh_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/TurnCooldownTimer" to="." method="_on_turn_cooldown_timer_timeout"]
 [connection signal="area_entered" from="NormalHurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="NormalHurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="area_entered" from="ChargeHurtbox" to="." method="_on_hurtbox_area_entered"]

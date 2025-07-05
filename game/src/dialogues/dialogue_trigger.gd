@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var ui: Control = $"../../../UI/UI"
+@onready var ui: Control = $"../../../../UI/UI"
 @export var dialogue_box_position:Vector2=Vector2(1320,500)
 @export var one_time_trigger: bool = true
 
@@ -11,3 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 		dialogue_triggered = true
 		body.movement_lock = true
 		ui.print_scene(dialogue_box_position)
+		ui.boss_to_start = 1

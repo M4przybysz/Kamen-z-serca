@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b4363e8k1pf0c"]
+[gd_scene load_steps=45 format=3 uid="uid://b4363e8k1pf0c"]
 
 [ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="1_3c6d5"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="2_2s78a"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="39_w14d5"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="40_f3ql8"]
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="41_efofl"]
+[ext_resource type="PackedScene" uid="uid://3lsfd6pikghv" path="res://src/bosses/dead_bride/dead_bride.tscn" id="42_ew8g7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_el4hk"]
 
@@ -4097,3 +4098,6 @@ position = Vector2(34568, 7944)
 
 [node name="HealthPack3" parent="." instance=ExtResource("41_efofl")]
 position = Vector2(33452, 8536)
+
+[node name="DeadBride" parent="." instance=ExtResource("42_ew8g7")]
+position = Vector2(46006, 5871)
