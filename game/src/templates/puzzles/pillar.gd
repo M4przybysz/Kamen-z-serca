@@ -2,11 +2,11 @@ extends RigidBody2D
 
 var left_check: bool = false
 var right_check: bool = false
-
+var on_plate: bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if right_check && left_check:
+	if (right_check && left_check) || on_plate:
 		freeze = true
 	else:
 		freeze = false

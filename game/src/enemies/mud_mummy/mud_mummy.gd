@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var idle_stay_timer: Timer = $Timers/IdleStayTimer
 @onready var huh_timer: Timer = $Timers/HuhTimer			# Timer used for delaying enemy turning XD
 @onready var attack_timer: Timer = $Timers/AttackTimer
+@onready var turn_cooldown_timer: Timer = $Timers/TurnCooldownTimer
 
 # Assign player to variable
 @onready var player: CharacterBody2D = $"../../../Player"
@@ -46,6 +47,8 @@ var right_idle_movement_limit: float	# Idle movement limiting point to the right
 var knockback: Vector2 = Vector2.ZERO						# Dynamic knockback force
 
 @export var charge_distance: float = 400.0	# Distnce from player to start charging
+@export var can_push_pillars: bool = false
+@export var no_charge: bool = false
 
 # Combat variables
 @export var max_hp: int = 3
@@ -72,6 +75,7 @@ var is_wrapping: bool = false
 var can_wrap: bool = false
 var animation_locked: bool = false
 var can_break_wall: bool = false
+var can_turn: bool = true
 
 # Random number generator
 var RNG = RandomNumberGenerator.new()
@@ -86,6 +90,9 @@ func _ready() -> void:
 	hp = max_hp
 	target = global_position.x
 	movement_speed = movement_speed_input
+	
+	if can_push_pillars:
+		collision_mask = 144
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -98,20 +105,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		normal_hurtbox_collision.disabled = false
 	
-	# Decide what to do
+	# Decide what to do and play animation
 	state_machine()
 	
-	# Change direction to the target (player or random point on X axis)
-	if target > global_position.x:
-		direction = 1
-	elif target < global_position.x:
-		direction = -1
-	else:
-		direction = 0
+	if can_turn:
+		# Change direction to the target (player or random point on X axis)
+		if target > global_position.x:
+			direction = 1
+		elif target < global_position.x:
+			direction = -1
+		else:
+			direction = 0
 	
-	# Animate enemy
-	flip_h()
-	# animated_sprite.play(state)
+		# Turn right or left
+		flip_h()
 	
 	velocity.x = direction * movement_speed
 	if !stun_timer.is_stopped(): velocity.x = 0
@@ -170,12 +177,12 @@ func state_machine():
 					animated_sprite.play(state)
 		"combat":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "lay_down"
+			elif player_in_charge_range && !no_charge: state = "lay_down"
 			elif player_in_attack_range: state = "attack"
 			else: state = "combat_movement"
 		"combat_movement":
 			if !sees_player: state = "idle"
-			elif player_in_charge_range: state = "lay_down"
+			elif player_in_charge_range && !no_charge: state = "lay_down"
 			elif player_in_attack_range: state = "attack"
 			else: 
 				combat_movement()
@@ -240,6 +247,9 @@ func flip_h() -> void:
 		animated_sprite.flip_h = true
 		attack_hitbox_collision.position.x = -25
 		wall_detector_collision.rotation_degrees = 90
+	
+	can_turn = false
+	turn_cooldown_timer.start()
 
 #########################################
 # Hitboxes and hurtboxes handling
@@ -300,6 +310,10 @@ func _on_idle_stay_timer_timeout() -> void:
 func _on_huh_timer_timeout() -> void:
 	huh_timer.stop()
 
+func _on_turn_cooldown_timer_timeout() -> void:
+	turn_cooldown_timer.stop()
+	can_turn = true
+
 #########################################
 # Combat handling
 #########################################
@@ -311,7 +325,7 @@ func decrease_hp(value: int) -> void:
 	#print(hp)
 
 func die() -> void:
-	print("Deleting enemy...")
+	#print("Deleting enemy...")
 	queue_free()
 
 func attack() -> void:
