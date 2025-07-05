@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bem0xf8p8cvhd"]
+[gd_scene load_steps=49 format=3 uid="uid://bem0xf8p8cvhd"]
 
 [ext_resource type="Script" path="res://src/levels/parallax_background.gd" id="1_46qi8"]
 [ext_resource type="PackedScene" uid="uid://bx23kih6wt82a" path="res://src/krzesimirowe_sceny/schody.tscn" id="1_eibag"]
@@ -12,16 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://cbjk6ef2kvkyx" path="res://assets/Background/chmura1.png" id="5_vtaro"]
 [ext_resource type="Texture2D" uid="uid://cqkv4dqtdf4jr" path="res://icon.svg" id="6_w85h7"]
 [ext_resource type="Texture2D" uid="uid://dkg53p0oyf6q1" path="res://assets/sprites/environment/brown.png" id="7_m1wh5"]
-[ext_resource type="Script" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.gd" id="8_c7vtu"]
 [ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="9_5257e"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="10_s0h4d"]
 [ext_resource type="PackedScene" uid="uid://drxv3r1w44i2h" path="res://src/krzesimirowe_sceny/oz_grab.tscn" id="11_se4u3"]
 [ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="12_2rkfp"]
 [ext_resource type="Texture2D" uid="uid://b8od1vctqyayo" path="res://assets/sprites/spikes/spikes.png" id="13_mxkye"]
 [ext_resource type="PackedScene" uid="uid://cjx5qw1hi6dm6" path="res://src/templates/enviroment/death_zone.tscn" id="13_xofsb"]
+[ext_resource type="PackedScene" uid="uid://bbc4dta7s3n87" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="13_ya24d"]
 [ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/external_assets/skały 2.png" id="14_a8ili"]
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/external_assets/gory.png" id="15_lks04"]
 [ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/external_assets/skala-gen.png" id="16_6g4ad"]
+[ext_resource type="PackedScene" uid="uid://v414gfe82fql" path="res://src/templates/puzzles/pillar_stopper.tscn" id="16_debpf"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="17_lv4so"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="18_j2urr"]
 [ext_resource type="PackedScene" uid="uid://mpiwwwfe4es3" path="res://src/bosses/great_oak/great_oak.tscn" id="20_wijuu"]
@@ -78,25 +79,13 @@ size = Vector2(30, 132)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v3bg1"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_46jyf"]
-b = Vector2(0, 30)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_w41lm"]
-b = Vector2(0, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlft8"]
-size = Vector2(100, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t2ua"]
-size = Vector2(20, 10)
-
 [node name="Alfa_v1" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("1_46qi8")
 
 [node name="FarLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(2362.57, 0)
 
@@ -106,7 +95,7 @@ scale = Vector2(0.35088, 0.38013)
 texture = ExtResource("1_sairl")
 
 [node name="MiddleLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-5, -1137)
+position = Vector2(-5, -1050)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(3200, 0)
 script = ExtResource("2_sr5oq")
@@ -123,7 +112,7 @@ scale = Vector2(1, 1.123)
 texture = ExtResource("4_lbckg")
 
 [node name="Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(3000, 0)
 script = ExtResource("2_sr5oq")
@@ -135,7 +124,7 @@ scale = Vector2(0.651778, 0.651778)
 texture = ExtResource("5_vtaro")
 
 [node name="CloseLandscape" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-41, -805)
+position = Vector2(-41, -700)
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -3263,16 +3252,6 @@ position = Vector2(14415, 1656)
 position = Vector2(15898, 1372)
 physics_material_override = SubResource("PhysicsMaterial_a8bce")
 
-[node name="Block93" type="StaticBody2D" parent="Environment/Level3"]
-position = Vector2(15324, 1893)
-collision_layer = 32
-collision_mask = 32
-physics_material_override = SubResource("PhysicsMaterial_a8bce")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Level3/Block93"]
-position = Vector2(0, -51)
-shape = SubResource("RectangleShape2D_ue20i")
-
 [node name="Block112" type="StaticBody2D" parent="Environment/Level3"]
 position = Vector2(16688, 62)
 scale = Vector2(1, 2)
@@ -3514,53 +3493,9 @@ detect_blocks = true
 [node name="Puzzles2" type="Node2D" parent="Environment"]
 position = Vector2(15532, 1037)
 
-[node name="PressurePlate" type="StaticBody2D" parent="Environment/Puzzles2" node_paths=PackedStringArray("thing_to_open")]
-position = Vector2(391, 1408)
-collision_layer = 33
-collision_mask = 33
-script = ExtResource("8_c7vtu")
+[node name="PressurePlate" parent="Environment/Puzzles2" node_paths=PackedStringArray("thing_to_open") instance=ExtResource("13_ya24d")]
+position = Vector2(323, 1402)
 thing_to_open = NodePath("../Door")
-
-[node name="MovementLockTimer" type="Timer" parent="Environment/Puzzles2/PressurePlate"]
-wait_time = 0.05
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Puzzles2/PressurePlate"]
-position = Vector2(-50, -7)
-rotation = 1.0472
-shape = SubResource("SegmentShape2D_46jyf")
-
-[node name="ColorRect" type="ColorRect" parent="Environment/Puzzles2/PressurePlate/CollisionShape2D2"]
-offset_right = 17.0
-offset_bottom = 30.0
-color = Color(0.214462, 0.217655, 0.24427, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Puzzles2/PressurePlate"]
-position = Vector2(50, -7)
-rotation = -1.0472
-shape = SubResource("SegmentShape2D_w41lm")
-
-[node name="ColorRect2" type="ColorRect" parent="Environment/Puzzles2/PressurePlate/CollisionShape2D"]
-offset_left = -17.0
-offset_bottom = 30.0
-color = Color(0.215331, 0.215783, 0.253409, 1)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Environment/Puzzles2/PressurePlate"]
-shape = SubResource("RectangleShape2D_nlft8")
-
-[node name="ColorRect3" type="ColorRect" parent="Environment/Puzzles2/PressurePlate/CollisionShape2D3"]
-offset_left = -50.0
-offset_top = -7.0
-offset_right = 50.0
-offset_bottom = 7.0
-color = Color(0.125254, 0.327538, 0.619359, 1)
-
-[node name="Area2D" type="Area2D" parent="Environment/Puzzles2/PressurePlate/CollisionShape2D3"]
-collision_layer = 32
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D"]
-position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_0t2ua")
 
 [node name="Door" parent="Environment/Puzzles2" instance=ExtResource("9_5257e")]
 position = Vector2(147, 707)
@@ -3581,6 +3516,9 @@ scale = Vector2(1.02559, -1)
 position = Vector2(5681.02, 1246.99)
 rotation = 3.14159
 scale = Vector2(1.02559, -1)
+
+[node name="PillarStopper" parent="Environment/Puzzles2" instance=ExtResource("16_debpf")]
+position = Vector2(-180, 804)
 
 [node name="Graf" type="Node2D" parent="Environment"]
 
@@ -4104,6 +4042,7 @@ position = Vector2(16778, 1794)
 position = Vector2(15462, 2026)
 idle_movement_range_left = 2
 idle_movement_range_right = 2
+can_push_pillars = true
 
 [node name="MudMummy8" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(17118, 617)
@@ -4119,6 +4058,7 @@ idle_movement_range_right = 2
 
 [node name="MudMummy12" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(3318, 609)
+no_charge = true
 
 [node name="MudMummy10" parent="enemies" instance=ExtResource("17_lv4so")]
 position = Vector2(18133, 371)
@@ -4155,7 +4095,7 @@ position = Vector2(23741, 162)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("21_k80ta")]
-position = Vector2(23761, 746)
+position = Vector2(23496, 848)
 heal = 1
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("21_k80ta")]
@@ -4236,6 +4176,3 @@ position = Vector2(9872, 950)
 rotation = -3.14159
 scale = Vector2(-0.398746, 0.513456)
 texture = ExtResource("22_xpo1j")
-
-[connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
-[connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]

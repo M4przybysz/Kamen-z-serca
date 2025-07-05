@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://mpiwwwfe4es3"]
+[gd_scene load_steps=25 format=3 uid="uid://mpiwwwfe4es3"]
 
 [ext_resource type="Texture2D" uid="uid://bx46jgj6dp41j" path="res://assets/sprites/tree/tree.png" id="1_gah10"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="1_scwdp"]
@@ -478,6 +478,670 @@ tracks/36/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D:rotation")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:disabled")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:disabled")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:disabled")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:disabled")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:disabled")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:disabled")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:disabled")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:disabled")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:disabled")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:visible")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:visible")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:visible")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:visible")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:visible")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:visible")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:visible")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:position")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, 0)]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:position")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(750, 0)]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:position")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 0)]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:position")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, -100)]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:position")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(750, -100)]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:position")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, -100)]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:position")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, -200)]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:position")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(750, -200)]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:position")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, -200)]
+}
+
+[sub_resource type="Animation" id="Animation_fmn21"]
+resource_name = "faling_acorns_attack"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Attacks/FallingAcornsAttack/Acorn1:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(500, 850)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Attacks/FallingAcornsAttack/Acorn2:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0.25, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(750, 0), Vector2(750, 850)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Attacks/FallingAcornsAttack/Acorn3:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.5, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 0), Vector2(1000, 850)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Attacks/FallingAcornsAttack/Acorn4:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(1.25, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, -100), Vector2(500, 750)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Attacks/FallingAcornsAttack/Acorn5:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(1, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(750, -100), Vector2(750, 750)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Attacks/FallingAcornsAttack/Acorn6:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, -100), Vector2(1000, 750)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Attacks/FallingAcornsAttack/Acorn7:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(1.5, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, -200), Vector2(500, 650)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Attacks/FallingAcornsAttack/Acorn8:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(1.75, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(750, -200), Vector2(750, 650)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Attacks/FallingAcornsAttack/Acorn9:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(2, 2.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, -200), Vector2(1000, 650)]
+}
 
 [sub_resource type="Animation" id="Animation_i5who"]
 resource_name = "long_branch_attack"
@@ -492,7 +1156,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1950, 500), Vector2(1000, 500), Vector2(1950, 500)]
+"values": [Vector2(1950, 500), Vector2(1250, 500), Vector2(1950, 500)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -516,7 +1180,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1950, 425), Vector2(1950, 425), Vector2(1000, 425), Vector2(1950, 425)]
+"values": [Vector2(1950, 425), Vector2(1950, 425), Vector2(1250, 425), Vector2(1950, 425)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -540,7 +1204,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 1, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1950, 350), Vector2(1950, 350), Vector2(1000, 350), Vector2(1950, 350)]
+"values": [Vector2(1950, 350), Vector2(1950, 350), Vector2(1250, 350), Vector2(1950, 350)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -693,7 +1357,7 @@ tracks/0/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 0.833333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1250, 680), Vector2(1250, 600), Vector2(1250, 680)]
@@ -729,7 +1393,7 @@ tracks/3/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 1.23333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1100, 680), Vector2(1100, 600), Vector2(1100, 680)]
@@ -765,7 +1429,7 @@ tracks/6/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 0.3, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(950, 680), Vector2(950, 600), Vector2(950, 680)]
@@ -801,7 +1465,7 @@ tracks/9/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D4:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 0.9, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(800, 680), Vector2(800, 600), Vector2(800, 680)]
@@ -837,7 +1501,7 @@ tracks/12/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D5:position"
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 1.23333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(650, 680), Vector2(650, 600), Vector2(650, 680)]
@@ -861,7 +1525,7 @@ tracks/14/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D7:position"
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 0.733333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(350, 680), Vector2(350, 600), Vector2(350, 680)]
@@ -938,10 +1602,35 @@ tracks/20/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.833333, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, -0.261799, -0.261799]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Attacks/SpikedRootsAttack/CollisionShape2D2:rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 1.23333, 1.36667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.436332, -0.261799, -0.261799]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_56seq"]
 _data = {
 "RESET": SubResource("Animation_vk68o"),
+"faling_acorns_attack": SubResource("Animation_fmn21"),
 "long_branch_attack": SubResource("Animation_i5who"),
 "moving_root_attack": SubResource("Animation_naxl5"),
 "short_branch_attack": SubResource("Animation_hsyyr"),
@@ -958,7 +1647,8 @@ size = Vector2(960.5, 43.5)
 radius = 50.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7561"]
-height = 100.0
+radius = 11.0
+height = 26.0
 
 [node name="GreatOak" type="Node2D"]
 script = ExtResource("1_ynktw")
@@ -995,6 +1685,9 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground"]
 shape = SubResource("RectangleShape2D_ruw3r")
 
+[node name="DialogueTrigger" parent="Environment" instance=ExtResource("2_5bsk2")]
+position = Vector2(1101, 489)
+
 [node name="ArenaClosing" type="Node2D" parent="Environment"]
 
 [node name="LockTrigger" type="Area2D" parent="Environment/ArenaClosing"]
@@ -1006,7 +1699,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1xy0x")
 
 [node name="ArenaLock" type="StaticBody2D" parent="Environment/ArenaClosing"]
-position = Vector2(-25, 320)
+position = Vector2(50, 320)
 collision_layer = 49
 collision_mask = 49
 
@@ -1021,6 +1714,7 @@ offset_top = -400.0
 offset_right = 25.0
 offset_bottom = 400.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Body" type="Node2D" parent="."]
 
@@ -1237,6 +1931,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/Attacks/SpikedRootsAttack"]
 visible = false
 position = Vector2(1100, 680)
+rotation = -0.261799
 shape = SubResource("CapsuleShape2D_v7561")
 disabled = true
 
@@ -1318,16 +2013,141 @@ offset_bottom = 50.0
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="FallingAcornsAttack" type="Area2D" parent="Body/Attacks"]
+[node name="FallingAcornsAttack" type="Area2D" parent="Body/Attacks" groups=["falling_acorn"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Acorn1" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(500, 0)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn1"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn2" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(750, 0)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn2"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn3" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(1000, 0)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn3"]
+offset_left = -10.0
+offset_top = -13.2105
+offset_right = 10.0
+offset_bottom = 12.7895
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn4" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(500, -100)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn4"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn5" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(750, -100)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn5"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn6" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(1000, -100)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn6"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn7" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(500, -200)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn7"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn8" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(750, -200)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn8"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Acorn9" type="CollisionShape2D" parent="Body/Attacks/FallingAcornsAttack"]
+visible = false
+position = Vector2(1000, -200)
+shape = SubResource("CapsuleShape2D_v7561")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Body/Attacks/FallingAcornsAttack/Acorn9"]
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ScreenSize" type="ColorRect" parent="."]
 visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 1, 0.239216)
-
-[node name="DialogueTrigger" parent="." instance=ExtResource("2_5bsk2")]
-position = Vector2(1101, 489)
 
 [connection signal="timeout" from="Timers/WindTimer" to="." method="_on_wind_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]

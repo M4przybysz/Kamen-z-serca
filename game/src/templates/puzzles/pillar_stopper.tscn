@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://v414gfe82fql"]
+
+[ext_resource type="Script" path="res://src/templates/puzzles/pillar_stopper.gd" id="1_qjuwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yugg"]
+size = Vector2(100, 100)
+
+[node name="PillarStopper" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_qjuwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3yugg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

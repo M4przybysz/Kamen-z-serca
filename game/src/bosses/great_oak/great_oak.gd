@@ -1,7 +1,11 @@
 extends Node2D
 
+# Arena "door"
 @onready var arena_lock: CollisionShape2D = $Environment/ArenaClosing/ArenaLock/CollisionShape2D
+@onready var lock_trigger: Area2D = $Environment/ArenaClosing/LockTrigger
+@onready var dialogue_trigger: Area2D = $Environment/DialogueTrigger
 
+# Assign AnimationPlayer to variables
 @onready var attack_player: AnimationPlayer = $Body/AttackPlayer
 
 # Assign Timers to variables
@@ -11,6 +15,7 @@ extends Node2D
 # Assign attack collisions to variables
 @onready var wind_collision: CollisionShape2D = $Body/Wind/CollisionShape2D
 
+# Main stuff
 @onready var ui: Control = $"../../UI/UI"
 @onready var main: Node = $"../../../"
 
@@ -23,7 +28,7 @@ const dmg_dictionary = { # Disctionary used to determine the dmg taken by the pl
 	"bronze_feather" : 2,
 	"spear" : 3,
 	"spike" : 1,
-	# Add more values here (format "attack_name" : damage)
+	# Add more values here ("attack_name" : damage)
 }
 
 # Possible attacks:
@@ -68,9 +73,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# Don't do anything unless the fight starts
-	if unlock_arena && !arena_lock.disabled:
+	if unlock_arena:
 		arena_lock.disabled = true
 		arena_lock.visible = false
+		if arena_lock.disabled && !arena_lock.visible:
+			unlock_arena = false
 	
 	if !wind_timer.is_stopped(): wind_collision.disabled = false
 	
@@ -104,11 +111,13 @@ func reset_attack_pattern() -> void:
 	elif fight_phase == 2:
 		active_attack_pattern = attack_patterns2[RNG.randi_range(0, 2)]
 
-func spiked_roots() -> void:
-	print("spiked_roots_attack")
-
-func falling_acorns() -> void:
-	print("falling_acorns_attack")
+func drop_health_pack() -> void:
+	var health_pack = load("res://src/health_pack/health_pack.tscn")
+	var new_health_pack = health_pack.instantiate()
+	var random_positions = [375, 625, 875]
+	new_health_pack.position.x = random_positions[randi() % random_positions.size()]
+	new_health_pack.position.y = 600
+	add_child(new_health_pack)
 
 #########################################
 # Starting a bloodbath
@@ -117,6 +126,16 @@ func start_fight() -> void:
 	is_in_fight = true
 	attack_cooldown_timer.start()
 	ui.show_boss_hp_bar("PRADAWNY DĄB")
+
+func reset_fight() -> void:
+	hp = max_hp
+	ui.hide_boss_hp_bar()
+	is_in_fight = false
+	unlock_arena = true
+	lock_trigger.reset()
+	dialogue_trigger.dialogue_triggered = false
+	main.las_spokoj.volume_db = 0
+	main.drzewo_walka.volume_db = -80
 
 #########################################
 # HP handling
@@ -148,6 +167,8 @@ func decrease_hp(value: int) -> void:
 		is_in_fight = false
 		unlock_arena = true
 		main.show_end_screen()
+		main.las_spokoj.volume_db = 0
+		main.drzewo_walka.volume_db = -80
 	if hp <= max_hp / 2:
 		fight_phase = 2
 	#print(hp)
@@ -169,7 +190,9 @@ func _on_attack_cooldown_timer_timeout() -> void:
 			2: attack_player.play("long_branch_attack")
 			3: attack_player.play("moving_root_attack")
 			4: attack_player.play("spiked_roots_attack")
-			5: falling_acorns()
+			5: 
+				attack_player.play("faling_acorns_attack")
+				drop_health_pack()
 			_: print("This pokemon doesn't know a move number ", active_attack_pattern[active_attack_index])
 		
 		active_attack_index += 1

@@ -29,6 +29,7 @@ E - (cheat) odblokowanie włóczni i tarczy
 "
 
 [node name="Alfa_v1" parent="." instance=ExtResource("4_83t1u")]
+position = Vector2(31, 0)
 
 [node name="Beta" parent="." instance=ExtResource("3_6ts5c")]
 

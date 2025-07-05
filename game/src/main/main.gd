@@ -7,6 +7,8 @@ extends Node
 
 @onready var las_walka: AudioStreamPlayer = $"Musica/LasWalka1"
 @onready var las_spokoj: AudioStreamPlayer = $"Musica/LasSpokoj1"
+@onready var drzewo_spokoj: AudioStreamPlayer = $"Musica/DrzewoSpokój"
+@onready var drzewo_walka: AudioStreamPlayer = $Musica/DrzewoWalka
 
 @export var player: CharacterBody2D
 @export var gameplay: Node2D
@@ -42,21 +44,18 @@ func show_end_screen():
 	gameplay.revive_position = Vector2(11225, -8995)
 	get_tree().paused = true
 
-
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("mud_mummy"):
 		combat_counter+=1
-		print(combat_counter)
+		#print(combat_counter)
 		if combat_counter > 0:
 			las_spokoj.volume_db = -80
 			las_walka.volume_db = 0
 
-
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("mud_mummy"):
 		combat_counter-=1
-		print(combat_counter)
+		#print(combat_counter)
 		if combat_counter <= 0:
 			las_spokoj.volume_db = 0
 			las_walka.volume_db = -80
