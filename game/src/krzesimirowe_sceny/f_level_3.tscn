@@ -1,0 +1,1475 @@
+[gd_scene load_steps=10 format=3 uid="uid://bywqvv2ge2shg"]
+
+[ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="1_lypu8"]
+[ext_resource type="PackedScene" uid="uid://cjdxi7ncb3cil" path="res://src/templates/enviroment/responsive_platform.tscn" id="2_4ntph"]
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="3_awitf"]
+[ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="4_hpc0m"]
+[ext_resource type="PackedScene" uid="uid://cxs7n0w7ox18b" path="res://src/templates/puzzles/door.tscn" id="5_4iuis"]
+[ext_resource type="PackedScene" uid="uid://bbc4dta7s3n87" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="6_ir5e4"]
+[ext_resource type="PackedScene" uid="uid://b4or4lsa5407x" path="res://src/templates/enviroment/czarn.tscn" id="7_7ig44"]
+[ext_resource type="PackedScene" uid="uid://vhd8wu8sob1g" path="res://src/templates/enviroment/Platform_slowing.tscn" id="8_xdmd4"]
+[ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="9_vq24i"]
+
+[node name="FLevel3" type="Node2D"]
+
+[node name="SpikeTest50" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43176, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest51" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43208, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest52" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43240, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest53" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43272, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest54" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43304, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest55" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43336, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest56" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43368, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest72" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43112, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest73" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43136, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest74" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43160, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest75" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43192, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest94" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42744, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest95" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42776, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest96" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42808, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest97" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42840, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest98" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42872, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest99" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42904, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest100" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42936, 9600)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest107" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42740, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest108" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42772, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest109" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42804, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest110" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42836, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest111" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42868, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest112" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42900, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest113" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42932, 9683.76)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest101" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42955.8, 9622.95)
+rotation = 2.35619
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest102" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42956.7, 9654.6)
+rotation = 2.35619
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest103" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42957.4, 9669.57)
+rotation = 2.35619
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest104" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42722.5, 9619.28)
+rotation = 5.49778
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest105" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42723.5, 9650.93)
+rotation = 5.49778
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest106" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(42724.1, 9665.89)
+rotation = 5.49778
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest76" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43224, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest77" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43256, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest78" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43288, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest79" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43320, 9752)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest80" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43104, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest81" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43128, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest82" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43152, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest83" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43184, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest84" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43216, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest85" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43248, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest86" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43280, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest87" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43312, 9840)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest88" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43328, 9776)
+rotation = -4.18878
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest89" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43328, 9800)
+rotation = -4.18878
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest90" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43328, 9824)
+rotation = -4.18878
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest91" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43088, 9816)
+rotation = -7.06857
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest92" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43088, 9792)
+rotation = -7.06857
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest93" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43088, 9768)
+rotation = -7.06857
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest57" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43392, 10336)
+rotation = 0.854517
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest58" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43168, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest59" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43200, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest60" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43232, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest61" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43264, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest62" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43296, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest63" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43328, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest64" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43360, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest65" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43384, 10424)
+rotation = -2.09439
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest66" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43408, 10408)
+rotation = -3.66519
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest67" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43408, 10376)
+rotation = -3.66519
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest68" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43408, 10352)
+rotation = -3.66519
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest69" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43160, 10352)
+rotation = -6.80677
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest70" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43160, 10384)
+rotation = -6.80677
+scale = Vector2(0.660547, 0.745469)
+
+[node name="SpikeTest71" parent="." instance=ExtResource("1_lypu8")]
+position = Vector2(43160, 10400)
+rotation = -6.80677
+scale = Vector2(0.660547, 0.745469)
+
+[node name="ResponsivePlatform28" parent="." instance=ExtResource("2_4ntph")]
+position = Vector2(36824, 10032)
+scale = Vector2(3.68008, 0.798572)
+
+[node name="ResponsivePlatform29" parent="." instance=ExtResource("2_4ntph")]
+position = Vector2(42976, 10600)
+scale = Vector2(0.889084, 0.661886)
+
+[node name="ResponsivePlatform30" parent="." instance=ExtResource("2_4ntph")]
+position = Vector2(42664, 10360)
+scale = Vector2(0.829909, 0.76755)
+
+[node name="Block1" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35384, 8600)
+scale = Vector2(2.9973, 2.23432)
+
+[node name="Block4" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36135.1, 8685.99)
+scale = Vector2(3.34639, 2.23432)
+
+[node name="Block66" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37104.6, 8797.04)
+scale = Vector2(2.9973, 2.23432)
+
+[node name="Block194" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37768.2, 8763.74)
+scale = Vector2(2.9973, 2.23432)
+
+[node name="Block49" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37936, 10504)
+scale = Vector2(5.65789, 2.18158)
+
+[node name="Block50" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38400, 10032)
+scale = Vector2(4.13694, 1.81136)
+
+[node name="Block17" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35664, 7864)
+scale = Vector2(3.83394, 1.86684)
+
+[node name="Block18" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35104, 7848)
+scale = Vector2(2.98207, 1.3469)
+
+[node name="Block16" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36672, 7776)
+scale = Vector2(4.04582, 1.69846)
+
+[node name="Block203" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44920, 4928)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block210" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44920, 6056)
+rotation = 1.57079
+scale = Vector2(3.81363, 0.611917)
+
+[node name="Block212" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44920, 7200)
+rotation = 2.09439
+scale = Vector2(1.88556, 0.530722)
+
+[node name="Block214" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44600, 7864)
+rotation = 3.40339
+scale = Vector2(4.72189, 1.99934)
+
+[node name="Block218" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44600, 7864)
+rotation = 3.14159
+scale = Vector2(4.72189, 1.99934)
+
+[node name="Block215" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(44744, 7416)
+rotation = 3.14159
+scale = Vector2(5.43618, 2.3988)
+
+[node name="Block217" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(46208, 9224)
+rotation = 3.66519
+scale = Vector2(5.53996, 4.81152)
+
+[node name="Block213" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45368, 7536)
+rotation = 2.09439
+scale = Vector2(1.88556, 0.530722)
+
+[node name="Block216" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45088, 8024)
+rotation = 2.09439
+scale = Vector2(1.7697, 0.535754)
+
+[node name="Block204" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45377.4, 4382.36)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block205" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45377.4, 4382.36)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block208" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45376, 4384)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block209" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45376, 5512)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block211" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45376, 6392)
+rotation = 1.57079
+scale = Vector2(3.80807, 0.515812)
+
+[node name="Block2" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35460, 8844)
+scale = Vector2(1.21688, 1.85053)
+
+[node name="Block3" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35560, 9088)
+scale = Vector2(1.0654, 1.88891)
+
+[node name="Block9" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35676, 9020)
+scale = Vector2(0.962603, 1.88159)
+
+[node name="Block8" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35512, 10032)
+scale = Vector2(4.43407, 2.22273)
+
+[node name="Block10" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35536, 9959.1)
+scale = Vector2(0.53247, 0.688452)
+
+[node name="Block11" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35528, 9992)
+scale = Vector2(0.650424, 1.07441)
+
+[node name="Block12" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35559.1, 9929.93)
+scale = Vector2(0.315458, 0.595951)
+
+[node name="Block44" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35583.1, 9895.1)
+scale = Vector2(0.315458, 0.595951)
+
+[node name="Block83" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36617.6, 9736)
+scale = Vector2(0.315458, 0.595951)
+
+[node name="Block58" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34992, 9640)
+scale = Vector2(0.164499, 0.157798)
+
+[node name="Block60" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35232.6, 9229.9)
+scale = Vector2(0.887971, 0.164939)
+
+[node name="Block129" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39850.3, 10336)
+scale = Vector2(0.449593, 0.876304)
+
+[node name="Block63" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35290.2, 8832.8)
+scale = Vector2(0.887971, 0.164939)
+
+[node name="Block20" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36000, 9800)
+scale = Vector2(0.601596, 1.02789)
+
+[node name="Block21" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35968, 9896)
+scale = Vector2(0.601596, 1.02789)
+
+[node name="Block24" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36032, 9680)
+scale = Vector2(0.265268, 0.357072)
+
+[node name="Block25" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36064, 9760)
+scale = Vector2(0.265268, 0.357072)
+
+[node name="Block37" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36040, 9720)
+rotation = 0.261799
+scale = Vector2(0.231901, 0.356819)
+
+[node name="Block38" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36053.4, 9741.19)
+rotation = -0.626274
+scale = Vector2(0.228192, 0.407093)
+
+[node name="Block61" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35312, 9040)
+rotation = -0.629648
+scale = Vector2(0.228192, 0.407093)
+
+[node name="Block39" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36288, 9586.79)
+rotation = -0.402323
+scale = Vector2(0.281714, 0.7964)
+
+[node name="Block43" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36542, 9494.02)
+rotation = 0.37833
+scale = Vector2(0.281714, 0.7964)
+
+[node name="Block40" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35809.9, 9480.05)
+rotation = 0.575582
+scale = Vector2(0.281714, 0.7964)
+
+[node name="Block22" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36144, 9896)
+scale = Vector2(1.89397, 0.828702)
+
+[node name="Block45" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36472, 10376)
+scale = Vector2(5.27843, 1.47834)
+
+[node name="Block46" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37912, 10032)
+scale = Vector2(2.22923, 0.187401)
+
+[node name="Block47" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37984, 10064)
+scale = Vector2(2.22923, 0.187401)
+
+[node name="Block48" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38080, 10112)
+scale = Vector2(2.22923, 0.187401)
+
+[node name="Block51" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38184, 10112)
+scale = Vector2(0.230399, 0.417392)
+
+[node name="Block52" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38240, 10120)
+scale = Vector2(0.218879, 0.393541)
+
+[node name="Block53" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38208, 10208)
+scale = Vector2(0.214468, 0.275989)
+
+[node name="Block55" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38224, 10176)
+scale = Vector2(0.214468, 0.275989)
+
+[node name="Block56" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38152, 10120)
+scale = Vector2(0.214468, 0.275989)
+
+[node name="Block54" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38280, 10080)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block100" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40866.6, 10054)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block133" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40901.9, 10154.1)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block134" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40944.8, 10198.7)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block140" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41429.2, 10227.3)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block145" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41706.2, 10275.8)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block135" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40996.1, 10147.4)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block132" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41090.2, 10060.7)
+scale = Vector2(0.514574, 0.406893)
+
+[node name="Block131" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40928.9, 10084.2)
+scale = Vector2(0.57966, 0.470216)
+
+[node name="Block64" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38339.5, 10455.7)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block65" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38375.3, 10356.6)
+scale = Vector2(0.225969, 0.421255)
+
+[node name="Block23" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36808, 10248)
+scale = Vector2(0.318495, 0.633219)
+
+[node name="Block95" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39919.3, 9809.67)
+scale = Vector2(0.318495, 0.633219)
+
+[node name="Block96" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39944.7, 9811.99)
+scale = Vector2(0.318495, 0.633219)
+
+[node name="Block97" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39963.3, 9761.67)
+scale = Vector2(0.318495, 0.633219)
+
+[node name="Block98" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39896.4, 9819.46)
+scale = Vector2(0.131842, 0.47898)
+
+[node name="Block99" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39958.8, 9899.68)
+scale = Vector2(0.131842, 0.47898)
+
+[node name="Block101" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39883, 9901.95)
+rotation = -0.523598
+scale = Vector2(0.159251, 0.505321)
+
+[node name="Block126" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40232.1, 10308)
+rotation = -0.523598
+scale = Vector2(0.159251, 0.505321)
+
+[node name="Block130" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40137.7, 9918.43)
+rotation = -0.523598
+scale = Vector2(0.159251, 0.505321)
+
+[node name="Block127" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39637.1, 9803.06)
+rotation = -0.785397
+scale = Vector2(0.161635, 0.515601)
+
+[node name="Block128" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39613.4, 9772.78)
+rotation = 0.785397
+scale = Vector2(0.358907, 0.604446)
+
+[node name="Block102" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40036.1, 9853.23)
+rotation = 0.513242
+scale = Vector2(0.154223, 0.545294)
+
+[node name="Block103" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40430.9, 10080.3)
+scale = Vector2(0.432951, 0.611899)
+
+[node name="Block116" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40408.5, 9908)
+scale = Vector2(0.670439, 0.629649)
+
+[node name="Block104" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40224, 10074.4)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block105" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40329.8, 10035.1)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block106" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40368, 10128)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block108" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40192, 9836)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block109" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41477.8, 10233.7)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block137" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41537.7, 10416.5)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block138" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41597.7, 10239.7)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block180" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42350.1, 9911.11)
+rotation = -1.57079
+scale = Vector2(0.157204, 0.840808)
+
+[node name="Block181" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42424.7, 9928.57)
+rotation = -1.57079
+scale = Vector2(0.157204, 0.840808)
+
+[node name="Block182" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42382.7, 9946.03)
+rotation = -1.57079
+scale = Vector2(0.157204, 0.840808)
+
+[node name="Block183" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42340.3, 10011.3)
+rotation = -1.83259
+scale = Vector2(0.157204, 0.840808)
+
+[node name="Block184" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42311.2, 9893.93)
+rotation = -1.57079
+scale = Vector2(0.157204, 0.840808)
+
+[node name="Block168" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43760, 9576)
+rotation = 0.372961
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block172" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42326.4, 9152.11)
+rotation = -0.261799
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block173" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42426, 9143.09)
+rotation = 0.523598
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block179" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42414.8, 9027.38)
+rotation = 0.261799
+scale = Vector2(0.481221, 0.476831)
+
+[node name="Block199" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43719.8, 8584)
+rotation = -0.785397
+scale = Vector2(0.481221, 0.476831)
+
+[node name="Block200" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43717.1, 8441.33)
+rotation = -0.523598
+scale = Vector2(0.481221, 0.476831)
+
+[node name="Block170" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43671.7, 9268.42)
+rotation = -0.321376
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block189" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43593.9, 9296.25)
+rotation = -0.785397
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block175" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43785.3, 8823.59)
+rotation = 0.523598
+scale = Vector2(0.845954, 1.27586)
+
+[node name="Block228" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39400, 8064)
+rotation = 1.309
+scale = Vector2(2.30354, 5.63913)
+
+[node name="Block229" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39376, 7224)
+rotation = 1.309
+scale = Vector2(2.45201, 5.88381)
+
+[node name="Block221" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41696, 7960)
+rotation = 0.785397
+scale = Vector2(0.845954, 1.27586)
+
+[node name="Block171" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43593.9, 9296.24)
+rotation = -1.57079
+scale = Vector2(0.470547, 0.946902)
+
+[node name="Block147" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42254.4, 10153.5)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block152" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42188.2, 10162.2)
+rotation = -0.261799
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block148" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42328, 10256.5)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block149" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42357.6, 10200.6)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block150" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42375.7, 10152.2)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block151" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42387.7, 10081.7)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block139" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41510.8, 10341.6)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block141" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40310.2, 9850.76)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block110" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40280, 10216)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block107" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40672, 10568)
+scale = Vector2(0.56013, 1.38553)
+
+[node name="Block121" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40733.9, 10608.2)
+rotation = 0.523598
+scale = Vector2(0.56013, 1.38553)
+
+[node name="Block123" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40764, 10466.1)
+rotation = 0.261799
+scale = Vector2(0.307146, 0.874797)
+
+[node name="Block122" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40760, 10496)
+rotation = -0.261799
+scale = Vector2(0.356852, 1.21729)
+
+[node name="Block118" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40760, 10416)
+scale = Vector2(0.37711, 2.46461)
+
+[node name="Block119" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40763.2, 10585.7)
+scale = Vector2(0.422588, 1.21927)
+
+[node name="Block120" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40716.8, 10684.5)
+scale = Vector2(0.454835, 0.853009)
+
+[node name="Block13" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35586.6, 9491.85)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block14" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35650.6, 9571.85)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block15" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35496, 9352)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block62" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35280, 9064)
+scale = Vector2(0.441133, 0.602506)
+
+[node name="Block35" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35984, 9944)
+rotation = 0.523598
+scale = Vector2(0.263735, 0.587921)
+
+[node name="Block41" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35623.6, 9957.13)
+rotation = -0.630212
+scale = Vector2(0.205957, 0.580969)
+
+[node name="Block42" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35462.8, 10165.1)
+rotation = -2.4403
+scale = Vector2(0.205957, 0.580969)
+
+[node name="Block36" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36631.9, 9922.44)
+rotation = -0.358846
+scale = Vector2(0.263735, 0.587921)
+
+[node name="Block57" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36656, 9320)
+rotation = 0.67737
+scale = Vector2(0.263735, 0.587921)
+
+[node name="Block26" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36248, 9280)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block32" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36288, 9248)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block59" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36587.1, 9197.88)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block33" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36448, 9584)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block34" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36380.1, 9654.54)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block27" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36288, 9408)
+scale = Vector2(0.34552, 0.595951)
+
+[node name="Block28" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36360, 9280)
+scale = Vector2(0.643352, 0.631327)
+
+[node name="Block29" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36376, 9432)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block30" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36488, 9280)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block31" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36432, 9360)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block67" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36755.6, 9147.24)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block76" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36858.4, 9273.1)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block68" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37135.9, 9309.91)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block69" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37074.7, 9377.47)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block81" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37039.4, 9454.33)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block70" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36986.4, 9282.09)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block71" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36884.2, 9382.88)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block80" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36905.6, 9495.02)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block74" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36646.3, 9180.2)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block75" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37230.6, 9279.09)
+scale = Vector2(0.441793, 0.817522)
+
+[node name="Block72" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36991.9, 9453.58)
+scale = Vector2(0.460853, 1.0747)
+
+[node name="Block73" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(36933.9, 9549.33)
+scale = Vector2(0.460853, 1.0747)
+
+[node name="Block78" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37022, 9288.57)
+scale = Vector2(1.62329, 0.674116)
+
+[node name="Block79" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37593.9, 9401.25)
+scale = Vector2(1.62329, 0.674116)
+
+[node name="Block84" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38011.7, 9662.36)
+scale = Vector2(1.62329, 0.674116)
+
+[node name="Block87" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38570, 9690.27)
+scale = Vector2(1.16445, 0.673895)
+
+[node name="Block91" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38830.4, 9714.08)
+scale = Vector2(1.16445, 0.673895)
+
+[node name="Block89" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38943.1, 9774.89)
+scale = Vector2(2.06061, 0.674127)
+
+[node name="Block85" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38018.9, 9284.01)
+scale = Vector2(5.774, 1.85074)
+
+[node name="Block93" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39641.1, 10032)
+rotation = 0.865602
+scale = Vector2(3.75247, 2.62386)
+
+[node name="Block117" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39914.2, 10821)
+scale = Vector2(3.47918, 1.52667)
+
+[node name="Block125" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40776, 10888)
+scale = Vector2(3.52763, 1.67453)
+
+[node name="Block142" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41814, 10577.8)
+scale = Vector2(2.36399, 3.34509)
+
+[node name="Block154" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42379.2, 10975.2)
+scale = Vector2(4.43337, 2.723)
+
+[node name="Block155" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43520, 9736)
+scale = Vector2(5.9658, 6.62262)
+
+[node name="Block156" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43752, 8304)
+scale = Vector2(5.9658, 6.62262)
+
+[node name="Block201" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45304, 6024)
+scale = Vector2(6.78651, 8.60001)
+
+[node name="Block202" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41606.4, 5619.03)
+scale = Vector2(5.9658, 6.62262)
+
+[node name="Block206" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42996.2, 4892.06)
+scale = Vector2(6.41266, 7.32498)
+
+[node name="Block207" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(45348.2, 4150.83)
+scale = Vector2(5.9658, 6.62262)
+
+[node name="Block157" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40384, 9328)
+scale = Vector2(7.17072, 1.78665)
+
+[node name="Block174" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40656, 9584)
+rotation = -0.523598
+scale = Vector2(7.20681, 0.827752)
+
+[node name="Block192" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40376, 8496)
+scale = Vector2(7.18444, 1.34982)
+
+[node name="Block158" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38384, 8496)
+scale = Vector2(13.5376, 3.30384)
+
+[node name="Block193" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35240, 8496)
+scale = Vector2(13.4284, 2.25833)
+
+[node name="Block159" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34848, 6984)
+scale = Vector2(25.4119, 3.13646)
+
+[node name="Block94" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39728, 9512)
+scale = Vector2(3.43981, 1.3426)
+
+[node name="Block124" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40696, 9576)
+rotation = 0.261799
+scale = Vector2(3.45118, 1.54924)
+
+[node name="Block136" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41584, 9832)
+scale = Vector2(3.1708, 1.47961)
+
+[node name="Block219" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41584, 7864)
+scale = Vector2(2.9605, 1.33158)
+
+[node name="Block220" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40680, 7840)
+scale = Vector2(3.10842, 1.9179)
+
+[node name="Block222" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40424, 7840)
+scale = Vector2(3.10842, 1.9179)
+
+[node name="Block224" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40408, 7728)
+scale = Vector2(3.10842, 1.9179)
+
+[node name="Block226" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40288, 7368)
+scale = Vector2(3.10842, 1.9179)
+
+[node name="Block230" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39432, 7464)
+scale = Vector2(3.29911, 1.66633)
+
+[node name="Block223" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39400, 8064)
+scale = Vector2(3.10842, 1.9179)
+
+[node name="Block77" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37804.9, 9433)
+rotation = -0.446906
+scale = Vector2(0.83485, 1.5949)
+
+[node name="Block86" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38310.2, 9839.08)
+rotation = -1.36818
+scale = Vector2(0.207899, 0.885098)
+
+[node name="Block143" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41550.6, 10673)
+rotation = -1.57079
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block153" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40246, 10471.9)
+rotation = -1.57079
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block160" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43508.7, 10784.5)
+rotation = -2.09439
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block185" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43462, 10788.3)
+rotation = -1.57079
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block186" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43475.3, 10794.3)
+rotation = -1.57079
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block187" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43497.7, 10794.6)
+rotation = -1.309
+scale = Vector2(0.128069, 0.499849)
+
+[node name="Block161" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43008, 10184)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block164" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42624, 10400)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block165" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42888, 10400)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block166" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43216, 10640)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block167" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42952, 10640)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block197" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43586.6, 8826.13)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block198" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43322.6, 8826.13)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block162" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43328, 10184)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block190" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43310.3, 9436)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block191" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42998.5, 9435.78)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block195" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43200.2, 9013.2)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block196" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42888.4, 9012.97)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block163" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43444.1, 9973.66)
+rotation = -1.57079
+scale = Vector2(0.137477, 0.886275)
+
+[node name="Block188" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43444.1, 9973.66)
+rotation = -1.309
+scale = Vector2(0.137477, 0.886275)
+
+[node name="Block176" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(42725.7, 9680.47)
+rotation = -1.57079
+scale = Vector2(0.249366, 0.75458)
+
+[node name="Block177" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43088.6, 9832.92)
+rotation = -1.57079
+scale = Vector2(0.247382, 0.807687)
+
+[node name="Block178" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43160.4, 10416.6)
+rotation = -1.57079
+scale = Vector2(0.247382, 0.807687)
+
+[node name="Block169" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(43720, 9544)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block225" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40304, 8304)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block227" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(40304, 8160)
+rotation = -1.57079
+scale = Vector2(0.133077, 0.159467)
+
+[node name="Block232" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39904, 7984)
+rotation = -0.523598
+scale = Vector2(0.418354, 0.119037)
+
+[node name="Block233" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39920, 8016)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block234" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39904, 7984)
+rotation = -0.523598
+scale = Vector2(0.418354, 0.119037)
+
+[node name="Block235" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39920, 8016)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block236" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37536, 8288)
+rotation = -0.523598
+scale = Vector2(0.418354, 0.119037)
+
+[node name="Block237" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39920, 8016)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block240" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39920, 8016)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block241" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37552, 8320)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block242" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37144, 8304)
+rotation = -0.523598
+scale = Vector2(0.418354, 0.119037)
+
+[node name="Block243" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37160, 8336)
+rotation = -2.09439
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block238" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39608, 7952)
+rotation = -0.261799
+scale = Vector2(0.424596, 0.135926)
+
+[node name="Block239" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(39616, 7992)
+rotation = -1.83259
+scale = Vector2(0.318709, 0.145886)
+
+[node name="Block144" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41672.8, 10473.8)
+rotation = 0.261799
+scale = Vector2(0.156646, 0.565372)
+
+[node name="Block146" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(41433.1, 10322.9)
+rotation = -0.261799
+scale = Vector2(0.219695, 0.5754)
+
+[node name="Block88" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38636.6, 9891.99)
+rotation = -1.36818
+scale = Vector2(0.207899, 0.885098)
+
+[node name="Block90" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(38696, 9880)
+rotation = -1.19659
+scale = Vector2(0.207899, 0.885098)
+
+[node name="Block82" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(37228.8, 9400.14)
+rotation = 0.629167
+scale = Vector2(0.471653, 1.20624)
+
+[node name="Block6" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35800, 8856)
+scale = Vector2(0.862477, 2.07212)
+
+[node name="Block7" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35628, 8716)
+scale = Vector2(0.862477, 2.07212)
+
+[node name="Block19" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(35560, 8368)
+rotation = 1.57079
+scale = Vector2(0.845123, 1.7164)
+
+[node name="Block5" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34220, 9708)
+scale = Vector2(1.68492, 2.54424)
+
+[node name="Block111" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34420.1, 8687.72)
+rotation = -0.523598
+scale = Vector2(0.584837, 2.87827)
+
+[node name="Block112" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34837.1, 9347.84)
+scale = Vector2(0.555634, 2.29201)
+
+[node name="Block115" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34693.4, 8860.94)
+scale = Vector2(0.555876, 2.17021)
+
+[node name="Block231" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34496, 8672)
+scale = Vector2(0.555876, 2.17021)
+
+[node name="Block114" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(34696, 10056)
+rotation = -1.57079
+scale = Vector2(-2.13927, 6.08147)
+
+[node name="Block113" parent="." instance=ExtResource("3_awitf")]
+position = Vector2(33760.3, 9112.68)
+rotation = -0.523598
+scale = Vector2(2.73552, 3.35674)
+
+[node name="Pillar" parent="." instance=ExtResource("4_hpc0m")]
+position = Vector2(37450.1, 10291.1)
+
+[node name="Door" parent="." instance=ExtResource("5_4iuis")]
+position = Vector2(38021.3, 9857.01)
+
+[node name="PressurePlate" parent="." node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("6_ir5e4")]
+position = Vector2(38248, 10496)
+thing_to_open = NodePath("../Door")
+activator = NodePath("../Pillar")
+
+[node name="Block92" parent="." instance=ExtResource("7_7ig44")]
+position = Vector2(34680, 9616)
+scale = Vector2(0.991968, 1.69905)
+
+[node name="PlatformSlowing" parent="." instance=ExtResource("8_xdmd4")]
+position = Vector2(40943.1, 10867.2)
+scale = Vector2(8.91688, 1.37638)
+
+[node name="PlatformBreaking" parent="." instance=ExtResource("9_vq24i")]
+position = Vector2(43050.4, 10144.1)
+scale = Vector2(2.88671, 0.945512)
+break_counter = 2
+
+[node name="PlatformBreaking2" parent="." instance=ExtResource("9_vq24i")]
+position = Vector2(43036.2, 9396.07)
+scale = Vector2(2.88671, 0.945512)
+break_counter = 2
+
+[node name="PlatformBreaking3" parent="." instance=ExtResource("9_vq24i")]
+position = Vector2(42925.5, 8989.2)
+scale = Vector2(2.88671, 0.945512)
+break_counter = 2
+
+[node name="Door1" parent="." instance=ExtResource("5_4iuis")]
+position = Vector2(41960, 8408)
+
+[node name="ResponsivePlatform32" parent="Door1" instance=ExtResource("2_4ntph")]
+position = Vector2(528, 88)
+scale = Vector2(2.02593, 0.745737)
+
+[node name="ResponsivePlatform31" parent="Door1" instance=ExtResource("2_4ntph")]
+position = Vector2(1376, -104)
+scale = Vector2(1.43994, 0.804745)
+
+[node name="ResponsivePlatform33" parent="Door1" instance=ExtResource("2_4ntph")]
+position = Vector2(1380.83, 378.145)
+scale = Vector2(0.917103, 0.635071)
+
+[node name="Pillar1" parent="." instance=ExtResource("4_hpc0m")]
+position = Vector2(42376, 8416)
+
+[node name="PressurePlate1" parent="." node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("6_ir5e4")]
+position = Vector2(42104.8, 8498.32)
+thing_to_open = NodePath("../Door1")
+activator = NodePath("../Pillar1")

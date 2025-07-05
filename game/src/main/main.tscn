@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=55 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -10,13 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://bkggftuw0vt3b" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-2.png" id="4_4i2tu"]
 [ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="4_o6day"]
 [ext_resource type="PackedScene" uid="uid://bbc4dta7s3n87" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="5_1lbou"]
+[ext_resource type="PackedScene" uid="uid://bwfjsx6t32cso" path="res://src/krzesimirowe_sceny/bloczek.tscn" id="5_3g7w4"]
 [ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="5_6y5ve"]
 [ext_resource type="Texture2D" uid="uid://c4fhrhwuoyqab" path="res://assets/sprites/environment/Platformy i teren/skal 2.png" id="5_7afl8"]
+[ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="5_8ncra"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
+[ext_resource type="PackedScene" uid="uid://bywqvv2ge2shg" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
+[ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="6_k57fp"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="6_x2lf7"]
+[ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="7_3ptru"]
 [ext_resource type="AudioStream" uid="uid://6jpixbsybplc" path="res://assets/sound/music/drzewo spokój.mp3" id="7_sm4c8"]
 [ext_resource type="AudioStream" uid="uid://cusu168j3sbjv" path="res://assets/sound/music/drzewo walka.mp3" id="8_pwxx4"]
+[ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="8_ujstv"]
 [ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="9_0c2w1"]
 [ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="9_2pipl"]
 [ext_resource type="Texture2D" uid="uid://p5yoodjxipwt" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-3.png" id="9_asrr6"]
@@ -27,9 +33,10 @@
 [ext_resource type="Script" path="res://src/main/tree_triger_music.gd" id="11_351p3"]
 [ext_resource type="Texture2D" uid="uid://wgqpii67nk18" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Krzak2CZ.png" id="13_bxxgd"]
 [ext_resource type="Texture2D" uid="uid://c5ptg80gs71xn" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/krzaki-suche2CZ.png" id="13_vquwt"]
+[ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="14_btelo"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="15_mlicb"]
 [ext_resource type="Texture2D" uid="uid://dxx73sc7v2tql" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik2.png" id="17_1od8p"]
-[ext_resource type="PackedScene" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
+[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
 [ext_resource type="Texture2D" uid="uid://nr23tf1nf44b" path="res://assets/sprites/environment/Platformy i teren/trawa_pathdzik.png" id="18_hcjcj"]
 [ext_resource type="Texture2D" uid="uid://dmh7m5fbcrs3x" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kam mech1.png" id="24_c5onk"]
 [ext_resource type="Texture2D" uid="uid://ckyvq403wkw5i" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany2.png" id="25_t08e5"]
@@ -61,6 +68,12 @@ gameplay = NodePath("Gameplay")
 [node name="Gameplay" parent="." node_paths=PackedStringArray("main", "death_menu") instance=ExtResource("2_lamct")]
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
+
+[node name="Label" parent="Gameplay" index="0"]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Alfa_v1" parent="Gameplay" index="1"]
+position = Vector2(-1, 0)
 
 [node name="ZiemiaDzik31" type="Sprite2D" parent="Gameplay/Alfa_v1" index="10"]
 z_index = 1
@@ -106,6 +119,30 @@ position = Vector2(33027, 70.0005)
 [node name="Block110" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="29"]
 position = Vector2(34299, -134)
 
+[node name="Block94" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="36"]
+position = Vector2(49479.1, 8818.77)
+
+[node name="Block95" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="37"]
+position = Vector2(47839.1, 8938.77)
+
+[node name="Block96" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="38"]
+position = Vector2(46199.1, 9058.77)
+
+[node name="Block97" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="39"]
+position = Vector2(44543.1, 9178.77)
+
+[node name="Block99" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="40"]
+position = Vector2(44951.1, 10169.2)
+
+[node name="Block100" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="41"]
+position = Vector2(43933.6, 9363.61)
+
+[node name="Block101" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="42"]
+position = Vector2(44670.5, 9597.63)
+
+[node name="ZaDaleki" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="111"]
+position = Vector2(44005.1, 11319.9)
+
 [node name="ResponsivePlatform9" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="114"]
 position = Vector2(27951, -5566)
 
@@ -114,12 +151,6 @@ position = Vector2(27689, -5586)
 
 [node name="ResponsivePlatform16" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="121"]
 position = Vector2(26865, 7527)
-
-[node name="Label" parent="Gameplay" index="0"]
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-
-[node name="Alfa_v1" parent="Gameplay" index="1"]
-position = Vector2(-1, 0)
 
 [node name="ResponsivePlatform20" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="122" instance=ExtResource("3_ybejy")]
 position = Vector2(31968, -1716)
@@ -159,33 +190,326 @@ position = Vector2(26810, 7417)
 [node name="ResponsivePlatform19" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="132"]
 position = Vector2(26928, 7314)
 
-[node name="Block9" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="155"]
+[node name="HealthPack" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="0" instance=ExtResource("5_8ncra")]
+position = Vector2(49824, -4230)
+
+[node name="HealthPack2" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="1" instance=ExtResource("5_8ncra")]
+position = Vector2(49768, -4230)
+
+[node name="HealthPack3" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="2" instance=ExtResource("5_8ncra")]
+position = Vector2(49704, -4230)
+
+[node name="HealthPack4" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="3" instance=ExtResource("5_8ncra")]
+position = Vector2(42016, -3102)
+
+[node name="HealthPack5" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="4" instance=ExtResource("5_8ncra")]
+position = Vector2(39800, -4654)
+
+[node name="HealthPack6" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="5" instance=ExtResource("5_8ncra")]
+position = Vector2(39864, -4654)
+
+[node name="HealthPack7" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="6" instance=ExtResource("5_8ncra")]
+position = Vector2(39832, -4702)
+
+[node name="HealthPack8" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="7" instance=ExtResource("5_8ncra")]
+position = Vector2(48576, 1290)
+
+[node name="HealthPack9" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="8" instance=ExtResource("5_8ncra")]
+position = Vector2(48656, 1290)
+
+[node name="HealthPack10" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="9" instance=ExtResource("5_8ncra")]
+position = Vector2(51904, 1122)
+
+[node name="HealthPack11" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="10" instance=ExtResource("5_8ncra")]
+position = Vector2(51776, 282)
+
+[node name="ZaDaleki" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="21"]
+position = Vector2(55749.8, 3934.54)
+
+[node name="Block162" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="53" instance=ExtResource("5_3g7w4")]
+position = Vector2(43720.6, -1906.28)
+rotation = -1.57079
+scale = Vector2(2.07032, 11.8845)
+
+[node name="Block58" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="57"]
+position = Vector2(42040, -4126)
+
+[node name="Block59" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="58"]
+position = Vector2(42032, -4230)
+
+[node name="Block161" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="74" instance=ExtResource("5_3g7w4")]
+position = Vector2(53618.8, -5103.66)
+scale = Vector2(6.37905, 2.63943)
+
+[node name="Block153" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="99"]
+position = Vector2(52222.1, -4455.76)
+rotation = 0.523598
+scale = Vector2(4.57304, 1.911)
+
+[node name="Block158" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="100"]
+position = Vector2(54842.7, -5280.78)
+
+[node name="Block159" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="101"]
+position = Vector2(55496.7, -4796.92)
+
+[node name="Block66" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="113"]
+position = Vector2(43624, -4198)
+scale = Vector2(2.64721, 0.529099)
+
+[node name="Block9" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="168"]
 position = Vector2(39280, -2518)
 scale = Vector2(1.11808, 0.819069)
 
-[node name="Block12" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="160"]
+[node name="Block12" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="173"]
 position = Vector2(39272, -2694)
 
-[node name="Block13" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="161"]
+[node name="Block13" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="174"]
 position = Vector2(39320, -2646)
 
-[node name="Block56" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="219"]
+[node name="SpikeTest50" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="213" instance=ExtResource("6_k57fp")]
+position = Vector2(43952.2, -2531.25)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest51" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="214" instance=ExtResource("6_k57fp")]
+position = Vector2(44000, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest52" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="215" instance=ExtResource("6_k57fp")]
+position = Vector2(44048, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest53" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="216" instance=ExtResource("6_k57fp")]
+position = Vector2(44096, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest54" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="217" instance=ExtResource("6_k57fp")]
+position = Vector2(44144, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest55" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="218" instance=ExtResource("6_k57fp")]
+position = Vector2(44192, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest56" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="219" instance=ExtResource("6_k57fp")]
+position = Vector2(44240, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest57" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="220" instance=ExtResource("6_k57fp")]
+position = Vector2(44288, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest58" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="221" instance=ExtResource("6_k57fp")]
+position = Vector2(44336, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest59" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="222" instance=ExtResource("6_k57fp")]
+position = Vector2(44384, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest60" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="223" instance=ExtResource("6_k57fp")]
+position = Vector2(44432, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest61" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="224" instance=ExtResource("6_k57fp")]
+position = Vector2(44480, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest62" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="225" instance=ExtResource("6_k57fp")]
+position = Vector2(44528, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest63" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="226" instance=ExtResource("6_k57fp")]
+position = Vector2(44576, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest64" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="227" instance=ExtResource("6_k57fp")]
+position = Vector2(44624, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest65" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="228" instance=ExtResource("6_k57fp")]
+position = Vector2(44672, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest66" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="229" instance=ExtResource("6_k57fp")]
+position = Vector2(44720, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest67" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="230" instance=ExtResource("6_k57fp")]
+position = Vector2(44768, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest68" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="231" instance=ExtResource("6_k57fp")]
+position = Vector2(44816, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest69" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="232" instance=ExtResource("6_k57fp")]
+position = Vector2(44864, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest70" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="233" instance=ExtResource("6_k57fp")]
+position = Vector2(44912, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest71" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="234" instance=ExtResource("6_k57fp")]
+position = Vector2(44960, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest72" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="235" instance=ExtResource("6_k57fp")]
+position = Vector2(45008, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest73" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="236" instance=ExtResource("6_k57fp")]
+position = Vector2(45056, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest74" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="237" instance=ExtResource("6_k57fp")]
+position = Vector2(45584, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest75" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="238" instance=ExtResource("6_k57fp")]
+position = Vector2(45632, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest76" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="239" instance=ExtResource("6_k57fp")]
+position = Vector2(45680, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest77" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="240" instance=ExtResource("6_k57fp")]
+position = Vector2(45728, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest78" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="241" instance=ExtResource("6_k57fp")]
+position = Vector2(45776, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest79" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="242" instance=ExtResource("6_k57fp")]
+position = Vector2(45824, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest80" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="243" instance=ExtResource("6_k57fp")]
+position = Vector2(46496, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest81" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="244" instance=ExtResource("6_k57fp")]
+position = Vector2(46544, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest82" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="245" instance=ExtResource("6_k57fp")]
+position = Vector2(46592, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest83" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="246" instance=ExtResource("6_k57fp")]
+position = Vector2(46640, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest84" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="247" instance=ExtResource("6_k57fp")]
+position = Vector2(46688, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="SpikeTest85" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="248" instance=ExtResource("6_k57fp")]
+position = Vector2(46736, -2526)
+rotation = 0.854517
+scale = Vector2(0.800244, 0.89294)
+
+[node name="PlatformBreaking3" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="255" instance=ExtResource("7_3ptru")]
+position = Vector2(47256, -5294)
+scale = Vector2(3.35006, 0.612737)
+break_counter = 2
+
+[node name="Block56" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="269"]
 position = Vector2(41400, -4222)
 
-[node name="Block57" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="220"]
+[node name="Block57" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="270"]
 position = Vector2(41192, -4414)
+
+[node name="Block64" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="271"]
+position = Vector2(43136, -4086)
+
+[node name="Block107" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="272"]
+position = Vector2(47736, -5006)
+
+[node name="Block163" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="273" instance=ExtResource("8_ujstv")]
+position = Vector2(47736, -5182)
+
+[node name="FLevel3" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/FLevel2" index="276" instance=ExtResource("6_0jp3y")]
+position = Vector2(9263.98, -8717.95)
 
 [node name="Door2" parent="Gameplay/Beta" index="2" instance=ExtResource("4_0xais")]
 position = Vector2(41412, 6855)
 scale = Vector2(1.79396, 0.681336)
 
 [node name="PressurePlate2" parent="Gameplay/Beta" index="5" node_paths=PackedStringArray("thing_to_open", "activator") instance=ExtResource("5_1lbou")]
-position = Vector2(42410, 7730)
+position = Vector2(50249.1, 8820.77)
 thing_to_open = NodePath("../Door2")
 activator = NodePath("../Pillar3")
 
 [node name="Pillar3" parent="Gameplay/Beta" index="6" instance=ExtResource("6_x2lf7")]
-position = Vector2(42558, 7599)
+position = Vector2(50397.1, 8689.77)
+
+[node name="MudMummy10" parent="Gameplay/Beta/EnemBeta" index="6" instance=ExtResource("14_btelo")]
+position = Vector2(35408, 10016)
+
+[node name="MudMummy11" parent="Gameplay/Beta/EnemBeta" index="7" instance=ExtResource("14_btelo")]
+position = Vector2(35072, 10016)
+
+[node name="MudMummy12" parent="Gameplay/Beta/EnemBeta" index="8" instance=ExtResource("14_btelo")]
+position = Vector2(36448, 9856)
+
+[node name="MudMummy13" parent="Gameplay/Beta/EnemBeta" index="9" instance=ExtResource("14_btelo")]
+position = Vector2(36968, 10328)
+
+[node name="MudMummy14" parent="Gameplay/Beta/EnemBeta" index="10" instance=ExtResource("14_btelo")]
+position = Vector2(37088, 10328)
+
+[node name="MudMummy15" parent="Gameplay/Beta/EnemBeta" index="11" instance=ExtResource("14_btelo")]
+position = Vector2(37200, 10328)
+
+[node name="MudMummy16" parent="Gameplay/Beta/EnemBeta" index="12" instance=ExtResource("14_btelo")]
+position = Vector2(37600, 10328)
+
+[node name="MudMummy17" parent="Gameplay/Beta/EnemBeta" index="13" instance=ExtResource("14_btelo")]
+position = Vector2(37744, 10328)
+
+[node name="MudMummy18" parent="Gameplay/Beta/EnemBeta" index="14" instance=ExtResource("14_btelo")]
+position = Vector2(41104, 10824)
+
+[node name="MudMummy19" parent="Gameplay/Beta/EnemBeta" index="15" instance=ExtResource("14_btelo")]
+position = Vector2(41504, 10824)
 
 [node name="Kamien-19" type="Sprite2D" parent="Gameplay/Beta/OZD/Dz1/Schod ozd4" index="2"]
 position = Vector2(205.61, 91.4638)
@@ -2122,8 +2446,11 @@ position = Vector2(34379, -186)
 [node name="HealthPack3" parent="Gameplay/Beta" index="20"]
 position = Vector2(33263, 406)
 
+[node name="DeadBride" parent="Gameplay/Beta" index="21"]
+position = Vector2(48110.3, 4852.77)
+
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(968, 476)
+position = Vector2(600, 576)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128
@@ -6607,6 +6934,10 @@ script = ExtResource("11_351p3")
 position = Vector2(22655.8, 894.5)
 shape = SubResource("RectangleShape2D_24a2n")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Musica/Node2D"]
+position = Vector2(23123.8, 861.5)
+shape = SubResource("RectangleShape2D_24a2n")
+
 [node name="Kamien" type="Sprite2D" parent="."]
 position = Vector2(20007, 2001)
 rotation = 1.57079
@@ -6636,10 +6967,6 @@ z_index = -2
 position = Vector2(1949, 374)
 scale = Vector2(1.14486, 1.02154)
 texture = ExtResource("45_7v5c8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
-position = Vector2(23123.8, 861.5)
-shape = SubResource("RectangleShape2D_24a2n")
 
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
