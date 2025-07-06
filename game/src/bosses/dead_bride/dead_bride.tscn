@@ -1,9 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://3lsfd6pikghv"]
+[gd_scene load_steps=21 format=3 uid="uid://3lsfd6pikghv"]
 
 [ext_resource type="Script" path="res://src/bosses/dead_bride/dead_bride.gd" id="1_du6mr"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="2_e62hm"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="3_dfavh"]
 [ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="3_phyrs"]
+[ext_resource type="PackedScene" uid="uid://bsus3i2nxy6a6" path="res://src/dialogues/dialogue_trigger.tscn" id="4_wn7eg"]
+[ext_resource type="Script" path="res://src/dialogues/bride_dialogue_trigger.gd" id="5_ludaf"]
+[ext_resource type="Script" path="res://src/dialogues/koniec.gd" id="6_4w7t1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmhox"]
 size = Vector2(1400, 100)
@@ -138,6 +141,14 @@ color = Color(0, 0, 0, 1)
 
 [node name="Checkpoint" parent="Environment" instance=ExtResource("3_phyrs")]
 position = Vector2(1050, 1250)
+
+[node name="DialogueTrigger" parent="Environment" instance=ExtResource("4_wn7eg")]
+position = Vector2(1523, 1168)
+script = ExtResource("5_ludaf")
+
+[node name="DialogueTrigger2" parent="Environment" instance=ExtResource("4_wn7eg")]
+position = Vector2(571, 1168)
+script = ExtResource("6_4w7t1")
 
 [node name="Body" type="Node2D" parent="."]
 

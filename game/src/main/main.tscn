@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=71 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -16,11 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="5_8ncra"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
-[ext_resource type="PackedScene" uid="uid://bywqvv2ge2shg" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
+[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="6_k57fp"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="6_x2lf7"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="7_3ptru"]
-[ext_resource type="AudioStream" uid="uid://6jpixbsybplc" path="res://assets/sound/music/drzewo spokój.mp3" id="7_sm4c8"]
 [ext_resource type="AudioStream" uid="uid://cusu168j3sbjv" path="res://assets/sound/music/drzewo walka.mp3" id="8_pwxx4"]
 [ext_resource type="PackedScene" uid="uid://myw1rlo6ju5e" path="res://src/krzesimirowe_sceny/drab1.tscn" id="8_ujstv"]
 [ext_resource type="Texture2D" uid="uid://bvqnyvynpggi2" path="res://assets/sprites/environment/Platformy i teren/ziemia_dzik.png" id="9_0c2w1"]
@@ -60,6 +59,12 @@
 [ext_resource type="Script" path="res://src/main/unlock_copper.gd" id="45_bqkt3"]
 [ext_resource type="PackedScene" path="res://assets/pakiet.tscn" id="46_17tst"]
 [ext_resource type="Texture2D" uid="uid://dhy77m5vwvcc" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/gora_ziem_mech.png" id="58_8t2km"]
+
+[ext_resource type="AudioStream" uid="uid://bsqi6e6rc7k8t" path="res://assets/dialogues/koniec.mp3" id="58_gydv0"]
+[ext_resource type="AudioStream" uid="uid://brdppiel2iu3j" path="res://assets/dialogues/oblubienica_po.mp3" id="59_lim8c"]
+[ext_resource type="AudioStream" uid="uid://chdkrbcm0mm1h" path="res://assets/dialogues/oblubienica-walka.mp3" id="60_irgmr"]
+[ext_resource type="AudioStream" uid="uid://crtew4prmk3q6" path="res://assets/dialogues/drzewo spokój.mp3" id="61_3aoxx"]
+[ext_resource type="AudioStream" uid="uid://dwlj2j25c3bqv" path="res://assets/dialogues/oblubienica_przed.mp3" id="65_gjlvn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w74ro"]
 size = Vector2(510, 700)
@@ -7143,6 +7148,310 @@ texture = ExtResource("25_t08e5")
 z_index = -2
 position = Vector2(17786, 2203)
 rotation = -3.14159
+scale = Vector2(1.53305, -2.74275)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik4" type="Sprite2D" parent="Gameplay/Beta" index="25"]
+position = Vector2(26393, 13838)
+rotation = -3.14159
+scale = Vector2(1.22029, -2.69359)
+texture = ExtResource("4_o6day")
+
+[node name="CzzernDzik5" type="Sprite2D" parent="Gameplay/Beta" index="26"]
+position = Vector2(26403, 13888)
+rotation = -3.14159
+scale = Vector2(1.22029, -2.69359)
+texture = ExtResource("4_o6day")
+
+[node name="Kamien" type="Sprite2D" parent="Gameplay/Beta" index="27"]
+position = Vector2(33807, 14297)
+rotation = 1.57079
+scale = Vector2(2.42055, 0.9584)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien2" type="Sprite2D" parent="Gameplay/Beta" index="28"]
+position = Vector2(33914, 14285)
+rotation = 1.57079
+scale = Vector2(2.22784, 0.982214)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien3" type="Sprite2D" parent="Gameplay/Beta" index="29"]
+position = Vector2(34286, 14342)
+rotation = 1.57079
+scale = Vector2(2.38267, 1.03029)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien4" type="Sprite2D" parent="Gameplay/Beta" index="30"]
+position = Vector2(33658, 14455)
+rotation = 1.57079
+scale = Vector2(2.42369, 0.900243)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien-4" type="Sprite2D" parent="Gameplay/Beta" index="31"]
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany27" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(17736, 1570)
+rotation = -1.57079
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany28" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(16405, 1864)
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany32" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(14871, 2491)
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany34" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(15404, 2496)
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany35" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(16045, 2027)
+rotation = -3.14159
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany29" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(17148, 1573)
+rotation = 3.14159
+scale = Vector2(1.01793, 0.682252)
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany24" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(15749, 12670)
+scale = Vector2(1.14486, 1.02154)
+texture = ExtResource("45_7v5c8")
+
+
+[node name="DeadBride" parent="Gameplay/Beta" index="32" instance=ExtResource("28_jq6wi")]
+position = Vector2(38605, 5680)
+
+[node name="ParkourEntrance" type="StaticBody2D" parent="Gameplay/Beta/DeadBride"]
+position = Vector2(-4384, 1810)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(245, 340)
+shape = SubResource("RectangleShape2D_w74ro")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D"]
+offset_left = -255.0
+offset_top = -350.0
+offset_right = 255.0
+offset_bottom = 350.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(570, 667)
+shape = SubResource("RectangleShape2D_2io4k")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D2"]
+offset_left = -76.0
+offset_top = -23.0
+offset_right = 71.0
+offset_bottom = 23.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(627, 428)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D3"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(503, 283)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D4"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(626, 154)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D5"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(502, 35)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D6"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(451, -154)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D7"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(624, -283)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D8"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gameplay/Beta/DeadBride/ParkourEntrance"]
+position = Vector2(450, -402)
+shape = SubResource("RectangleShape2D_uunyl")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/Beta/DeadBride/ParkourEntrance/CollisionShape2D9"]
+offset_left = -9.89258
+offset_top = -10.4312
+offset_right = 10.1074
+offset_bottom = 9.56885
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="Gameplay" index="3"]
+position = Vector2(593.018, 239.641)
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
+shape = SubResource("CircleShape2D_klkfr")
+
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
+main = NodePath("../../..")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueInterface" parent="Gameplay/UI/UI" index="4"]
+visible = false
+
+[node name="UnlockTin" type="Area2D" parent="Gameplay"]
+script = ExtResource("44_i22kd")
+
+[node name="Timer" type="Timer" parent="Gameplay/UnlockTin"]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="Gameplay/UnlockTin"]
+visible = false
+offset_left = 30264.0
+offset_top = -4143.0
+offset_right = 30413.0
+offset_bottom = -4120.0
+text = "Odblokowano cynę"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/UnlockTin"]
+position = Vector2(30334, -4042)
+shape = SubResource("RectangleShape2D_p8asx")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/UnlockTin/CollisionShape2D"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(1, 0.74902, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="UnlockCopper" type="Area2D" parent="Gameplay"]
+script = ExtResource("45_bqkt3")
+
+[node name="Timer" type="Timer" parent="Gameplay/UnlockCopper"]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="Gameplay/UnlockCopper"]
+visible = false
+offset_left = 28320.0
+offset_top = -8178.0
+offset_right = 28469.0
+offset_bottom = -8155.0
+text = "Odblokowano miedź"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/UnlockCopper"]
+position = Vector2(28394, -8084)
+shape = SubResource("RectangleShape2D_p8asx")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/UnlockCopper/CollisionShape2D"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(1, 0.74902, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Gameplay_Level Design_Tapeta_TapetaD1#Sciany23" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(20134, 2423)
+rotation = -3.14159
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_Tapeta_TapetaD1#Sciany24" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(13518.5, 4818)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_2p062")
+
+[node name="Gameplay_Level Design_Tapeta_TapetaD1#Sciany25" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(12795.5, 4003)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_prn4l")
+
+[node name="Gameplay_Level Design#LDDNied1" type="Node2D" parent="."]
+
+[node name="Gameplay_Level Design_LDDNied1#DzikSkal280" type="Sprite2D" parent="."]
+position = Vector2(23385, 1366)
+rotation = -12.5664
+texture = ExtResource("5_6y5ve")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany23" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(20686, 2242)
+rotation = -3.14159
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany25" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(20579, 1920)
+rotation = -3.92699
+texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany26" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(17786, 2203)
+rotation = -3.14159
 texture = ExtResource("25_t08e5")
 
 [node name="Gameplay_Level Design_LDDNied1#Sciany27" type="Sprite2D" parent="."]
@@ -7185,6 +7494,115 @@ position = Vector2(20785, 2248)
 rotation = -1.57079
 scale = Vector2(0.645335, 0.640689)
 texture = ExtResource("25_t08e5")
+
+[node name="Gameplay_Level Design_LDDNied1#Sciany33" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(7625, 277)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_prn4l")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(16596, 1404)
+rotation = 0.261799
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia23" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(13805, 3414)
+rotation = 0.261799
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia7" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8928, 780)
+rotation = -0.261799
+scale = Vector2(-1, 1)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia21" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8533, 2330)
+scale = Vector2(-1, 1)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia22" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8884, 1671)
+rotation = 0.785397
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia18" type="Sprite2D" parent="."]
+position = Vector2(14556, 1431)
+scale = Vector2(-0.301924, 0.296192)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia20" type="Sprite2D" parent="."]
+position = Vector2(14482, 1433)
+scale = Vector2(-0.219919, 0.189678)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia19" type="Sprite2D" parent="."]
+position = Vector2(14642, 1424)
+rotation = -0.523598
+scale = Vector2(-0.349876, 0.328059)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia16" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(19991, 2280)
+rotation = 0.261799
+scale = Vector2(-1, 1)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia17" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(20215, 2276)
+rotation = -0.261799
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia8" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17496, 1269)
+rotation = 0.785397
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia9" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17888, 1754)
+rotation = -1.309
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia10" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17736, 1397)
+rotation = -2.87979
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia11" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17608, 1277)
+rotation = -5.75958
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia12" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17736, 1513)
+rotation = -10.472
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
+[node name="Gameplay_Level Design_LDDNied1#BykJaskinia13" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17588, 1421)
+rotation = -10.9956
+scale = Vector2(-0.461595, 0.59776)
+texture = ExtResource("43_hxkt6")
+
 
 [node name="Gameplay_Level Design_LDDNied1#Sciany33" type="Sprite2D" parent="."]
 z_index = -2
@@ -7392,6 +7810,7 @@ position = Vector2(-8166, 3085)
 
 [node name="Gameplay_Level Design#Tapeta_Niedziela" type="Node2D" parent="."]
 
+
 [node name="Gameplay_Level Design_Tapeta_Niedziela#Dzik" type="Node2D" parent="."]
 
 [node name="Gameplay_Level Design_Tapeta_Niedziela_Dzik#DzikTap1" type="Node2D" parent="."]
@@ -7450,6 +7869,7 @@ position = Vector2(-8166, 3085)
 
 [node name="Gameplay_Level Design_Tapeta_Niedziela_TempUkrainiec#UkraTap4" type="Node2D" parent="."]
 
+
 [node name="Gameplay_Level Design_Tapeta_Niedziela_TempUkrainiec#UkraTap5" type="Node2D" parent="."]
 
 [node name="Menus" type="CanvasLayer" parent="."]
@@ -7475,8 +7895,17 @@ gameplay = NodePath("../../Gameplay")
 
 [node name="Musica" type="Node" parent="."]
 
+[node name="Koniec" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("58_gydv0")
+
+[node name="Oblubienica_po" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("59_lim8c")
+
+[node name="Oblubienica-walka" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("60_irgmr")
+
 [node name="DrzewoSpokój" type="AudioStreamPlayer" parent="Musica"]
-stream = ExtResource("7_sm4c8")
+stream = ExtResource("61_3aoxx")
 volume_db = -80.0
 autoplay = true
 parameters/looping = true
@@ -7497,6 +7926,9 @@ stream = ExtResource("8_pwxx4")
 volume_db = -80.0
 autoplay = true
 parameters/looping = true
+
+[node name="OblubienicaPrzed" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("65_gjlvn")
 
 [node name="Node2D" type="Area2D" parent="Musica"]
 script = ExtResource("11_351p3")
@@ -7609,3 +8041,6 @@ texture = ExtResource("58_8t2km")
 [editable path="Gameplay"]
 [editable path="Gameplay/Beta"]
 [editable path="Gameplay/Beta/OZD/Dz1/Schod ozd4"]
+[editable path="Gameplay/UI/UI"]
+[editable path="Gameplay/UI/UI/DialogueInterface/DynamicDiaogueBox"]
+[editable path="Gameplay/UI/UI/DialogueInterface/Narrator"]

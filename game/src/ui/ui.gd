@@ -3,6 +3,8 @@ extends Control
 @onready var dialogue_interface: Control = $DialogueInterface
 @onready var drzewo_spokoj: AudioStreamPlayer = $"../../../Musica/DrzewoSpokój"
 @onready var drzewo_walka: AudioStreamPlayer = $"../../../Musica/DrzewoWalka"
+@onready var oblubienica_walka: AudioStreamPlayer = $"../../../Musica/Oblubienica-walka"
+@onready var oblubienica_przed: AudioStreamPlayer = $"../../../Musica/OblubienicaPrzed"
 
 # Narrator Dialogue properities
 @onready var narrator: RichTextLabel = $DialogueInterface/Narrator/Control/RichTextLabel
@@ -19,7 +21,6 @@ extends Control
 
 # Timers
 @onready var warning_timer: Timer = $BossWarnings/WarningTimer
-
 @export var main: Node
 @export var	player: CharacterBody2D
 
@@ -156,6 +157,25 @@ func print_line() -> void:
 			drzewo_spokoj.volume_db = -80
 			emit_signal("start_oak_fight")
 		# main.show_end_screen() # show end screen
+		if boss_to_start == 2:
+			dialogue_interface.visible = false
+			dialogue_on = false
+			player.movement_lock = false
+			oblubienica_walka.volume_db = 0
+			oblubienica_przed.volume_db = -80
+			emit_signal("start_oak_fight")
+		# main.show_end_screen() # show end screen
+		if boss_to_start == 3:
+			dialogue_interface.visible = false
+			dialogue_on = false
+			player.movement_lock = false
+			emit_signal("start_oak_fight")
+			get_tree().quit()
+		$Gameplay/UI/UI/DialogueInterface/WejscieWKonar.hide()
+		$Gameplay/UI/UI/DialogueInterface/Poczatek.hide()
+		$Gameplay/UI/UI/DialogueInterface/Zakonczenia.hide()
+		$Gameplay/UI/UI/DialogueInterface/ZakonczeniaWedrowiec.hide()
+		$Gameplay/UI/UI/DialogueInterface/ZakonczenieBabaWazony.hide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() && dialogue_on:

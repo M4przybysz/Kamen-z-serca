@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4ffy2ihhl0s2"]
+[gd_scene load_steps=19 format=3 uid="uid://c4ffy2ihhl0s2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_nlrv2"]
 [ext_resource type="Texture2D" uid="uid://f5erhq5j502x" path="res://assets/sprites/ui/damage1.png" id="2_ce1ua"]
@@ -11,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://md4b4rduxwaf" path="res://assets/sprites/throwables/bronze.png" id="9_7ow6w"]
 [ext_resource type="Texture2D" uid="uid://oc2hf7ojfhde" path="res://assets/sprites/throwables/copper.png" id="10_avsow"]
 [ext_resource type="Texture2D" uid="uid://dlbegmst44h3y" path="res://assets/sprites/throwables/stone.png" id="11_srjus"]
+[ext_resource type="Texture2D" uid="uid://mq76ytsr80u3" path="res://assets/obrazy/poczatek.jpg" id="11_y1n2w"]
+[ext_resource type="Texture2D" uid="uid://bus5ja7gxn0b3" path="res://assets/obrazy/zakonczenia.jpg" id="12_w76vi"]
+[ext_resource type="Texture2D" uid="uid://dwmy2n4rdamgd" path="res://assets/obrazy/wejscie_w_konar.jpg" id="13_5lofl"]
+[ext_resource type="Texture2D" uid="uid://b76h3b8jsl6bs" path="res://assets/obrazy/zakonczenia_wedrowiec.jpg" id="14_062ri"]
+[ext_resource type="Texture2D" uid="uid://balhqtiyotq74" path="res://assets/obrazy/zakonczenie_baba_wazony.jpg" id="15_b0qwo"]
 
 [sub_resource type="Gradient" id="Gradient_4g2bo"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
@@ -77,35 +82,6 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("6_xwhx4")
-
-[node name="DialogueInterface" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="DynamicDiaogueBox" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
-layout_mode = 1
-anchor_right = 0.106
-anchor_bottom = 0.225
-offset_left = 1320.0
-offset_top = 528.0
-offset_right = 2178.48
-offset_bottom = 682.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Narrator" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.106
-anchor_bottom = 0.225
-offset_left = 256.0
-offset_top = 907.0
-offset_right = 2666.48
-offset_bottom = 987.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Throwables" type="Control" parent="."]
 anchors_preset = 0
@@ -220,6 +196,63 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 1080.0
 texture = SubResource("GradientTexture1D_4ouk5")
+
+[node name="DialogueInterface" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Poczatek" type="Sprite2D" parent="DialogueInterface"]
+position = Vector2(958, 540)
+scale = Vector2(0.935303, 0.998611)
+texture = ExtResource("11_y1n2w")
+
+[node name="Zakonczenia" type="Sprite2D" parent="DialogueInterface"]
+visible = false
+position = Vector2(957, 538)
+scale = Vector2(0.93457, 0.996296)
+texture = ExtResource("12_w76vi")
+
+[node name="WejscieWKonar" type="Sprite2D" parent="DialogueInterface"]
+visible = false
+position = Vector2(959, 540)
+scale = Vector2(0.936523, 1)
+texture = ExtResource("13_5lofl")
+
+[node name="ZakonczeniaWedrowiec" type="Sprite2D" parent="DialogueInterface"]
+visible = false
+position = Vector2(956, 544)
+scale = Vector2(0.9375, 1.00556)
+texture = ExtResource("14_062ri")
+
+[node name="ZakonczenieBabaWazony" type="Sprite2D" parent="DialogueInterface"]
+visible = false
+position = Vector2(959, 537)
+scale = Vector2(0.936523, 1.00185)
+texture = ExtResource("15_b0qwo")
+
+[node name="DynamicDiaogueBox" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
+layout_mode = 1
+anchor_right = 0.106
+anchor_bottom = 0.225
+offset_left = 1320.0
+offset_top = 528.0
+offset_right = 2178.48
+offset_bottom = 682.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Narrator" parent="DialogueInterface" instance=ExtResource("7_jmgqw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.106
+anchor_bottom = 0.225
+offset_left = 256.0
+offset_top = 907.0
+offset_right = 2666.48
+offset_bottom = 987.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="timeout" from="BossWarnings/WarningTimer" to="." method="_on_warning_timer_timeout"]
 

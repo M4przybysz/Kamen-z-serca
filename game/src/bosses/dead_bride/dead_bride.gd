@@ -16,6 +16,7 @@ extends Node2D
 # Main stuff
 @onready var ui: Control = $"../../UI/UI"
 @onready var main: Node = $"../../../"
+@onready var dialogue_trigger: Area2D = $Environment/DialogueTrigger
 
 # Constant variables
 const max_hp: int = 30
@@ -205,8 +206,10 @@ func decrease_hp(value: int) -> void:
 		ui.hide_boss_hp_bar()
 		is_in_fight = false
 		unlock_arena = true
-		get_tree().quit()
 	if hp <= 10:
 		fight_phase = 2
 		change_hurtbox = true
+		ui.dialogue_scene = ui.get_scene("#BridePhase2")
+		ui.print_scene()
+
 	#print(hp)
