@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bbc4dta7s3n87" path="res://src/templates/puzzles/pushable_objects_and_pressure_plates/pressure_plate.tscn" id="13_ya24d"]
 [ext_resource type="Texture2D" uid="uid://bt8c4ua7kiddp" path="res://assets/external_assets/skały 2.png" id="14_a8ili"]
 [ext_resource type="Texture2D" uid="uid://cj4cinxplcnci" path="res://assets/external_assets/gory.png" id="15_lks04"]
-[ext_resource type="Texture2D" uid="uid://c3rktklqssg5m" path="res://assets/external_assets/skala-gen.png" id="16_6g4ad"]
 [ext_resource type="PackedScene" uid="uid://v414gfe82fql" path="res://src/templates/puzzles/pillar_stopper.tscn" id="16_debpf"]
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="17_lv4so"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="18_j2urr"]
@@ -29,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="21_k80ta"]
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="21_muiwh"]
 [ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="22_xpo1j"]
+[ext_resource type="Texture2D" uid="uid://b8nauev5u0j63" path="res://assets/Background/skalaziel.png" id="22_yy372"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvim"]
 
@@ -4104,7 +4104,7 @@ offset_top = -950.0
 offset_right = 7012.0
 offset_bottom = 586.0
 scale = Vector2(0.614995, 0.757229)
-texture = ExtResource("16_6g4ad")
+texture = ExtResource("22_yy372")
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -4188,7 +4188,6 @@ position = Vector2(23741, 162)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("21_k80ta")]
 position = Vector2(23496, 848)
-heal = 1
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("21_k80ta")]
 position = Vector2(16210, 1159)
@@ -4268,9 +4267,6 @@ position = Vector2(9872, 950)
 rotation = -3.14159
 scale = Vector2(-0.398746, 0.513456)
 texture = ExtResource("22_xpo1j")
-
-[connection signal="timeout" from="Environment/Puzzles2/PressurePlate/MovementLockTimer" to="Environment/Puzzles2/PressurePlate" method="_on_movement_lock_timer_timeout"]
-[connection signal="body_entered" from="Environment/Puzzles2/PressurePlate/CollisionShape2D3/Area2D" to="Environment/Puzzles2/PressurePlate" method="_on_area_2d_body_entered"]
 
 [editable path="Environment/Level2/Block135"]
 [editable path="Environment/Level2/Block221"]
