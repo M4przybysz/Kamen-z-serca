@@ -236,22 +236,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.5,
-"texture": ExtResource("6_2omg2")
-}, {
-"duration": 1.5,
-"texture": ExtResource("7_khcqr")
-}, {
-"duration": 1.5,
-"texture": ExtResource("8_tqyqj")
-}, {
-"duration": 1.5,
 "texture": ExtResource("9_73ulm")
-}, {
-"duration": 1.5,
-"texture": ExtResource("10_bvthk")
-}, {
-"duration": 1.5,
-"texture": ExtResource("11_wm125")
 }],
 "loop": false,
 "name": &"idle",
@@ -417,7 +402,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-0.121508, 0.121508)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"attack"
+animation = &"wrap_around_player"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]

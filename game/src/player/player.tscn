@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://de6uyjfeaewdo" path="res://assets/sprites/player/slide/slide3.png" id="24_3uvuj"]
 [ext_resource type="Texture2D" uid="uid://d1dlcf5wh808s" path="res://assets/sprites/player/slide/slide4.png" id="25_ac3f8"]
 [ext_resource type="Texture2D" uid="uid://cq2lpfd07tr81" path="res://assets/sprites/player/shieldbash.png" id="31_7qrd4"]
-[ext_resource type="PackedScene" uid="uid://cuqm1dsbcx8cf" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
+[ext_resource type="PackedScene" uid="uid://co24k8ymn44rp" path="res://src/player/spear/spear.tscn" id="31_k2iuf"]
 [ext_resource type="Texture2D" uid="uid://bq5g3j5m7fcsu" path="res://assets/sprites/throwables/bronze_shoot.png" id="32_764bl"]
 [ext_resource type="Texture2D" uid="uid://dxvr48mmcxytv" path="res://assets/sprites/throwables/stone_shoot.png" id="32_eycl2"]
 [ext_resource type="Texture2D" uid="uid://ce4vtfhq8fge1" path="res://assets/sprites/player/atakw.png" id="32_s40f6"]
@@ -256,9 +256,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wvas7")
+"texture": SubResource("AtlasTexture_3i6po")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bv0gg")
 }, {
 "duration": 1.0,
@@ -504,7 +504,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
-size = Vector2(50, 100)
+size = Vector2(33, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyrw6"]
 size = Vector2(10, 70)
@@ -585,8 +585,10 @@ stream = ExtResource("6_l6ij5")
 position = Vector2(5, 1)
 scale = Vector2(0.117857, 0.117857)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"wing_attack2"
+animation = &"wing_attack1"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]
 position = Vector2(0, -50)
@@ -595,15 +597,16 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WingAttack"]
 visible = false
-position = Vector2(25, 50)
+position = Vector2(16.5, 55)
 shape = SubResource("RectangleShape2D_722fy")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="WingAttack/CollisionShape2D"]
-offset_left = -25.0
-offset_top = -50.0
-offset_right = 25.0
-offset_bottom = 50.0
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 17.0
+offset_bottom = 45.0
 color = Color(1, 0, 0, 0.501961)
 
 [node name="Shield" type="StaticBody2D" parent="."]

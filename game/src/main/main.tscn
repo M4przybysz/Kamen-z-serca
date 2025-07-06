@@ -5283,7 +5283,7 @@ texture = ExtResource("25_t08e5")
 
 [node name="Sciany14" type="Sprite2D" parent="Gameplay/Beta/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(8775, 769)
+position = Vector2(8800, 769)
 texture = ExtResource("25_t08e5")
 
 [node name="Sciany18" type="Sprite2D" parent="Gameplay/Beta/Level Design/Tapeta/TapetaD1"]
