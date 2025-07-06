@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=32 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
@@ -17,10 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://bmjuu3c8mqg7h" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0005.png" id="11_wm125"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16gak"]
 radius = 15.0
 height = 80.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhhnp"]
 radius = 15.0
 height = 80.0
 
@@ -151,10 +159,6 @@ _data = {
 "idle_movement": SubResource("Animation_7h87a")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dggxu"]
-atlas = ExtResource("3_p6vgn")
-region = Rect2(0, 0, 600, 650)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu5kn"]
 atlas = ExtResource("4_0ixoj")
 region = Rect2(0, 0, 600, 650)
@@ -163,23 +167,21 @@ region = Rect2(0, 0, 600, 650)
 atlas = ExtResource("2_f5ld2")
 region = Rect2(72, 0, 1486, 519)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dggxu"]
+atlas = ExtResource("3_p6vgn")
+region = Rect2(0, 0, 600, 650)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbqbr"]
 animations = [{
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
-}, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bu5kn")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": ExtResource("5_g3g2q")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
 }],
 "loop": false,
 "name": &"attack",
@@ -194,19 +196,7 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
-"texture": ExtResource("5_g3g2q")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dggxu")
 }],
 "loop": false,
@@ -355,7 +345,7 @@ shape = SubResource("CapsuleShape2D_4h4jj")
 [node name="ChargeCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4h4jj")
+shape = SubResource("CapsuleShape2D_16gak")
 disabled = true
 
 [node name="NormalHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
@@ -364,6 +354,7 @@ collision_layer = 6
 collision_mask = 4
 
 [node name="ColorRect" type="ColorRect" parent="NormalHurtbox"]
+visible = false
 offset_left = 20.0
 offset_top = -15.0
 offset_right = 50.0
@@ -390,7 +381,7 @@ color = Color(1, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeHurtbox"]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_06uet")
+shape = SubResource("CapsuleShape2D_xhhnp")
 disabled = true
 
 [node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]
@@ -404,6 +395,7 @@ shape = SubResource("RectangleShape2D_kj1do")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="AttackHitbox/CollisionShape2D"]
+visible = false
 offset_left = -15.0
 offset_top = -30.0
 offset_right = 15.0
@@ -423,10 +415,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 5)
 scale = Vector2(-0.121508, 0.121508)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"combat"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]

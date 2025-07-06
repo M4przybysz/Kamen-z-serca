@@ -255,8 +255,8 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_3i6po")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvas7")
 }, {
 "duration": 1.5,
 "texture": SubResource("AtlasTexture_bv0gg")
