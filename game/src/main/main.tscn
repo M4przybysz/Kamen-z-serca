@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=68 format=3 uid="uid://d3gn4eoxa2lh0"]
+=======
+[gd_scene load_steps=72 format=3 uid="uid://d3gn4eoxa2lh0"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -59,8 +63,16 @@
 [ext_resource type="Texture2D" uid="uid://bpifovnh467yy" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-4.png" id="45_7v5c8"]
 [ext_resource type="Script" path="res://src/main/unlock_copper.gd" id="45_bqkt3"]
 [ext_resource type="PackedScene" uid="uid://dfmc8b7cff21" path="res://assets/pakiet.tscn" id="46_17tst"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://2fmi2jce2htv" path="res://ar_tap_1.tscn" id="47_nxdc7"]
+=======
+[ext_resource type="Texture2D" uid="uid://5wnqepfjk75s" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/dol_ziem_mech.png" id="48_mfg1g"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dhy77m5vwvcc" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/gora_ziem_mech.png" id="58_8t2km"]
+[ext_resource type="Texture2D" uid="uid://ftodn8406fua" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany_ziemia3.png" id="62_4qt1f"]
+[ext_resource type="Texture2D" uid="uid://ckkpq0elrrq1q" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany2half.png" id="62_aq8j0"]
+[ext_resource type="Texture2D" uid="uid://5141bubeot25" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany_ziemia5.png" id="63_7igcd"]
+[ext_resource type="Texture2D" uid="uid://c5y5rrphbuy2h" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/dol_ziem_mech3.png" id="65_shaqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w74ro"]
 size = Vector2(510, 700)
@@ -5289,7 +5301,14 @@ texture = ExtResource("25_t08e5")
 
 [node name="Sciany18" type="Sprite2D" parent="Gameplay/Beta/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(13932, 1411)
+position = Vector2(13906, 864)
+scale = Vector2(0.632643, 1.04279)
+texture = ExtResource("25_t08e5")
+
+[node name="Sciany23" type="Sprite2D" parent="Gameplay/Beta/Level Design/Tapeta/TapetaD1"]
+z_index = -3
+position = Vector2(13898, 2100)
+rotation = 3.14159
 scale = Vector2(0.632643, 1.04279)
 texture = ExtResource("25_t08e5")
 
@@ -7038,7 +7057,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="Gameplay" index="3"]
-position = Vector2(593.018, 239.641)
+position = Vector2(16984, -267)
 
 [node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
 collision_layer = 128
@@ -7106,8 +7125,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Tapeciarnia" type="Node2D" parent="Gameplay"]
 
 [node name="Dzik" type="Node2D" parent="Gameplay/Tapeciarnia"]
-
-[node name="DzikTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
 
 [node name="DzikTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
 
@@ -7660,6 +7677,197 @@ texture = ExtResource("26_dok6n")
 z_index = -5
 position = Vector2(11728, 1268)
 texture = ExtResource("58_8t2km")
+
+[node name="DzikTap1" type="Node2D" parent="."]
+
+[node name="TrawaDzik" type="Sprite2D" parent="DzikTap1"]
+position = Vector2(13601, 3281)
+texture = ExtResource("9_xkmbh")
+
+[node name="Skarpa" type="Node2D" parent="DzikTap1"]
+position = Vector2(-764, -4874)
+
+[node name="Sciany2" type="Sprite2D" parent="DzikTap1/Skarpa"]
+z_index = -5
+position = Vector2(11728, 1325)
+texture = ExtResource("26_dok6n")
+
+[node name="Sciany3" type="Sprite2D" parent="DzikTap1/Skarpa"]
+z_index = -5
+position = Vector2(11728, 1325)
+texture = ExtResource("26_dok6n")
+
+[node name="GoraZiemMech" type="Sprite2D" parent="DzikTap1/Skarpa"]
+z_index = -5
+position = Vector2(11728, 1268)
+texture = ExtResource("58_8t2km")
+
+[node name="DolZiemMech" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(17027, 583)
+texture = ExtResource("48_mfg1g")
+
+[node name="ScianyMech5" type="Sprite2D" parent="DzikTap1"]
+z_index = -10
+position = Vector2(17033, 585)
+texture = ExtResource("26_dok6n")
+
+[node name="ScianyMech7" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(14527, 1322)
+texture = ExtResource("26_dok6n")
+
+[node name="ScianyMech6" type="Sprite2D" parent="DzikTap1"]
+z_index = -10
+position = Vector2(18120, 592)
+texture = ExtResource("26_dok6n")
+
+[node name="DolZiemMech2" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(18118, 103)
+scale = Vector2(1, 0.52)
+texture = ExtResource("48_mfg1g")
+
+[node name="Sciany2" type="Sprite2D" parent="DzikTap1"]
+z_index = -13
+position = Vector2(14925, 1400)
+rotation = 0.714316
+texture = ExtResource("25_t08e5")
+
+[node name="Sciany6" type="Sprite2D" parent="DzikTap1"]
+z_index = -11
+position = Vector2(15358, 1503)
+rotation = 0.314494
+texture = ExtResource("25_t08e5")
+
+[node name="Sciany7" type="Sprite2D" parent="DzikTap1"]
+z_index = -11
+position = Vector2(15858, 1448)
+rotation = -2.87979
+texture = ExtResource("25_t08e5")
+
+[node name="ScianyMech3" type="Sprite2D" parent="DzikTap1"]
+z_index = -11
+position = Vector2(14988, 1546)
+scale = Vector2(0.73256, 0.54177)
+texture = ExtResource("34_gjm31")
+
+[node name="Sciany9" type="Sprite2D" parent="DzikTap1"]
+z_index = -11
+position = Vector2(15118, 776)
+rotation = -2.35619
+texture = ExtResource("62_4qt1f")
+
+[node name="Sciany11" type="Sprite2D" parent="DzikTap1"]
+z_index = -12
+position = Vector2(15696, 643)
+rotation = -3.14159
+texture = ExtResource("62_4qt1f")
+
+[node name="Sciany15" type="Sprite2D" parent="DzikTap1"]
+z_index = -12
+position = Vector2(15696, 643)
+rotation = -3.14159
+texture = ExtResource("62_4qt1f")
+
+[node name="Sciany5" type="Sprite2D" parent="DzikTap1"]
+z_index = -10
+position = Vector2(14391, 383)
+scale = Vector2(-1, 1)
+texture = ExtResource("63_7igcd")
+
+[node name="Sciany16" type="Sprite2D" parent="DzikTap1"]
+z_index = -4
+position = Vector2(13284, 550)
+rotation = -1.57079
+scale = Vector2(-0.567908, 0.771332)
+texture = ExtResource("63_7igcd")
+
+[node name="Sciany18" type="Sprite2D" parent="DzikTap1"]
+z_index = -4
+position = Vector2(13018, 627)
+rotation = -1.309
+scale = Vector2(-0.567908, 0.771332)
+texture = ExtResource("63_7igcd")
+
+[node name="Sciany17" type="Sprite2D" parent="DzikTap1"]
+z_index = -4
+position = Vector2(12844, 842.001)
+rotation = -2.61799
+scale = Vector2(-0.446805, 0.503024)
+texture = ExtResource("63_7igcd")
+
+[node name="Sciany12" type="Sprite2D" parent="DzikTap1"]
+z_index = -8
+position = Vector2(14132, 856)
+rotation = 1.0472
+scale = Vector2(-0.63648, 0.542023)
+texture = ExtResource("34_gjm31")
+
+[node name="Sciany13" type="Sprite2D" parent="DzikTap1"]
+z_index = -8
+position = Vector2(14088, 333)
+rotation = 0.261799
+scale = Vector2(-0.63648, 0.542023)
+texture = ExtResource("34_gjm31")
+
+[node name="Sciany8" type="Sprite2D" parent="DzikTap1"]
+z_index = -10
+position = Vector2(15072, 1183)
+rotation = -9.42476
+scale = Vector2(-1, 1)
+texture = ExtResource("62_aq8j0")
+
+[node name="Sciany10" type="Sprite2D" parent="DzikTap1"]
+z_index = -11
+position = Vector2(15296, 1105)
+rotation = -12.5664
+scale = Vector2(-1, 1)
+texture = ExtResource("62_aq8j0")
+
+[node name="DolZiemMech4" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(14527, 1318)
+texture = ExtResource("65_shaqx")
+
+[node name="DolZiemMech6" type="Sprite2D" parent="DzikTap1"]
+z_index = -4
+position = Vector2(13210, 1345)
+texture = ExtResource("65_shaqx")
+
+[node name="DolZiemMech5" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(15296, 1203)
+scale = Vector2(-1.05289, 0.795521)
+texture = ExtResource("65_shaqx")
+
+[node name="Sciany3" type="Sprite2D" parent="DzikTap1"]
+z_index = -9
+position = Vector2(15818, 749)
+texture = ExtResource("34_gjm31")
+
+[node name="Skarpa2" type="Node2D" parent="DzikTap1"]
+position = Vector2(1483, 62)
+
+[node name="Sciany2" type="Sprite2D" parent="DzikTap1/Skarpa2"]
+z_index = -5
+position = Vector2(11728, 1325)
+texture = ExtResource("26_dok6n")
+
+[node name="Sciany3" type="Sprite2D" parent="DzikTap1/Skarpa2"]
+z_index = -5
+position = Vector2(11727, 1277)
+texture = ExtResource("26_dok6n")
+
+[node name="GoraZiemMech" type="Sprite2D" parent="DzikTap1/Skarpa2"]
+z_index = -5
+position = Vector2(11728, 1268)
+texture = ExtResource("58_8t2km")
+
+[node name="Sciany14" type="Sprite2D" parent="DzikTap1"]
+z_index = -8
+position = Vector2(13304, 1277)
+texture = ExtResource("34_gjm31")
 
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
