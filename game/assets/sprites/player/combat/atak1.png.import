@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chryb4qa4720f"
-path="res://.godot/imported/attack3.png-84cc908999586c4030293d19d4266a93.ctex"
+uid="uid://rnvh3gbvaila"
+path="res://.godot/imported/atak1.png-89ccb52de31dfb947de5fa746c15f4d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/combat/attack3.png"
-dest_files=["res://.godot/imported/attack3.png-84cc908999586c4030293d19d4266a93.ctex"]
+source_file="res://assets/sprites/player/combat/atak1.png"
+dest_files=["res://.godot/imported/atak1.png-89ccb52de31dfb947de5fa746c15f4d8.ctex"]
 
 [params]
 
