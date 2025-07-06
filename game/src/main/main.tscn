@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=60 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -56,8 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://j6u3fmx8yfda" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany_ziemia_mech.png" id="44_il6cn"]
 [ext_resource type="Texture2D" uid="uid://bpifovnh467yy" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-4.png" id="45_7v5c8"]
 [ext_resource type="PackedScene" uid="uid://dfmc8b7cff21" path="res://assets/pakiet.tscn" id="46_17tst"]
-[ext_resource type="Texture2D" uid="uid://csd5xocwsdk3u" path="res://assets/Background/Statek 1.png" id="56_3hhu6"]
-[ext_resource type="Texture2D" uid="uid://dg1hcc3bgmhlx" path="res://assets/Background/Statek 3.png" id="57_reo4p"]
 [ext_resource type="Texture2D" uid="uid://dhy77m5vwvcc" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/gora_ziem_mech.png" id="58_8t2km"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
@@ -7183,6 +7181,30 @@ position = Vector2(-8166, 3085)
 
 [node name="FilTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
 
+[node name="Kacper" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela"]
+
+[node name="KacTap1" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Kacper"]
+
+[node name="KacTap2" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Kacper"]
+
+[node name="KacTap3" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Kacper"]
+
+[node name="KacTap4" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Kacper"]
+
+[node name="KacTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Kacper"]
+
+[node name="TempUkrainiec" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela"]
+
+[node name="UkraTap1" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/TempUkrainiec"]
+
+[node name="UkraTap2" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/TempUkrainiec"]
+
+[node name="UkraTap3" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/TempUkrainiec"]
+
+[node name="UkraTap4" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/TempUkrainiec"]
+
+[node name="UkraTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/TempUkrainiec"]
+
 [node name="CzzernDzik" type="Sprite2D" parent="Gameplay"]
 position = Vector2(14462, 2057)
 rotation = 1.57079
@@ -7317,18 +7339,6 @@ texture = ExtResource("25_t08e5")
 z_index = -4
 position = Vector2(12344, 3514)
 texture = ExtResource("44_il6cn")
-
-[node name="Statek1" type="Sprite2D" parent="."]
-z_index = 8
-position = Vector2(3624, 768)
-scale = Vector2(1.32409, 1.01844)
-texture = ExtResource("56_3hhu6")
-
-[node name="Statek2" type="Sprite2D" parent="."]
-z_index = 8
-position = Vector2(878, 638)
-scale = Vector2(1.17536, 0.765035)
-texture = ExtResource("57_reo4p")
 
 [node name="Skarpa" type="Node2D" parent="."]
 position = Vector2(-12, -70)
