@@ -62,6 +62,12 @@ gameplay = NodePath("Gameplay")
 main = NodePath("..")
 death_menu = NodePath("../Menus/DeathMenu")
 
+[node name="Label" parent="Gameplay" index="0"]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Alfa_v1" parent="Gameplay" index="1"]
+position = Vector2(0, 0)
+
 [node name="ZiemiaDzik31" type="Sprite2D" parent="Gameplay/Alfa_v1" index="10"]
 z_index = 1
 position = Vector2(22681, 1173)
@@ -114,12 +120,6 @@ position = Vector2(27689, -5586)
 
 [node name="ResponsivePlatform16" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="121"]
 position = Vector2(26865, 7527)
-
-[node name="Label" parent="Gameplay" index="0"]
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-
-[node name="Alfa_v1" parent="Gameplay" index="1"]
-position = Vector2(-1, 0)
 
 [node name="ResponsivePlatform20" parent="Gameplay/Beta/Enviroment/LD/Level2Podzm/KLevel1" index="122" instance=ExtResource("3_ybejy")]
 position = Vector2(31968, -1716)
@@ -6607,6 +6607,10 @@ script = ExtResource("11_351p3")
 position = Vector2(22655.8, 894.5)
 shape = SubResource("RectangleShape2D_24a2n")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Musica/Node2D"]
+position = Vector2(23123.8, 861.5)
+shape = SubResource("RectangleShape2D_24a2n")
+
 [node name="Kamien" type="Sprite2D" parent="."]
 position = Vector2(20007, 2001)
 rotation = 1.57079
@@ -6636,10 +6640,6 @@ z_index = -2
 position = Vector2(1949, 374)
 scale = Vector2(1.14486, 1.02154)
 texture = ExtResource("45_7v5c8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Musica/Node2D"]
-position = Vector2(23123.8, 861.5)
-shape = SubResource("RectangleShape2D_24a2n")
 
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
