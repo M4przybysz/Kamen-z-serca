@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=62 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://crtf3q5tl4ytd" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/byk_jaskinia.png" id="43_hxkt6"]
 [ext_resource type="Texture2D" uid="uid://j6u3fmx8yfda" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany_ziemia_mech.png" id="44_il6cn"]
 [ext_resource type="Texture2D" uid="uid://bpifovnh467yy" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-4.png" id="45_7v5c8"]
+[ext_resource type="PackedScene" uid="uid://dfmc8b7cff21" path="res://assets/pakiet.tscn" id="46_17tst"]
 [ext_resource type="Texture2D" uid="uid://csd5xocwsdk3u" path="res://assets/Background/Statek 1.png" id="56_3hhu6"]
 [ext_resource type="Texture2D" uid="uid://dg1hcc3bgmhlx" path="res://assets/Background/Statek 3.png" id="57_reo4p"]
 [ext_resource type="Texture2D" uid="uid://dhy77m5vwvcc" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/gora_ziem_mech.png" id="58_8t2km"]
@@ -5358,25 +5359,25 @@ texture = ExtResource("31_xvsg6")
 
 [node name="Sciany6" type="Sprite2D" parent="Gameplay/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(13319, 404)
+position = Vector2(13309.5, 4447)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("32_2p062")
 
 [node name="Sciany4" type="Sprite2D" parent="Gameplay/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(12805, -40)
+position = Vector2(13004.5, 4374)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("33_prn4l")
 
 [node name="Sciany24" type="Sprite2D" parent="Gameplay/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(13319, 404)
+position = Vector2(13518.5, 4818)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("32_2p062")
 
 [node name="Sciany25" type="Sprite2D" parent="Gameplay/Level Design/Tapeta/TapetaD1"]
 z_index = -2
-position = Vector2(12805, -40)
+position = Vector2(12795.5, 4003)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("33_prn4l")
 
@@ -5536,12 +5537,12 @@ position = Vector2(12704, 1456)
 texture = ExtResource("9_0c2w1")
 
 [node name="DzikSkal206" type="Sprite2D" parent="Gameplay/Level Design/Tapeta"]
-position = Vector2(21791, 6077)
+position = Vector2(18007, 6382)
 rotation = -3.14159
 texture = ExtResource("5_6y5ve")
 
 [node name="DzikSkal207" type="Sprite2D" parent="Gameplay/Level Design/Tapeta"]
-position = Vector2(21791, 6235)
+position = Vector2(18501, 7061)
 rotation = -3.14159
 texture = ExtResource("5_6y5ve")
 
@@ -5661,7 +5662,7 @@ rotation = -1.57079
 texture = ExtResource("5_6y5ve")
 
 [node name="DzikSkal208" type="Sprite2D" parent="Gameplay/Level Design/Tapeta"]
-position = Vector2(21791, 6328)
+position = Vector2(18007, 6633)
 rotation = -3.14159
 texture = ExtResource("5_6y5ve")
 
@@ -6876,31 +6877,10 @@ texture = ExtResource("5_7afl8")
 
 [node name="LDDNied1" type="Node2D" parent="Gameplay/Level Design"]
 
-[node name="CzzernDzik" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-position = Vector2(24533, 2653)
-rotation = 1.57079
-texture = ExtResource("4_o6day")
-
 [node name="DzikSkal280" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
 position = Vector2(23385, 1366)
 rotation = -12.5664
 texture = ExtResource("5_6y5ve")
-
-[node name="TrawaDzik15" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-z_index = 2
-position = Vector2(25139.5, 2805)
-texture = ExtResource("9_xkmbh")
-
-[node name="ScianyMech5" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-position = Vector2(24852.5, 2722)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("26_dok6n")
-
-[node name="Skal12" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-z_index = 3
-position = Vector2(25227.5, 2710)
-rotation = -1.57079
-texture = ExtResource("5_7afl8")
 
 [node name="Sciany23" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
 z_index = -2
@@ -6960,18 +6940,6 @@ position = Vector2(20785, 2248)
 rotation = -1.57079
 scale = Vector2(0.645335, 0.640689)
 texture = ExtResource("25_t08e5")
-
-[node name="Sciany30" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-z_index = -2
-position = Vector2(24743.5, 3558)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("32_2p062")
-
-[node name="Sciany31" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
-z_index = -2
-position = Vector2(24229.5, 3114)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("33_prn4l")
 
 [node name="Sciany33" type="Sprite2D" parent="Gameplay/Level Design/LDDNied1"]
 z_index = -2
@@ -7173,6 +7141,47 @@ z_index = -4
 position = Vector2(15769, 1386)
 scale = Vector2(0.378102, 0.312977)
 texture = ExtResource("34_gjm31")
+
+[node name="Pakiet" parent="Gameplay/Level Design/LDDNied1" instance=ExtResource("46_17tst")]
+position = Vector2(-8166, 3085)
+
+[node name="Tapeta_Niedziela" type="Node2D" parent="Gameplay/Level Design"]
+
+[node name="Dzik" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela"]
+
+[node name="DzikTap1" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Dzik"]
+
+[node name="DzikTap2" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Dzik"]
+
+[node name="DzikTap3" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Dzik"]
+
+[node name="DzikTap4" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Dzik"]
+
+[node name="DzikTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Dzik"]
+
+[node name="Artur" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela"]
+
+[node name="ArTap1" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Artur"]
+
+[node name="ArTap2" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Artur"]
+
+[node name="ArTap3" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Artur"]
+
+[node name="ArTap4" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Artur"]
+
+[node name="ArTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Artur"]
+
+[node name="Filip" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela"]
+
+[node name="FilTap1" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
+
+[node name="FilTap2" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
+
+[node name="FilTap3" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
+
+[node name="FilTap4" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
+
+[node name="FilTap5" type="Node2D" parent="Gameplay/Level Design/Tapeta_Niedziela/Filip"]
 
 [node name="CzzernDzik" type="Sprite2D" parent="Gameplay"]
 position = Vector2(14462, 2057)
