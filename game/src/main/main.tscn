@@ -7322,14 +7322,37 @@ scale = Vector2(1.17536, 0.765035)
 texture = ExtResource("57_reo4p")
 
 [node name="Skarpa" type="Node2D" parent="."]
-position = Vector2(0, -70)
+position = Vector2(-12, -70)
 
 [node name="Sciany2" type="Sprite2D" parent="Skarpa"]
 z_index = -5
-position = Vector2(11728, 1331)
+position = Vector2(11728, 1325)
+texture = ExtResource("26_dok6n")
+
+[node name="Sciany3" type="Sprite2D" parent="Skarpa"]
+z_index = -5
+position = Vector2(11728, 1325)
 texture = ExtResource("26_dok6n")
 
 [node name="GoraZiemMech" type="Sprite2D" parent="Skarpa"]
+z_index = -5
+position = Vector2(11728, 1268)
+texture = ExtResource("58_8t2km")
+
+[node name="Skarpa2" type="Node2D" parent="."]
+position = Vector2(732, 2)
+
+[node name="Sciany2" type="Sprite2D" parent="Skarpa2"]
+z_index = -5
+position = Vector2(11728, 1325)
+texture = ExtResource("26_dok6n")
+
+[node name="Sciany3" type="Sprite2D" parent="Skarpa2"]
+z_index = -5
+position = Vector2(11730, 1265)
+texture = ExtResource("26_dok6n")
+
+[node name="GoraZiemMech" type="Sprite2D" parent="Skarpa2"]
 z_index = -5
 position = Vector2(11728, 1268)
 texture = ExtResource("58_8t2km")
