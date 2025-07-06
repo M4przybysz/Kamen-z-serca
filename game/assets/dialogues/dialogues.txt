@@ -18,4 +18,118 @@ D: Zatem podjąłeś wybór…
 N: [center][i]Potężny huk rozniósł się po okolicy, gdy Dąb uniósł jedną gałąź nad drugą ku górze.[/i][/center]
 D: Zabaw mnie zatem. Zważmy twoje serce, zobaczymy jak głęboko cię pociągnie.
 ###
+#Obraz pierwszy
+N: [center][i]Ta opowieść zaczęła się od straty.[/i][/center]
+N: [center][i]Straty, która objęła naszego człowieka doszczętnie, nie pozwalając mu na dalszą pracę ani na chwilę wytchnienia.[/i][/center]
+N: [center][i]Wielu powiadało, żeby nie igrać z końcem, ale trudno jest pogodzić się z utratą powodu życia.[/i][/center]
+N: [center][i]Nikt nie próbował przeszkodzić młodemu wówczas rolnikowi, gdy zamiast na pole udał się do pobliskiego kręgu.[/i][/center]
+N: [center][i]Odprawił tam obrzęd, przeznaczony dla tych co pomarli i rzucił się w wodę - zakłócając Ład i Porządek aby zdjąć ciężar, jaki został mu przytroczony.
+N: [center][i]Spadając wiedział, że to pierwszy krok aby zrzucić z siebie [b]Kamień z Serca[/b].[/i][/center]
+###
+#Obraz drugi
+N: [center][i]Potężne Drzewo znieruchomiało odsłaniając wnękę do swego wnętrza.[/i][/center]
+N: [center][i]Bohater spojrzał się na korę dębiszcza i oderwał spory kawał - posłuży za tarczę.[/i][/center]
+N: [center][i]Ptakoczłek niedługo potem zniknął w trzewiach Drzewa a dziupla zaczęła się zasklepiać...[/i][/center]
+###
+#Kowal pierwszy
+N: [center][i]Podchodząc do Kowala nie sposób było nie zobaczyć, że ręce ma poharatane od pracy, poznaczone bliznami.[/i][/center]
+K: Żywy? Hmm. Nieczęsto się to zdarza.
+N: [center][i]Mężczyzna sięgnął po drzewiec, który zaczął obracał w dłoni.[/i][/center]
+K: A jeszcze rzadziej, ktoś kto ma zamiar kogoś stąd wyciągnąć
+N: [center][i]Kowal spojrzał się uważnie po całym ciele ptakoczłeka, oceniając i badając wzrokiem.[/i][/center]
+K: Tak być nie może. Nie zejdziesz tak do [b]Głębin[/b]. Jesteś zbyt słaby, zbyt… lekki.
+K: Przynieś mi miedź i cynę. Zrobimy ci odpowiednią skorupę.
+K: Po tym... już nie będziesz tym samym.  
+K: A teraz trzymaj tą włócznię - przyda ci się nie tylko do walki, możesz jej użyć też do wspinaczki.
+###
+#Kowal beztowarowy
+K:Nie kłopocz mnie bez towarów! I bez tego mam mnóstwo pracy…
+K: Znajdź miedź i cynę jeśli chcesz bym ci pomógł, powinny być gdzieś w tych jaskiniach.
+K:[b]Miedzi[/b] szukaj na dole, gdzieś na prawo.
+K:[b]Cynę[/b] powinieneś znaleźć w kierunku, z którego przyszedłeś, choć powinna być trochę wyżej.
+###
+#Kowal towarowy
+N: [i][center]Ptakoczłek wręczył surowce, oddychając ciężko po ucieczce[/i][/center]
+K: Hoh, udało ci się. Zabawiłeś mnie tym biegiem, dlatego zasłużyłeś na nagrodę
+N:[center][i] Kowal wziął przedmioty i począł układać w naczyniu, pod którym żarzył się ogień.
+K: Brąz. Krew ziemi. Sprawi, że będziesz wytrzymalszy i silniejszy, odporny na wpływ Izby.
+N: [center][i]Mężczyzna zamknął naczynie pokrywką, a z niewielkich szczelin począł unosić się dym.[/i][/center]
+K: Tylko szaleniec wróciłby po kogoś, komu skończył się czas na Powierzchni.
+K: Ta przemiana cię zaboli, ale to co spotkasz w [b]Głębinach[/b], w [b]Izbie Odosobnienia[/b]… Będziesz cierpiał na własne życzenie.
+N: [center][i]Kowal otworzył pojemnik, wrzucił ostatnie składniki mieszając wewnątrz długim narzędziem.[/i][/center]
+K: Zachowaj czysty umysł. To już twój ostatni krok, pamiętaj, że wciąż będziesz mógł zawrócić gdy [i]Nią[/i] zobaczysz.
+K: A teraz stój bez ruchu aby brąz pokrył całe twoje ciało nie tworząc grudek.
+K: Nie chcemy przecież, by z ciebie też pozostał jedynie kamień…
+###
+#Bride1
+N: [center][i]Na środku sali stała [b]Oblubienica[/b], powoli obrastająca kamienną powłoką. Pozostałości tych, którzy już obrócili się w proch oblepiał ją i jej podobnych, stojących głębiej w sali.[/i][/center]
+N: [center][i]Mimo skały ciążącej na ciele, uniosła głowę by napotkać wzrok bohatera. Jej zmęczony głos ledwo dobiegał jego uszu.[/i][/center]
+O: Czy to ty, mężu? Jak się tu dostałeś? Czy twój czas również nadszedł?
+N: [center][i]On zaprzeczył gwałtownie i wyciągnął zachęcająco rękę w jej stronę. Jedyne co usłyszał w zamian to ściszony, pozbawiony radości śmiech.[/i][/center]
+O: Chcesz, bym z tobą poszła?
+O: Mój czas pod gwiazdami dobiegł końca, mężu. Odejdź, zanim Ty również zostaniesz tu na zawsze.
+N: [center][i]Pośród cieni dawno obróconych w proch tłoczących się po ścianach otworzyły się ogromne kamienne wrota. Wydobył się z nich świeży podmuch wiatru z powierzchni.[/i][/center]
+O: Nie męcz mnie już więcej. Ciesz się tym, co ci pozostało.
+###
+#Bride2
+N:  [center][i]Tym razem oblubienica nawet nie zaszczyciła męża spojrzeniem. Jedynie jej głos nabrał siły, niosąc ze sobą ostrzegawcze tony.[/i][/center]
+O: Czemu trwasz w swym daremnym postanowieniu?
+O: Nie pójdę nigdzie z tobą. Nawet gdybym chciała, nie mogę postąpić wbrew [b]Prawom[/b].
+O: Nie będzie kolejnego ostrzeżenia. Przejdź przez wrota do świata żywych, lub gotuj się do walki.
+###
+#BridePhase1
+N: [center][i]Oblubienica powoli zaczęła poruszać skamieniałymi kończynami, po których rozrosła się siatka pęknięć. Ponownie z jej spierzchniętych ust wydobył się zimny chichot, gdy wrota z trzaskiem zamknęły drogę odwrotu.[/i][/center]
+O: Mogłam spodziewać się, że mnie nie posłuchasz. Nigdy nie słuchałeś.
+N: [center][i]Bohater wydawałoby się zignorował jej słowa; jedynie jego dłoń bezwiednie ściskała drzewiec włóczni, a oczy uważnie śledziły każdy jej ruch.[/i][/center]
+O: Chciałabym, by zakończyło się to inaczej. 
+N: [center][i] Po tych słowach rzuciła się do ataku.[/i][/center]
+###
+#BridePhase2
+N: [center][i]Dysząc, oblubienica opadła na kolana. Kamień krępujący jej ruchy w końcu pękł, odsłaniając bladą jak śmierć skórę i beznamiętną twarz. Jedynie jej oczy paliły się żywą nienawiścią.[/i][/center]
+O: Jak śmiesz przychodzić tu, niszcząc wszystko na swej drodze?
+O: Przecząc [b]Przedwiecznym Prawom[/b], zakłócając spokój umarłych?
+O: W imię czego? Naszej miłości, łamanej przez lata ciężarem twej pięści i słów?  
+N: [center][i]Powstając strząsnęła z siebie resztki skały. Jej ruchy nabrały energii, a lico wykrzywiła w brzydkim grymasie w końcu ukazując jakiekolwiek emocje.[/i][/center]
+O: Ona już nie istnieje. Powstrzymywałam się, ze względu na uczucie które nas kiedyś łączyło. Z nadzieją, że zrozumiesz.
+O: Ale nie rozumiesz. Nigdy nie rozumiałeś, a brakuje ci wyobraźni by choć spróbować!
+O: Więc choć, o bohaterze! Zawalcz o swą ukochaną i zgiń z jej ręki!
+###
+#BrideEnd
+N: [center][i]Oblubienica opada na ziemię po raz drugi. Energia, która chwilowo wstąpiła w jej członki zniknęła bez śladu, zastąpiona apatią i bezruchem.[/center][i]
+O: Dość. Nie mam już sił, wygrałeś. 
+N: [center][i]Jej szloch odbił się od kamiennych ścian. Bohater patrzył tylko, wydawałoby się beznamiętnie, czekając na jej kolejny ruch.[/i][/center]
+O: Nawet po śmierci nie jestem w stanie cię powstrzymać. Rób więc co zechcesz.
+N: [center][i]Jej mąż wciąż nie reagował, patrząc na konsekwencje swych działań. Jego myśli błądziły po tym co było, jest i będzie, mierząc się z tym co zrobił.[/i][/center] 
+N: [center][i]W końcu otrząsnął się z rozmyślań. Obejrzał się na pogrążoną w rozpaczy ukochaną, i na kamienne wrota, ponownie zachęcająco otwarte.[/i][/center] 
+N: [center][i]Wciąż miał wybór.[/i][/center] 
+###
+#EndingNeutral
+N: [center][i]Bohater uszanował prośbę swej oblubienicy. Z ciążącym sercem opuścił Podziemia, pozostawiają swą żonę w zaświatach.[/i][/center]
+N: [center][i]Mimo prób i wysiłków nie mógł zapomnieć tamtych wydarzeń. Każdego dnia walczył z myślami i wątpliwościami, zastanawiając się czy wybrał dobrze.[/i][/center]
+N: [center][i]Nigdy nie zrozumiał czemu nie zdecydowała się na powrót. Bez niej nie miał celu, motywacji, szczęścia - życie było szare, a egzystencja pusta.[/i][/center]
+N: [center][i]Potrafił godzinami przyglądać się jej ulubionemu miejscu, przeglądać pozostałe po niej pamiątki, wspominać upięknione przez czas przeżycia z ukochaną.[/i][/center] 
+N: [center][i]Wiedział, że uczynił dobrze - zrzucił z siebie ciążący głaz. Jednak wątpliwości i żal przejęły kontrolę nad jego duszą.[/i][/center]
+N: [center][i]Być może gdyby zawalczył nie czułby tego bólu, nie wytwarzałby znów nowego zmartwienia. Nie skończyłby z nowym kamieniem na sercu.[/i][/center]
+###
+#EndingBad
+N: [center][i]Podjąwszy wybór, bohater wyprowadził swą lubą z krainy umarłych. Podczas powrotu nie napotkał więcej trudności ani ze strony umarłych, ani od oblubienicy.[/i][/center] 
+N: [center][i]Po wyjściu na blask dnia powrócili do swego domostwa. Wszystko wydawało się jak dawniej - on uprawiał rolę, ona zajmowała się domem i mężem po jego powrocie.[/i][/center]
+N: [center][i]Bohater widział jednak różnicę. Była cieniem samej siebie, pozbawionym duszy i życia posągiem włóczącym się po gospodarstwie.[/i][/center] 
+N: [center][i]Gdy on pracował, ona siedziała bez ruchu w izbie. Gdy go ponosił gniew, ona potulnie słuchała i znosiła wszelkie obelgi, trwała jak nieruchoma lalka o tej samej beznamiętnej twarzy.[/i][/center]
+N: [center][i]Choć miał co chciał, czuł że zawiódł. Zimna skała okalająca jego duszę nie znikła.[/i][/center]
+N: [center][i]Kamień na sercu pozostał do końca jego dni.[/i][/center] 
+###
+#EndingGood
+N: [center][i]Podjąwszy wybór, bohater zostawił swą ukochaną i samotnie powrócił do świata żywych. Choć do domostwa wszedł sam, czuł dziwną lekkość na sercu.[/i][/center] 
+N: [center][i]Następnego dnia spakował najpotrzebniejsze rzeczy, założył na barki ciężki płaszcz i opuścił gospodarstwo. Podróżował od sioła do wsi, od wsi do miasta, dzieląc się swymi przeżyciami z gawiedzią.[/i][/center] 
+N: [center][i]Opowieść z roku na rok zmieniała się; żyła własnym życiem, rozwijała się i plotła, powtarzana z ust do ust przez najbliższe lata.[/i][/center]
+N: [center][i]Sam bohater nigdy nie zapomniał tego, co przeżył w Podziemiach. Choć doświadczenie wciąż bolały, nie pozwolił im zaniknąć. Wraz z biegiem czasu zaczął nawet patrzeć na nie przychylnie.[/i][/center]
+N: [center][i]W końcu to dzięki nim zrzuciłem kamień z serca.[/i][/center] 
+###
+#Wedrowiec
+W: ...Była to droga do świątyni niezliczeni przez wieki nią szli, drugie tyle będzie nią jeszcze szło
+W: Mówi się żę każdy prędzej czy później kroczy tą ścieżką
+W: Jeśli jesteś godny, przejdziesz. Jeśli nie - zostaniesz tu do końca, jak inni. 
+W: Nie każdy tak kończy, ci godni mają mogą nawet zostać Panami, ale Wielkość też ma swoją cenę. 
+W: A dalej... dalej jest to po co się tędy kroczy. Brama do [b]Głębin[/b]. Jeśli tam zmierzasz, to uważaj pod nogi, tu nie lubi się gości…
 #####
