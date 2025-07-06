@@ -1,17 +1,34 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=32 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
 [ext_resource type="Texture2D" uid="uid://c4bryxeqpvgtn" path="res://assets/sprites/mud_mummy/test_mummy.png" id="2_f5ld2"]
+[ext_resource type="Texture2D" uid="uid://cq2o5x1oad6go" path="res://assets/sprites/mud_mummy/fighting/Timeline 1_0000 (2).png" id="3_p6vgn"]
 [ext_resource type="AudioStream" uid="uid://h4f13xwluej4" path="res://assets/sound/sfx/draugr_attack.wav" id="3_ph1a7"]
+[ext_resource type="Texture2D" uid="uid://df8bbb748ylom" path="res://assets/sprites/mud_mummy/fighting/Timeline 1_0001 (2).png" id="4_0ixoj"]
 [ext_resource type="AudioStream" uid="uid://duj6yptmllcc7" path="res://assets/sound/sfx/draugr_throw.wav" id="4_qyjaw"]
+[ext_resource type="Texture2D" uid="uid://bvda11bxqjua6" path="res://assets/sprites/mud_mummy/fighting/Timeline 1_0002 (2).png" id="5_g3g2q"]
 [ext_resource type="AudioStream" uid="uid://d2mu6t4bmsyuy" path="res://assets/sound/sfx/draugr_movement.wav" id="5_ibqi1"]
+[ext_resource type="Texture2D" uid="uid://cy03t3x73vsid" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0000.png" id="6_2omg2"]
+[ext_resource type="Texture2D" uid="uid://i5kpisndtua0" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0001.png" id="7_khcqr"]
+[ext_resource type="Texture2D" uid="uid://bio2qj8hgl762" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0002.png" id="8_tqyqj"]
+[ext_resource type="Texture2D" uid="uid://cj7u3jmnj7uh1" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0003.png" id="9_73ulm"]
+[ext_resource type="Texture2D" uid="uid://be0ratveij3wd" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0004.png" id="10_bvthk"]
+[ext_resource type="Texture2D" uid="uid://bmjuu3c8mqg7h" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0005.png" id="11_wm125"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16gak"]
 radius = 15.0
 height = 80.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhhnp"]
 radius = 15.0
 height = 80.0
 
@@ -142,11 +159,29 @@ _data = {
 "idle_movement": SubResource("Animation_7h87a")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu5kn"]
+atlas = ExtResource("4_0ixoj")
+region = Rect2(0, 0, 600, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lom7i"]
+atlas = ExtResource("2_f5ld2")
+region = Rect2(72, 0, 1486, 519)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dggxu"]
+atlas = ExtResource("3_p6vgn")
+region = Rect2(0, 0, 600, 650)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbqbr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"texture": SubResource("AtlasTexture_bu5kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g3g2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu5kn")
 }],
 "loop": false,
 "name": &"attack",
@@ -154,7 +189,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"texture": SubResource("AtlasTexture_lom7i")
 }],
 "loop": true,
 "name": &"charge",
@@ -162,15 +197,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"texture": SubResource("AtlasTexture_dggxu")
 }],
 "loop": false,
 "name": &"combat",
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"duration": 1.5,
+"texture": ExtResource("6_2omg2")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_khcqr")
+}, {
+"duration": 1.5,
+"texture": ExtResource("8_tqyqj")
+}, {
+"duration": 1.5,
+"texture": ExtResource("9_73ulm")
+}, {
+"duration": 1.5,
+"texture": ExtResource("10_bvthk")
+}, {
+"duration": 1.5,
+"texture": ExtResource("11_wm125")
 }],
 "loop": true,
 "name": &"combat_movement",
@@ -185,16 +235,31 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"duration": 1.5,
+"texture": ExtResource("9_73ulm")
 }],
 "loop": false,
 "name": &"idle",
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_f5ld2")
+"duration": 1.5,
+"texture": ExtResource("6_2omg2")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_khcqr")
+}, {
+"duration": 1.5,
+"texture": ExtResource("8_tqyqj")
+}, {
+"duration": 1.5,
+"texture": ExtResource("9_73ulm")
+}, {
+"duration": 1.5,
+"texture": ExtResource("10_bvthk")
+}, {
+"duration": 1.5,
+"texture": ExtResource("11_wm125")
 }],
 "loop": true,
 "name": &"idle_movement",
@@ -265,7 +330,7 @@ shape = SubResource("CapsuleShape2D_4h4jj")
 [node name="ChargeCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4h4jj")
+shape = SubResource("CapsuleShape2D_16gak")
 disabled = true
 
 [node name="NormalHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
@@ -274,6 +339,7 @@ collision_layer = 6
 collision_mask = 4
 
 [node name="ColorRect" type="ColorRect" parent="NormalHurtbox"]
+visible = false
 offset_left = 20.0
 offset_top = -15.0
 offset_right = 50.0
@@ -300,7 +366,7 @@ color = Color(1, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeHurtbox"]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_06uet")
+shape = SubResource("CapsuleShape2D_xhhnp")
 disabled = true
 
 [node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]
@@ -314,6 +380,7 @@ shape = SubResource("RectangleShape2D_kj1do")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="AttackHitbox/CollisionShape2D"]
+visible = false
 offset_left = -15.0
 offset_top = -30.0
 offset_right = 15.0
@@ -333,10 +400,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 26)
-scale = Vector2(-0.06, 0.1)
+scale = Vector2(-0.121508, 0.121508)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"idle"
+animation = &"wrap_around_player"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]

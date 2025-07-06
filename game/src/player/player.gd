@@ -272,9 +272,9 @@ func _input(_event: InputEvent) -> void:
 		throwables.get_children()[0].return_to_player()
 	
 	# Action key can lock and unlock spear
-	if Input.is_action_just_pressed("action"):
-		is_spear_unlocked = !is_spear_unlocked
-		is_shield_unlocked = !is_shield_unlocked
+	#if Input.is_action_just_pressed("action"):
+		#is_spear_unlocked = !is_spear_unlocked
+		#is_shield_unlocked = !is_shield_unlocked
 
 #########################################
 # Direction change handling

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://77gs534lm6sf"
-path="res://.godot/imported/attack2.png-3513460f6045bc885bf9cb951e08678f.ctex"
+uid="uid://cg6evyvwrvt3"
+path="res://.godot/imported/Timeline 1_0002 (1).png-df49d7956098cfebe2b1a3f7ea80afd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/combat/attack2.png"
-dest_files=["res://.godot/imported/attack2.png-3513460f6045bc885bf9cb951e08678f.ctex"]
+source_file="res://assets/sprites/mud_mummy/fighting/Timeline 1_0002 (1).png"
+dest_files=["res://.godot/imported/Timeline 1_0002 (1).png-df49d7956098cfebe2b1a3f7ea80afd6.ctex"]
 
 [params]
 

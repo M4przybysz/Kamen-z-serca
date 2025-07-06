@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://77gs534lm6sf"
-path="res://.godot/imported/attack2.png-3513460f6045bc885bf9cb951e08678f.ctex"
+uid="uid://bg5ojxh7i3obx"
+path="res://.godot/imported/chwytp.png-408871114ffdbfcb51f5c484d5d8a852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/combat/attack2.png"
-dest_files=["res://.godot/imported/attack2.png-3513460f6045bc885bf9cb951e08678f.ctex"]
+source_file="res://assets/sprites/player/chwytp.png"
+dest_files=["res://.godot/imported/chwytp.png-408871114ffdbfcb51f5c484d5d8a852.ctex"]
 
 [params]
 
