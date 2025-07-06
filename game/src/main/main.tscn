@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=68 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://bpifovnh467yy" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-4.png" id="45_7v5c8"]
 [ext_resource type="Script" path="res://src/main/unlock_copper.gd" id="45_bqkt3"]
 [ext_resource type="PackedScene" uid="uid://dfmc8b7cff21" path="res://assets/pakiet.tscn" id="46_17tst"]
+[ext_resource type="PackedScene" uid="uid://2fmi2jce2htv" path="res://ar_tap_1.tscn" id="47_nxdc7"]
 [ext_resource type="Texture2D" uid="uid://dhy77m5vwvcc" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/gora_ziem_mech.png" id="58_8t2km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w74ro"]
@@ -7130,7 +7131,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Artur" type="Node2D" parent="Gameplay/Tapeciarnia"]
 
-[node name="ArTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+[node name="ArTap1" parent="Gameplay/Tapeciarnia/Artur" instance=ExtResource("47_nxdc7")]
 
 [node name="ArTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
 

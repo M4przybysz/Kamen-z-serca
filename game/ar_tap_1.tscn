@@ -1,0 +1,881 @@
+[gd_scene load_steps=4 format=3 uid="uid://2fmi2jce2htv"]
+
+[ext_resource type="Texture2D" uid="uid://vv1omy14bitq" path="res://assets/sprites/environment/Platformy i teren/dzik skal3.png" id="1_6qac5"]
+[ext_resource type="Texture2D" uid="uid://bx43j5dfqoioo" path="res://assets/sprites/environment/Platformy i teren/czzern_dzik.png" id="2_kqcue"]
+[ext_resource type="Texture2D" uid="uid://biubgyirgnnqo" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien.png" id="3_4p31v"]
+
+[node name="ArTap1" type="Node2D"]
+
+[node name="ArSkal305" type="Sprite2D" parent="."]
+position = Vector2(14512, 1938)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal315" type="Sprite2D" parent="."]
+position = Vector2(14820, 2339)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal316" type="Sprite2D" parent="."]
+position = Vector2(14971, 2339)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal317" type="Sprite2D" parent="."]
+position = Vector2(15053, 2339)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal318" type="Sprite2D" parent="."]
+position = Vector2(15148, 2341)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal319" type="Sprite2D" parent="."]
+position = Vector2(15284, 2341)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal320" type="Sprite2D" parent="."]
+position = Vector2(15431, 2390)
+rotation = 5.37784
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal321" type="Sprite2D" parent="."]
+position = Vector2(15462, 2441)
+rotation = 4.97418
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal322" type="Sprite2D" parent="."]
+position = Vector2(15546, 2467)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal323" type="Sprite2D" parent="."]
+position = Vector2(15684, 2467)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal324" type="Sprite2D" parent="."]
+position = Vector2(16021, 2464)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal325" type="Sprite2D" parent="."]
+position = Vector2(16040, 2349)
+rotation = 3.14159
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal326" type="Sprite2D" parent="."]
+position = Vector2(16021, 2168)
+rotation = 2.87979
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal327" type="Sprite2D" parent="."]
+position = Vector2(15986, 2023)
+rotation = 2.87979
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal328" type="Sprite2D" parent="."]
+position = Vector2(15867, 1930)
+rotation = 1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal329" type="Sprite2D" parent="."]
+position = Vector2(15689, 1930)
+rotation = 1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal330" type="Sprite2D" parent="."]
+position = Vector2(15516, 1930)
+rotation = 1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal331" type="Sprite2D" parent="."]
+position = Vector2(15344, 1933)
+rotation = 1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal332" type="Sprite2D" parent="."]
+position = Vector2(15339, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal333" type="Sprite2D" parent="."]
+position = Vector2(15507, 1899)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal334" type="Sprite2D" parent="."]
+position = Vector2(15664, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal335" type="Sprite2D" parent="."]
+position = Vector2(15819, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal336" type="Sprite2D" parent="."]
+position = Vector2(15986, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal337" type="Sprite2D" parent="."]
+position = Vector2(16160, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal338" type="Sprite2D" parent="."]
+position = Vector2(16317, 1900)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal339" type="Sprite2D" parent="."]
+position = Vector2(16230, 1664)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal363" type="Sprite2D" parent="."]
+position = Vector2(15717, 1585)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal364" type="Sprite2D" parent="."]
+position = Vector2(15791, 1586)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal365" type="Sprite2D" parent="."]
+position = Vector2(15883, 1560)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal372" type="Sprite2D" parent="."]
+position = Vector2(17118, 1744)
+rotation = -3.40339
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal373" type="Sprite2D" parent="."]
+position = Vector2(17075, 1582)
+rotation = -3.40339
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal374" type="Sprite2D" parent="."]
+position = Vector2(16996, 1426)
+rotation = -3.92699
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal375" type="Sprite2D" parent="."]
+position = Vector2(16887, 1311)
+rotation = -3.92699
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal389" type="Sprite2D" parent="."]
+position = Vector2(16887, 1311)
+rotation = -3.92699
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal376" type="Sprite2D" parent="."]
+position = Vector2(16780, 1287)
+rotation = -4.45058
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal390" type="Sprite2D" parent="."]
+position = Vector2(16887, 1656)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal391" type="Sprite2D" parent="."]
+position = Vector2(16724, 1656)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal392" type="Sprite2D" parent="."]
+position = Vector2(16559, 1656)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal393" type="Sprite2D" parent="."]
+position = Vector2(16390, 1656)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal394" type="Sprite2D" parent="."]
+position = Vector2(16234, 1660)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal395" type="Sprite2D" parent="."]
+position = Vector2(16912, 1636)
+rotation = -6.28318
+scale = Vector2(-0.370321, 0.26388)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal396" type="Sprite2D" parent="."]
+position = Vector2(16971, 1642)
+rotation = -9.42476
+scale = Vector2(-0.370321, 0.26388)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal397" type="Sprite2D" parent="."]
+position = Vector2(16416, 1402)
+rotation = -9.42476
+scale = Vector2(-0.370321, 0.26388)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal398" type="Sprite2D" parent="."]
+position = Vector2(16402, 1418)
+rotation = -7.85397
+scale = Vector2(-0.370321, 0.26388)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal399" type="Sprite2D" parent="."]
+position = Vector2(16338, 1574)
+rotation = -7.85397
+scale = Vector2(-0.405526, 0.400386)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal400" type="Sprite2D" parent="."]
+position = Vector2(15965, 1547)
+rotation = -9.42476
+scale = Vector2(-0.405526, 0.400386)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal401" type="Sprite2D" parent="."]
+position = Vector2(15986, 1494)
+rotation = -8.90117
+scale = Vector2(-0.405526, 0.400386)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal385" type="Sprite2D" parent="."]
+position = Vector2(16517, 1881)
+rotation = -3.14159
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal386" type="Sprite2D" parent="."]
+position = Vector2(16388, 1966)
+rotation = -6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal387" type="Sprite2D" parent="."]
+position = Vector2(16517, 1879)
+rotation = -6.28318
+scale = Vector2(1.28206, 0.999991)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal388" type="Sprite2D" parent="."]
+position = Vector2(16517, 1879)
+rotation = -6.28318
+scale = Vector2(1.28206, 0.999991)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal377" type="Sprite2D" parent="."]
+position = Vector2(16615, 1258)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal378" type="Sprite2D" parent="."]
+position = Vector2(16454, 1255)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal381" type="Sprite2D" parent="."]
+position = Vector2(16364, 1491)
+rotation = -6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal382" type="Sprite2D" parent="."]
+position = Vector2(16322, 1485)
+rotation = -3.14159
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal383" type="Sprite2D" parent="."]
+position = Vector2(16272, 1724)
+rotation = -3.14159
+scale = Vector2(0.952154, 0.658702)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal384" type="Sprite2D" parent="."]
+position = Vector2(16317, 1724)
+rotation = -6.28318
+scale = Vector2(0.952154, 0.658702)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal379" type="Sprite2D" parent="."]
+position = Vector2(16296, 1250)
+rotation = -4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal380" type="Sprite2D" parent="."]
+position = Vector2(16194, 1307)
+rotation = -6.28318
+scale = Vector2(1, 0.637694)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal340" type="Sprite2D" parent="."]
+position = Vector2(16408, 1664)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal341" type="Sprite2D" parent="."]
+position = Vector2(16582, 1664)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal366" type="Sprite2D" parent="."]
+position = Vector2(16131, 1394)
+rotation = 0.994354
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal367" type="Sprite2D" parent="."]
+position = Vector2(16024, 1462)
+rotation = 1.0472
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal368" type="Sprite2D" parent="."]
+position = Vector2(15921, 1438)
+rotation = 3.14159
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal361" type="Sprite2D" parent="."]
+position = Vector2(15460, 2085)
+rotation = -1.57079
+scale = Vector2(1.04537, 0.644807)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal362" type="Sprite2D" parent="."]
+position = Vector2(15266, 1914)
+rotation = -3.40339
+scale = Vector2(1.05064, 0.428143)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal349" type="Sprite2D" parent="."]
+position = Vector2(16522, 1798)
+rotation = -1.57079
+scale = Vector2(0.505586, 0.344618)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal350" type="Sprite2D" parent="."]
+position = Vector2(16522, 1798)
+rotation = -1.57079
+scale = Vector2(0.505586, 0.344618)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal352" type="Sprite2D" parent="."]
+position = Vector2(16942, 1624)
+rotation = -1.57079
+scale = Vector2(0.606702, 0.424145)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal342" type="Sprite2D" parent="."]
+position = Vector2(16756, 1664)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal360" type="Sprite2D" parent="."]
+position = Vector2(16270, 1801)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal359" type="Sprite2D" parent="."]
+position = Vector2(16360, 1400)
+rotation = -1.57079
+scale = Vector2(0.834823, 0.770828)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal354" type="Sprite2D" parent="."]
+position = Vector2(15712, 1585)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal355" type="Sprite2D" parent="."]
+position = Vector2(15882, 1528)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal356" type="Sprite2D" parent="."]
+position = Vector2(15984, 1313)
+rotation = -2.18217
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal357" type="Sprite2D" parent="."]
+position = Vector2(16046, 1273)
+rotation = -2.17548
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal358" type="Sprite2D" parent="."]
+position = Vector2(16118, 1220)
+rotation = -1.94955
+scale = Vector2(0.651115, 0.555954)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal353" type="Sprite2D" parent="."]
+position = Vector2(15741, 1550)
+rotation = -2.00756
+scale = Vector2(0.848946, 0.802717)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal351" type="Sprite2D" parent="."]
+position = Vector2(16450, 1956)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal343" type="Sprite2D" parent="."]
+position = Vector2(16878, 1664)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal344" type="Sprite2D" parent="."]
+position = Vector2(16626, 1852)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal345" type="Sprite2D" parent="."]
+position = Vector2(16800, 1852)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal346" type="Sprite2D" parent="."]
+position = Vector2(16975, 1852)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal347" type="Sprite2D" parent="."]
+position = Vector2(17111, 1855)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal348" type="Sprite2D" parent="."]
+position = Vector2(17111, 1855)
+rotation = -1.57079
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal314" type="Sprite2D" parent="."]
+position = Vector2(14512, 1938)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal313" type="Sprite2D" parent="."]
+position = Vector2(14512, 1938)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal306" type="Sprite2D" parent="."]
+position = Vector2(14556, 2034)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal307" type="Sprite2D" parent="."]
+position = Vector2(14645, 2135)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal369" type="Sprite2D" parent="."]
+position = Vector2(16942, 1636)
+rotation = 4.71238
+scale = Vector2(1.1579, 0.437731)
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal308" type="Sprite2D" parent="."]
+position = Vector2(14708, 2214)
+rotation = 4.71238
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal309" type="Sprite2D" parent="."]
+position = Vector2(14579, 2010)
+rotation = 6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal310" type="Sprite2D" parent="."]
+position = Vector2(14626, 2103)
+rotation = 6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal311" type="Sprite2D" parent="."]
+position = Vector2(14714, 2203)
+rotation = 6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="ArSkal312" type="Sprite2D" parent="."]
+position = Vector2(14778, 2284)
+rotation = 6.28318
+texture = ExtResource("1_6qac5")
+
+[node name="CzzernAr" type="Sprite2D" parent="."]
+position = Vector2(14446, 1933)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr64" type="Sprite2D" parent="."]
+position = Vector2(14432, 2042)
+rotation = 1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr65" type="Sprite2D" parent="."]
+position = Vector2(14296, 1908)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr56" type="Sprite2D" parent="."]
+position = Vector2(14579, 2066)
+rotation = 1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr57" type="Sprite2D" parent="."]
+position = Vector2(14630, 2166)
+rotation = 1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr58" type="Sprite2D" parent="."]
+position = Vector2(14719, 2265)
+rotation = 1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr59" type="Sprite2D" parent="."]
+position = Vector2(14780, 2348)
+rotation = 1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr2" type="Sprite2D" parent="."]
+position = Vector2(14496, 2032)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr3" type="Sprite2D" parent="."]
+position = Vector2(14583, 2132)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr4" type="Sprite2D" parent="."]
+position = Vector2(14645, 2214)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr5" type="Sprite2D" parent="."]
+position = Vector2(14840, 2341)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr6" type="Sprite2D" parent="."]
+position = Vector2(15468, 2415)
+rotation = 0.651111
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr7" type="Sprite2D" parent="."]
+position = Vector2(15460, 2428)
+rotation = 0.651111
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr8" type="Sprite2D" parent="."]
+position = Vector2(15447, 2436)
+rotation = 0.651111
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr9" type="Sprite2D" parent="."]
+position = Vector2(15440, 2451)
+rotation = 0.651111
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr10" type="Sprite2D" parent="."]
+position = Vector2(15241, 2340)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr38" type="Sprite2D" parent="."]
+position = Vector2(16206, 2376)
+scale = Vector2(1.17168, 3.34611)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr39" type="Sprite2D" parent="."]
+position = Vector2(16453, 1969)
+scale = Vector2(1.17168, 3.34611)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr11" type="Sprite2D" parent="."]
+position = Vector2(16044, 2471)
+rotation = -1.57079
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr12" type="Sprite2D" parent="."]
+position = Vector2(16045, 2276)
+rotation = -1.70842
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr14" type="Sprite2D" parent="."]
+position = Vector2(16388, 2042)
+rotation = -4.71238
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr15" type="Sprite2D" parent="."]
+position = Vector2(16469, 1956)
+rotation = -6.28318
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr16" type="Sprite2D" parent="."]
+position = Vector2(16532, 1990)
+rotation = -7.85397
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr17" type="Sprite2D" parent="."]
+position = Vector2(16668, 1855)
+rotation = -6.28318
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr18" type="Sprite2D" parent="."]
+position = Vector2(17111, 1857)
+rotation = -6.28318
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr19" type="Sprite2D" parent="."]
+position = Vector2(17128, 1775)
+rotation = -8.11577
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr25" type="Sprite2D" parent="."]
+position = Vector2(16060, 1441)
+rotation = -9.94836
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr26" type="Sprite2D" parent="."]
+position = Vector2(16081, 1422)
+rotation = -9.94836
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr27" type="Sprite2D" parent="."]
+position = Vector2(16196, 1290)
+rotation = -10.9956
+scale = Vector2(0.490097, 0.999953)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr28" type="Sprite2D" parent="."]
+position = Vector2(16376, 1421)
+rotation = -9.42476
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr29" type="Sprite2D" parent="."]
+position = Vector2(16376, 1394)
+rotation = -12.5664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr30" type="Sprite2D" parent="."]
+position = Vector2(16360, 1394)
+rotation = -12.5664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr31" type="Sprite2D" parent="."]
+position = Vector2(16321, 1432)
+rotation = -14.1371
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr66" type="Sprite2D" parent="."]
+position = Vector2(16294, 1775)
+rotation = -15.7079
+scale = Vector2(0.122349, 0.356169)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr67" type="Sprite2D" parent="."]
+position = Vector2(16294, 1686)
+rotation = -18.8495
+scale = Vector2(0.122349, 0.356169)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr40" type="Sprite2D" parent="."]
+position = Vector2(15913, 1503)
+rotation = -13.6135
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr41" type="Sprite2D" parent="."]
+position = Vector2(15956, 1501)
+rotation = -11.2574
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr42" type="Sprite2D" parent="."]
+position = Vector2(15774, 1570)
+rotation = -9.42476
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr43" type="Sprite2D" parent="."]
+position = Vector2(15841, 1566)
+rotation = -9.49664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr44" type="Sprite2D" parent="."]
+position = Vector2(15908, 1560)
+rotation = -9.49664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr45" type="Sprite2D" parent="."]
+position = Vector2(15927, 1558)
+rotation = -9.49664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr46" type="Sprite2D" parent="."]
+position = Vector2(15958, 1516)
+rotation = -11.2574
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr47" type="Sprite2D" parent="."]
+position = Vector2(15768, 1537)
+rotation = -13.09
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr49" type="Sprite2D" parent="."]
+position = Vector2(15828, 1521)
+rotation = -12.5664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr50" type="Sprite2D" parent="."]
+position = Vector2(15875, 1522)
+rotation = -12.5664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr51" type="Sprite2D" parent="."]
+position = Vector2(15918, 1525)
+rotation = -12.5664
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr52" type="Sprite2D" parent="."]
+position = Vector2(15918, 1513)
+rotation = -13.6135
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr53" type="Sprite2D" parent="."]
+position = Vector2(15935, 1520)
+rotation = -14.3989
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr54" type="Sprite2D" parent="."]
+position = Vector2(15918, 1513)
+rotation = -13.8753
+scale = Vector2(0.10764, 0.744257)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr55" type="Sprite2D" parent="."]
+position = Vector2(14434, 2066)
+rotation = -14.1371
+scale = Vector2(-0.968098, 3.37311)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr60" type="Sprite2D" parent="."]
+position = Vector2(14368, 2074)
+rotation = -14.1371
+scale = Vector2(-0.968098, 3.37311)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr61" type="Sprite2D" parent="."]
+position = Vector2(14471, 2172)
+rotation = -14.1371
+scale = Vector2(-0.968098, 3.37311)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr62" type="Sprite2D" parent="."]
+position = Vector2(14568, 2278)
+rotation = -14.1371
+scale = Vector2(-0.968098, 3.37311)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr63" type="Sprite2D" parent="."]
+position = Vector2(14626, 2355)
+rotation = -14.1371
+scale = Vector2(-0.968098, 3.37311)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr48" type="Sprite2D" parent="."]
+position = Vector2(15736, 1561)
+rotation = -14.1371
+scale = Vector2(0.0555244, 0.467625)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr32" type="Sprite2D" parent="."]
+position = Vector2(16322, 1496)
+rotation = -14.1371
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr33" type="Sprite2D" parent="."]
+position = Vector2(16322, 1537)
+rotation = -14.1371
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr34" type="Sprite2D" parent="."]
+position = Vector2(16368, 1537)
+rotation = -17.2787
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr35" type="Sprite2D" parent="."]
+position = Vector2(16366, 1475)
+rotation = -17.2787
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr36" type="Sprite2D" parent="."]
+position = Vector2(16366, 1443)
+rotation = -17.2787
+scale = Vector2(0.285201, 0.395664)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr37" type="Sprite2D" parent="."]
+position = Vector2(16345, 1577)
+rotation = -15.7079
+scale = Vector2(0.148196, 0.385352)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr20" type="Sprite2D" parent="."]
+position = Vector2(17063, 1509)
+rotation = -8.37757
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr21" type="Sprite2D" parent="."]
+position = Vector2(16887, 1312)
+rotation = -8.63937
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr22" type="Sprite2D" parent="."]
+position = Vector2(16833, 1296)
+rotation = -9.16296
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr23" type="Sprite2D" parent="."]
+position = Vector2(16839, 1272)
+rotation = -9.16296
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr24" type="Sprite2D" parent="."]
+position = Vector2(17249, 1889)
+rotation = -9.68656
+scale = Vector2(0.530953, 3.19334)
+texture = ExtResource("2_kqcue")
+
+[node name="CzzernAr13" type="Sprite2D" parent="."]
+position = Vector2(16024, 1974)
+rotation = -2.61799
+scale = Vector2(0.779898, 0.437217)
+texture = ExtResource("2_kqcue")
+
+[node name="Kamien5" type="Sprite2D" parent="."]
+position = Vector2(14420, 1553)
+scale = Vector2(-0.544256, -0.544148)
+texture = ExtResource("3_4p31v")
+
+[node name="Kamien6" type="Sprite2D" parent="."]
+position = Vector2(14421, 1655)
+scale = Vector2(-0.544256, -0.544148)
+texture = ExtResource("3_4p31v")
+
+[node name="Kamien7" type="Sprite2D" parent="."]
+position = Vector2(15905, 1372)
+scale = Vector2(-0.544256, -0.544148)
+texture = ExtResource("3_4p31v")
