@@ -323,15 +323,21 @@ animations = [{
 "name": &"use_shield",
 "speed": 15.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_kmqv2")
+}],
 "loop": false,
 "name": &"wing_attack1",
 "speed": 15.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vy2g8")
+}],
+"loop": false,
 "name": &"wing_attack2",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_722fy"]
@@ -415,7 +421,7 @@ stream = ExtResource("6_l6ij5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"air_dash"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]

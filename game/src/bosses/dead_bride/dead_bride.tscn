@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://3lsfd6pikghv"]
+[gd_scene load_steps=18 format=3 uid="uid://3lsfd6pikghv"]
 
 [ext_resource type="Script" path="res://src/bosses/dead_bride/dead_bride.gd" id="1_du6mr"]
 [ext_resource type="Script" path="res://src/bosses/great_oak/lock_trigger.gd" id="2_e62hm"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="3_dfavh"]
+[ext_resource type="PackedScene" uid="uid://bugda5o3gdqi0" path="res://src/checkpoint/checkpoint.tscn" id="3_phyrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmhox"]
 size = Vector2(1400, 100)
@@ -33,6 +34,17 @@ size = Vector2(90, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ue8h3"]
 size = Vector2(50, 100)
+
+[sub_resource type="Animation" id="Animation_jd23c"]
+resource_name = "breaking_walls"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfg6r"]
+_data = {
+"breaking_walls": SubResource("Animation_jd23c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3blvd"]
+size = Vector2(100, 100)
 
 [node name="DeadBride" type="Node2D"]
 script = ExtResource("1_du6mr")
@@ -123,6 +135,9 @@ offset_top = -150.0
 offset_right = 25.0
 offset_bottom = 150.0
 color = Color(0, 0, 0, 1)
+
+[node name="Checkpoint" parent="Environment" instance=ExtResource("3_phyrs")]
+position = Vector2(1050, 1250)
 
 [node name="Body" type="Node2D" parent="."]
 
@@ -293,6 +308,8 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Hurtbox" type="Area2D" parent="Body"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape1" type="CollisionShape2D" parent="Body/Hurtbox"]
 position = Vector2(1700, 1210)
@@ -306,8 +323,10 @@ offset_bottom = 90.0
 color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="Body/Hurtbox"]
+visible = false
 position = Vector2(1700, 1250)
 shape = SubResource("RectangleShape2D_ue8h3")
+disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="Body/Hurtbox/CollisionShape2"]
 offset_left = -25.0
@@ -317,5 +336,19 @@ offset_bottom = 50.0
 color = Color(1, 0, 0.305882, 1)
 
 [node name="AttackPlayer" type="AnimationPlayer" parent="Body"]
+libraries = {
+"": SubResource("AnimationLibrary_vfg6r")
+}
+
+[node name="CounterPlayer" type="AnimationPlayer" parent="Body"]
+
+[node name="FightStart" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FightStart"]
+position = Vector2(1605, 1250)
+shape = SubResource("RectangleShape2D_3blvd")
 
 [connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
+[connection signal="area_entered" from="Body/Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="Body/Hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="FightStart" to="." method="_on_fight_start_body_entered"]

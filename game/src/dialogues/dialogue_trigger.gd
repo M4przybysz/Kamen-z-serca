@@ -11,3 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 		dialogue_triggered = true
 		body.movement_lock = true
 		ui.print_scene(dialogue_box_position)
+		ui.boss_to_start = 1

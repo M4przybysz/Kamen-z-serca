@@ -39,6 +39,12 @@ var dialogue_scene: Array = []
 var dialgue_line_index: int = 0
 var dialogue_on: bool = false
 
+# Boss to start
+# 0 - none
+# 1 - great oak
+# 2 - dead bride
+var boss_to_start: int = 0
+
 # Signals
 signal start_oak_fight
 
@@ -142,12 +148,13 @@ func print_line() -> void:
 			dynamic_dialogue_box_text.text = dialogue_scene[dialgue_line_index].substr(3, dialogue_scene[dialgue_line_index].length() - 3)
 		dialgue_line_index += 1
 	else:
-		dialogue_interface.visible = false
-		dialogue_on = false
-		player.movement_lock = false
-		drzewo_walka.volume_db = 0
-		drzewo_spokoj.volume_db = -80
-		emit_signal("start_oak_fight")
+		if boss_to_start == 1:
+			dialogue_interface.visible = false
+			dialogue_on = false
+			player.movement_lock = false
+			drzewo_walka.volume_db = 0
+			drzewo_spokoj.volume_db = -80
+			emit_signal("start_oak_fight")
 		# main.show_end_screen() # show end screen
 
 func _input(event: InputEvent) -> void:

@@ -1,3 +1,3 @@
 # Kamień z serca
 
-Gra wideo z gatunku metroidvania, tworzona przy pomocy silnika Godot.
+Kamień z serca. Platformowa gra akcji z elementami metroidvanii, tworzona przy pomocy silnika Godot.
