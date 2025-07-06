@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="5_8ncra"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
-[ext_resource type="PackedScene" uid="uid://bywqvv2ge2shg" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
+[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="6_k57fp"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="6_x2lf7"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="7_3ptru"]
@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://dwl1u5xa8yaj3" path="res://src/enemies/mud_mummy/mud_mummy.tscn" id="14_btelo"]
 [ext_resource type="Texture2D" uid="uid://dd4c3bsgr82p" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-glowna.png" id="15_mlicb"]
 [ext_resource type="Texture2D" uid="uid://dxx73sc7v2tql" path="res://assets/sprites/environment/Platformy i teren/trawa_dzik2.png" id="17_1od8p"]
-[ext_resource type="PackedScene" uid="uid://co21ckupkt803" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
+[ext_resource type="PackedScene" path="res://assets/sprites/environment/schod_ozd.tscn" id="17_2vnot"]
 [ext_resource type="Texture2D" uid="uid://nr23tf1nf44b" path="res://assets/sprites/environment/Platformy i teren/trawa_pathdzik.png" id="18_hcjcj"]
 [ext_resource type="Texture2D" uid="uid://dmh7m5fbcrs3x" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kam mech1.png" id="24_c5onk"]
 [ext_resource type="Texture2D" uid="uid://ckyvq403wkw5i" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany2.png" id="25_t08e5"]
@@ -73,7 +73,7 @@ death_menu = NodePath("../Menus/DeathMenu")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 
 [node name="Alfa_v1" parent="Gameplay" index="1"]
-position = Vector2(-1, 0)
+position = Vector2(0, 0)
 
 [node name="ZiemiaDzik31" type="Sprite2D" parent="Gameplay/Alfa_v1" index="10"]
 z_index = 1
@@ -2457,7 +2457,6 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
-position = Vector2(-44, 27)
 shape = SubResource("CircleShape2D_klkfr")
 
 [node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
