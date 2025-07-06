@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwl1u5xa8yaj3"]
+[gd_scene load_steps=32 format=3 uid="uid://dwl1u5xa8yaj3"]
 
 [ext_resource type="Script" path="res://src/enemies/mud_mummy/mud_mummy.gd" id="1_ri1ep"]
 [ext_resource type="AudioStream" uid="uid://cg44n71vqc80e" path="res://assets/sound/sfx/draugr_death.wav" id="2_4o23v"]
@@ -17,10 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://bmjuu3c8mqg7h" path="res://assets/sprites/mud_mummy/walking/Timeline 1_0005.png" id="11_wm125"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h4jj"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16gak"]
 radius = 15.0
 height = 80.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06uet"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhhnp"]
 radius = 15.0
 height = 80.0
 
@@ -355,7 +363,7 @@ shape = SubResource("CapsuleShape2D_4h4jj")
 [node name="ChargeCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4h4jj")
+shape = SubResource("CapsuleShape2D_16gak")
 disabled = true
 
 [node name="NormalHurtbox" type="Area2D" parent="." groups=["mummy_hurtbox"]]
@@ -364,6 +372,7 @@ collision_layer = 6
 collision_mask = 4
 
 [node name="ColorRect" type="ColorRect" parent="NormalHurtbox"]
+visible = false
 offset_left = 20.0
 offset_top = -15.0
 offset_right = 50.0
@@ -390,7 +399,7 @@ color = Color(1, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeHurtbox"]
 position = Vector2(0, 25)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_06uet")
+shape = SubResource("CapsuleShape2D_xhhnp")
 disabled = true
 
 [node name="AttackHitbox" type="Area2D" parent="." groups=["mummy_attack"]]

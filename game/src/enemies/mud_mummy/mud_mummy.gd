@@ -386,17 +386,13 @@ func check_charge() -> void:
 	if charge_timer.is_stopped():
 		charge_collision.disabled = true
 		charge_hurtbox_collision.disabled = true
-		$ChargeHurtbox/ColorRect.hide()
 		normal_collision.disabled = false
 		normal_hurtbox_collision.disabled = false
-		$NormalHurtbox/ColorRect.show()
 	else:
 		normal_collision.disabled = true
 		normal_hurtbox_collision.disabled = true
-		$NormalHurtbox/ColorRect.hide()
 		charge_collision.disabled = false
 		charge_hurtbox_collision.disabled = false
-		$ChargeHurtbox/ColorRect.show()
 
 #########################################
 # Wall detection
