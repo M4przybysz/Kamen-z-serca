@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://d3gn4eoxa2lh0"]
+[gd_scene load_steps=58 format=3 uid="uid://d3gn4eoxa2lh0"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_2nm2t"]
 [ext_resource type="PackedScene" uid="uid://w86chk0k7rbt" path="res://src/gameplay/gameplay.tscn" id="2_lamct"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="5_8ncra"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
-[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
+[ext_resource type="PackedScene" uid="uid://bywqvv2ge2shg" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="6_k57fp"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="6_x2lf7"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="7_3ptru"]
@@ -51,7 +51,12 @@
 [ext_resource type="Texture2D" uid="uid://c65ylyq73qini" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany6.png" id="32_2p062"]
 [ext_resource type="Texture2D" uid="uid://cr7l322eacmcf" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany4.png" id="33_prn4l"]
 [ext_resource type="Texture2D" uid="uid://bqpfddfyxnfg1" path="res://assets/sprites/environment/Platformy i teren/skalne ściany/sciany3.png" id="34_gjm31"]
+[ext_resource type="Script" path="res://src/main/unlocks/unlock_tin.gd" id="44_i22kd"]
 [ext_resource type="Texture2D" uid="uid://bpifovnh467yy" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/kamien-4.png" id="45_7v5c8"]
+[ext_resource type="Script" path="res://src/main/unlock_copper.gd" id="45_bqkt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8asx"]
+size = Vector2(100, 100)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klkfr"]
 radius = 525.0
@@ -2448,19 +2453,6 @@ position = Vector2(33263, 406)
 
 [node name="DeadBride" parent="Gameplay/Beta" index="21"]
 position = Vector2(48110.3, 4852.77)
-
-[node name="Player" parent="Gameplay" index="3"]
-position = Vector2(600, 576)
-
-[node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
-shape = SubResource("CircleShape2D_klkfr")
-
-[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
-main = NodePath("../../..")
 
 [node name="Level Design" type="Node2D" parent="Gameplay"]
 
@@ -6862,23 +6854,122 @@ texture = ExtResource("4_o6day")
 
 [node name="CzzernDzik2" type="Sprite2D" parent="Gameplay"]
 position = Vector2(12765, 1652)
-scale = Vector2(-1.53305, 2.74275)
+rotation = 3.14159
+scale = Vector2(1.53305, -2.74275)
 texture = ExtResource("4_o6day")
 
 [node name="CzzernDzik3" type="Sprite2D" parent="Gameplay"]
 position = Vector2(12852, 1650)
-scale = Vector2(-1.53305, 2.74275)
+rotation = 3.14159
+scale = Vector2(1.53305, -2.74275)
 texture = ExtResource("4_o6day")
 
 [node name="CzzernDzik4" type="Sprite2D" parent="Gameplay"]
 position = Vector2(12593, 1542)
-scale = Vector2(-1.22029, 2.69359)
+rotation = 3.14159
+scale = Vector2(1.22029, -2.69359)
 texture = ExtResource("4_o6day")
 
 [node name="CzzernDzik5" type="Sprite2D" parent="Gameplay"]
 position = Vector2(12603, 1592)
-scale = Vector2(-1.22029, 2.69359)
+rotation = 3.14159
+scale = Vector2(1.22029, -2.69359)
 texture = ExtResource("4_o6day")
+
+[node name="Kamien" type="Sprite2D" parent="Gameplay"]
+position = Vector2(20007, 2001)
+rotation = 1.57079
+scale = Vector2(2.42055, 0.9584)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien2" type="Sprite2D" parent="Gameplay"]
+position = Vector2(20114, 1989)
+rotation = 1.57079
+scale = Vector2(2.22784, 0.982214)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien3" type="Sprite2D" parent="Gameplay"]
+position = Vector2(20486, 2046)
+rotation = 1.57079
+scale = Vector2(2.38267, 1.03029)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien4" type="Sprite2D" parent="Gameplay"]
+position = Vector2(19858, 2159)
+rotation = 1.57079
+scale = Vector2(2.42369, 0.900243)
+texture = ExtResource("9_2pipl")
+
+[node name="Kamien-4" type="Sprite2D" parent="Gameplay"]
+z_index = -2
+position = Vector2(1949, 374)
+scale = Vector2(1.14486, 1.02154)
+texture = ExtResource("45_7v5c8")
+
+[node name="UnlockTin" type="Area2D" parent="Gameplay"]
+script = ExtResource("44_i22kd")
+
+[node name="Timer" type="Timer" parent="Gameplay/UnlockTin"]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="Gameplay/UnlockTin"]
+visible = false
+offset_left = 30264.0
+offset_top = -4143.0
+offset_right = 30413.0
+offset_bottom = -4120.0
+text = "Odblokowano cynę"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/UnlockTin"]
+position = Vector2(30334, -4042)
+shape = SubResource("RectangleShape2D_p8asx")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/UnlockTin/CollisionShape2D"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(1, 0.74902, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="UnlockCopper" type="Area2D" parent="Gameplay"]
+script = ExtResource("45_bqkt3")
+
+[node name="Timer" type="Timer" parent="Gameplay/UnlockCopper"]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="Gameplay/UnlockCopper"]
+visible = false
+offset_left = 28320.0
+offset_top = -8178.0
+offset_right = 28469.0
+offset_bottom = -8155.0
+text = "Odblokowano miedź"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/UnlockCopper"]
+position = Vector2(28394, -8084)
+shape = SubResource("RectangleShape2D_p8asx")
+
+[node name="ColorRect" type="ColorRect" parent="Gameplay/UnlockCopper/CollisionShape2D"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(1, 0.74902, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="Gameplay" index="16"]
+position = Vector2(600, 576)
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Player" index="14"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Player/Area2D"]
+shape = SubResource("CircleShape2D_klkfr")
+
+[node name="UI" parent="Gameplay/UI" index="0" node_paths=PackedStringArray("main")]
+main = NodePath("../../..")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -6937,36 +7028,10 @@ shape = SubResource("RectangleShape2D_24a2n")
 position = Vector2(23123.8, 861.5)
 shape = SubResource("RectangleShape2D_24a2n")
 
-[node name="Kamien" type="Sprite2D" parent="."]
-position = Vector2(20007, 2001)
-rotation = 1.57079
-scale = Vector2(2.42055, 0.9584)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien2" type="Sprite2D" parent="."]
-position = Vector2(20114, 1989)
-rotation = 1.57079
-scale = Vector2(2.22784, 0.982214)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien3" type="Sprite2D" parent="."]
-position = Vector2(20486, 2046)
-rotation = 1.57079
-scale = Vector2(2.38267, 1.03029)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien4" type="Sprite2D" parent="."]
-position = Vector2(19858, 2159)
-rotation = 1.57079
-scale = Vector2(2.42369, 0.900243)
-texture = ExtResource("9_2pipl")
-
-[node name="Kamien-4" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(1949, 374)
-scale = Vector2(1.14486, 1.02154)
-texture = ExtResource("45_7v5c8")
-
+[connection signal="body_entered" from="Gameplay/UnlockTin" to="Gameplay/UnlockTin" method="_on_body_entered"]
+[connection signal="timeout" from="Gameplay/UnlockTin/Timer" to="Gameplay/UnlockTin" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Gameplay/UnlockCopper" to="Gameplay/UnlockCopper" method="_on_body_entered"]
+[connection signal="timeout" from="Gameplay/UnlockCopper/Timer" to="Gameplay/UnlockCopper" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Player/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Musica/Node2D" to="Musica/Node2D" method="_on_body_entered"]
