@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bep8wle5xq65" path="res://src/health_pack/health_pack.tscn" id="5_8ncra"]
 [ext_resource type="Texture2D" uid="uid://b2nwi5tfh56o6" path="res://assets/sprites/environment/Platformy i teren/Dekoracje/Megalit/kolumna-2-glowna.png" id="5_q74c7"]
 [ext_resource type="PackedScene" uid="uid://dtdi70vm2ahdn" path="res://src/menus/death_menu/death_menu.tscn" id="5_saqgk"]
-[ext_resource type="PackedScene" uid="uid://bywqvv2ge2shg" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
+[ext_resource type="PackedScene" path="res://src/krzesimirowe_sceny/f_level_3.tscn" id="6_0jp3y"]
 [ext_resource type="PackedScene" uid="uid://bcep0b81sj6pl" path="res://src/test_elements/enemy/spike_test.tscn" id="6_k57fp"]
 [ext_resource type="PackedScene" uid="uid://dnc0aw0gl43a4" path="res://src/templates/puzzles/pillar.tscn" id="6_x2lf7"]
 [ext_resource type="PackedScene" uid="uid://mtw0v5borccy" path="res://src/templates/enviroment/Platform_breaking.tscn" id="7_3ptru"]
