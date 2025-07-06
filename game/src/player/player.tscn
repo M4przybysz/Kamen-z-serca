@@ -152,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d8q1d")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a15lc")
 }, {
 "duration": 1.0,
@@ -421,7 +421,7 @@ stream = ExtResource("6_l6ij5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_n5irl")
-animation = &"grab_edge"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="WingAttack" type="Area2D" parent="." groups=["wing_attack"]]

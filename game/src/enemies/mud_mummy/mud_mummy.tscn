@@ -159,10 +159,6 @@ _data = {
 "idle_movement": SubResource("Animation_7h87a")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dggxu"]
-atlas = ExtResource("3_p6vgn")
-region = Rect2(0, 0, 600, 650)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu5kn"]
 atlas = ExtResource("4_0ixoj")
 region = Rect2(0, 0, 600, 650)
@@ -171,23 +167,21 @@ region = Rect2(0, 0, 600, 650)
 atlas = ExtResource("2_f5ld2")
 region = Rect2(72, 0, 1486, 519)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dggxu"]
+atlas = ExtResource("3_p6vgn")
+region = Rect2(0, 0, 600, 650)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbqbr"]
 animations = [{
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
-}, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bu5kn")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": ExtResource("5_g3g2q")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
 }],
 "loop": false,
 "name": &"attack",
@@ -202,19 +196,7 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_dggxu")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
-"texture": ExtResource("5_g3g2q")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bu5kn")
-}, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dggxu")
 }],
 "loop": false,
@@ -413,6 +395,7 @@ shape = SubResource("RectangleShape2D_kj1do")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="AttackHitbox/CollisionShape2D"]
+visible = false
 offset_left = -15.0
 offset_top = -30.0
 offset_right = 15.0
@@ -432,10 +415,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 5)
 scale = Vector2(-0.121508, 0.121508)
 sprite_frames = SubResource("SpriteFrames_mbqbr")
-animation = &"combat"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
