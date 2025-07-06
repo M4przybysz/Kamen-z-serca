@@ -6,6 +6,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.ascend_to_level_2()
+		body.is_spear_unlocked = true
 		label.show()
 		timer.start()
 

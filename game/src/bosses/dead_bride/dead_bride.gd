@@ -106,8 +106,9 @@ func start_fight() -> void:
 	attack_cooldown_timer.start()
 	ui.show_boss_hp_bar("OBLUBIENICA")
 
-func _on_fight_start_area_entered(_area: Area2D) -> void:
-	start_fight()
+func _on_fight_start_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		start_fight()
 
 #########################################
 # Normal attacks handling
@@ -204,7 +205,7 @@ func decrease_hp(value: int) -> void:
 		ui.hide_boss_hp_bar()
 		is_in_fight = false
 		unlock_arena = true
-		main.show_end_screen()
+		get_tree().quit()
 	if hp <= 10:
 		fight_phase = 2
 		change_hurtbox = true

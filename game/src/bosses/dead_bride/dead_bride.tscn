@@ -351,4 +351,4 @@ shape = SubResource("RectangleShape2D_3blvd")
 [connection signal="body_entered" from="Environment/ArenaClosing/LockTrigger" to="Environment/ArenaClosing/LockTrigger" method="_on_body_entered"]
 [connection signal="area_entered" from="Body/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Body/Hurtbox" to="." method="_on_hurtbox_area_exited"]
-[connection signal="area_entered" from="FightStart" to="." method="_on_fight_start_area_entered"]
+[connection signal="body_entered" from="FightStart" to="." method="_on_fight_start_body_entered"]

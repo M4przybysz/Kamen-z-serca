@@ -40,7 +40,7 @@ func show_end_screen():
 	end_screen.visible = true
 	player.global_position = Vector2(11225, -8995)
 	player.is_shield_unlocked = true
-	player.is_spear_unlocked = true
+	#player.is_spear_unlocked = true
 	gameplay.revive_position = Vector2(11225, -8995)
 	get_tree().paused = true
 
