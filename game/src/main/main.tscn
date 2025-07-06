@@ -7102,6 +7102,68 @@ offset_bottom = 50.0
 color = Color(1, 0.74902, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="Tapeciarnia" type="Node2D" parent="Gameplay"]
+
+[node name="Dzik" type="Node2D" parent="Gameplay/Tapeciarnia"]
+
+[node name="DzikTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
+
+[node name="DzikTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
+
+[node name="DzikTap3" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
+
+[node name="DzikTap4" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
+
+[node name="DzikTap5" type="Node2D" parent="Gameplay/Tapeciarnia/Dzik"]
+
+[node name="Filip" type="Node2D" parent="Gameplay/Tapeciarnia"]
+
+[node name="FilTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Filip"]
+
+[node name="FilTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Filip"]
+
+[node name="FilTap3" type="Node2D" parent="Gameplay/Tapeciarnia/Filip"]
+
+[node name="FilTap4" type="Node2D" parent="Gameplay/Tapeciarnia/Filip"]
+
+[node name="FilTap5" type="Node2D" parent="Gameplay/Tapeciarnia/Filip"]
+
+[node name="Artur" type="Node2D" parent="Gameplay/Tapeciarnia"]
+
+[node name="ArTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+
+[node name="ArTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+
+[node name="ArTap3" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+
+[node name="ArTap4" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+
+[node name="ArTap5" type="Node2D" parent="Gameplay/Tapeciarnia/Artur"]
+
+[node name="Kacper" type="Node2D" parent="Gameplay/Tapeciarnia"]
+
+[node name="KacTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Kacper"]
+
+[node name="KacTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Kacper"]
+
+[node name="KacTap3" type="Node2D" parent="Gameplay/Tapeciarnia/Kacper"]
+
+[node name="KacTap4" type="Node2D" parent="Gameplay/Tapeciarnia/Kacper"]
+
+[node name="KacTap5" type="Node2D" parent="Gameplay/Tapeciarnia/Kacper"]
+
+[node name="Temp_Ukrainiec" type="Node2D" parent="Gameplay/Tapeciarnia"]
+
+[node name="UkraTap1" type="Node2D" parent="Gameplay/Tapeciarnia/Temp_Ukrainiec"]
+
+[node name="UkraTap2" type="Node2D" parent="Gameplay/Tapeciarnia/Temp_Ukrainiec"]
+
+[node name="UkraTap3" type="Node2D" parent="Gameplay/Tapeciarnia/Temp_Ukrainiec"]
+
+[node name="UkraTap4" type="Node2D" parent="Gameplay/Tapeciarnia/Temp_Ukrainiec"]
+
+[node name="UkraTap5" type="Node2D" parent="Gameplay/Tapeciarnia/Temp_Ukrainiec"]
+
 [node name="Gameplay_Level Design_Tapeta_TapetaD1#Sciany23" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(20134, 2423)
